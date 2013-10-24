@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CCButtonTest">
+      <UniqueIdentifier>{c1f70f70-e692-4665-b79b-77ceab751274}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CCGridTest">
+      <UniqueIdentifier>{3be1d496-ec2b-4fa5-95de-1f409bcbeb0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CCPageTest">
+      <UniqueIdentifier>{df9a90d0-0def-4434-b10f-0aa969c2d302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CCPanelTest">
+      <UniqueIdentifier>{510bc10c-532b-4011-a3e8-3e71bf1f58a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CCScrollTest">
+      <UniqueIdentifier>{f4efa2bd-ef3e-4641-9821-397830822185}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CCTableGridTest">
+      <UniqueIdentifier>{bfc46ed1-7bd9-4c45-8593-edf3284d2958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CCTableTest">
+      <UniqueIdentifier>{28983c4e-29d0-46b6-ac84-da46d7b23a20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CCTextTest">
+      <UniqueIdentifier>{0f6bc0a7-b071-445d-9e0e-837dce6cb9a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CCToggleTest">
+      <UniqueIdentifier>{858c2b30-1cd2-4c5e-88a2-5729a2e97d1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cocoswidget">
+      <UniqueIdentifier>{7e27fa87-88bc-4e12-b41d-126272b25197}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MenuScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CCButtonTest\CCButtonTest.cpp">
+      <Filter>Classes\CCButtonTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CCGridTest\CCGridTest.cpp">
+      <Filter>Classes\CCGridTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CCPageTest\CCPageTest.cpp">
+      <Filter>Classes\CCPageTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CCPanelTest\CCPanelTest.cpp">
+      <Filter>Classes\CCPanelTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CCScrollTest\CCScrollTest.cpp">
+      <Filter>Classes\CCScrollTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CCTableGridTest\CCTableGridTest.cpp">
+      <Filter>Classes\CCTableGridTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CCTableTest\CCTableTest.cpp">
+      <Filter>Classes\CCTableTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CCTextTest\CCTextTest.cpp">
+      <Filter>Classes\CCTextTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CCToggleTest\CCToggleTest.cpp">
+      <Filter>Classes\CCToggleTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CC9Sprite.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCButton.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCGrid.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCImageBox.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCImageScale9.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCPage.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCPanel.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCScroll.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCTable.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCTableGrid.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCTextAtlas.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCTextBMFont.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCTextTTF.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCToggle.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCWidget.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\cocoswidget\CCWidgetLayout.cpp">
+      <Filter>cocoswidget</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MenuScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CCButtonTest\CCButtonTest.h">
+      <Filter>Classes\CCButtonTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CCGridTest\CCGridTest.h">
+      <Filter>Classes\CCGridTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CCPageTest\CCPageTest.h">
+      <Filter>Classes\CCPageTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CCPanelTest\CCPanelTest.h">
+      <Filter>Classes\CCPanelTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CCScrollTest\CCScrollTest.h">
+      <Filter>Classes\CCScrollTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CCTableGridTest\CCTableGridTest.h">
+      <Filter>Classes\CCTableGridTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CCTableTest\CCTableTest.h">
+      <Filter>Classes\CCTableTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CCTextTest\CCTextTest.h">
+      <Filter>Classes\CCTextTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CCToggleTest\CCToggleTest.h">
+      <Filter>Classes\CCToggleTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CC9Sprite.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCButton.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCGrid.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCImageBox.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCImageScale9.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCPage.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCPanel.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCScroll.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCTable.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCTableGrid.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCTextAtlas.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCTextBMFont.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCTextTTF.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCToggle.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCWidget.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCWidgetLayout.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\CCWidgetMacros.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\cocoswidget\cocos-widget.h">
+      <Filter>cocoswidget</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
