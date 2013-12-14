@@ -1,0 +1,35 @@
+class CTableViewCell : public CPanel
+{
+    CTableViewCell();
+    virtual ~CTableViewCell();
+
+    unsigned int getIdx();
+    void setIdx(unsigned int uIdx);
+    virtual void reset();
+};
+
+class CTableView : public CScrollView, public CDataSourceAdapterProtocol
+{
+    CTableView();
+    virtual ~CTableView();
+
+    void setCountOfCell(unsigned int uCellsCount);
+    unsigned int getCountOfCell() const;
+    void setSizeOfCell(const CCSize& tCellsSize);
+    const CCSize& getSizeOfCell() const;
+	bool isAutoRelocate() const;
+	void setAutoRelocate(bool bAuto);
+
+	float getAutoRelocateSpeed() const;
+	void setAutoRelocateSpeed(float fSpeed);
+
+	CCArray* getCells();
+	CTableViewCell* cellAtIndex(unsigned int idx);
+    CTableViewCell* dequeueCell();
+	void reloadData();
+		
+    static CTableView* create(const CCSize& tViewSize);
+		
+	virtual void setDataSourceAdapterScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeDataSourceAdapterScriptHandler();
+};

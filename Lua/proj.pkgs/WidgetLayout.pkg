@@ -1,0 +1,30 @@
+enum CWidgetTouchModel
+{
+	eWidgetTouchNone,
+	eWidgetTouchTransient,
+	eWidgetTouchSustained,
+};
+
+class CWidgetLayout : public CCNodeRGBA, public CCTouchDelegate
+{
+	CWidgetLayout();
+	virtual ~CWidgetLayout();
+	virtual bool init();
+	
+	virtual int getTouchPriority();
+	virtual void setTouchPriority(int nTouchPriority);
+	virtual bool isTouchEnabled();
+	virtual void setTouchEnabled(bool bTouchEnabled);
+	virtual CCObject* findViewById(const char* id);
+	bool isMultiTouchEnabled() const;
+	void setMultiTouchEnabled(bool bEnabled);
+
+	static CWidgetLayout* create();
+	
+	void setOnTouchMovedAfterLongClickScriptHandler(LUA_FUNCTION nHandler);
+	void setOnTouchEndedAfterLongClickScriptHandler(LUA_FUNCTION nHandler);
+	void setOnTouchCancelledAfterLongClickScriptHandler(LUA_FUNCTION nHandler);
+	void removeOnTouchMovedAfterLongClickScriptHandler();
+	void removeOnTouchEndedAfterLongClickScriptHandler();
+	void removeOnTouchCancelledAfterLongClickScriptHandler();
+};

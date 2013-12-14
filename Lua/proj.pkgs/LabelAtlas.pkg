@@ -1,0 +1,33 @@
+class CLabelAtlas : public CCLabelAtlas, public CWidget, public CClickableProtocol, public CLongClickableProtocol
+{
+	CLabelAtlas();
+	virtual ~CLabelAtlas();
+
+    static CLabelAtlas * create(const char *pString, const char *charMapFile, unsigned int itemWidth, unsigned int itemHeight, unsigned int startCharMap);
+    static CLabelAtlas* create(const char *pString, const char *fntFile);
+	
+	virtual void setOnClickScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeOnClickScriptHandler();
+	virtual void setOnLongClickScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeOnLongClickScriptHandler();
+	
+	int getUserTag() const;
+	void setUserTag(int nTag);
+	const char* getId();
+	void setId(const char* id);
+	virtual bool isEnabled();
+	virtual void setEnabled(bool bEnabled);
+	virtual bool isTouchEnabled();
+	virtual void setTouchEnabled(bool bTouchEnabled);
+	virtual void interruptTouchCascade(CCTouch* pTouch, float fDuration);
+    virtual void interruptTouch(CCTouch* pTouch, float fDuration);
+    virtual bool isTouchInterrupted();
+	virtual void setOnTouchBeganScriptHandler(LUA_FUNCTION nHandler);
+	virtual void setOnTouchMovedScriptHandler(LUA_FUNCTION nHandler);
+	virtual void setOnTouchEndedScriptHandler(LUA_FUNCTION nHandler);
+	virtual void setOnTouchCancelledScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeOnTouchBeganScriptHandler();
+	virtual void removeOnTouchMovedScriptHandler();
+	virtual void removeOnTouchEndedScriptHandler();
+	virtual void removeOnTouchCancelledScriptHandler();
+};

@@ -1,0 +1,33 @@
+class CGridPageViewPage : public CTableViewCell
+{
+	CGridPageViewPage();
+	virtual ~CGridPageViewPage();
+	CCArray* getGirdCells();
+};
+
+class CGridPageViewCell : public CTableViewCell
+{
+	CGridPageViewCell();
+	virtual ~CGridPageViewCell();
+};
+
+class CGridPageView : public CTableView, public CPageChangeableProtocol
+{
+	CGridPageView();
+	virtual ~CGridPageView();
+
+	static CGridPageView* create(const CCSize& tViewSize);
+
+	void setCountOfCell(unsigned int uCellsCount);
+    unsigned int getCountOfCell() const;
+    void setSizeOfCell(const CCSize& tCellsSize);
+    const CCSize& getSizeOfCell() const;
+	void setRows(unsigned int uRows);
+	unsigned int getRows() const;
+	void setColumns(unsigned int uColumns);
+	unsigned int getColumns() const;
+	void reloadData();
+	
+	virtual void setOnPageChangedScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeOnPageChangedScriptHandler();
+};

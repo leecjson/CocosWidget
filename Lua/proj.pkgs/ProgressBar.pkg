@@ -1,0 +1,52 @@
+enum CProgressBarDirection
+{
+	eProgressBarDirectionLeftToRight,
+	eProgressBarDirectionRightToLeft,
+	eProgressBarDirectionBottomToTop,
+	eProgressBarDirectionTopToBottom
+};
+
+class CProgressBar : public CCNodeRGBA, public CProgressEndedProtocol, public CValueChangeableProtocol
+{
+	CProgressBar();
+	virtual ~CProgressBar();
+
+	virtual bool init();
+	virtual bool initWithFile(const char* pProgress);
+	virtual void setContentSize(const CCSize& tSize);
+	
+	void setValue(int nValue);
+	int getValue() const;
+	void setMaxValue(int nMaxValue);
+	int getMaxValue() const;
+	void setMinValue(int nMinValue);
+	int getMinValue() const;
+	void setDirection(CProgressBarDirection eDirection);
+	CProgressBarDirection getDirection() const;
+
+	void startProgress(int nValue, float fDuration);
+	void startProgressFromTo(int nFromValue, int nToValue, float fDuration);
+	void stopProgress();
+	float getPercentage() const;
+	bool isProgressEnded() const;
+
+	virtual void setProgressImage(const char* pFile);
+	virtual void setProgressTexture(CCTexture2D* pTexture);
+	virtual void setProgressSpriteFrame(CCSpriteFrame* pFrame);
+	virtual void setProgressSpriteFrameName(const char* pSpriteName);
+
+	static CProgressBar* create();
+	static CProgressBar* create(const char* pProgress);
+
+	void setBackgroundImage(const char* pFile);
+	void setBackgroundTexture(CCTexture2D* pTexture);
+	void setBackgroundSpriteFrame(CCSpriteFrame* pSpriteFrame);
+	void setBackgroundSpriteFrameName(const char* pFrameName);
+	CCSprite* getBackgroundImage() const;
+	void removeBackgroundImage();
+	
+	virtual void setOnValueChangedScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeOnValueChangedScriptHandler();
+	virtual void setOnProgressEndedScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeOnProgressEndedScriptHandler();
+};
