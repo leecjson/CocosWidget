@@ -1,4 +1,4 @@
 CocosWidget
 ===========
 
-CocosWidget-2.0alpha-pre
+no thanks
