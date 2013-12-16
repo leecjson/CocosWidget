@@ -7,7 +7,30 @@ LOCAL_MODULE := cocos2dlua_shared
 LOCAL_MODULE_FILENAME := libcocos2dlua
 
 LOCAL_SRC_FILES := hellolua/main.cpp \
-                   ../../Classes/AppDelegate.cpp
+../../../CocosWidget/Button.cpp \
+../../../CocosWidget/CheckBox.cpp \
+../../../CocosWidget/ControlView.cpp \
+../../../CocosWidget/GridPageView.cpp \
+../../../CocosWidget/GridView.cpp \
+../../../CocosWidget/ImageView.cpp \
+../../../CocosWidget/ImageViewScale9.cpp \
+../../../CocosWidget/Label.cpp \
+../../../CocosWidget/LabelAtlas.cpp \
+../../../CocosWidget/LabelBMFont.cpp \
+../../../CocosWidget/ListView.cpp \
+../../../CocosWidget/Lua_cocos2dx_widget.cpp \
+../../../CocosWidget/PageView.cpp \
+../../../CocosWidget/Panel.cpp \
+../../../CocosWidget/ProgressBar.cpp \
+../../../CocosWidget/Scale9Sprite.cpp \
+../../../CocosWidget/ScrollView.cpp \
+../../../CocosWidget/Slider.cpp \
+../../../CocosWidget/TableView.cpp \
+../../../CocosWidget/ToggleView.cpp \
+../../../CocosWidget/Widget.cpp \
+../../../CocosWidget/WidgetLayout.cpp \
+../../../CocosWidget/WidgetProtocol.cpp \
+../../Classes/AppDelegate.cpp
 
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes

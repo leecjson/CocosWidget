@@ -228,82 +228,83 @@
 		379BB9D217F03F3700829B88 /* sconscript in Resources */ = {isa = PBXBuildFile; fileRef = 379BB98D17F03F3700829B88 /* sconscript */; };
 		379BB9D317F03F3700829B88 /* CCSGUIReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB99117F03F3700829B88 /* CCSGUIReader.cpp */; };
 		379BB9D417F03F3700829B88 /* CCSSceneReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 379BB99317F03F3700829B88 /* CCSSceneReader.cpp */; };
-		6705654A185483FF00A836F4 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 670564EC185483FF00A836F4 /* AppDelegate.cpp */; };
-		6705654B185483FF00A836F4 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 670564EF185483FF00A836F4 /* Button.cpp */; };
-		6705654C185483FF00A836F4 /* CheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 670564F1185483FF00A836F4 /* CheckBox.cpp */; };
-		6705654D185483FF00A836F4 /* ControlView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 670564F4185483FF00A836F4 /* ControlView.cpp */; };
-		6705654E185483FF00A836F4 /* GridPageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 670564F6185483FF00A836F4 /* GridPageView.cpp */; };
-		6705654F185483FF00A836F4 /* GridView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 670564F8185483FF00A836F4 /* GridView.cpp */; };
-		67056550185483FF00A836F4 /* ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 670564FA185483FF00A836F4 /* ImageView.cpp */; };
-		67056551185483FF00A836F4 /* ImageViewScale9.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 670564FC185483FF00A836F4 /* ImageViewScale9.cpp */; };
-		67056552185483FF00A836F4 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 670564FE185483FF00A836F4 /* Label.cpp */; };
-		67056553185483FF00A836F4 /* LabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056500185483FF00A836F4 /* LabelAtlas.cpp */; };
-		67056554185483FF00A836F4 /* LabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056502185483FF00A836F4 /* LabelBMFont.cpp */; };
-		67056555185483FF00A836F4 /* ListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056504185483FF00A836F4 /* ListView.cpp */; };
-		67056556185483FF00A836F4 /* PageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056506185483FF00A836F4 /* PageView.cpp */; };
-		67056557185483FF00A836F4 /* Panel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056508185483FF00A836F4 /* Panel.cpp */; };
-		67056558185483FF00A836F4 /* ProgressBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6705650A185483FF00A836F4 /* ProgressBar.cpp */; };
-		67056559185483FF00A836F4 /* Scale9Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6705650C185483FF00A836F4 /* Scale9Sprite.cpp */; };
-		6705655A185483FF00A836F4 /* ScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6705650E185483FF00A836F4 /* ScrollView.cpp */; };
-		6705655B185483FF00A836F4 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056510185483FF00A836F4 /* Slider.cpp */; };
-		6705655C185483FF00A836F4 /* TableView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056512185483FF00A836F4 /* TableView.cpp */; };
-		6705655D185483FF00A836F4 /* ToggleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056514185483FF00A836F4 /* ToggleView.cpp */; };
-		6705655E185483FF00A836F4 /* Widget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056516185483FF00A836F4 /* Widget.cpp */; };
-		6705655F185483FF00A836F4 /* WidgetLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056518185483FF00A836F4 /* WidgetLayout.cpp */; };
-		67056560185483FF00A836F4 /* WidgetProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6705651B185483FF00A836F4 /* WidgetProtocol.cpp */; };
-		67056561185483FF00A836F4 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6705651D185483FF00A836F4 /* MenuScene.cpp */; };
-		67056562185483FF00A836F4 /* ButtonTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056521185483FF00A836F4 /* ButtonTest.cpp */; };
-		67056563185483FF00A836F4 /* CheckBoxTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056524185483FF00A836F4 /* CheckBoxTest.cpp */; };
-		67056564185483FF00A836F4 /* ControlViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056527185483FF00A836F4 /* ControlViewTest.cpp */; };
-		67056565185483FF00A836F4 /* GridPageViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6705652A185483FF00A836F4 /* GridPageViewTest.cpp */; };
-		67056566185483FF00A836F4 /* GridViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6705652D185483FF00A836F4 /* GridViewTest.cpp */; };
-		67056567185483FF00A836F4 /* LabelTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056530185483FF00A836F4 /* LabelTest.cpp */; };
-		67056568185483FF00A836F4 /* ListViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056533185483FF00A836F4 /* ListViewTest.cpp */; };
-		67056569185483FF00A836F4 /* PageViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056536185483FF00A836F4 /* PageViewTest.cpp */; };
-		6705656A185483FF00A836F4 /* PanelTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056539185483FF00A836F4 /* PanelTest.cpp */; };
-		6705656B185483FF00A836F4 /* ProgressBarTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6705653C185483FF00A836F4 /* ProgressBarTest.cpp */; };
-		6705656C185483FF00A836F4 /* ScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6705653F185483FF00A836F4 /* ScrollViewTest.cpp */; };
-		6705656D185483FF00A836F4 /* SliderTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056542185483FF00A836F4 /* SliderTest.cpp */; };
-		6705656E185483FF00A836F4 /* TableViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056545185483FF00A836F4 /* TableViewTest.cpp */; };
-		6705656F185483FF00A836F4 /* ToggleViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67056548185483FF00A836F4 /* ToggleViewTest.cpp */; };
-		670565961854840B00A836F4 /* again1.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565701854840A00A836F4 /* again1.png */; };
-		670565971854840B00A836F4 /* again2.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565711854840B00A836F4 /* again2.png */; };
-		670565981854840B00A836F4 /* arial-unicode-26.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 670565721854840B00A836F4 /* arial-unicode-26.fnt */; };
-		670565991854840B00A836F4 /* arial-unicode-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565731854840B00A836F4 /* arial-unicode-26.png */; };
-		6705659A1854840B00A836F4 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565741854840B00A836F4 /* back1.png */; };
-		6705659B1854840B00A836F4 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565751854840B00A836F4 /* back2.png */; };
-		6705659C1854840B00A836F4 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565761854840B00A836F4 /* background.png */; };
-		6705659D1854840B00A836F4 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565771854840B00A836F4 /* background2.png */; };
-		6705659E1854840B00A836F4 /* background3.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565781854840B00A836F4 /* background3.png */; };
-		6705659F1854840B00A836F4 /* btn1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565791854840B00A836F4 /* btn1_1.png */; };
-		670565A01854840B00A836F4 /* btn1_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705657A1854840B00A836F4 /* btn1_2.png */; };
-		670565A11854840B00A836F4 /* btn1_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705657B1854840B00A836F4 /* btn1_3.png */; };
-		670565A21854840B00A836F4 /* circle1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705657C1854840B00A836F4 /* circle1.png */; };
-		670565A31854840B00A836F4 /* circle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705657D1854840B00A836F4 /* circle2.png */; };
-		670565A41854840B00A836F4 /* ckb_disable_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705657E1854840B00A836F4 /* ckb_disable_01.png */; };
-		670565A51854840B00A836F4 /* ckb_disable_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705657F1854840B00A836F4 /* ckb_disable_02.png */; };
-		670565A61854840B00A836F4 /* ckb_normal_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565801854840B00A836F4 /* ckb_normal_01.png */; };
-		670565A71854840B00A836F4 /* ckb_normal_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565811854840B00A836F4 /* ckb_normal_02.png */; };
-		670565A81854840B00A836F4 /* ckb_selected_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565821854840B00A836F4 /* ckb_selected_01.png */; };
-		670565A91854840B00A836F4 /* ckb_selected_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565831854840B00A836F4 /* ckb_selected_02.png */; };
-		670565AA1854840B00A836F4 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565841854840B00A836F4 /* CloseNormal.png */; };
-		670565AB1854840B00A836F4 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565851854840B00A836F4 /* CloseSelected.png */; };
-		670565AC1854840B00A836F4 /* control_baseboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565861854840B00A836F4 /* control_baseboard.png */; };
-		670565AD1854840B00A836F4 /* control_joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565871854840B00A836F4 /* control_joystick.png */; };
-		670565AE1854840B00A836F4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565881854840B00A836F4 /* icon.png */; };
-		670565AF1854840B00A836F4 /* next1.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565891854840B00A836F4 /* next1.png */; };
-		670565B01854840B00A836F4 /* next2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705658A1854840B00A836F4 /* next2.png */; };
-		670565B11854840B00A836F4 /* num.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705658B1854840B00A836F4 /* num.png */; };
-		670565B21854840B00A836F4 /* progress_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705658C1854840B00A836F4 /* progress_bg.png */; };
-		670565B31854840B00A836F4 /* progress_v_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705658D1854840B00A836F4 /* progress_v_bg.png */; };
-		670565B41854840B00A836F4 /* progress_v.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705658E1854840B00A836F4 /* progress_v.png */; };
-		670565B51854840B00A836F4 /* progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 6705658F1854840B00A836F4 /* progress.png */; };
-		670565B61854840B00A836F4 /* scrollcontent.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565901854840B00A836F4 /* scrollcontent.png */; };
-		670565B71854840B00A836F4 /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565911854840B00A836F4 /* slider.png */; };
-		670565B81854840B00A836F4 /* sprite9_btn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565921854840B00A836F4 /* sprite9_btn1.png */; };
-		670565B91854840B00A836F4 /* sprite9_btn2.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565931854840B00A836F4 /* sprite9_btn2.png */; };
-		670565BA1854840B00A836F4 /* toggle1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565941854840B00A836F4 /* toggle1_1.png */; };
-		670565BB1854840B00A836F4 /* toggle1_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 670565951854840B00A836F4 /* toggle1_2.png */; };
+		67D502CD185EB0EA005D6DF9 /* again1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502A7185EB0E5005D6DF9 /* again1.png */; };
+		67D502CE185EB0EA005D6DF9 /* again2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502A8185EB0E5005D6DF9 /* again2.png */; };
+		67D502CF185EB0EA005D6DF9 /* arial-unicode-26.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 67D502A9185EB0E5005D6DF9 /* arial-unicode-26.fnt */; };
+		67D502D0185EB0EA005D6DF9 /* arial-unicode-26.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502AA185EB0E5005D6DF9 /* arial-unicode-26.png */; };
+		67D502D1185EB0EA005D6DF9 /* back1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502AB185EB0E6005D6DF9 /* back1.png */; };
+		67D502D2185EB0EA005D6DF9 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502AC185EB0E6005D6DF9 /* back2.png */; };
+		67D502D3185EB0EA005D6DF9 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502AD185EB0E6005D6DF9 /* background.png */; };
+		67D502D4185EB0EA005D6DF9 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502AE185EB0E6005D6DF9 /* background2.png */; };
+		67D502D5185EB0EA005D6DF9 /* background3.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502AF185EB0E6005D6DF9 /* background3.png */; };
+		67D502D6185EB0EA005D6DF9 /* btn1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502B0185EB0E6005D6DF9 /* btn1_1.png */; };
+		67D502D7185EB0EA005D6DF9 /* btn1_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502B1185EB0E6005D6DF9 /* btn1_2.png */; };
+		67D502D8185EB0EA005D6DF9 /* btn1_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502B2185EB0E6005D6DF9 /* btn1_3.png */; };
+		67D502D9185EB0EA005D6DF9 /* circle1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502B3185EB0E6005D6DF9 /* circle1.png */; };
+		67D502DA185EB0EA005D6DF9 /* circle2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502B4185EB0E6005D6DF9 /* circle2.png */; };
+		67D502DB185EB0EA005D6DF9 /* ckb_disable_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502B5185EB0E6005D6DF9 /* ckb_disable_01.png */; };
+		67D502DC185EB0EA005D6DF9 /* ckb_disable_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502B6185EB0E6005D6DF9 /* ckb_disable_02.png */; };
+		67D502DD185EB0EA005D6DF9 /* ckb_normal_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502B7185EB0E6005D6DF9 /* ckb_normal_01.png */; };
+		67D502DE185EB0EA005D6DF9 /* ckb_normal_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502B8185EB0E6005D6DF9 /* ckb_normal_02.png */; };
+		67D502DF185EB0EA005D6DF9 /* ckb_selected_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502B9185EB0E6005D6DF9 /* ckb_selected_01.png */; };
+		67D502E0185EB0EA005D6DF9 /* ckb_selected_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502BA185EB0E7005D6DF9 /* ckb_selected_02.png */; };
+		67D502E1185EB0EA005D6DF9 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502BB185EB0E7005D6DF9 /* CloseNormal.png */; };
+		67D502E2185EB0EA005D6DF9 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502BC185EB0E7005D6DF9 /* CloseSelected.png */; };
+		67D502E3185EB0EA005D6DF9 /* control_baseboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502BD185EB0E7005D6DF9 /* control_baseboard.png */; };
+		67D502E4185EB0EA005D6DF9 /* control_joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502BE185EB0E7005D6DF9 /* control_joystick.png */; };
+		67D502E5185EB0EA005D6DF9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502BF185EB0E7005D6DF9 /* icon.png */; };
+		67D502E6185EB0EA005D6DF9 /* next1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502C0185EB0E7005D6DF9 /* next1.png */; };
+		67D502E7185EB0EA005D6DF9 /* next2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502C1185EB0E7005D6DF9 /* next2.png */; };
+		67D502E8185EB0EA005D6DF9 /* num.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502C2185EB0E8005D6DF9 /* num.png */; };
+		67D502E9185EB0EA005D6DF9 /* progress_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502C3185EB0E8005D6DF9 /* progress_bg.png */; };
+		67D502EA185EB0EA005D6DF9 /* progress_v_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502C4185EB0E8005D6DF9 /* progress_v_bg.png */; };
+		67D502EB185EB0EA005D6DF9 /* progress_v.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502C5185EB0E8005D6DF9 /* progress_v.png */; };
+		67D502EC185EB0EA005D6DF9 /* progress.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502C6185EB0E8005D6DF9 /* progress.png */; };
+		67D502ED185EB0EA005D6DF9 /* scrollcontent.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502C7185EB0E8005D6DF9 /* scrollcontent.png */; };
+		67D502EE185EB0EA005D6DF9 /* slider.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502C8185EB0E9005D6DF9 /* slider.png */; };
+		67D502EF185EB0EA005D6DF9 /* sprite9_btn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502C9185EB0E9005D6DF9 /* sprite9_btn1.png */; };
+		67D502F0185EB0EA005D6DF9 /* sprite9_btn2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502CA185EB0E9005D6DF9 /* sprite9_btn2.png */; };
+		67D502F1185EB0EA005D6DF9 /* toggle1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502CB185EB0E9005D6DF9 /* toggle1_1.png */; };
+		67D502F2185EB0EA005D6DF9 /* toggle1_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D502CC185EB0E9005D6DF9 /* toggle1_2.png */; };
+		67D50322185EB0FE005D6DF9 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D502F3185EB0FE005D6DF9 /* AppDelegate.cpp */; };
+		67D50323185EB0FE005D6DF9 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D502F5185EB0FE005D6DF9 /* MenuScene.cpp */; };
+		67D50324185EB0FE005D6DF9 /* ButtonTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D502F9185EB0FE005D6DF9 /* ButtonTest.cpp */; };
+		67D50325185EB0FE005D6DF9 /* CheckBoxTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D502FC185EB0FE005D6DF9 /* CheckBoxTest.cpp */; };
+		67D50326185EB0FE005D6DF9 /* ControlViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D502FF185EB0FE005D6DF9 /* ControlViewTest.cpp */; };
+		67D50327185EB0FE005D6DF9 /* GridPageViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50302185EB0FE005D6DF9 /* GridPageViewTest.cpp */; };
+		67D50328185EB0FE005D6DF9 /* GridViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50305185EB0FE005D6DF9 /* GridViewTest.cpp */; };
+		67D50329185EB0FE005D6DF9 /* LabelTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50308185EB0FE005D6DF9 /* LabelTest.cpp */; };
+		67D5032A185EB0FE005D6DF9 /* ListViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5030B185EB0FE005D6DF9 /* ListViewTest.cpp */; };
+		67D5032B185EB0FE005D6DF9 /* PageViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5030E185EB0FE005D6DF9 /* PageViewTest.cpp */; };
+		67D5032C185EB0FE005D6DF9 /* PanelTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50311185EB0FE005D6DF9 /* PanelTest.cpp */; };
+		67D5032D185EB0FE005D6DF9 /* ProgressBarTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50314185EB0FE005D6DF9 /* ProgressBarTest.cpp */; };
+		67D5032E185EB0FE005D6DF9 /* ScrollViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50317185EB0FE005D6DF9 /* ScrollViewTest.cpp */; };
+		67D5032F185EB0FE005D6DF9 /* SliderTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5031A185EB0FE005D6DF9 /* SliderTest.cpp */; };
+		67D50330185EB0FE005D6DF9 /* TableViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5031D185EB0FE005D6DF9 /* TableViewTest.cpp */; };
+		67D50331185EB0FE005D6DF9 /* ToggleViewTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50320185EB0FE005D6DF9 /* ToggleViewTest.cpp */; };
+		67D50363185EB108005D6DF9 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50333185EB108005D6DF9 /* Button.cpp */; };
+		67D50364185EB108005D6DF9 /* CheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50335185EB108005D6DF9 /* CheckBox.cpp */; };
+		67D50365185EB108005D6DF9 /* ControlView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50338185EB108005D6DF9 /* ControlView.cpp */; };
+		67D50366185EB108005D6DF9 /* GridPageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5033A185EB108005D6DF9 /* GridPageView.cpp */; };
+		67D50367185EB108005D6DF9 /* GridView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5033C185EB108005D6DF9 /* GridView.cpp */; };
+		67D50368185EB108005D6DF9 /* ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5033E185EB108005D6DF9 /* ImageView.cpp */; };
+		67D50369185EB108005D6DF9 /* ImageViewScale9.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50340185EB108005D6DF9 /* ImageViewScale9.cpp */; };
+		67D5036A185EB108005D6DF9 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50342185EB108005D6DF9 /* Label.cpp */; };
+		67D5036B185EB108005D6DF9 /* LabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50344185EB108005D6DF9 /* LabelAtlas.cpp */; };
+		67D5036C185EB108005D6DF9 /* LabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50346185EB108005D6DF9 /* LabelBMFont.cpp */; };
+		67D5036D185EB108005D6DF9 /* ListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50348185EB108005D6DF9 /* ListView.cpp */; };
+		67D5036E185EB108005D6DF9 /* Lua_cocos2dx_widget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5034A185EB108005D6DF9 /* Lua_cocos2dx_widget.cpp */; };
+		67D5036F185EB108005D6DF9 /* PageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5034C185EB108005D6DF9 /* PageView.cpp */; };
+		67D50370185EB108005D6DF9 /* Panel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5034E185EB108005D6DF9 /* Panel.cpp */; };
+		67D50371185EB108005D6DF9 /* ProgressBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50350185EB108005D6DF9 /* ProgressBar.cpp */; };
+		67D50372185EB108005D6DF9 /* Scale9Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50352185EB108005D6DF9 /* Scale9Sprite.cpp */; };
+		67D50373185EB108005D6DF9 /* ScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50354185EB108005D6DF9 /* ScrollView.cpp */; };
+		67D50374185EB108005D6DF9 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50356185EB108005D6DF9 /* Slider.cpp */; };
+		67D50375185EB108005D6DF9 /* TableView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50358185EB108005D6DF9 /* TableView.cpp */; };
+		67D50376185EB108005D6DF9 /* ToggleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5035A185EB108005D6DF9 /* ToggleView.cpp */; };
+		67D50377185EB108005D6DF9 /* Widget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5035C185EB108005D6DF9 /* Widget.cpp */; };
+		67D50378185EB108005D6DF9 /* WidgetLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D5035E185EB108005D6DF9 /* WidgetLayout.cpp */; };
+		67D50379185EB108005D6DF9 /* WidgetProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D50361185EB108005D6DF9 /* WidgetProtocol.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
@@ -789,129 +790,128 @@
 		379BB99217F03F3700829B88 /* CCSGUIReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSGUIReader.h; sourceTree = "<group>"; };
 		379BB99317F03F3700829B88 /* CCSSceneReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSSceneReader.cpp; sourceTree = "<group>"; };
 		379BB99417F03F3700829B88 /* CCSSceneReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSSceneReader.h; sourceTree = "<group>"; };
-		670564EC185483FF00A836F4 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		670564ED185483FF00A836F4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
-		670564EF185483FF00A836F4 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
-		670564F0185483FF00A836F4 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
-		670564F1185483FF00A836F4 /* CheckBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CheckBox.cpp; sourceTree = "<group>"; };
-		670564F2185483FF00A836F4 /* CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
-		670564F3185483FF00A836F4 /* cocos-widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cocos-widget.h"; sourceTree = "<group>"; };
-		670564F4185483FF00A836F4 /* ControlView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ControlView.cpp; sourceTree = "<group>"; };
-		670564F5185483FF00A836F4 /* ControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlView.h; sourceTree = "<group>"; };
-		670564F6185483FF00A836F4 /* GridPageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridPageView.cpp; sourceTree = "<group>"; };
-		670564F7185483FF00A836F4 /* GridPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridPageView.h; sourceTree = "<group>"; };
-		670564F8185483FF00A836F4 /* GridView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridView.cpp; sourceTree = "<group>"; };
-		670564F9185483FF00A836F4 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
-		670564FA185483FF00A836F4 /* ImageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageView.cpp; sourceTree = "<group>"; };
-		670564FB185483FF00A836F4 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
-		670564FC185483FF00A836F4 /* ImageViewScale9.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageViewScale9.cpp; sourceTree = "<group>"; };
-		670564FD185483FF00A836F4 /* ImageViewScale9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewScale9.h; sourceTree = "<group>"; };
-		670564FE185483FF00A836F4 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
-		670564FF185483FF00A836F4 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
-		67056500185483FF00A836F4 /* LabelAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelAtlas.cpp; sourceTree = "<group>"; };
-		67056501185483FF00A836F4 /* LabelAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelAtlas.h; sourceTree = "<group>"; };
-		67056502185483FF00A836F4 /* LabelBMFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelBMFont.cpp; sourceTree = "<group>"; };
-		67056503185483FF00A836F4 /* LabelBMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelBMFont.h; sourceTree = "<group>"; };
-		67056504185483FF00A836F4 /* ListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListView.cpp; sourceTree = "<group>"; };
-		67056505185483FF00A836F4 /* ListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListView.h; sourceTree = "<group>"; };
-		67056506185483FF00A836F4 /* PageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PageView.cpp; sourceTree = "<group>"; };
-		67056507185483FF00A836F4 /* PageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageView.h; sourceTree = "<group>"; };
-		67056508185483FF00A836F4 /* Panel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Panel.cpp; sourceTree = "<group>"; };
-		67056509185483FF00A836F4 /* Panel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panel.h; sourceTree = "<group>"; };
-		6705650A185483FF00A836F4 /* ProgressBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgressBar.cpp; sourceTree = "<group>"; };
-		6705650B185483FF00A836F4 /* ProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBar.h; sourceTree = "<group>"; };
-		6705650C185483FF00A836F4 /* Scale9Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scale9Sprite.cpp; sourceTree = "<group>"; };
-		6705650D185483FF00A836F4 /* Scale9Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scale9Sprite.h; sourceTree = "<group>"; };
-		6705650E185483FF00A836F4 /* ScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrollView.cpp; sourceTree = "<group>"; };
-		6705650F185483FF00A836F4 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
-		67056510185483FF00A836F4 /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Slider.cpp; sourceTree = "<group>"; };
-		67056511185483FF00A836F4 /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
-		67056512185483FF00A836F4 /* TableView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableView.cpp; sourceTree = "<group>"; };
-		67056513185483FF00A836F4 /* TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableView.h; sourceTree = "<group>"; };
-		67056514185483FF00A836F4 /* ToggleView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToggleView.cpp; sourceTree = "<group>"; };
-		67056515185483FF00A836F4 /* ToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleView.h; sourceTree = "<group>"; };
-		67056516185483FF00A836F4 /* Widget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Widget.cpp; sourceTree = "<group>"; };
-		67056517185483FF00A836F4 /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
-		67056518185483FF00A836F4 /* WidgetLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WidgetLayout.cpp; sourceTree = "<group>"; };
-		67056519185483FF00A836F4 /* WidgetLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetLayout.h; sourceTree = "<group>"; };
-		6705651A185483FF00A836F4 /* WidgetMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetMacros.h; sourceTree = "<group>"; };
-		6705651B185483FF00A836F4 /* WidgetProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WidgetProtocol.cpp; sourceTree = "<group>"; };
-		6705651C185483FF00A836F4 /* WidgetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetProtocol.h; sourceTree = "<group>"; };
-		6705651D185483FF00A836F4 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MenuScene.cpp; path = ../Classes/MenuScene.cpp; sourceTree = "<group>"; };
-		6705651E185483FF00A836F4 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuScene.h; path = ../Classes/MenuScene.h; sourceTree = "<group>"; };
-		67056521185483FF00A836F4 /* ButtonTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ButtonTest.cpp; sourceTree = "<group>"; };
-		67056522185483FF00A836F4 /* ButtonTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonTest.h; sourceTree = "<group>"; };
-		67056524185483FF00A836F4 /* CheckBoxTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CheckBoxTest.cpp; sourceTree = "<group>"; };
-		67056525185483FF00A836F4 /* CheckBoxTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBoxTest.h; sourceTree = "<group>"; };
-		67056527185483FF00A836F4 /* ControlViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ControlViewTest.cpp; sourceTree = "<group>"; };
-		67056528185483FF00A836F4 /* ControlViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlViewTest.h; sourceTree = "<group>"; };
-		6705652A185483FF00A836F4 /* GridPageViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridPageViewTest.cpp; sourceTree = "<group>"; };
-		6705652B185483FF00A836F4 /* GridPageViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridPageViewTest.h; sourceTree = "<group>"; };
-		6705652D185483FF00A836F4 /* GridViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridViewTest.cpp; sourceTree = "<group>"; };
-		6705652E185483FF00A836F4 /* GridViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewTest.h; sourceTree = "<group>"; };
-		67056530185483FF00A836F4 /* LabelTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelTest.cpp; sourceTree = "<group>"; };
-		67056531185483FF00A836F4 /* LabelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTest.h; sourceTree = "<group>"; };
-		67056533185483FF00A836F4 /* ListViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListViewTest.cpp; sourceTree = "<group>"; };
-		67056534185483FF00A836F4 /* ListViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewTest.h; sourceTree = "<group>"; };
-		67056536185483FF00A836F4 /* PageViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PageViewTest.cpp; sourceTree = "<group>"; };
-		67056537185483FF00A836F4 /* PageViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewTest.h; sourceTree = "<group>"; };
-		67056539185483FF00A836F4 /* PanelTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PanelTest.cpp; sourceTree = "<group>"; };
-		6705653A185483FF00A836F4 /* PanelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelTest.h; sourceTree = "<group>"; };
-		6705653C185483FF00A836F4 /* ProgressBarTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgressBarTest.cpp; sourceTree = "<group>"; };
-		6705653D185483FF00A836F4 /* ProgressBarTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarTest.h; sourceTree = "<group>"; };
-		6705653F185483FF00A836F4 /* ScrollViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrollViewTest.cpp; sourceTree = "<group>"; };
-		67056540185483FF00A836F4 /* ScrollViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewTest.h; sourceTree = "<group>"; };
-		67056542185483FF00A836F4 /* SliderTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SliderTest.cpp; sourceTree = "<group>"; };
-		67056543185483FF00A836F4 /* SliderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderTest.h; sourceTree = "<group>"; };
-		67056545185483FF00A836F4 /* TableViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableViewTest.cpp; sourceTree = "<group>"; };
-		67056546185483FF00A836F4 /* TableViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewTest.h; sourceTree = "<group>"; };
-		67056548185483FF00A836F4 /* ToggleViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToggleViewTest.cpp; sourceTree = "<group>"; };
-		67056549185483FF00A836F4 /* ToggleViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleViewTest.h; sourceTree = "<group>"; };
-		670565701854840A00A836F4 /* again1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = again1.png; sourceTree = "<group>"; };
-		670565711854840B00A836F4 /* again2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = again2.png; sourceTree = "<group>"; };
-		670565721854840B00A836F4 /* arial-unicode-26.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "arial-unicode-26.fnt"; sourceTree = "<group>"; };
-		670565731854840B00A836F4 /* arial-unicode-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arial-unicode-26.png"; sourceTree = "<group>"; };
-		670565741854840B00A836F4 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
-		670565751854840B00A836F4 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
-		670565761854840B00A836F4 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
-		670565771854840B00A836F4 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
-		670565781854840B00A836F4 /* background3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background3.png; sourceTree = "<group>"; };
-		670565791854840B00A836F4 /* btn1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn1_1.png; sourceTree = "<group>"; };
-		6705657A1854840B00A836F4 /* btn1_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn1_2.png; sourceTree = "<group>"; };
-		6705657B1854840B00A836F4 /* btn1_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn1_3.png; sourceTree = "<group>"; };
-		6705657C1854840B00A836F4 /* circle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle1.png; sourceTree = "<group>"; };
-		6705657D1854840B00A836F4 /* circle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle2.png; sourceTree = "<group>"; };
-		6705657E1854840B00A836F4 /* ckb_disable_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_disable_01.png; sourceTree = "<group>"; };
-		6705657F1854840B00A836F4 /* ckb_disable_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_disable_02.png; sourceTree = "<group>"; };
-		670565801854840B00A836F4 /* ckb_normal_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_normal_01.png; sourceTree = "<group>"; };
-		670565811854840B00A836F4 /* ckb_normal_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_normal_02.png; sourceTree = "<group>"; };
-		670565821854840B00A836F4 /* ckb_selected_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_selected_01.png; sourceTree = "<group>"; };
-		670565831854840B00A836F4 /* ckb_selected_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_selected_02.png; sourceTree = "<group>"; };
-		670565841854840B00A836F4 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
-		670565851854840B00A836F4 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
-		670565861854840B00A836F4 /* control_baseboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = control_baseboard.png; sourceTree = "<group>"; };
-		670565871854840B00A836F4 /* control_joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = control_joystick.png; sourceTree = "<group>"; };
-		670565881854840B00A836F4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		670565891854840B00A836F4 /* next1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next1.png; sourceTree = "<group>"; };
-		6705658A1854840B00A836F4 /* next2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next2.png; sourceTree = "<group>"; };
-		6705658B1854840B00A836F4 /* num.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num.png; sourceTree = "<group>"; };
-		6705658C1854840B00A836F4 /* progress_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_bg.png; sourceTree = "<group>"; };
-		6705658D1854840B00A836F4 /* progress_v_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_v_bg.png; sourceTree = "<group>"; };
-		6705658E1854840B00A836F4 /* progress_v.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_v.png; sourceTree = "<group>"; };
-		6705658F1854840B00A836F4 /* progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress.png; sourceTree = "<group>"; };
-		670565901854840B00A836F4 /* scrollcontent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollcontent.png; sourceTree = "<group>"; };
-		670565911854840B00A836F4 /* slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider.png; sourceTree = "<group>"; };
-		670565921854840B00A836F4 /* sprite9_btn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite9_btn1.png; sourceTree = "<group>"; };
-		670565931854840B00A836F4 /* sprite9_btn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite9_btn2.png; sourceTree = "<group>"; };
-		670565941854840B00A836F4 /* toggle1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggle1_1.png; sourceTree = "<group>"; };
-		670565951854840B00A836F4 /* toggle1_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggle1_2.png; sourceTree = "<group>"; };
-		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
+		67D502A7185EB0E5005D6DF9 /* again1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = again1.png; sourceTree = "<group>"; };
+		67D502A8185EB0E5005D6DF9 /* again2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = again2.png; sourceTree = "<group>"; };
+		67D502A9185EB0E5005D6DF9 /* arial-unicode-26.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "arial-unicode-26.fnt"; sourceTree = "<group>"; };
+		67D502AA185EB0E5005D6DF9 /* arial-unicode-26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arial-unicode-26.png"; sourceTree = "<group>"; };
+		67D502AB185EB0E6005D6DF9 /* back1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back1.png; sourceTree = "<group>"; };
+		67D502AC185EB0E6005D6DF9 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
+		67D502AD185EB0E6005D6DF9 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		67D502AE185EB0E6005D6DF9 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
+		67D502AF185EB0E6005D6DF9 /* background3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background3.png; sourceTree = "<group>"; };
+		67D502B0185EB0E6005D6DF9 /* btn1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn1_1.png; sourceTree = "<group>"; };
+		67D502B1185EB0E6005D6DF9 /* btn1_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn1_2.png; sourceTree = "<group>"; };
+		67D502B2185EB0E6005D6DF9 /* btn1_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn1_3.png; sourceTree = "<group>"; };
+		67D502B3185EB0E6005D6DF9 /* circle1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle1.png; sourceTree = "<group>"; };
+		67D502B4185EB0E6005D6DF9 /* circle2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle2.png; sourceTree = "<group>"; };
+		67D502B5185EB0E6005D6DF9 /* ckb_disable_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_disable_01.png; sourceTree = "<group>"; };
+		67D502B6185EB0E6005D6DF9 /* ckb_disable_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_disable_02.png; sourceTree = "<group>"; };
+		67D502B7185EB0E6005D6DF9 /* ckb_normal_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_normal_01.png; sourceTree = "<group>"; };
+		67D502B8185EB0E6005D6DF9 /* ckb_normal_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_normal_02.png; sourceTree = "<group>"; };
+		67D502B9185EB0E6005D6DF9 /* ckb_selected_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_selected_01.png; sourceTree = "<group>"; };
+		67D502BA185EB0E7005D6DF9 /* ckb_selected_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ckb_selected_02.png; sourceTree = "<group>"; };
+		67D502BB185EB0E7005D6DF9 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
+		67D502BC185EB0E7005D6DF9 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
+		67D502BD185EB0E7005D6DF9 /* control_baseboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = control_baseboard.png; sourceTree = "<group>"; };
+		67D502BE185EB0E7005D6DF9 /* control_joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = control_joystick.png; sourceTree = "<group>"; };
+		67D502BF185EB0E7005D6DF9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		67D502C0185EB0E7005D6DF9 /* next1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next1.png; sourceTree = "<group>"; };
+		67D502C1185EB0E7005D6DF9 /* next2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next2.png; sourceTree = "<group>"; };
+		67D502C2185EB0E8005D6DF9 /* num.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num.png; sourceTree = "<group>"; };
+		67D502C3185EB0E8005D6DF9 /* progress_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_bg.png; sourceTree = "<group>"; };
+		67D502C4185EB0E8005D6DF9 /* progress_v_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_v_bg.png; sourceTree = "<group>"; };
+		67D502C5185EB0E8005D6DF9 /* progress_v.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress_v.png; sourceTree = "<group>"; };
+		67D502C6185EB0E8005D6DF9 /* progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progress.png; sourceTree = "<group>"; };
+		67D502C7185EB0E8005D6DF9 /* scrollcontent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scrollcontent.png; sourceTree = "<group>"; };
+		67D502C8185EB0E9005D6DF9 /* slider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slider.png; sourceTree = "<group>"; };
+		67D502C9185EB0E9005D6DF9 /* sprite9_btn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite9_btn1.png; sourceTree = "<group>"; };
+		67D502CA185EB0E9005D6DF9 /* sprite9_btn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite9_btn2.png; sourceTree = "<group>"; };
+		67D502CB185EB0E9005D6DF9 /* toggle1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggle1_1.png; sourceTree = "<group>"; };
+		67D502CC185EB0E9005D6DF9 /* toggle1_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggle1_2.png; sourceTree = "<group>"; };
+		67D502F3185EB0FE005D6DF9 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
+		67D502F4185EB0FE005D6DF9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
+		67D502F5185EB0FE005D6DF9 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MenuScene.cpp; path = ../Classes/MenuScene.cpp; sourceTree = "<group>"; };
+		67D502F6185EB0FE005D6DF9 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuScene.h; path = ../Classes/MenuScene.h; sourceTree = "<group>"; };
+		67D502F9185EB0FE005D6DF9 /* ButtonTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ButtonTest.cpp; sourceTree = "<group>"; };
+		67D502FA185EB0FE005D6DF9 /* ButtonTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonTest.h; sourceTree = "<group>"; };
+		67D502FC185EB0FE005D6DF9 /* CheckBoxTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CheckBoxTest.cpp; sourceTree = "<group>"; };
+		67D502FD185EB0FE005D6DF9 /* CheckBoxTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBoxTest.h; sourceTree = "<group>"; };
+		67D502FF185EB0FE005D6DF9 /* ControlViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ControlViewTest.cpp; sourceTree = "<group>"; };
+		67D50300185EB0FE005D6DF9 /* ControlViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlViewTest.h; sourceTree = "<group>"; };
+		67D50302185EB0FE005D6DF9 /* GridPageViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridPageViewTest.cpp; sourceTree = "<group>"; };
+		67D50303185EB0FE005D6DF9 /* GridPageViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridPageViewTest.h; sourceTree = "<group>"; };
+		67D50305185EB0FE005D6DF9 /* GridViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridViewTest.cpp; sourceTree = "<group>"; };
+		67D50306185EB0FE005D6DF9 /* GridViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewTest.h; sourceTree = "<group>"; };
+		67D50308185EB0FE005D6DF9 /* LabelTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelTest.cpp; sourceTree = "<group>"; };
+		67D50309185EB0FE005D6DF9 /* LabelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelTest.h; sourceTree = "<group>"; };
+		67D5030B185EB0FE005D6DF9 /* ListViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListViewTest.cpp; sourceTree = "<group>"; };
+		67D5030C185EB0FE005D6DF9 /* ListViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewTest.h; sourceTree = "<group>"; };
+		67D5030E185EB0FE005D6DF9 /* PageViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PageViewTest.cpp; sourceTree = "<group>"; };
+		67D5030F185EB0FE005D6DF9 /* PageViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewTest.h; sourceTree = "<group>"; };
+		67D50311185EB0FE005D6DF9 /* PanelTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PanelTest.cpp; sourceTree = "<group>"; };
+		67D50312185EB0FE005D6DF9 /* PanelTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelTest.h; sourceTree = "<group>"; };
+		67D50314185EB0FE005D6DF9 /* ProgressBarTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgressBarTest.cpp; sourceTree = "<group>"; };
+		67D50315185EB0FE005D6DF9 /* ProgressBarTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBarTest.h; sourceTree = "<group>"; };
+		67D50317185EB0FE005D6DF9 /* ScrollViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrollViewTest.cpp; sourceTree = "<group>"; };
+		67D50318185EB0FE005D6DF9 /* ScrollViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewTest.h; sourceTree = "<group>"; };
+		67D5031A185EB0FE005D6DF9 /* SliderTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SliderTest.cpp; sourceTree = "<group>"; };
+		67D5031B185EB0FE005D6DF9 /* SliderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderTest.h; sourceTree = "<group>"; };
+		67D5031D185EB0FE005D6DF9 /* TableViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableViewTest.cpp; sourceTree = "<group>"; };
+		67D5031E185EB0FE005D6DF9 /* TableViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewTest.h; sourceTree = "<group>"; };
+		67D50320185EB0FE005D6DF9 /* ToggleViewTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToggleViewTest.cpp; sourceTree = "<group>"; };
+		67D50321185EB0FE005D6DF9 /* ToggleViewTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleViewTest.h; sourceTree = "<group>"; };
+		67D50333185EB108005D6DF9 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
+		67D50334185EB108005D6DF9 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		67D50335185EB108005D6DF9 /* CheckBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CheckBox.cpp; sourceTree = "<group>"; };
+		67D50336185EB108005D6DF9 /* CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
+		67D50337185EB108005D6DF9 /* cocos-widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cocos-widget.h"; sourceTree = "<group>"; };
+		67D50338185EB108005D6DF9 /* ControlView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ControlView.cpp; sourceTree = "<group>"; };
+		67D50339185EB108005D6DF9 /* ControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlView.h; sourceTree = "<group>"; };
+		67D5033A185EB108005D6DF9 /* GridPageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridPageView.cpp; sourceTree = "<group>"; };
+		67D5033B185EB108005D6DF9 /* GridPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridPageView.h; sourceTree = "<group>"; };
+		67D5033C185EB108005D6DF9 /* GridView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridView.cpp; sourceTree = "<group>"; };
+		67D5033D185EB108005D6DF9 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
+		67D5033E185EB108005D6DF9 /* ImageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageView.cpp; sourceTree = "<group>"; };
+		67D5033F185EB108005D6DF9 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
+		67D50340185EB108005D6DF9 /* ImageViewScale9.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageViewScale9.cpp; sourceTree = "<group>"; };
+		67D50341185EB108005D6DF9 /* ImageViewScale9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewScale9.h; sourceTree = "<group>"; };
+		67D50342185EB108005D6DF9 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
+		67D50343185EB108005D6DF9 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
+		67D50344185EB108005D6DF9 /* LabelAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelAtlas.cpp; sourceTree = "<group>"; };
+		67D50345185EB108005D6DF9 /* LabelAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelAtlas.h; sourceTree = "<group>"; };
+		67D50346185EB108005D6DF9 /* LabelBMFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelBMFont.cpp; sourceTree = "<group>"; };
+		67D50347185EB108005D6DF9 /* LabelBMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelBMFont.h; sourceTree = "<group>"; };
+		67D50348185EB108005D6DF9 /* ListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListView.cpp; sourceTree = "<group>"; };
+		67D50349185EB108005D6DF9 /* ListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListView.h; sourceTree = "<group>"; };
+		67D5034A185EB108005D6DF9 /* Lua_cocos2dx_widget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lua_cocos2dx_widget.cpp; sourceTree = "<group>"; };
+		67D5034B185EB108005D6DF9 /* Lua_cocos2dx_widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lua_cocos2dx_widget.h; sourceTree = "<group>"; };
+		67D5034C185EB108005D6DF9 /* PageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PageView.cpp; sourceTree = "<group>"; };
+		67D5034D185EB108005D6DF9 /* PageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageView.h; sourceTree = "<group>"; };
+		67D5034E185EB108005D6DF9 /* Panel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Panel.cpp; sourceTree = "<group>"; };
+		67D5034F185EB108005D6DF9 /* Panel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panel.h; sourceTree = "<group>"; };
+		67D50350185EB108005D6DF9 /* ProgressBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgressBar.cpp; sourceTree = "<group>"; };
+		67D50351185EB108005D6DF9 /* ProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBar.h; sourceTree = "<group>"; };
+		67D50352185EB108005D6DF9 /* Scale9Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scale9Sprite.cpp; sourceTree = "<group>"; };
+		67D50353185EB108005D6DF9 /* Scale9Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scale9Sprite.h; sourceTree = "<group>"; };
+		67D50354185EB108005D6DF9 /* ScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrollView.cpp; sourceTree = "<group>"; };
+		67D50355185EB108005D6DF9 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
+		67D50356185EB108005D6DF9 /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Slider.cpp; sourceTree = "<group>"; };
+		67D50357185EB108005D6DF9 /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
+		67D50358185EB108005D6DF9 /* TableView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableView.cpp; sourceTree = "<group>"; };
+		67D50359185EB108005D6DF9 /* TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableView.h; sourceTree = "<group>"; };
+		67D5035A185EB108005D6DF9 /* ToggleView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToggleView.cpp; sourceTree = "<group>"; };
+		67D5035B185EB108005D6DF9 /* ToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleView.h; sourceTree = "<group>"; };
+		67D5035C185EB108005D6DF9 /* Widget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Widget.cpp; sourceTree = "<group>"; };
+		67D5035D185EB108005D6DF9 /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
+		67D5035E185EB108005D6DF9 /* WidgetLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WidgetLayout.cpp; sourceTree = "<group>"; };
+		67D5035F185EB108005D6DF9 /* WidgetLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetLayout.h; sourceTree = "<group>"; };
+		67D50360185EB108005D6DF9 /* WidgetMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetMacros.h; sourceTree = "<group>"; };
+		67D50361185EB108005D6DF9 /* WidgetProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WidgetProtocol.cpp; sourceTree = "<group>"; };
+		67D50362185EB108005D6DF9 /* WidgetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetProtocol.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D41A0AD0160F154A004552AE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../proj.ios/Default-568h@2x.png"; sourceTree = "<group>"; };
-		D446FD6D16102124000ADA7B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../proj.ios/Default@2x.png"; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -1438,12 +1438,12 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				670564EC185483FF00A836F4 /* AppDelegate.cpp */,
-				670564ED185483FF00A836F4 /* AppDelegate.h */,
-				670564EE185483FF00A836F4 /* cocoswidget */,
-				6705651D185483FF00A836F4 /* MenuScene.cpp */,
-				6705651E185483FF00A836F4 /* MenuScene.h */,
-				6705651F185483FF00A836F4 /* testwidget */,
+				67D50332185EB108005D6DF9 /* CocosWidget */,
+				67D502F3185EB0FE005D6DF9 /* AppDelegate.cpp */,
+				67D502F4185EB0FE005D6DF9 /* AppDelegate.h */,
+				67D502F5185EB0FE005D6DF9 /* MenuScene.cpp */,
+				67D502F6185EB0FE005D6DF9 /* MenuScene.h */,
+				67D502F7185EB0FE005D6DF9 /* testwidget */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -1885,252 +1885,251 @@
 			path = CocoStudio;
 			sourceTree = "<group>";
 		};
-		670564EE185483FF00A836F4 /* cocoswidget */ = {
+		67D502F7185EB0FE005D6DF9 /* testwidget */ = {
 			isa = PBXGroup;
 			children = (
-				670564EF185483FF00A836F4 /* Button.cpp */,
-				670564F0185483FF00A836F4 /* Button.h */,
-				670564F1185483FF00A836F4 /* CheckBox.cpp */,
-				670564F2185483FF00A836F4 /* CheckBox.h */,
-				670564F3185483FF00A836F4 /* cocos-widget.h */,
-				670564F4185483FF00A836F4 /* ControlView.cpp */,
-				670564F5185483FF00A836F4 /* ControlView.h */,
-				670564F6185483FF00A836F4 /* GridPageView.cpp */,
-				670564F7185483FF00A836F4 /* GridPageView.h */,
-				670564F8185483FF00A836F4 /* GridView.cpp */,
-				670564F9185483FF00A836F4 /* GridView.h */,
-				670564FA185483FF00A836F4 /* ImageView.cpp */,
-				670564FB185483FF00A836F4 /* ImageView.h */,
-				670564FC185483FF00A836F4 /* ImageViewScale9.cpp */,
-				670564FD185483FF00A836F4 /* ImageViewScale9.h */,
-				670564FE185483FF00A836F4 /* Label.cpp */,
-				670564FF185483FF00A836F4 /* Label.h */,
-				67056500185483FF00A836F4 /* LabelAtlas.cpp */,
-				67056501185483FF00A836F4 /* LabelAtlas.h */,
-				67056502185483FF00A836F4 /* LabelBMFont.cpp */,
-				67056503185483FF00A836F4 /* LabelBMFont.h */,
-				67056504185483FF00A836F4 /* ListView.cpp */,
-				67056505185483FF00A836F4 /* ListView.h */,
-				67056506185483FF00A836F4 /* PageView.cpp */,
-				67056507185483FF00A836F4 /* PageView.h */,
-				67056508185483FF00A836F4 /* Panel.cpp */,
-				67056509185483FF00A836F4 /* Panel.h */,
-				6705650A185483FF00A836F4 /* ProgressBar.cpp */,
-				6705650B185483FF00A836F4 /* ProgressBar.h */,
-				6705650C185483FF00A836F4 /* Scale9Sprite.cpp */,
-				6705650D185483FF00A836F4 /* Scale9Sprite.h */,
-				6705650E185483FF00A836F4 /* ScrollView.cpp */,
-				6705650F185483FF00A836F4 /* ScrollView.h */,
-				67056510185483FF00A836F4 /* Slider.cpp */,
-				67056511185483FF00A836F4 /* Slider.h */,
-				67056512185483FF00A836F4 /* TableView.cpp */,
-				67056513185483FF00A836F4 /* TableView.h */,
-				67056514185483FF00A836F4 /* ToggleView.cpp */,
-				67056515185483FF00A836F4 /* ToggleView.h */,
-				67056516185483FF00A836F4 /* Widget.cpp */,
-				67056517185483FF00A836F4 /* Widget.h */,
-				67056518185483FF00A836F4 /* WidgetLayout.cpp */,
-				67056519185483FF00A836F4 /* WidgetLayout.h */,
-				6705651A185483FF00A836F4 /* WidgetMacros.h */,
-				6705651B185483FF00A836F4 /* WidgetProtocol.cpp */,
-				6705651C185483FF00A836F4 /* WidgetProtocol.h */,
-			);
-			name = cocoswidget;
-			path = ../Classes/cocoswidget;
-			sourceTree = "<group>";
-		};
-		6705651F185483FF00A836F4 /* testwidget */ = {
-			isa = PBXGroup;
-			children = (
-				67056520185483FF00A836F4 /* ButtonTest */,
-				67056523185483FF00A836F4 /* CheckBoxTest */,
-				67056526185483FF00A836F4 /* ControlViewTest */,
-				67056529185483FF00A836F4 /* GridPageViewTest */,
-				6705652C185483FF00A836F4 /* GridViewTest */,
-				6705652F185483FF00A836F4 /* LabelTest */,
-				67056532185483FF00A836F4 /* ListViewTest */,
-				67056535185483FF00A836F4 /* PageViewTest */,
-				67056538185483FF00A836F4 /* PanelTest */,
-				6705653B185483FF00A836F4 /* ProgressBarTest */,
-				6705653E185483FF00A836F4 /* ScrollViewTest */,
-				67056541185483FF00A836F4 /* SliderTest */,
-				67056544185483FF00A836F4 /* TableViewTest */,
-				67056547185483FF00A836F4 /* ToggleViewTest */,
+				67D502F8185EB0FE005D6DF9 /* ButtonTest */,
+				67D502FB185EB0FE005D6DF9 /* CheckBoxTest */,
+				67D502FE185EB0FE005D6DF9 /* ControlViewTest */,
+				67D50301185EB0FE005D6DF9 /* GridPageViewTest */,
+				67D50304185EB0FE005D6DF9 /* GridViewTest */,
+				67D50307185EB0FE005D6DF9 /* LabelTest */,
+				67D5030A185EB0FE005D6DF9 /* ListViewTest */,
+				67D5030D185EB0FE005D6DF9 /* PageViewTest */,
+				67D50310185EB0FE005D6DF9 /* PanelTest */,
+				67D50313185EB0FE005D6DF9 /* ProgressBarTest */,
+				67D50316185EB0FE005D6DF9 /* ScrollViewTest */,
+				67D50319185EB0FE005D6DF9 /* SliderTest */,
+				67D5031C185EB0FE005D6DF9 /* TableViewTest */,
+				67D5031F185EB0FE005D6DF9 /* ToggleViewTest */,
 			);
 			name = testwidget;
 			path = ../Classes/testwidget;
 			sourceTree = "<group>";
 		};
-		67056520185483FF00A836F4 /* ButtonTest */ = {
+		67D502F8185EB0FE005D6DF9 /* ButtonTest */ = {
 			isa = PBXGroup;
 			children = (
-				67056521185483FF00A836F4 /* ButtonTest.cpp */,
-				67056522185483FF00A836F4 /* ButtonTest.h */,
+				67D502F9185EB0FE005D6DF9 /* ButtonTest.cpp */,
+				67D502FA185EB0FE005D6DF9 /* ButtonTest.h */,
 			);
 			path = ButtonTest;
 			sourceTree = "<group>";
 		};
-		67056523185483FF00A836F4 /* CheckBoxTest */ = {
+		67D502FB185EB0FE005D6DF9 /* CheckBoxTest */ = {
 			isa = PBXGroup;
 			children = (
-				67056524185483FF00A836F4 /* CheckBoxTest.cpp */,
-				67056525185483FF00A836F4 /* CheckBoxTest.h */,
+				67D502FC185EB0FE005D6DF9 /* CheckBoxTest.cpp */,
+				67D502FD185EB0FE005D6DF9 /* CheckBoxTest.h */,
 			);
 			path = CheckBoxTest;
 			sourceTree = "<group>";
 		};
-		67056526185483FF00A836F4 /* ControlViewTest */ = {
+		67D502FE185EB0FE005D6DF9 /* ControlViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				67056527185483FF00A836F4 /* ControlViewTest.cpp */,
-				67056528185483FF00A836F4 /* ControlViewTest.h */,
+				67D502FF185EB0FE005D6DF9 /* ControlViewTest.cpp */,
+				67D50300185EB0FE005D6DF9 /* ControlViewTest.h */,
 			);
 			path = ControlViewTest;
 			sourceTree = "<group>";
 		};
-		67056529185483FF00A836F4 /* GridPageViewTest */ = {
+		67D50301185EB0FE005D6DF9 /* GridPageViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				6705652A185483FF00A836F4 /* GridPageViewTest.cpp */,
-				6705652B185483FF00A836F4 /* GridPageViewTest.h */,
+				67D50302185EB0FE005D6DF9 /* GridPageViewTest.cpp */,
+				67D50303185EB0FE005D6DF9 /* GridPageViewTest.h */,
 			);
 			path = GridPageViewTest;
 			sourceTree = "<group>";
 		};
-		6705652C185483FF00A836F4 /* GridViewTest */ = {
+		67D50304185EB0FE005D6DF9 /* GridViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				6705652D185483FF00A836F4 /* GridViewTest.cpp */,
-				6705652E185483FF00A836F4 /* GridViewTest.h */,
+				67D50305185EB0FE005D6DF9 /* GridViewTest.cpp */,
+				67D50306185EB0FE005D6DF9 /* GridViewTest.h */,
 			);
 			path = GridViewTest;
 			sourceTree = "<group>";
 		};
-		6705652F185483FF00A836F4 /* LabelTest */ = {
+		67D50307185EB0FE005D6DF9 /* LabelTest */ = {
 			isa = PBXGroup;
 			children = (
-				67056530185483FF00A836F4 /* LabelTest.cpp */,
-				67056531185483FF00A836F4 /* LabelTest.h */,
+				67D50308185EB0FE005D6DF9 /* LabelTest.cpp */,
+				67D50309185EB0FE005D6DF9 /* LabelTest.h */,
 			);
 			path = LabelTest;
 			sourceTree = "<group>";
 		};
-		67056532185483FF00A836F4 /* ListViewTest */ = {
+		67D5030A185EB0FE005D6DF9 /* ListViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				67056533185483FF00A836F4 /* ListViewTest.cpp */,
-				67056534185483FF00A836F4 /* ListViewTest.h */,
+				67D5030B185EB0FE005D6DF9 /* ListViewTest.cpp */,
+				67D5030C185EB0FE005D6DF9 /* ListViewTest.h */,
 			);
 			path = ListViewTest;
 			sourceTree = "<group>";
 		};
-		67056535185483FF00A836F4 /* PageViewTest */ = {
+		67D5030D185EB0FE005D6DF9 /* PageViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				67056536185483FF00A836F4 /* PageViewTest.cpp */,
-				67056537185483FF00A836F4 /* PageViewTest.h */,
+				67D5030E185EB0FE005D6DF9 /* PageViewTest.cpp */,
+				67D5030F185EB0FE005D6DF9 /* PageViewTest.h */,
 			);
 			path = PageViewTest;
 			sourceTree = "<group>";
 		};
-		67056538185483FF00A836F4 /* PanelTest */ = {
+		67D50310185EB0FE005D6DF9 /* PanelTest */ = {
 			isa = PBXGroup;
 			children = (
-				67056539185483FF00A836F4 /* PanelTest.cpp */,
-				6705653A185483FF00A836F4 /* PanelTest.h */,
+				67D50311185EB0FE005D6DF9 /* PanelTest.cpp */,
+				67D50312185EB0FE005D6DF9 /* PanelTest.h */,
 			);
 			path = PanelTest;
 			sourceTree = "<group>";
 		};
-		6705653B185483FF00A836F4 /* ProgressBarTest */ = {
+		67D50313185EB0FE005D6DF9 /* ProgressBarTest */ = {
 			isa = PBXGroup;
 			children = (
-				6705653C185483FF00A836F4 /* ProgressBarTest.cpp */,
-				6705653D185483FF00A836F4 /* ProgressBarTest.h */,
+				67D50314185EB0FE005D6DF9 /* ProgressBarTest.cpp */,
+				67D50315185EB0FE005D6DF9 /* ProgressBarTest.h */,
 			);
 			path = ProgressBarTest;
 			sourceTree = "<group>";
 		};
-		6705653E185483FF00A836F4 /* ScrollViewTest */ = {
+		67D50316185EB0FE005D6DF9 /* ScrollViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				6705653F185483FF00A836F4 /* ScrollViewTest.cpp */,
-				67056540185483FF00A836F4 /* ScrollViewTest.h */,
+				67D50317185EB0FE005D6DF9 /* ScrollViewTest.cpp */,
+				67D50318185EB0FE005D6DF9 /* ScrollViewTest.h */,
 			);
 			path = ScrollViewTest;
 			sourceTree = "<group>";
 		};
-		67056541185483FF00A836F4 /* SliderTest */ = {
+		67D50319185EB0FE005D6DF9 /* SliderTest */ = {
 			isa = PBXGroup;
 			children = (
-				67056542185483FF00A836F4 /* SliderTest.cpp */,
-				67056543185483FF00A836F4 /* SliderTest.h */,
+				67D5031A185EB0FE005D6DF9 /* SliderTest.cpp */,
+				67D5031B185EB0FE005D6DF9 /* SliderTest.h */,
 			);
 			path = SliderTest;
 			sourceTree = "<group>";
 		};
-		67056544185483FF00A836F4 /* TableViewTest */ = {
+		67D5031C185EB0FE005D6DF9 /* TableViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				67056545185483FF00A836F4 /* TableViewTest.cpp */,
-				67056546185483FF00A836F4 /* TableViewTest.h */,
+				67D5031D185EB0FE005D6DF9 /* TableViewTest.cpp */,
+				67D5031E185EB0FE005D6DF9 /* TableViewTest.h */,
 			);
 			path = TableViewTest;
 			sourceTree = "<group>";
 		};
-		67056547185483FF00A836F4 /* ToggleViewTest */ = {
+		67D5031F185EB0FE005D6DF9 /* ToggleViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				67056548185483FF00A836F4 /* ToggleViewTest.cpp */,
-				67056549185483FF00A836F4 /* ToggleViewTest.h */,
+				67D50320185EB0FE005D6DF9 /* ToggleViewTest.cpp */,
+				67D50321185EB0FE005D6DF9 /* ToggleViewTest.h */,
 			);
 			path = ToggleViewTest;
+			sourceTree = "<group>";
+		};
+		67D50332185EB108005D6DF9 /* CocosWidget */ = {
+			isa = PBXGroup;
+			children = (
+				67D50333185EB108005D6DF9 /* Button.cpp */,
+				67D50334185EB108005D6DF9 /* Button.h */,
+				67D50335185EB108005D6DF9 /* CheckBox.cpp */,
+				67D50336185EB108005D6DF9 /* CheckBox.h */,
+				67D50337185EB108005D6DF9 /* cocos-widget.h */,
+				67D50338185EB108005D6DF9 /* ControlView.cpp */,
+				67D50339185EB108005D6DF9 /* ControlView.h */,
+				67D5033A185EB108005D6DF9 /* GridPageView.cpp */,
+				67D5033B185EB108005D6DF9 /* GridPageView.h */,
+				67D5033C185EB108005D6DF9 /* GridView.cpp */,
+				67D5033D185EB108005D6DF9 /* GridView.h */,
+				67D5033E185EB108005D6DF9 /* ImageView.cpp */,
+				67D5033F185EB108005D6DF9 /* ImageView.h */,
+				67D50340185EB108005D6DF9 /* ImageViewScale9.cpp */,
+				67D50341185EB108005D6DF9 /* ImageViewScale9.h */,
+				67D50342185EB108005D6DF9 /* Label.cpp */,
+				67D50343185EB108005D6DF9 /* Label.h */,
+				67D50344185EB108005D6DF9 /* LabelAtlas.cpp */,
+				67D50345185EB108005D6DF9 /* LabelAtlas.h */,
+				67D50346185EB108005D6DF9 /* LabelBMFont.cpp */,
+				67D50347185EB108005D6DF9 /* LabelBMFont.h */,
+				67D50348185EB108005D6DF9 /* ListView.cpp */,
+				67D50349185EB108005D6DF9 /* ListView.h */,
+				67D5034A185EB108005D6DF9 /* Lua_cocos2dx_widget.cpp */,
+				67D5034B185EB108005D6DF9 /* Lua_cocos2dx_widget.h */,
+				67D5034C185EB108005D6DF9 /* PageView.cpp */,
+				67D5034D185EB108005D6DF9 /* PageView.h */,
+				67D5034E185EB108005D6DF9 /* Panel.cpp */,
+				67D5034F185EB108005D6DF9 /* Panel.h */,
+				67D50350185EB108005D6DF9 /* ProgressBar.cpp */,
+				67D50351185EB108005D6DF9 /* ProgressBar.h */,
+				67D50352185EB108005D6DF9 /* Scale9Sprite.cpp */,
+				67D50353185EB108005D6DF9 /* Scale9Sprite.h */,
+				67D50354185EB108005D6DF9 /* ScrollView.cpp */,
+				67D50355185EB108005D6DF9 /* ScrollView.h */,
+				67D50356185EB108005D6DF9 /* Slider.cpp */,
+				67D50357185EB108005D6DF9 /* Slider.h */,
+				67D50358185EB108005D6DF9 /* TableView.cpp */,
+				67D50359185EB108005D6DF9 /* TableView.h */,
+				67D5035A185EB108005D6DF9 /* ToggleView.cpp */,
+				67D5035B185EB108005D6DF9 /* ToggleView.h */,
+				67D5035C185EB108005D6DF9 /* Widget.cpp */,
+				67D5035D185EB108005D6DF9 /* Widget.h */,
+				67D5035E185EB108005D6DF9 /* WidgetLayout.cpp */,
+				67D5035F185EB108005D6DF9 /* WidgetLayout.h */,
+				67D50360185EB108005D6DF9 /* WidgetMacros.h */,
+				67D50361185EB108005D6DF9 /* WidgetProtocol.cpp */,
+				67D50362185EB108005D6DF9 /* WidgetProtocol.h */,
+			);
+			name = CocosWidget;
+			path = ../../CocosWidget;
 			sourceTree = "<group>";
 		};
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				670565701854840A00A836F4 /* again1.png */,
-				670565711854840B00A836F4 /* again2.png */,
-				670565721854840B00A836F4 /* arial-unicode-26.fnt */,
-				670565731854840B00A836F4 /* arial-unicode-26.png */,
-				670565741854840B00A836F4 /* back1.png */,
-				670565751854840B00A836F4 /* back2.png */,
-				670565761854840B00A836F4 /* background.png */,
-				670565771854840B00A836F4 /* background2.png */,
-				670565781854840B00A836F4 /* background3.png */,
-				670565791854840B00A836F4 /* btn1_1.png */,
-				6705657A1854840B00A836F4 /* btn1_2.png */,
-				6705657B1854840B00A836F4 /* btn1_3.png */,
-				6705657C1854840B00A836F4 /* circle1.png */,
-				6705657D1854840B00A836F4 /* circle2.png */,
-				6705657E1854840B00A836F4 /* ckb_disable_01.png */,
-				6705657F1854840B00A836F4 /* ckb_disable_02.png */,
-				670565801854840B00A836F4 /* ckb_normal_01.png */,
-				670565811854840B00A836F4 /* ckb_normal_02.png */,
-				670565821854840B00A836F4 /* ckb_selected_01.png */,
-				670565831854840B00A836F4 /* ckb_selected_02.png */,
-				670565841854840B00A836F4 /* CloseNormal.png */,
-				670565851854840B00A836F4 /* CloseSelected.png */,
-				670565861854840B00A836F4 /* control_baseboard.png */,
-				670565871854840B00A836F4 /* control_joystick.png */,
-				670565881854840B00A836F4 /* icon.png */,
-				670565891854840B00A836F4 /* next1.png */,
-				6705658A1854840B00A836F4 /* next2.png */,
-				6705658B1854840B00A836F4 /* num.png */,
-				6705658C1854840B00A836F4 /* progress_bg.png */,
-				6705658D1854840B00A836F4 /* progress_v_bg.png */,
-				6705658E1854840B00A836F4 /* progress_v.png */,
-				6705658F1854840B00A836F4 /* progress.png */,
-				670565901854840B00A836F4 /* scrollcontent.png */,
-				670565911854840B00A836F4 /* slider.png */,
-				670565921854840B00A836F4 /* sprite9_btn1.png */,
-				670565931854840B00A836F4 /* sprite9_btn2.png */,
-				670565941854840B00A836F4 /* toggle1_1.png */,
-				670565951854840B00A836F4 /* toggle1_2.png */,
-				D41A0AD0160F154A004552AE /* Default-568h@2x.png */,
-				7855E0DF153FEF240059DD9A /* Default.png */,
-				D446FD6D16102124000ADA7B /* Default@2x.png */,
+				67D502A7185EB0E5005D6DF9 /* again1.png */,
+				67D502A8185EB0E5005D6DF9 /* again2.png */,
+				67D502A9185EB0E5005D6DF9 /* arial-unicode-26.fnt */,
+				67D502AA185EB0E5005D6DF9 /* arial-unicode-26.png */,
+				67D502AB185EB0E6005D6DF9 /* back1.png */,
+				67D502AC185EB0E6005D6DF9 /* back2.png */,
+				67D502AD185EB0E6005D6DF9 /* background.png */,
+				67D502AE185EB0E6005D6DF9 /* background2.png */,
+				67D502AF185EB0E6005D6DF9 /* background3.png */,
+				67D502B0185EB0E6005D6DF9 /* btn1_1.png */,
+				67D502B1185EB0E6005D6DF9 /* btn1_2.png */,
+				67D502B2185EB0E6005D6DF9 /* btn1_3.png */,
+				67D502B3185EB0E6005D6DF9 /* circle1.png */,
+				67D502B4185EB0E6005D6DF9 /* circle2.png */,
+				67D502B5185EB0E6005D6DF9 /* ckb_disable_01.png */,
+				67D502B6185EB0E6005D6DF9 /* ckb_disable_02.png */,
+				67D502B7185EB0E6005D6DF9 /* ckb_normal_01.png */,
+				67D502B8185EB0E6005D6DF9 /* ckb_normal_02.png */,
+				67D502B9185EB0E6005D6DF9 /* ckb_selected_01.png */,
+				67D502BA185EB0E7005D6DF9 /* ckb_selected_02.png */,
+				67D502BB185EB0E7005D6DF9 /* CloseNormal.png */,
+				67D502BC185EB0E7005D6DF9 /* CloseSelected.png */,
+				67D502BD185EB0E7005D6DF9 /* control_baseboard.png */,
+				67D502BE185EB0E7005D6DF9 /* control_joystick.png */,
+				67D502BF185EB0E7005D6DF9 /* icon.png */,
+				67D502C0185EB0E7005D6DF9 /* next1.png */,
+				67D502C1185EB0E7005D6DF9 /* next2.png */,
+				67D502C2185EB0E8005D6DF9 /* num.png */,
+				67D502C3185EB0E8005D6DF9 /* progress_bg.png */,
+				67D502C4185EB0E8005D6DF9 /* progress_v_bg.png */,
+				67D502C5185EB0E8005D6DF9 /* progress_v.png */,
+				67D502C6185EB0E8005D6DF9 /* progress.png */,
+				67D502C7185EB0E8005D6DF9 /* scrollcontent.png */,
+				67D502C8185EB0E9005D6DF9 /* slider.png */,
+				67D502C9185EB0E9005D6DF9 /* sprite9_btn1.png */,
+				67D502CA185EB0E9005D6DF9 /* sprite9_btn2.png */,
+				67D502CB185EB0E9005D6DF9 /* toggle1_1.png */,
+				67D502CC185EB0E9005D6DF9 /* toggle1_2.png */,
 				D4EF949B15BD2D8E00D803EB /* Icon-114.png */,
 				D4EF949F15BD2D9800D803EB /* Icon-144.png */,
 				D4EF949915BD2D8B00D803EB /* Icon-57.png */,
@@ -2218,44 +2217,44 @@
 				379BB9CD17F03F3700829B88 /* json_internalmap.inl in Resources */,
 				379BB9D017F03F3700829B88 /* json_valueiterator.inl in Resources */,
 				379BB9D217F03F3700829B88 /* sconscript in Resources */,
-				670565961854840B00A836F4 /* again1.png in Resources */,
-				670565971854840B00A836F4 /* again2.png in Resources */,
-				670565981854840B00A836F4 /* arial-unicode-26.fnt in Resources */,
-				670565991854840B00A836F4 /* arial-unicode-26.png in Resources */,
-				6705659A1854840B00A836F4 /* back1.png in Resources */,
-				6705659B1854840B00A836F4 /* back2.png in Resources */,
-				6705659C1854840B00A836F4 /* background.png in Resources */,
-				6705659D1854840B00A836F4 /* background2.png in Resources */,
-				6705659E1854840B00A836F4 /* background3.png in Resources */,
-				6705659F1854840B00A836F4 /* btn1_1.png in Resources */,
-				670565A01854840B00A836F4 /* btn1_2.png in Resources */,
-				670565A11854840B00A836F4 /* btn1_3.png in Resources */,
-				670565A21854840B00A836F4 /* circle1.png in Resources */,
-				670565A31854840B00A836F4 /* circle2.png in Resources */,
-				670565A41854840B00A836F4 /* ckb_disable_01.png in Resources */,
-				670565A51854840B00A836F4 /* ckb_disable_02.png in Resources */,
-				670565A61854840B00A836F4 /* ckb_normal_01.png in Resources */,
-				670565A71854840B00A836F4 /* ckb_normal_02.png in Resources */,
-				670565A81854840B00A836F4 /* ckb_selected_01.png in Resources */,
-				670565A91854840B00A836F4 /* ckb_selected_02.png in Resources */,
-				670565AA1854840B00A836F4 /* CloseNormal.png in Resources */,
-				670565AB1854840B00A836F4 /* CloseSelected.png in Resources */,
-				670565AC1854840B00A836F4 /* control_baseboard.png in Resources */,
-				670565AD1854840B00A836F4 /* control_joystick.png in Resources */,
-				670565AE1854840B00A836F4 /* icon.png in Resources */,
-				670565AF1854840B00A836F4 /* next1.png in Resources */,
-				670565B01854840B00A836F4 /* next2.png in Resources */,
-				670565B11854840B00A836F4 /* num.png in Resources */,
-				670565B21854840B00A836F4 /* progress_bg.png in Resources */,
-				670565B31854840B00A836F4 /* progress_v_bg.png in Resources */,
-				670565B41854840B00A836F4 /* progress_v.png in Resources */,
-				670565B51854840B00A836F4 /* progress.png in Resources */,
-				670565B61854840B00A836F4 /* scrollcontent.png in Resources */,
-				670565B71854840B00A836F4 /* slider.png in Resources */,
-				670565B81854840B00A836F4 /* sprite9_btn1.png in Resources */,
-				670565B91854840B00A836F4 /* sprite9_btn2.png in Resources */,
-				670565BA1854840B00A836F4 /* toggle1_1.png in Resources */,
-				670565BB1854840B00A836F4 /* toggle1_2.png in Resources */,
+				67D502CD185EB0EA005D6DF9 /* again1.png in Resources */,
+				67D502CE185EB0EA005D6DF9 /* again2.png in Resources */,
+				67D502CF185EB0EA005D6DF9 /* arial-unicode-26.fnt in Resources */,
+				67D502D0185EB0EA005D6DF9 /* arial-unicode-26.png in Resources */,
+				67D502D1185EB0EA005D6DF9 /* back1.png in Resources */,
+				67D502D2185EB0EA005D6DF9 /* back2.png in Resources */,
+				67D502D3185EB0EA005D6DF9 /* background.png in Resources */,
+				67D502D4185EB0EA005D6DF9 /* background2.png in Resources */,
+				67D502D5185EB0EA005D6DF9 /* background3.png in Resources */,
+				67D502D6185EB0EA005D6DF9 /* btn1_1.png in Resources */,
+				67D502D7185EB0EA005D6DF9 /* btn1_2.png in Resources */,
+				67D502D8185EB0EA005D6DF9 /* btn1_3.png in Resources */,
+				67D502D9185EB0EA005D6DF9 /* circle1.png in Resources */,
+				67D502DA185EB0EA005D6DF9 /* circle2.png in Resources */,
+				67D502DB185EB0EA005D6DF9 /* ckb_disable_01.png in Resources */,
+				67D502DC185EB0EA005D6DF9 /* ckb_disable_02.png in Resources */,
+				67D502DD185EB0EA005D6DF9 /* ckb_normal_01.png in Resources */,
+				67D502DE185EB0EA005D6DF9 /* ckb_normal_02.png in Resources */,
+				67D502DF185EB0EA005D6DF9 /* ckb_selected_01.png in Resources */,
+				67D502E0185EB0EA005D6DF9 /* ckb_selected_02.png in Resources */,
+				67D502E1185EB0EA005D6DF9 /* CloseNormal.png in Resources */,
+				67D502E2185EB0EA005D6DF9 /* CloseSelected.png in Resources */,
+				67D502E3185EB0EA005D6DF9 /* control_baseboard.png in Resources */,
+				67D502E4185EB0EA005D6DF9 /* control_joystick.png in Resources */,
+				67D502E5185EB0EA005D6DF9 /* icon.png in Resources */,
+				67D502E6185EB0EA005D6DF9 /* next1.png in Resources */,
+				67D502E7185EB0EA005D6DF9 /* next2.png in Resources */,
+				67D502E8185EB0EA005D6DF9 /* num.png in Resources */,
+				67D502E9185EB0EA005D6DF9 /* progress_bg.png in Resources */,
+				67D502EA185EB0EA005D6DF9 /* progress_v_bg.png in Resources */,
+				67D502EB185EB0EA005D6DF9 /* progress_v.png in Resources */,
+				67D502EC185EB0EA005D6DF9 /* progress.png in Resources */,
+				67D502ED185EB0EA005D6DF9 /* scrollcontent.png in Resources */,
+				67D502EE185EB0EA005D6DF9 /* slider.png in Resources */,
+				67D502EF185EB0EA005D6DF9 /* sprite9_btn1.png in Resources */,
+				67D502F0185EB0EA005D6DF9 /* sprite9_btn2.png in Resources */,
+				67D502F1185EB0EA005D6DF9 /* toggle1_1.png in Resources */,
+				67D502F2185EB0EA005D6DF9 /* toggle1_2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2476,44 +2475,45 @@
 				379BB9D117F03F3700829B88 /* json_writer.cpp in Sources */,
 				379BB9D317F03F3700829B88 /* CCSGUIReader.cpp in Sources */,
 				379BB9D417F03F3700829B88 /* CCSSceneReader.cpp in Sources */,
-				6705654A185483FF00A836F4 /* AppDelegate.cpp in Sources */,
-				6705654B185483FF00A836F4 /* Button.cpp in Sources */,
-				6705654C185483FF00A836F4 /* CheckBox.cpp in Sources */,
-				6705654D185483FF00A836F4 /* ControlView.cpp in Sources */,
-				6705654E185483FF00A836F4 /* GridPageView.cpp in Sources */,
-				6705654F185483FF00A836F4 /* GridView.cpp in Sources */,
-				67056550185483FF00A836F4 /* ImageView.cpp in Sources */,
-				67056551185483FF00A836F4 /* ImageViewScale9.cpp in Sources */,
-				67056552185483FF00A836F4 /* Label.cpp in Sources */,
-				67056553185483FF00A836F4 /* LabelAtlas.cpp in Sources */,
-				67056554185483FF00A836F4 /* LabelBMFont.cpp in Sources */,
-				67056555185483FF00A836F4 /* ListView.cpp in Sources */,
-				67056556185483FF00A836F4 /* PageView.cpp in Sources */,
-				67056557185483FF00A836F4 /* Panel.cpp in Sources */,
-				67056558185483FF00A836F4 /* ProgressBar.cpp in Sources */,
-				67056559185483FF00A836F4 /* Scale9Sprite.cpp in Sources */,
-				6705655A185483FF00A836F4 /* ScrollView.cpp in Sources */,
-				6705655B185483FF00A836F4 /* Slider.cpp in Sources */,
-				6705655C185483FF00A836F4 /* TableView.cpp in Sources */,
-				6705655D185483FF00A836F4 /* ToggleView.cpp in Sources */,
-				6705655E185483FF00A836F4 /* Widget.cpp in Sources */,
-				6705655F185483FF00A836F4 /* WidgetLayout.cpp in Sources */,
-				67056560185483FF00A836F4 /* WidgetProtocol.cpp in Sources */,
-				67056561185483FF00A836F4 /* MenuScene.cpp in Sources */,
-				67056562185483FF00A836F4 /* ButtonTest.cpp in Sources */,
-				67056563185483FF00A836F4 /* CheckBoxTest.cpp in Sources */,
-				67056564185483FF00A836F4 /* ControlViewTest.cpp in Sources */,
-				67056565185483FF00A836F4 /* GridPageViewTest.cpp in Sources */,
-				67056566185483FF00A836F4 /* GridViewTest.cpp in Sources */,
-				67056567185483FF00A836F4 /* LabelTest.cpp in Sources */,
-				67056568185483FF00A836F4 /* ListViewTest.cpp in Sources */,
-				67056569185483FF00A836F4 /* PageViewTest.cpp in Sources */,
-				6705656A185483FF00A836F4 /* PanelTest.cpp in Sources */,
-				6705656B185483FF00A836F4 /* ProgressBarTest.cpp in Sources */,
-				6705656C185483FF00A836F4 /* ScrollViewTest.cpp in Sources */,
-				6705656D185483FF00A836F4 /* SliderTest.cpp in Sources */,
-				6705656E185483FF00A836F4 /* TableViewTest.cpp in Sources */,
-				6705656F185483FF00A836F4 /* ToggleViewTest.cpp in Sources */,
+				67D50322185EB0FE005D6DF9 /* AppDelegate.cpp in Sources */,
+				67D50323185EB0FE005D6DF9 /* MenuScene.cpp in Sources */,
+				67D50324185EB0FE005D6DF9 /* ButtonTest.cpp in Sources */,
+				67D50325185EB0FE005D6DF9 /* CheckBoxTest.cpp in Sources */,
+				67D50326185EB0FE005D6DF9 /* ControlViewTest.cpp in Sources */,
+				67D50327185EB0FE005D6DF9 /* GridPageViewTest.cpp in Sources */,
+				67D50328185EB0FE005D6DF9 /* GridViewTest.cpp in Sources */,
+				67D50329185EB0FE005D6DF9 /* LabelTest.cpp in Sources */,
+				67D5032A185EB0FE005D6DF9 /* ListViewTest.cpp in Sources */,
+				67D5032B185EB0FE005D6DF9 /* PageViewTest.cpp in Sources */,
+				67D5032C185EB0FE005D6DF9 /* PanelTest.cpp in Sources */,
+				67D5032D185EB0FE005D6DF9 /* ProgressBarTest.cpp in Sources */,
+				67D5032E185EB0FE005D6DF9 /* ScrollViewTest.cpp in Sources */,
+				67D5032F185EB0FE005D6DF9 /* SliderTest.cpp in Sources */,
+				67D50330185EB0FE005D6DF9 /* TableViewTest.cpp in Sources */,
+				67D50331185EB0FE005D6DF9 /* ToggleViewTest.cpp in Sources */,
+				67D50363185EB108005D6DF9 /* Button.cpp in Sources */,
+				67D50364185EB108005D6DF9 /* CheckBox.cpp in Sources */,
+				67D50365185EB108005D6DF9 /* ControlView.cpp in Sources */,
+				67D50366185EB108005D6DF9 /* GridPageView.cpp in Sources */,
+				67D50367185EB108005D6DF9 /* GridView.cpp in Sources */,
+				67D50368185EB108005D6DF9 /* ImageView.cpp in Sources */,
+				67D50369185EB108005D6DF9 /* ImageViewScale9.cpp in Sources */,
+				67D5036A185EB108005D6DF9 /* Label.cpp in Sources */,
+				67D5036B185EB108005D6DF9 /* LabelAtlas.cpp in Sources */,
+				67D5036C185EB108005D6DF9 /* LabelBMFont.cpp in Sources */,
+				67D5036D185EB108005D6DF9 /* ListView.cpp in Sources */,
+				67D5036E185EB108005D6DF9 /* Lua_cocos2dx_widget.cpp in Sources */,
+				67D5036F185EB108005D6DF9 /* PageView.cpp in Sources */,
+				67D50370185EB108005D6DF9 /* Panel.cpp in Sources */,
+				67D50371185EB108005D6DF9 /* ProgressBar.cpp in Sources */,
+				67D50372185EB108005D6DF9 /* Scale9Sprite.cpp in Sources */,
+				67D50373185EB108005D6DF9 /* ScrollView.cpp in Sources */,
+				67D50374185EB108005D6DF9 /* Slider.cpp in Sources */,
+				67D50375185EB108005D6DF9 /* TableView.cpp in Sources */,
+				67D50376185EB108005D6DF9 /* ToggleView.cpp in Sources */,
+				67D50377185EB108005D6DF9 /* Widget.cpp in Sources */,
+				67D50378185EB108005D6DF9 /* WidgetLayout.cpp in Sources */,
+				67D50379185EB108005D6DF9 /* WidgetProtocol.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

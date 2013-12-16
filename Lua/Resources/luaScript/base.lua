@@ -28,6 +28,7 @@ function createScene()
 	
 	local p_layout = CWidgetLayout:create();
 	p_layout:setTag(1);
+	p_layout:setMultiTouchEnabled(true);
 	p_scene:addChild(p_layout);
 	tab_scene.p_layout = p_layout;
 

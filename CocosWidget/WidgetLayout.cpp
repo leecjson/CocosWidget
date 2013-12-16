@@ -375,8 +375,6 @@ void CWidgetLayout::onExit()
 
 bool CWidgetLayout::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
-	CCLOG("began");
-
 	if( m_bTouchEnabled && m_bVisible && m_pChildren && m_pChildren->count() > 0 )
 	{
 		CCPoint touchPointInView = convertToNodeSpace(pTouch->getLocation());
@@ -409,8 +407,6 @@ bool CWidgetLayout::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 
 void CWidgetLayout::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 {
-	CCLOG("moved");
-
 	if( m_pSelectedWidget )
 	{
 		if( m_pSelectedWidget->isTouchInterrupted() )
@@ -429,8 +425,6 @@ void CWidgetLayout::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 
 void CWidgetLayout::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
-	CCLOG("ended");
-
 	if( m_pSelectedWidget )
 	{
 		if( m_pSelectedWidget->isTouchInterrupted() )
@@ -475,8 +469,6 @@ void CWidgetLayout::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
 
 void CWidgetLayout::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 {
-	CCLOG("began's");
-
 	CCSetIterator itr = pTouches->begin();
 	for(; itr != pTouches->end(); ++itr)
 	{
@@ -532,8 +524,6 @@ void CWidgetLayout::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 
 void CWidgetLayout::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 {
-	CCLOG("moved's");
-
 	CCSetIterator itr = pTouches->begin();
 	for(; itr != pTouches->end(); ++itr)
 	{
@@ -558,8 +548,6 @@ void CWidgetLayout::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 
 void CWidgetLayout::ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent)
 {
-	CCLOG("ended's");
-
 	CCSetIterator itr = pTouches->begin();
 	for(; itr != pTouches->end(); ++itr)
 	{
