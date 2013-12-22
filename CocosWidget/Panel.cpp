@@ -112,7 +112,7 @@ CWidgetTouchModel CPanel::onTouchBegan(CCTouch *pTouch)
 			}
 		}
 	}
-	return eWidgetTouchTransient;
+	return eWidgetTouchNone;
 }
 
 void CPanel::onTouchMoved(CCTouch *pTouch, float fDuration)
