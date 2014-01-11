@@ -173,10 +173,7 @@ CCObject* CLayout::find(CCArray* pChidren, const char* id)
 				else
 				{
 					CCObject* pRet = find(dynamic_cast<CCNode*>(pObject)->getChildren(), id);
-					if( pRet )
-					{
-						return pRet;
-					}
+					if( pRet ) return pRet;
 				}
 			}
 		}
