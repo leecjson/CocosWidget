@@ -31,7 +31,7 @@ bool CSliderBasicTest::init()
 	m_pSlider->setDirection(eProgressBarDirectionBottomToTop);
 	m_pSlider->setOnValueChangedListener(this,
 		ccw_valuechanged_selector(CSliderBasicTest::onValueChanged));
-	m_pLayout->addChild(m_pSlider);
+	m_pWindow->addChild(m_pSlider);
 
 
 	m_pText = CLabel::create();
@@ -39,7 +39,7 @@ bool CSliderBasicTest::init()
 	m_pText->setPosition(CCPoint(380, 400));
 	m_pText->setFontSize(35.0f);
 	m_pText->setString("none");
-	m_pLayout->addChild(m_pText);
+	m_pWindow->addChild(m_pText);
 
 	return true;
 }
@@ -65,7 +65,7 @@ bool CSliderWithScrollTest::init()
 	m_pScrollView->setDirection(eScrollViewDirectionHorizontal);
 	m_pScrollView->setPosition(CCPoint(480, 350));
 	m_pScrollView->setDragable(false);
-	m_pLayout->addChild(m_pScrollView);
+	m_pWindow->addChild(m_pScrollView);
 
 	float x = 100.0f;
 	for( int i = 0; i < 30; i++ )
@@ -74,7 +74,7 @@ bool CSliderWithScrollTest::init()
 
 		char buf[32] = {0};
 		sprintf(buf, "%d", i + 1);
-		pIcon->getLabel()->initWithString(buf, "", 25);
+		pIcon->initText(buf, "", 25);
 		pIcon->setPosition(CCPoint( x , 160 ));
 		m_pScrollView->getContainer()->addChild(pIcon);
 		x += 100.0f;
@@ -90,7 +90,7 @@ bool CSliderWithScrollTest::init()
 	m_pSlider->setMinValue(0);
 	m_pSlider->setValue(0);
 	m_pSlider->setOnValueChangedListener(this, ccw_valuechanged_selector(CSliderWithScrollTest::onValueChanged));
-	m_pLayout->addChild(m_pSlider);
+	m_pWindow->addChild(m_pSlider);
 
 	return true;
 }

@@ -5,21 +5,22 @@ enum CWidgetTouchModel
 	eWidgetTouchSustained,
 };
 
-class CWidgetLayout : public CCNodeRGBA, public CCTouchDelegate
+class CWidgetWindow : public CCNodeRGBA, public CCTouchDelegate
 {
-	CWidgetLayout();
-	virtual ~CWidgetLayout();
+	CWidgetWindow();
+	virtual ~CWidgetWindow();
 	virtual bool init();
-	
+	static CWidgetWindow* create();
+
 	virtual int getTouchPriority();
 	virtual void setTouchPriority(int nTouchPriority);
 	virtual bool isTouchEnabled();
 	virtual void setTouchEnabled(bool bTouchEnabled);
-	virtual CCObject* findViewById(const char* id);
+	CCObject* findViewById(const char* id);
 	bool isMultiTouchEnabled() const;
 	void setMultiTouchEnabled(bool bEnabled);
-
-	static CWidgetLayout* create();
+	void setModalable(bool bModalable);
+	bool isModalable() const;
 	
 	void setOnTouchMovedAfterLongClickScriptHandler(LUA_FUNCTION nHandler);
 	void setOnTouchEndedAfterLongClickScriptHandler(LUA_FUNCTION nHandler);

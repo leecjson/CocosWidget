@@ -25,7 +25,7 @@ bool CControlViewBasicTest::init()
 
 	m_pIcon = CCSprite::create("icon.png");
 	m_pIcon->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(m_pIcon);
+	m_pWindow->addChild(m_pIcon);
 
 	CControlView* pView = CControlView::create(
 		"control_baseboard.png", "control_joystick.png");
@@ -35,7 +35,7 @@ bool CControlViewBasicTest::init()
 	pView->setAnchorPoint(CCPointZero);
 	pView->setScale(1.5f);
 	pView->setOpacity(200);
-	m_pLayout->addChild(pView);
+	m_pWindow->addChild(pView);
 
 	CControlView* pView2 = CControlView::create();
 	pView2->setBaseBoardImage("control_baseboard.png");
@@ -45,7 +45,7 @@ bool CControlViewBasicTest::init()
 	pView2->setAnchorPoint(CCPoint(1, 0));
 	pView2->setScale(1.5f);
 	pView2->setOpacity(200);
-	m_pLayout->addChild(pView2);
+	m_pWindow->addChild(pView2);
 
 	return true;
 }

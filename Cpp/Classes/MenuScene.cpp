@@ -6,13 +6,16 @@
 #include "testwidget/GridPageViewTest/GridPageViewTest.h"
 #include "testwidget/GridViewTest/GridViewTest.h"
 #include "testwidget/LabelTest/LabelTest.h"
-#include "testwidget/PanelTest/PanelTest.h"
+#include "testwidget/LayoutTest/LayoutTest.h"
 #include "testwidget/PageViewTest/PageViewTest.h"
 #include "testwidget/ListViewTest/ListViewTest.h"
 #include "testwidget/CheckBoxTest/CheckBoxTest.h"
 #include "testwidget/ControlViewTest/ControlViewTest.h"
 #include "testwidget/ProgressBarTest/ProgressBarTest.h"
 #include "testwidget/SliderTest/SliderTest.h"
+#include "testwidget/TextRichTest/TextRichTest.h"
+#include "testwidget/ExpandableListViewTest/ExpandableListViewTest.h"
+#include "testwidget/DrawOrderTest/DrawOrderTest.h"
 
 #define MENU_ITEM_ID_BUTTON 0
 #define MENU_ITEM_ID_TOGGLE 1
@@ -21,13 +24,16 @@
 #define MENU_ITEM_ID_TABLE 4
 #define MENU_ITEM_ID_GRIDPAGE 5
 #define MENU_ITEM_ID_GRID 6
-#define MENU_ITEM_ID_PANEL 7
+#define MENU_ITEM_ID_LAYOUT 7
 #define MENU_ITEM_ID_PAGE 8
 #define MENU_ITEM_ID_LISTVIEW 9
 #define MENU_ITEM_ID_CHECKBOX 10
 #define MENU_ITEM_ID_CONTROLVIEW 11
 #define MENU_ITEM_ID_PROGRESSBAR 12
 #define MENU_ITEM_ID_SLIDER 13
+#define MENU_ITEM_ID_TEXTRICH 14
+#define MENU_ITEM_ID_EXPANDABLELISTVIEW 15
+#define MENU_ITEM_ID_DRAWORDERTEST 16
 
 MenuScene::MenuScene()
 : m_pMenuTableView(NULL)
@@ -51,17 +57,20 @@ bool MenuScene::init()
 	m_vMenuItems.push_back("TableView Test");
 	m_vMenuItems.push_back("PageGridView Test");
 	m_vMenuItems.push_back("GridView Test");
-	m_vMenuItems.push_back("Panel Test");
+	m_vMenuItems.push_back("Layout Test");
 	m_vMenuItems.push_back("PageView Test");
 	m_vMenuItems.push_back("ListView Test");
 	m_vMenuItems.push_back("CheckBox Test");
 	m_vMenuItems.push_back("ControlView Test");
 	m_vMenuItems.push_back("ProgressBar Test");
 	m_vMenuItems.push_back("Slider Test");
+	m_vMenuItems.push_back("TextRich Test");
+	m_vMenuItems.push_back("ExpandableListView Test");
+	m_vMenuItems.push_back("DrawOrder Dispatch Test");
 
-	CWidgetLayout* pLayout = CWidgetLayout::create();
-	pLayout->setMultiTouchEnabled(false);
-	addChild(pLayout);
+	CWidgetWindow* pWindow = CWidgetWindow::create();
+	pWindow->setMultiTouchEnabled(false);
+	addChild(pWindow);
 
 	m_pMenuTableView = CTableView::create(CCSize(700, 640));
 	m_pMenuTableView->setCountOfCell(m_vMenuItems.size());
@@ -71,7 +80,7 @@ bool MenuScene::init()
 		this, ccw_datasource_adapter_selector(MenuScene::menuTableDataSource));
 	m_pMenuTableView->setDirection(eScrollViewDirectionVertical);
 	m_pMenuTableView->setPosition(CCPoint(480, 320));
-	pLayout->addChild(m_pMenuTableView);
+	pWindow->addChild(m_pMenuTableView);
 	m_pMenuTableView->reloadData();
 
 	
@@ -177,9 +186,9 @@ void MenuScene::onTextClick(CCObject* pSender)
 			pushCGridViewTestScene();
 		}
 		break;
-	case MENU_ITEM_ID_PANEL:
+	case MENU_ITEM_ID_LAYOUT:
 		{
-			pushCPanelTestScene();
+			pushCLayoutTestScene();
 		}
 		break;
 	case MENU_ITEM_ID_PAGE:
@@ -212,6 +221,21 @@ void MenuScene::onTextClick(CCObject* pSender)
 			pushCSliderTestScene();
 		}
 		break;
+	case MENU_ITEM_ID_TEXTRICH:
+		{
+			pushCTextRichTestScene();
+		}
+		break;
+	case MENU_ITEM_ID_EXPANDABLELISTVIEW:
+		{
+			pushCExpandableListViewTestScene();
+		}
+		break;
+	case MENU_ITEM_ID_DRAWORDERTEST:
+		{
+			pushDrawOrderTestScene();
+		}
+		break;
 	default:
 		break;
 	}
@@ -221,7 +245,7 @@ void MenuScene::onTextClick(CCObject* pSender)
 
 
 BaseTestScene::BaseTestScene()
-: m_pLayout(NULL)
+: m_pWindow(NULL)
 , m_pNextBtn(NULL)
 , m_pBackBtn(NULL)
 , m_pTitleText(NULL)
@@ -236,42 +260,42 @@ bool BaseTestScene::init()
 	CCScene::init();
 	setPosition(CCPointZero);
 
-	m_pLayout = CWidgetLayout::create();
-	m_pLayout->setMultiTouchEnabled(true);
-	addChild(m_pLayout);
+	m_pWindow = CWidgetWindow::create();
+	m_pWindow->setMultiTouchEnabled(true);
+	addChild(m_pWindow);
 
 	m_pNextBtn = CButton::create("next1.png", "next2.png");
 	m_pNextBtn->setOnClickListener(this, ccw_click_selector(BaseTestScene::onNextBtnClick));
 	m_pNextBtn->setPosition(CCPoint(630, 55));
-	m_pLayout->addChild(m_pNextBtn);
+	m_pWindow->addChild(m_pNextBtn);
 
 	m_pBackBtn = CButton::create("back1.png", "back2.png");
 	m_pBackBtn->setOnClickListener(this, ccw_click_selector(BaseTestScene::onBackBtnClick));
 	m_pBackBtn->setPosition(CCPoint(330, 55));
-	m_pLayout->addChild(m_pBackBtn);
+	m_pWindow->addChild(m_pBackBtn);
 
 	m_pRefBtn = CButton::create("again1.png", "again2.png");
 	m_pRefBtn->setOnClickListener(this, ccw_click_selector(BaseTestScene::onRefBtnClick));
 	m_pRefBtn->setPosition(CCPoint(480, 55));
-	m_pLayout->addChild(m_pRefBtn);
+	m_pWindow->addChild(m_pRefBtn);
 
 	m_pTitleText = CLabel::create();
 	m_pTitleText->setFontSize(45.0f);
 	m_pTitleText->setPosition(CCPoint(480, 600));
-	m_pLayout->addChild(m_pTitleText);
+	m_pWindow->addChild(m_pTitleText);
 
 	m_pDescriptionText  = CLabel::create();
 	m_pDescriptionText->setHorizontalAlignment(kCCTextAlignmentCenter);
 	m_pDescriptionText->setAnchorPoint(CCPoint(0.5f, 1.0f));
 	m_pDescriptionText->setFontSize(30.0f);
 	m_pDescriptionText->setPosition(CCPoint(480, 570));
-	m_pLayout->addChild(m_pDescriptionText);
+	m_pWindow->addChild(m_pDescriptionText);
 
 	m_pMenuText = CLabel::create("Back", "", 45.0f);
 	m_pMenuText->setPosition(CCPoint(893, 35));
 	m_pMenuText->setTouchEnabled(true);
 	m_pMenuText->setOnClickListener(this, ccw_click_selector(BaseTestScene::onMenuBtnClick));
-	m_pLayout->addChild(m_pMenuText);
+	m_pWindow->addChild(m_pMenuText);
 
 	return true;
 }

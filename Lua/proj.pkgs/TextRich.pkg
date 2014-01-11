@@ -1,0 +1,54 @@
+class CTextRich: public CCNodeRGBA, public CWidget, public CTextRichClickableProtocol
+{
+	CTextRich();
+	virtual ~CTextRich();
+	virtual bool init();
+	static CTextRich* create();
+	
+	const char* getFontName();
+	void setFontName(const char* pFontName);
+	float getFontSize() const;
+	void setFontSize(float fFontSize);
+	unsigned int getMaxLineLength() const;
+	void setMaxLineLength(unsigned int uLen);
+	float getVerticalSpacing() const;
+	void setVerticalSpacing(float fSpacing);
+	
+	void insertElement(const char* pString, 
+		const char* pFontName = NULL, 
+		float fFontSize = 0.0f, 
+		const ccColor3B& tColor = ccc3(255,255,255), 
+		const char* pDescription = NULL);
+
+	void insertElement(CCNode* pNode,
+		unsigned int uLen = 0,
+		const char* pDescription = NULL);
+
+	void removeAllElements();
+	void reloadData();
+	
+	virtual void setOnTextRichClickScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeOnTextRichClickScriptHandler();
+	
+	int getUserTag() const;
+	void setUserTag(int nTag);
+	const char* getId();
+	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
+	virtual bool isEnabled();
+	virtual void setEnabled(bool bEnabled);
+	virtual bool isTouchEnabled();
+	virtual void setTouchEnabled(bool bTouchEnabled);
+	virtual void interruptTouchCascade(CCTouch* pTouch, float fDuration);
+    virtual void interruptTouch(CCTouch* pTouch, float fDuration);
+    virtual bool isTouchInterrupted();
+	virtual void setOnTouchBeganScriptHandler(LUA_FUNCTION nHandler);
+	virtual void setOnTouchMovedScriptHandler(LUA_FUNCTION nHandler);
+	virtual void setOnTouchEndedScriptHandler(LUA_FUNCTION nHandler);
+	virtual void setOnTouchCancelledScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeOnTouchBeganScriptHandler();
+	virtual void removeOnTouchMovedScriptHandler();
+	virtual void removeOnTouchEndedScriptHandler();
+	virtual void removeOnTouchCancelledScriptHandler();
+};

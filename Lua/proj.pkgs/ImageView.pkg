@@ -1,7 +1,7 @@
 class CImageView : public CCSprite, public CWidget, public CClickableProtocol, public CLongClickableProtocol
 {
 	CImageView();
-	
+	virtual bool init();
 	static CImageView* create();
 	static CImageView* create(const char *pszFileName);
 	static CImageView* create(const char *pszFileName, const CCRect& rect);
@@ -19,6 +19,8 @@ class CImageView : public CCSprite, public CWidget, public CClickableProtocol, p
 	void setUserTag(int nTag);
 	const char* getId();
 	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
 	virtual bool isEnabled();
 	virtual void setEnabled(bool bEnabled);
 	virtual bool isTouchEnabled();

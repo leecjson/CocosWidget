@@ -2,8 +2,8 @@ class CCheckBox : public CCNodeRGBA, public CWidget, public CCheckableProtocol, 
 {
 	CCheckBox();
 	virtual ~CCheckBox();
-
 	virtual bool init();
+	static CCheckBox* create();
 	virtual void setContentSize(const CCSize& tContentSize);
 
 	virtual void setNormalImage(const char* pFile);
@@ -20,12 +20,12 @@ class CCheckBox : public CCNodeRGBA, public CWidget, public CCheckableProtocol, 
 	virtual void setDisabledNormalSpriteFrame(CCSpriteFrame* pFrame);
 	virtual void setDisabledCheckedSpriteFrame(CCSpriteFrame* pFrame);
 
-	virtual void setNormalTexture(CCTexture2D *pTexture);
-	virtual void setNormalPressTexture(CCTexture2D *pTexture);
-	virtual void setCheckedTexture(CCTexture2D *pTexture);
-	virtual void setCheckedPressTexture(CCTexture2D *pTexture);
-	virtual void setDisabledNormalTexture(CCTexture2D *pTexture);
-	virtual void setDisabledCheckedTexture(CCTexture2D *pTexture);
+	virtual void setNormalTexture(CCTexture2D* pTexture);
+	virtual void setNormalPressTexture(CCTexture2D* pTexture);
+	virtual void setCheckedTexture(CCTexture2D* pTexture);
+	virtual void setCheckedPressTexture(CCTexture2D* pTexture);
+	virtual void setDisabledNormalTexture(CCTexture2D* pTexture);
+	virtual void setDisabledCheckedTexture(CCTexture2D* pTexture);
 
 	virtual void setNormalSpriteFrameName(const char* pSpriteName);
 	virtual void setNormalPressSpriteFrameName(const char* pSpriteName);
@@ -33,8 +33,6 @@ class CCheckBox : public CCNodeRGBA, public CWidget, public CCheckableProtocol, 
 	virtual void setCheckedPressSpriteFrameName(const char* pSpriteName);
 	virtual void setDisabledNormalSpriteFrameName(const char* pSpriteName);
 	virtual void setDisabledCheckedSpriteFrameName(const char* pSpriteName);
-
-	static CCheckBox* create();
 	
 	virtual void setChecked(bool bChecked);
 	bool isChecked() const;
@@ -48,11 +46,12 @@ class CCheckBox : public CCNodeRGBA, public CWidget, public CCheckableProtocol, 
 	virtual void setOnLongClickScriptHandler(LUA_FUNCTION nHandler);
 	virtual void removeOnLongClickScriptHandler();
 	
-	
 	int getUserTag() const;
 	void setUserTag(int nTag);
 	const char* getId();
 	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
 	virtual bool isEnabled();
 	virtual void setEnabled(bool bEnabled);
 	virtual bool isTouchEnabled();

@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,24 +27,20 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_LISTVIEW_H__
 #define __CCWIDGET_LISTVIEW_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
 #include "ScrollView.h"
 #include "WidgetProtocol.h"
-#include <list>
+#include <vector>
 
 NS_CC_WIDGET_BEGIN
 
 /**
- * class    : CListView
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 可变长列表控件定义
+ * class  : CListView
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CListView : public CScrollView
 {
@@ -53,37 +49,28 @@ public:
 	virtual ~CListView();
 	static CListView* create(const CCSize& contentSize);
 
-	// 在列表尾部插入节点
 	void insertNodeAtLast(CCNode* pNode);
-	// 在列表头部插入节点
 	void insertNodeAtFront(CCNode* pNode);
-	// 在目标节点之前插入节点
 	void insertNode(CCNode* pNode, CCNode* pTarget);
-	// 在对应下标插入节点
 	void insertNode(CCNode* pNode, unsigned int idx);
 
-	// 根据下标删除节点
-	void removeNode(unsigned int idx);
-	// 删除节点
+	void removeNodeAtIndex(unsigned int idx);
 	void removeNode(CCNode* pNode);
-	// 删除头部节点
 	void removeFrontNode();
-	// 删除尾部节点
 	void removeLastNode();
-	// 删除所有节点
 	void removeAllNodes();
 
-	// 获取所有节点
 	CCArray* getNodes();
-	// 获取节点数量
+	CCNode* getNodeAtIndex(unsigned int idx);
 	unsigned int getNodeCount() const;
+	void reloadData();
 
 protected:
 	void updateNodesPosition();
 
 protected:
-	std::list<CCNode*> m_lNodeList;
-	float m_fNodesSize;
+	std::vector<CCNode*> m_vNodeList;
+	float m_fLayoutIndexSize;
 };
 
 NS_CC_WIDGET_END

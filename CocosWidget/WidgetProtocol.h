@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,17 +35,25 @@ THE SOFTWARE.
 
 NS_CC_WIDGET_BEGIN
 
+class CWidget;
+
+static const CCPoint CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT = CCPoint(0.5f, 0.5f);
+static const CCSize CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE = CCSize(100, 100);
+
+static const CCPoint CCWIDGET_LAYOUT_DEFAULT_ANCHOR_POINT = CCPoint(0.5f, 0.5f);
+static const CCSize CCWIDGET_LAYOUT_DEFAULT_CONTENT_SIZE = CCSize(300, 300);
+
 /**
- * enum     : CWidgetTouchModel
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 控件触摸事件类型
+ * class  : CGridPageView
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 enum CWidgetTouchModel
 {
-	eWidgetTouchNone,          // 不接收事件
-	eWidgetTouchTransient,     // 暂时性接收事件，这个事件可能会被上级控件所中断。
-	eWidgetTouchSustained,     // 持续性接收事件，这个事件不会被上级控件中断，只能由本控件自行中断
+	eWidgetTouchNone,
+	eWidgetTouchTransient,
+	eWidgetTouchSustained,
 };
 
 typedef void (CCObject::*SEL_ClickHandler)(CCObject *pSender);
@@ -59,7 +67,8 @@ typedef void (CCObject::*SEL_ScrollingHandler)(CCObject* pSender);
 typedef void (CCObject::*SEL_PageChangedHandler)(CCObject* pSender, unsigned int nPageIdx);
 typedef CCObject* (CCObject::*SEL_DataSoucreAdapterHandler)(CCObject* pConvertCell, unsigned int uIdx);
 typedef CWidgetTouchModel (CCObject::*SEL_TouchBeganHandler)(CCObject* pSender, CCTouch* pTouch);
-typedef bool (CCObject::*SEL_TouchEventHandler)(CCObject *pSender, CCTouch *pTouch, float fDuration);
+typedef bool (CCObject::*SEL_TouchEventHandler)(CCObject* pSender, CCTouch* pTouch, float fDuration);
+typedef void (CCObject::*SEL_TextRichClickHandler)(CCObject* pSender, const char* description);
 
 
 #define ccw_click_selector(_SELECTOR_) (cocos2d::cocoswidget::SEL_ClickHandler)(&_SELECTOR_)
@@ -74,6 +83,7 @@ typedef bool (CCObject::*SEL_TouchEventHandler)(CCObject *pSender, CCTouch *pTou
 #define ccw_datasource_adapter_selector(__SELECTOR__) (cocos2d::cocoswidget::SEL_DataSoucreAdapterHandler)(&__SELECTOR__)
 #define ccw_touchbegan_selector(_SELECTOR_) (cocos2d::cocoswidget::SEL_TouchBeganHandler)(&_SELECTOR_)
 #define ccw_touchevent_selector(_SELECTOR_) (cocos2d::cocoswidget::SEL_TouchEventHandler)(&_SELECTOR_)
+#define ccw_textrichclick_selector(_SELECTOR_) (cocos2d::cocoswidget::SEL_TextRichClickHandler)(&_SELECTOR_)
 
 
 class CWidgetTouchProtocol
@@ -104,6 +114,38 @@ public:
 	virtual void setDataSourceAdapterScriptHandler(int nHandler);
 	virtual void removeDataSourceAdapterScriptHandler();
 #endif
+};
+
+class CTextRichClickableProtocol
+{
+public:
+	CTextRichClickableProtocol();
+	virtual ~CTextRichClickableProtocol();
+	void setOnTextRichClickListener(CCObject* pListener, SEL_TextRichClickHandler pHandler);
+
+protected:
+	CCObject* m_pRichTextClickListener;
+	SEL_TextRichClickHandler m_pRichTextClickHandler;
+	void executeTextRichClickHandler(CCObject* pSender, const char* pDescription);
+#if USING_LUA
+protected:
+	int m_nRichTextClickScriptHandler;
+	void executeTextRichScriptHandler(CCObject* pSender, const char* pDescription);
+public:
+	virtual void setOnTextRichClickScriptHandler(int nHandler);
+	virtual void removeOnTextRichClickScriptHandler();
+#endif
+};
+
+class CLayoutableProtocol
+{
+public:
+	CLayoutableProtocol();
+	virtual ~CLayoutableProtocol();
+
+protected:
+	CWidget* m_pSelectedWidget;
+    CWidgetTouchModel m_eSelectedWidgetTouchModel;
 };
 
 class CPageChangeableProtocol
@@ -384,7 +426,11 @@ if( m_bLongClickEnabled ) \
 
 #ifndef CC_WIDGET_UPDATE_BACKGROUND_POS
 #define CC_WIDGET_UPDATE_BACKGROUND_POS \
-if(m_pBackgroundImage) m_pBackgroundImage->setPosition(CCPoint(m_obContentSize.width / 2, m_obContentSize.height / 2))
+if(m_pBackgroundImage) m_pBackgroundImage->setPosition(CCPoint(m_obContentSize.width / 2, m_obContentSize.height / 2)); \
+if(m_pBackgroundColor) m_pBackgroundColor->setPosition(CCPoint(m_obContentSize.width / 2, m_obContentSize.height / 2)); \
+if(m_pBackgroundColor) m_pBackgroundColor->setContentSize(m_obContentSize); \
+if(m_pBackgroundGradient) m_pBackgroundGradient->setPosition(CCPoint(m_obContentSize.width / 2, m_obContentSize.height / 2)); \
+if(m_pBackgroundGradient) m_pBackgroundGradient->setContentSize(m_obContentSize);
 #endif //CC_WIDGET_UPDATE_BACKGROUND_POS
 
 #ifndef CC_WIDGET_BACKGROUND
@@ -392,13 +438,25 @@ if(m_pBackgroundImage) m_pBackgroundImage->setPosition(CCPoint(m_obContentSize.w
 public: \
 	void setBackgroundImage(const char* pFile) \
 	{ \
-		CCAssert(pFile && strlen(pFile), "pFile nil"); \
+		CCAssert(pFile && strlen(pFile), "file path should not null"); \
 		CCTexture2D* pTexture = CCTextureCache::sharedTextureCache()->addImage(pFile); \
 		setBackgroundTexture(pTexture); \
 	} \
 	\
 	void setBackgroundTexture(CCTexture2D* pTexture) \
 	{ \
+		if( m_pBackgroundColor ) \
+		{ \
+			removeChild(m_pBackgroundColor); \
+			m_pBackgroundColor = NULL; \
+		} \
+		\
+		if( m_pBackgroundGradient ) \
+		{ \
+			removeChild(m_pBackgroundGradient); \
+			m_pBackgroundGradient = NULL; \
+		} \
+		\
 		if( m_pBackgroundImage ) \
 		{ \
 			CCRect rect; \
@@ -419,6 +477,18 @@ public: \
 	\
 	void setBackgroundSpriteFrame(CCSpriteFrame* pSpriteFrame) \
 	{ \
+		if( m_pBackgroundColor ) \
+		{ \
+			removeChild(m_pBackgroundColor); \
+			m_pBackgroundColor = NULL; \
+		} \
+		\
+		if( m_pBackgroundGradient ) \
+		{ \
+			removeChild(m_pBackgroundGradient); \
+			m_pBackgroundGradient = NULL; \
+		} \
+		\
 		if( m_pBackgroundImage ) \
 		{ \
 			m_pBackgroundImage->setDisplayFrame(pSpriteFrame); \
@@ -448,12 +518,122 @@ public: \
 		if( m_pBackgroundImage ) \
 		{ \
 			removeChild(m_pBackgroundImage); \
+			m_pBackgroundImage = NULL; \
 		} \
 	} \
 	\
 protected: \
 	CCSprite* m_pBackgroundImage; \
-
+	\
+public: \
+	void setBackgroundColor(const ccColor4B& tColor) \
+	{ \
+		if( m_pBackgroundImage ) \
+		{ \
+			removeChild(m_pBackgroundImage); \
+			m_pBackgroundImage = NULL; \
+		} \
+		\
+		if( m_pBackgroundGradient ) \
+		{ \
+			removeChild(m_pBackgroundGradient); \
+			m_pBackgroundGradient = NULL; \
+		} \
+		\
+		if( m_pBackgroundColor ) \
+		{ \
+			m_pBackgroundColor->setColor(ccc3(tColor.r, tColor.g, tColor.b)); \
+			m_pBackgroundColor->setOpacity(tColor.a); \
+		} \
+		else \
+		{ \
+			m_pBackgroundColor = CColorView::create(tColor); \
+			m_pBackgroundColor->setTouchEnabled(false); \
+			m_pBackgroundColor->setZOrder(-128); \
+			m_pBackgroundColor->setContentSize(m_obContentSize); \
+			addChild(m_pBackgroundColor); \
+		} \
+		m_pBackgroundColor->setPosition(CCPoint(m_obContentSize.width / 2, m_obContentSize.height / 2)); \
+	} \
+	\
+	void removeBackgroundColor() \
+	{ \
+		if( m_pBackgroundColor ) \
+		{ \
+			removeChild(m_pBackgroundColor); \
+			m_pBackgroundColor = NULL; \
+		} \
+	} \
+	\
+protected: \
+	CColorView* m_pBackgroundColor; \
+	\
+public: \
+	void setBackgroundGradient(const ccColor4B& tStart, const ccColor4B& tEnd, const CCPoint& v) \
+	{ \
+		if( m_pBackgroundImage ) \
+		{ \
+			removeChild(m_pBackgroundImage); \
+			m_pBackgroundImage = NULL; \
+		} \
+		\
+		if( m_pBackgroundColor ) \
+		{ \
+			removeChild(m_pBackgroundColor); \
+			m_pBackgroundColor = NULL; \
+		} \
+		\
+		if( m_pBackgroundGradient ) \
+		{ \
+			m_pBackgroundGradient->setStartColor(ccc3(tStart.r, tStart.g, tStart.b)); \
+			m_pBackgroundGradient->setEndColor(ccc3(tEnd.r, tEnd.g, tEnd.b)); \
+			m_pBackgroundGradient->setStartOpacity(tStart.a); \
+			m_pBackgroundGradient->setEndOpacity(tEnd.a); \
+			m_pBackgroundGradient->setVector(v); \
+		} \
+		else \
+		{ \
+			m_pBackgroundGradient = CGradientView::create(tStart, tEnd, v); \
+			m_pBackgroundGradient->setTouchEnabled(false); \
+			m_pBackgroundGradient->setZOrder(-128); \
+			m_pBackgroundGradient->setContentSize(m_obContentSize); \
+			addChild(m_pBackgroundGradient); \
+		} \
+		m_pBackgroundGradient->setPosition(CCPoint(m_obContentSize.width / 2, m_obContentSize.height / 2)); \
+	} \
+	\
+	void removeBackgroundGradient() \
+	{ \
+		if( m_pBackgroundGradient ) \
+		{ \
+			removeChild(m_pBackgroundGradient); \
+			m_pBackgroundGradient = NULL; \
+		} \
+	} \
+protected: \
+	CGradientView* m_pBackgroundGradient; \
+	\
+public: \
+	void setBackgroundOpacity(GLbyte opacity) \
+	{ \
+		if( m_pBackgroundImage ) \
+		{ \
+			m_pBackgroundImage->setOpacity(opacity); \
+			return; \
+		} \
+		\
+		if( m_pBackgroundColor ) \
+		{ \
+			m_pBackgroundColor->setOpacity(opacity); \
+			return; \
+		} \
+		\
+		if( m_pBackgroundGradient ) \
+		{ \
+			m_pBackgroundGradient->setOpacity(opacity);\
+			return; \
+		} \
+	}
 #endif //CC_WIDGET_BACKGROUND
 
 

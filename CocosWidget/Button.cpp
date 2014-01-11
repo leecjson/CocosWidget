@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,20 +43,23 @@ CButton::CButton()
 , m_bScale9Enabled(false)
 , m_tTextOffset(CCPointZero)
 , m_pLabel(NULL)
+, m_bCascadeTextSizeEnabled(false)
 {
 	setThisObject(this);
-	setCascadeColorEnabled(true);
 	setCascadeOpacityEnabled(true);
+
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+	setContentSize(CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE);
 }
 
 CButton::~CButton()
 {
-	
+	CC_SAFE_RELEASE(m_pLabel);
 }
 
 CButton* CButton::create()
 {
-	CButton *pRet = new CButton();
+	CButton* pRet = new CButton();
 	if( pRet && pRet->init() )
 	{
 		pRet->autorelease();
@@ -92,15 +95,15 @@ CButton* CButton::create(const char* pNormal, const char* pSelected, const char*
 
 bool CButton::init()
 {
-	setContentSize(CCSizeMake(100, 100));
-	setPosition(CCPointZero);
-	setAnchorPoint(CCPoint(0.5f, 0.5f));
-	return CCNode::init();
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+	setContentSize(CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE);
+
+	return true;
 }
 
 bool CButton::initWith9Sprite(const CCSize& tSize, const char* pNormal, const char* pSelected, const char* pDisabled)
 {
-	if( !pNormal || !strlen(pNormal) || !init()  )
+	if( !pNormal || !strlen(pNormal) || !init() )
 	{
 		return false;
 	}
@@ -129,12 +132,20 @@ bool CButton::initWithFile(const char* pNormal, const char* pSelected, const cha
 	return true;
 }
 
-void CButton::updateCascadeLabelContentSize(const CCSize& tOffsetSize)
+void CButton::setCascadeTextSizeEnabled(bool bEnabled, const CCSize& tPadding)
 {
-	if( m_bScale9Enabled && m_pLabel )
+	m_bCascadeTextSizeEnabled = bEnabled;
+	m_tCascadeTextSizePadding = tPadding;
+
+	if( bEnabled ) updateCascadeTextSize();
+}
+
+void CButton::updateCascadeTextSize()
+{
+	if( m_bCascadeTextSizeEnabled && m_bScale9Enabled && m_pLabel )
 	{
 		const CCSize& tTextSize = m_pLabel->getContentSize();
-		setContentSize(tTextSize + tOffsetSize);
+		setContentSize(tTextSize + m_tCascadeTextSizePadding);
 	}
 }
 
@@ -174,6 +185,8 @@ void CButton::setNormalSpriteFrame(CCSpriteFrame* pFrame)
 			addChild(m_pNormalImage);
 		}
 	}
+
+	updateCascadeTextSize();
 }
 
 void CButton::setSelectedSpriteFrame(CCSpriteFrame* pFrame)
@@ -211,6 +224,8 @@ void CButton::setSelectedSpriteFrame(CCSpriteFrame* pFrame)
 			addChild(m_pSelectedImage);
 		}
 	}
+
+	updateCascadeTextSize();
 }
 
 void CButton::setDisabledSpriteFrame(CCSpriteFrame* pFrame)
@@ -248,6 +263,8 @@ void CButton::setDisabledSpriteFrame(CCSpriteFrame* pFrame)
 			addChild(m_pDisabledImage);
 		}
 	}
+
+	updateCascadeTextSize();
 }
 
 void CButton::setNormalImage(const char* pFile)
@@ -319,6 +336,8 @@ void CButton::setNormalTexture(CCTexture2D *pTexture)
 			addChild(m_pNormalImage);
 		}
 	}
+
+	updateCascadeTextSize();
 }
 
 void CButton::setSelectedTexture(CCTexture2D *pTexture)
@@ -362,6 +381,8 @@ void CButton::setSelectedTexture(CCTexture2D *pTexture)
 			addChild(m_pSelectedImage);
 		}
 	}
+
+	updateCascadeTextSize();
 }
 
 void CButton::setDisabledTexture(CCTexture2D *pTexture)
@@ -405,6 +426,8 @@ void CButton::setDisabledTexture(CCTexture2D *pTexture)
 			addChild(m_pDisabledImage);
 		}
 	}
+
+	updateCascadeTextSize();
 }
 
 void CButton::setNormalSpriteFrameName(const char* pSpriteName)
@@ -463,7 +486,7 @@ CCNode* CButton::getDisabledImage()
 
 void CButton::setContentSize(const CCSize& contentSize)
 {
-	CCNode::setContentSize(contentSize);
+	CCNodeRGBA::setContentSize(contentSize);
 
 	if( m_pNormalImage )
 	{
@@ -498,11 +521,61 @@ void CButton::setContentSize(const CCSize& contentSize)
 	}
 }
 
+void CButton::setText(const char* pText)
+{
+	getLabel()->setString(pText);
+	updateCascadeTextSize();
+}
+
+const char* CButton::getText()
+{
+	return getLabel()->getString();
+}
+
+void CButton::setTextFontName(const char* pTextFontName)
+{
+	getLabel()->setFontName(pTextFontName);
+	updateCascadeTextSize();
+}
+
+const char* CButton::getTextFontName()
+{
+	return getLabel()->getFontName();
+}
+
+void CButton::setTextFontSize(float fTextFontSize)
+{
+	getLabel()->setFontSize(fTextFontSize);
+	updateCascadeTextSize();
+}
+
+float CButton::getTextFontSize()
+{
+	return getLabel()->getFontSize();
+}
+
+void CButton::setTextColor(const ccColor3B& color)
+{
+	getLabel()->setColor(color);
+}
+
+const ccColor3B& CButton::getTextColor()
+{
+	return getLabel()->getColor();
+}
+
+void CButton::initText(const char* pText, const char* pFontName, float fFontSize)
+{
+	getLabel()->initWithString(pText, pFontName, fFontSize);
+	updateCascadeTextSize();
+}
+
 CLabel* CButton::getLabel()
 {
-	if( !m_pLabel )
+	if(!m_pLabel)
 	{
 		m_pLabel = CLabel::create();
+		m_pLabel->retain();
 		m_pLabel->setFontSize(25);
 		m_pLabel->setPosition(CC_CENTER_POS(m_obContentSize));
 		m_pLabel->setZOrder(1);
@@ -580,7 +653,7 @@ void CButton::setLabelOffset(const CCPoint& tOffset)
 	}
 }
 
-CWidgetTouchModel CButton::onTouchBegan(CCTouch *pTouch)
+CWidgetTouchModel CButton::onTouchBegan(CCTouch* pTouch)
 {
 	CC_WIDGET_LONGCLICK_ONTOUCHBEGAN;
 
@@ -593,7 +666,7 @@ CWidgetTouchModel CButton::onTouchBegan(CCTouch *pTouch)
 	return eWidgetTouchTransient;
 }
 
-void CButton::onTouchMoved(CCTouch *pTouch, float fDuration)
+void CButton::onTouchMoved(CCTouch* pTouch, float fDuration)
 {
 	CC_WIDGET_LONGCLICK_ONTOUCHMOVED;
 
@@ -613,7 +686,7 @@ void CButton::onTouchMoved(CCTouch *pTouch, float fDuration)
 	}
 }
 
-void CButton::onTouchEnded(CCTouch *pTouch, float fDuration)
+void CButton::onTouchEnded(CCTouch* pTouch, float fDuration)
 {
 	CC_WIDGET_LONGCLICK_ONTOUCHENDED;
 
@@ -644,7 +717,7 @@ void CButton::onTouchEnded(CCTouch *pTouch, float fDuration)
 	}
 }
 
-void CButton::onTouchCancelled(CCTouch *pTouch, float fDuration)
+void CButton::onTouchCancelled(CCTouch* pTouch, float fDuration)
 {
 	CC_WIDGET_LONGCLICK_ONTOUCHCANCELLED;
 

@@ -2,7 +2,6 @@ class CGridPageViewPage : public CTableViewCell
 {
 	CGridPageViewPage();
 	virtual ~CGridPageViewPage();
-	CCArray* getGirdCells();
 };
 
 class CGridPageViewCell : public CTableViewCell
@@ -15,7 +14,6 @@ class CGridPageView : public CTableView, public CPageChangeableProtocol
 {
 	CGridPageView();
 	virtual ~CGridPageView();
-
 	static CGridPageView* create(const CCSize& tViewSize);
 
 	void setCountOfCell(unsigned int uCellsCount);

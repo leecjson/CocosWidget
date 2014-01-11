@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,96 +24,67 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
-#ifndef __CCWIDGET_PANEL_H__
-#define __CCWIDGET_PANEL_H__
-
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// 
-/////////////////////////////////////////////////////////////////////////////
+#ifndef __CCWIDGET_COLORVIEW_H__
+#define __CCWIDGET_COLORVIEW_H__
 
 #include "cocos2d.h"
-#include "WidgetMacros.h"
 #include "Widget.h"
+#include "WidgetMacros.h"
 #include "WidgetProtocol.h"
 
 NS_CC_WIDGET_BEGIN
 
 /**
- * class    : CPanel
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 面板控件定义
+ * class  : CColorView
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
-class CPanel : public CCNodeRGBA, public CWidget
-{
-public:
-	CPanel();
-	virtual ~CPanel();
-
-	// 初始化默认数据
-	virtual bool init();
-	// 当设置大小时，更新内容坐标
-	virtual void setContentSize(const CCSize& tContentSize);
-
-    virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
-    virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
-    virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
-    virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
-
-	static CPanel* create();
-	static CPanel* create(const CCSize& tContentSize);
-
-	CC_WIDGET_BACKGROUND;
-    
-protected:
-	// 被选中的控件
-	CWidget* m_pSelectedWidget;
-	// 子控件的触摸模式
-    CWidgetTouchModel m_eChildTouchModel;
-};
-
-/**
- * 类名 : CPanel
- * 作者 : cocos2d-x Xi'an-Lijunlin csdn_viva@foxmail.com
- * 邮箱 : csdn_viva@foxmail.com
- * 功能 : 带绘制颜色的面板容器
- */
-class CPanelColor : public CPanel, public CCBlendProtocol
+class CColorView 
+: public CCNodeRGBA
+, public CWidget
+, public CCBlendProtocol
+, public CClickableProtocol
+, public CLongClickableProtocol
 #ifdef EMSCRIPTEN
 , public CCGLBufferedNode
 #endif
 {
 public:
-	CPanelColor();
-	virtual ~CPanelColor();
-	static CPanelColor* create();
-	static CPanelColor* create(const ccColor4B& color);
-
+	CColorView();
+	virtual ~CColorView();
 	virtual bool init();
 	virtual bool initWithColor(const ccColor4B& color);
-	virtual void draw();
-    virtual void setContentSize(const CCSize & var);
-
+	static CColorView* create();
+	static CColorView* create(const ccColor4B& color);
+	
+	virtual void setContentSize(const CCSize& size);
+	virtual void setColor(const ccColor3B& color);
+	virtual void setOpacity(GLubyte opacity);
+	virtual void setCascadeOpacityEnabled(bool cascadeOpacityEnabled);
+	virtual void setCascadeColorEnabled(bool cascadeColorEnabled);
 	virtual GLubyte getOpacity();
 	virtual GLubyte getDisplayedOpacity();
-	virtual void setOpacity(GLubyte opacity);
-	virtual void updateDisplayedOpacity(GLubyte parentOpacity);
-	virtual bool isCascadeOpacityEnabled();
-	virtual void setCascadeOpacityEnabled(bool cascadeOpacityEnabled);
-
 	virtual const ccColor3B& getColor();
 	virtual const ccColor3B& getDisplayedColor();
-	virtual void setColor(const ccColor3B& color);
-	virtual void updateDisplayedColor(const ccColor3B& parentColor);
 	virtual bool isCascadeColorEnabled();
-	virtual void setCascadeColorEnabled(bool cascadeColorEnabled);
+	virtual bool isCascadeOpacityEnabled();
 
+public:
+	virtual CWidgetTouchModel onTouchBegan(CCTouch* pTouch);
+	virtual void onTouchMoved(CCTouch* pTouch, float fDuration);
+	virtual void onTouchEnded(CCTouch* pTouch, float fDuration);
+	virtual void onTouchCancelled(CCTouch* pTouch, float fDuration);
+
+	virtual void updateDisplayedOpacity(GLubyte parentOpacity);
+	virtual void updateDisplayedColor(const ccColor3B& parentColor);
 	virtual void setOpacityModifyRGB(bool bValue) {CC_UNUSED_PARAM(bValue);}
 	virtual bool isOpacityModifyRGB() { return false; }
-
+	virtual void draw();
 	virtual ccBlendFunc getBlendFunc(){ return m_tBlendFunc; }
 	virtual void setBlendFunc(ccBlendFunc tBlendFunc){ m_tBlendFunc = tBlendFunc; }
+
+	CC_WIDGET_LONGCLICK_SCHEDULE(CColorView);
 
 protected:
 	ccBlendFunc m_tBlendFunc;
@@ -126,4 +97,4 @@ protected:
 
 NS_CC_WIDGET_END
 
-#endif //__CCWIDGET_PANEL_H__
+#endif //__CCWIDGET_COLORVIEW_H__

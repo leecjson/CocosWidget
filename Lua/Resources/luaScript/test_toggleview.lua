@@ -32,7 +32,7 @@ local function createCToggleViewBasicTest()
 	m_pText:setPosition(CCPoint(380, 400));
 	m_pText:setFontSize(35.0);
 	m_pText:setString("none");
-	p_base_scene.p_layout:addChild(m_pText);
+	p_base_scene.p_window:addChild(m_pText);
 	
 	local pToggle = CToggleView:create("toggle1_2.png", "toggle1_1.png");
 	pToggle:setOnClickScriptHandler(function(p_sender)
@@ -43,7 +43,7 @@ local function createCToggleViewBasicTest()
 		end
 	end);
 	pToggle:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pToggle);
+	p_base_scene.p_window:addChild(pToggle);
 
 	
 	return p_base_scene.p_scene;
@@ -87,26 +87,26 @@ local function createCToggleViewGroupTest()
 	pToggle1:setOnCheckScriptHandler(on_click);
 	pToggle1:setPosition(CCPoint(200, 450));
 	pToggle1:setExclusion(1);
-	p_base_scene.p_layout:addChild(pToggle1);
+	p_base_scene.p_window:addChild(pToggle1);
 
 	local pToggle2 = CToggleView:create("toggle1_2.png", "toggle1_1.png");
 	pToggle2:setOnCheckScriptHandler(on_click);
 	pToggle2:setPosition(CCPoint(200, 350));
 	pToggle2:setExclusion(1);
-	p_base_scene.p_layout:addChild(pToggle2);
+	p_base_scene.p_window:addChild(pToggle2);
 
 	local pToggle3 = CToggleView:create("toggle1_2.png", "toggle1_1.png");
 	pToggle3:setOnCheckScriptHandler(on_click);
 	pToggle3:setPosition(CCPoint(200, 250));
 	pToggle3:setExclusion(1);
-	p_base_scene.p_layout:addChild(pToggle3);
+	p_base_scene.p_window:addChild(pToggle3);
 
 	local pText1 = CLabel:create();
 	pText1:setAnchorPoint(CCPoint(0, 0.5));
 	pText1:setPosition(CCPoint(350, 450));
 	pText1:setFontSize(35.0);
 	pText1:setString("none");
-	p_base_scene.p_layout:addChild(pText1);
+	p_base_scene.p_window:addChild(pText1);
 	pToggle1:setUserObject(pText1);
 
 	local pText2 = CLabel:create();
@@ -114,7 +114,7 @@ local function createCToggleViewGroupTest()
 	pText2:setPosition(CCPoint(350, 350));
 	pText2:setFontSize(35.0);
 	pText2:setString("none");
-	p_base_scene.p_layout:addChild(pText2);
+	p_base_scene.p_window:addChild(pText2);
 	pToggle2:setUserObject(pText2);
 
 	local pText3 = CLabel:create();
@@ -122,18 +122,18 @@ local function createCToggleViewGroupTest()
 	pText3:setPosition(CCPoint(350, 250));
 	pText3:setFontSize(35.0);
 	pText3:setString("none");
-	p_base_scene.p_layout:addChild(pText3);
+	p_base_scene.p_window:addChild(pText3);
 	pToggle3:setUserObject(pText3);
 
 	local pToggle4 = CToggleView:create("toggle1_2.png", "toggle1_1.png");
 	pToggle4:setPosition(CCPoint(700, 250));
 	pToggle4:setExclusion(2);
-	p_base_scene.p_layout:addChild(pToggle4);
+	p_base_scene.p_window:addChild(pToggle4);
 
 	local pToggle5 = CToggleView:create("toggle1_2.png", "toggle1_1.png");
 	pToggle5:setPosition(CCPoint(700, 350));
 	pToggle5:setExclusion(2);
-	p_base_scene.p_layout:addChild(pToggle5);
+	p_base_scene.p_window:addChild(pToggle5);
 	
 	return p_base_scene.p_scene;
 end

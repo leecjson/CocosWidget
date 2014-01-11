@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,9 +43,10 @@ CProgressBar::CProgressBar()
 , m_tProgressSize(CCSizeZero)
 , m_tCenterPoint(CCPointZero)
 , m_pBackgroundImage(NULL)
+, m_pBackgroundColor(NULL)
+, m_pBackgroundGradient(NULL)
 {
-	setCascadeColorEnabled(true);
-	setCascadeOpacityEnabled(true);
+	
 }
 
 CProgressBar::~CProgressBar()
@@ -79,7 +80,12 @@ CProgressBar* CProgressBar::create(const char* pProgress)
 
 bool CProgressBar::init()
 {
-	setAnchorPoint(CCPoint(0.5f, 0.5f));
+	setCascadeColorEnabled(true);
+	setCascadeOpacityEnabled(true);
+
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+	setContentSize(CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE);
+
 	return true;
 }
 
@@ -103,6 +109,7 @@ void CProgressBar::changeValueAndExecuteEvent(int nValue, bool bExeEvent)
 #if 1
 	CCAssert(m_nMinValue >= 0 && m_nMaxValue >= 0 && m_nMinValue < m_nMaxValue, "err");
 #endif
+	int nOldValue = m_nValue;
 
 	nValue = MAX(nValue, m_nMinValue);
 	nValue = MIN(nValue, m_nMaxValue);
@@ -142,7 +149,7 @@ void CProgressBar::changeValueAndExecuteEvent(int nValue, bool bExeEvent)
 	}
 	m_pProgressSprite->setTextureRect(tScissorRect);
 
-	if( bExeEvent )
+	if( bExeEvent && nOldValue != nValue )
 	{
 		executeValueChangedHandler(this, nValue);
 	}

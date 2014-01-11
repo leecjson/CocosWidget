@@ -28,11 +28,11 @@ local function createCLabelBasicTest()
 	
 	local pText1 = CLabel:create("Hello CCTK And cocoswidget", "", 30.0);
 	pText1:setPosition(CCPoint(480, 450));
-	p_base_scene.p_layout:addChild(pText1);
+	p_base_scene.p_window:addChild(pText1);
 	
 	local pText3 = CLabel:create("none", "", 30.0);
 	pText3:setPosition(CCPoint(750, 380));
-	p_base_scene.p_layout:addChild(pText3);
+	p_base_scene.p_window:addChild(pText3);
 
 	local pText2 = CLabel:create("Click me test event", "", 30.0);
 	pText2:setTouchEnabled(true);
@@ -63,7 +63,7 @@ local function createCLabelBasicTest()
 	pText2:setOnTouchCancelledScriptHandler(on_touch_end);
 	pText2:setColor(ccc3(0, 255, 0));
 	pText2:setPosition(CCPoint(480, 380));
-	p_base_scene.p_layout:addChild(pText2);
+	p_base_scene.p_window:addChild(pText2);
 	
 	return p_base_scene.p_scene;
 end
@@ -113,7 +113,7 @@ local function createCLabelAtlasTest()
 	
 	pText:setOnTouchEndedScriptHandler(on_touch_end);
 	pText:setOnTouchCancelledScriptHandler(on_touch_end);
-	p_base_scene.p_layout:addChild(pText);
+	p_base_scene.p_window:addChild(pText);
 
 	return p_base_scene.p_scene;
 end
@@ -143,7 +143,7 @@ local function createCLabelBMFontTest()
 	
 	local pText = CLabelBMFont:create("hello cocos2d-x and cocoswidget", "arial-unicode-26.fnt");
 	pText:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pText);
+	p_base_scene.p_window:addChild(pText);
 
 	return p_base_scene.p_scene;
 end

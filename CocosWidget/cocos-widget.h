@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,8 +31,48 @@ THE SOFTWARE.
 // version for Cocos2d-x 2.x
 
 #include "WidgetMacros.h"
-#include "WidgetLayout.h"
+
+NS_CC_WIDGET_BEGIN
+
+class CWidget;
+class CWidgetWindow;
+class CButton;
+class CCheckBox;
+class CColorView;
+class CControlView;
+class CExpandableNode;
+class CExpanedableListView;
+class CGradientView;
+class CGridPageViewPage;
+class CGridPageViewCell;
+class GridPageView;
+class CGridViewCell;
+class CGridView;
+class CImageView;
+class CImageViewScale9;
+class CLabel;
+class CLabelAtlas;
+class CLabelBMFont;
+class CLayout;
+class CListView;
+class CPageViewCell;
+class CPageView;
+class CProgressBar;
+class CScale9Sprite;
+class CScrollViewContainer;
+class CScrollView;
+class CSlider;
+class CTableViewCell;
+class CTableView;
+class CTextArea;
+class CTextRich;
+class CToggleView;
+
+NS_CC_WIDGET_END
+
+#include "WidgetWindow.h"
 #include "Widget.h"
+#include "WidgetProtocol.h"
 #include "Button.h"
 #include "ToggleView.h"
 #include "Label.h"
@@ -40,7 +80,7 @@ THE SOFTWARE.
 #include "LabelBMFont.h"
 #include "ScrollView.h"
 #include "TableView.h"
-#include "Panel.h"
+#include "Layout.h"
 #include "GridPageView.h"
 #include "GridView.h"
 #include "Scale9Sprite.h"
@@ -50,7 +90,12 @@ THE SOFTWARE.
 #include "ListView.h"
 #include "CheckBox.h"
 #include "ControlView.h"
+#include "ColorView.h"
+#include "GradientView.h"
 #include "ProgressBar.h"
 #include "Slider.h"
+#include "TextArea.h"
+#include "TextRich.h"
+#include "ExpandableListView.h"
 
 #endif //__CCWIDGET_H__

@@ -1,7 +1,8 @@
 class CImageViewScale9 : public CScale9Sprite, public CWidget, public CClickableProtocol, public CLongClickableProtocol
 {
 	CImageViewScale9();
-	
+	virtual bool init();
+	static CImageViewScale9* create(const CCSize& size, const char* file);
 	static CImageViewScale9* create(const char* file, CCRect rect,  CCRect capInsets);
 	static CImageViewScale9* create(const char* file, CCRect rect);
 	static CImageViewScale9* create(CCRect capInsets, const char* file);
@@ -23,6 +24,8 @@ class CImageViewScale9 : public CScale9Sprite, public CWidget, public CClickable
 	void setUserTag(int nTag);
 	const char* getId();
 	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
 	virtual bool isEnabled();
 	virtual void setEnabled(bool bEnabled);
 	virtual bool isTouchEnabled();

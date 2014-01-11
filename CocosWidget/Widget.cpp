@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,7 +25,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
 #include "Widget.h"
-#include "WidgetLayout.h"
+#include "WidgetWindow.h"
 #if USING_LUA
 #include "CCLuaEngine.h"
 #endif
@@ -35,6 +35,7 @@ NS_CC_WIDGET_BEGIN
 
 CWidget::CWidget()
 : m_strId("")
+, m_strDescription("")
 , m_pThisObject(NULL)
 , m_bEnabled(true)
 , m_bTouchEnabled(true)
@@ -91,6 +92,16 @@ const char* CWidget::getId()
 void CWidget::setId(const char* id)
 {
 	m_strId = id;
+}
+
+const char* CWidget::getDescription()
+{
+	return m_strDescription.c_str();
+}
+
+void CWidget::setDescription(const char* description)
+{
+	m_strDescription = description;
 }
 
 bool CWidget::isEnabled()
@@ -395,10 +406,10 @@ void CWidget::setLongClickTouchHandlerWidget(CCNode* pWidget, int id)
 {
 	for(CCNode* pNode = (CCNode*)m_pThisObject; pNode != NULL; pNode = pNode->getParent())
 	{
-		CWidgetLayout* pWidgetLayoutParent = dynamic_cast<CWidgetLayout*>(pNode);
-		if( pWidgetLayoutParent != NULL )
+		CWidgetWindow* pWidgetWindow = dynamic_cast<CWidgetWindow*>(pNode);
+		if( pWidgetWindow != NULL )
 		{
-			pWidgetLayoutParent->setLongClickTouchHandlerWidget(pWidget, id);
+			pWidgetWindow->setLongClickTouchHandlerWidget(pWidget, id);
 			return;
 		}
 	}

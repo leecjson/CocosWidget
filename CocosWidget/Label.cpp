@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,7 +31,6 @@ NS_CC_WIDGET_BEGIN
 CLabel::CLabel()
 {
 	setThisObject(this);
-	m_bTouchEnabled = false;
 }
 
 CLabel::~CLabel()
@@ -41,7 +40,7 @@ CLabel::~CLabel()
 
 CLabel* CLabel::create()
 {
-    CLabel * pRet = new CLabel();
+    CLabel* pRet = new CLabel();
     if (pRet && pRet->init())
     {
 		pRet->autorelease();
@@ -56,6 +55,8 @@ CLabel* CLabel::create(const char *pString, const char *pFontName, float fFontSi
 	CLabel * pRet = new CLabel();
 	if (pRet && pRet->initWithString(pString, pFontName, fFontSize))
     {
+		pRet->setTouchEnabled(false);
+		pRet->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
 		pRet->autorelease();
 		return pRet;
     }
@@ -69,6 +70,8 @@ CLabel* CLabel::create(const char *pString, const char *pFontName, float fFontSi
 	CLabel * pRet = new CLabel();
 	if (pRet && pRet->initWithString(pString, pFontName, fFontSize, tDimensions, hAlignment))
     {
+		pRet->setTouchEnabled(false);
+		pRet->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
 		pRet->autorelease();
 		return pRet;
     }
@@ -82,11 +85,21 @@ CLabel* CLabel::create(const char *pString, const char *pFontName, float fFontSi
 	CLabel * pRet = new CLabel();
 	if (pRet && pRet->initWithString(pString, pFontName, fFontSize, tDimensions, hAlignment, vAlignment))
     {
+		pRet->setTouchEnabled(false);
+		pRet->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
 		pRet->autorelease();
 		return pRet;
     }
 	CC_SAFE_DELETE(pRet);
 	return NULL;
+}
+
+bool CLabel::init()
+{
+	setTouchEnabled(false);
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+
+	return CCLabelTTF::init();
 }
 
 CWidgetTouchModel CLabel::onTouchBegan(CCTouch* pTouch)

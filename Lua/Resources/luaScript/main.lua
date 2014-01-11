@@ -6,13 +6,16 @@ require "test_scrollview"
 require "test_tableview"
 require "test_gridpageview"
 require "test_gridview"
-require "test_panel"
+require "test_layout"
 require "test_pageview"
 require "test_listview"
 require "test_checkbox"
 require "test_controlview"
 require "test_progressbar"
 require "test_slider"
+require "test_textrich"
+require "test_expandablelistview"
+require "test_draworder"
 
 local _tab_menu_items = {
 	"Button Test",
@@ -22,13 +25,16 @@ local _tab_menu_items = {
 	"TableView Test",
 	"PageGridView Test",
 	"GridView Test",
-	"Panel Test",
+	"Layout Test",
 	"PageView Test",
 	"ListView Test",
 	"CheckBox Test",
 	"ControlView Test",
 	"ProgressBar Test",
-	"Slider Test"
+	"Slider Test",
+	"TextRich Test",
+	"ExpandableListView Test",
+	"DrawOrder Dispatch Test"
 }
 
 function main()
@@ -36,9 +42,9 @@ function main()
 	local p_scene = CCScene:create();
 	_p_director:runWithScene(p_scene);
 	
-	local p_layout = CWidgetLayout:create();
-	p_layout:setMultiTouchEnabled(false);
-	p_scene:addChild(p_layout);
+	local p_window = CWidgetWindow:create();
+	p_window:setMultiTouchEnabled(false);
+	p_scene:addChild(p_window);
 	
 	local function on_table_view_item_clicked(p_sender)
 		local target = tolua.cast(p_sender, "CLabel");
@@ -59,7 +65,7 @@ function main()
 		elseif idx == 7 then
 			push_CGridView_test_scene();
 		elseif idx == 8 then
-			push_CPanel_test_scene();
+			push_CLayout_test_scene();
 		elseif idx == 9 then
 			push_CPageView_test_scene();
 		elseif idx == 10 then
@@ -72,6 +78,12 @@ function main()
 			push_CProgressBar_test_scene();
 		elseif idx == 14 then
 			push_CSlider_test_scene();
+		elseif idx == 15 then
+			push_CTextRich_test_scene();
+		elseif idx == 16 then
+			push_CExpandableListView_test_scene();
+		elseif idx == 17 then
+			push_DrawOrderTest_test_scene();
 		end
 	end
 	
@@ -129,7 +141,7 @@ function main()
 	p_table_view:setBounceable(true);
 	p_table_view:setDirection(eScrollViewDirectionVertical);
 	p_table_view:setPosition(CCPoint(480, 320));
-	p_layout:addChild(p_table_view);
+	p_window:addChild(p_table_view);
 	p_table_view:reloadData();
 	
 

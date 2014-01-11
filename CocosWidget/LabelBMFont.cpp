@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,7 +31,6 @@ NS_CC_WIDGET_BEGIN
 CLabelBMFont::CLabelBMFont()
 {
 	setThisObject(this);
-	m_bTouchEnabled = false;
 }
 
 CLabelBMFont::~CLabelBMFont()
@@ -67,9 +66,19 @@ void CLabelBMFont::onTouchCancelled(CCTouch *pTouch, float fDuration)
 	CC_WIDGET_LONGCLICK_ONTOUCHCANCELLED;
 }
 
+bool CLabelBMFont::init()
+{
+	bool bRet = CCSpriteBatchNode::init();
+
+	setTouchEnabled(false);
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+
+	return bRet;
+}
+
 CLabelBMFont* CLabelBMFont::create()
 {
-    CLabelBMFont * pRet = new CLabelBMFont();
+    CLabelBMFont* pRet = new CLabelBMFont();
     if( pRet && pRet->init() )
     {
         pRet->autorelease();
@@ -97,8 +106,10 @@ CLabelBMFont * CLabelBMFont::create(const char *pString, const char *fntFile)
 CLabelBMFont *CLabelBMFont::create(const char *pString, const char *fntFile, float width/* = kCCLabelAutomaticWidth*/, CCTextAlignment alignment/* = kCCTextAlignmentLeft*/, CCPoint imageOffset/* = CCPointZero*/)
 {
     CLabelBMFont *pRet = new CLabelBMFont();
-    if(pRet && pRet->initWithString(pString, fntFile, width, alignment, imageOffset))
+    if( pRet && pRet->initWithString(pString, fntFile, width, alignment, imageOffset) )
     {
+		pRet->setTouchEnabled(false);
+		pRet->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pRet->autorelease();
         return pRet;
     }

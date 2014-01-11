@@ -54,7 +54,7 @@ local function createCPageViewBasicTest()
 	m_pText:setPosition(CCPoint(800, 320));
 	m_pText:setFontSize(35.0);
 	m_pText:setString("none");
-	p_base_scene.p_layout:addChild(m_pText);
+	p_base_scene.p_window:addChild(m_pText);
 	
 	local function on_page_changed(p_sender, idx)
 		m_pText:setString(tostring(idx));
@@ -66,7 +66,7 @@ local function createCPageViewBasicTest()
 	pPageView:setDataSourceAdapterScriptHandler(data_source);
 	pPageView:setOnPageChangedScriptHandler(on_page_changed);
 	pPageView:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pPageView);
+	p_base_scene.p_window:addChild(pPageView);
 	pPageView:reloadData();
 	
 	return p_base_scene.p_scene;
@@ -101,7 +101,7 @@ local function createCPageViewVerticalTest()
 	m_pText:setPosition(CCPoint(800, 320));
 	m_pText:setFontSize(35.0);
 	m_pText:setString("none");
-	p_base_scene.p_layout:addChild(m_pText);
+	p_base_scene.p_window:addChild(m_pText);
 	
 	local function data_source(p_convertview, idx)
 		local pPageCell = tolua.cast(p_convertview, "CPageViewCell");
@@ -136,7 +136,7 @@ local function createCPageViewVerticalTest()
 	pPageView:setOnPageChangedScriptHandler(on_page_changed);
 	pPageView:setPosition(CCPoint(480, 320));
 	pPageView:setDirection(eScrollViewDirectionVertical);
-	p_base_scene.p_layout:addChild(pPageView);
+	p_base_scene.p_window:addChild(pPageView);
 	pPageView:reloadData();
 
 	return p_base_scene.p_scene;

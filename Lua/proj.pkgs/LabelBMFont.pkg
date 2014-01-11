@@ -2,8 +2,8 @@ class CLabelBMFont : public CCLabelBMFont, public CWidget, public CClickableProt
 {
 	CLabelBMFont();
 	virtual ~CLabelBMFont();
-	
-    static CLabelBMFont* create(const char *pString, const char *fntFile, float width, CCTextAlignment alignment, CCPoint imageOffset);
+	virtual bool init();
+	static CLabelBMFont* create(const char *pString, const char *fntFile, float width, CCTextAlignment alignment, CCPoint imageOffset);
 	static CLabelBMFont* create(const char *pString, const char *fntFile, float width, CCTextAlignment alignment);
 	static CLabelBMFont* create(const char *pString, const char *fntFile, float width);
 	static CLabelBMFont* create(const char *pString, const char *fntFile);
@@ -18,6 +18,8 @@ class CLabelBMFont : public CCLabelBMFont, public CWidget, public CClickableProt
 	void setUserTag(int nTag);
 	const char* getId();
 	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
 	virtual bool isEnabled();
 	virtual void setEnabled(bool bEnabled);
 	virtual bool isTouchEnabled();

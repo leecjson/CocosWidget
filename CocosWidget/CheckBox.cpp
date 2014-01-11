@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,6 +39,9 @@ CCheckBox::CCheckBox()
 	setThisObject(this);
 	setCascadeColorEnabled(true);
 	setCascadeOpacityEnabled(true);
+
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+	setContentSize(CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE);
 }
 
 CCheckBox::~CCheckBox()
@@ -60,8 +63,9 @@ CCheckBox* CCheckBox::create()
 
 bool CCheckBox::init()
 {
-	setContentSize(CCSize(100, 100));
-	setAnchorPoint(CCPoint(0.5f, 0.5f));
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+	setContentSize(CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE);
+
 	return true;
 }
 
@@ -80,7 +84,7 @@ void CCheckBox::setContentSize(const CCSize& tContentSize)
 	SAVE_SET_CENTER(m_pDisabledChecked, m_obContentSize);
 }
 
-CWidgetTouchModel CCheckBox::onTouchBegan(CCTouch *pTouch)
+CWidgetTouchModel CCheckBox::onTouchBegan(CCTouch* pTouch)
 {
 	CC_WIDGET_LONGCLICK_ONTOUCHBEGAN;
 
@@ -104,7 +108,7 @@ CWidgetTouchModel CCheckBox::onTouchBegan(CCTouch *pTouch)
 	return eWidgetTouchTransient;
 }
 
-void CCheckBox::onTouchMoved(CCTouch *pTouch, float fDuration)
+void CCheckBox::onTouchMoved(CCTouch* pTouch, float fDuration)
 {
 	CC_WIDGET_LONGCLICK_ONTOUCHMOVED;
 
@@ -151,7 +155,7 @@ void CCheckBox::onTouchMoved(CCTouch *pTouch, float fDuration)
 	}
 }
 
-void CCheckBox::onTouchEnded(CCTouch *pTouch, float fDuration)
+void CCheckBox::onTouchEnded(CCTouch* pTouch, float fDuration)
 {
 	CC_WIDGET_LONGCLICK_ONTOUCHENDED;
 
@@ -187,7 +191,7 @@ void CCheckBox::onTouchEnded(CCTouch *pTouch, float fDuration)
 	}
 }
 
-void CCheckBox::onTouchCancelled(CCTouch *pTouch, float fDuration)
+void CCheckBox::onTouchCancelled(CCTouch* pTouch, float fDuration)
 {
 	CC_WIDGET_LONGCLICK_ONTOUCHCANCELLED;
 
@@ -506,7 +510,7 @@ void CCheckBox::setDisabledCheckedSpriteFrame(CCSpriteFrame* pFrame)
 	}
 }
 
-void CCheckBox::setNormalTexture(CCTexture2D *pTexture)
+void CCheckBox::setNormalTexture(CCTexture2D* pTexture)
 {
 	if( m_pNormal )
 	{
@@ -527,7 +531,7 @@ void CCheckBox::setNormalTexture(CCTexture2D *pTexture)
 	m_pNormal->setPosition(CCPoint(m_obContentSize.width/2, m_obContentSize.height/2));
 }
 
-void CCheckBox::setNormalPressTexture(CCTexture2D *pTexture)
+void CCheckBox::setNormalPressTexture(CCTexture2D* pTexture)
 {
 	if( m_pNormalPress )
 	{
@@ -546,7 +550,7 @@ void CCheckBox::setNormalPressTexture(CCTexture2D *pTexture)
 	m_pNormalPress->setPosition(CCPoint(m_obContentSize.width/2, m_obContentSize.height/2));
 }
 
-void CCheckBox::setCheckedTexture(CCTexture2D *pTexture)
+void CCheckBox::setCheckedTexture(CCTexture2D* pTexture)
 {
 	if( m_pChecked )
 	{
@@ -565,7 +569,7 @@ void CCheckBox::setCheckedTexture(CCTexture2D *pTexture)
 	m_pChecked->setPosition(CCPoint(m_obContentSize.width/2, m_obContentSize.height/2));
 }
 
-void CCheckBox::setCheckedPressTexture(CCTexture2D *pTexture)
+void CCheckBox::setCheckedPressTexture(CCTexture2D* pTexture)
 {
 	if( m_pCheckedPress )
 	{
@@ -584,7 +588,7 @@ void CCheckBox::setCheckedPressTexture(CCTexture2D *pTexture)
 	m_pCheckedPress->setPosition(CCPoint(m_obContentSize.width/2, m_obContentSize.height/2));
 }
 
-void CCheckBox::setDisabledNormalTexture(CCTexture2D *pTexture)
+void CCheckBox::setDisabledNormalTexture(CCTexture2D* pTexture)
 {
 	if( m_pDisabledNormal )
 	{
@@ -603,7 +607,7 @@ void CCheckBox::setDisabledNormalTexture(CCTexture2D *pTexture)
 	m_pDisabledNormal->setPosition(CCPoint(m_obContentSize.width/2, m_obContentSize.height/2));
 }
 
-void CCheckBox::setDisabledCheckedTexture(CCTexture2D *pTexture)
+void CCheckBox::setDisabledCheckedTexture(CCTexture2D* pTexture)
 {
 	if( m_pDisabledChecked )
 	{

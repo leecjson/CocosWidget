@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,11 +27,6 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_SLIDER_H__
 #define __CCWIDGET_SLIDER_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// 
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
@@ -40,34 +35,31 @@ THE SOFTWARE.
 NS_CC_WIDGET_BEGIN
 
 /**
- * class    : CSlider
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 滑动块控件定义
+ * class  : CSlider
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CSlider : public CProgressBar, public CWidget
 {
 public:
 	CSlider();
 	virtual ~CSlider();
-
-	// 通过滑动块图片，进度条图片路径初始化
 	virtual bool initWithSlider(const char* pSlider, const char* pProgress);
-	// 当设置大小时更新内容
+	static CSlider* create();
+	static CSlider* create(const char* pSlider, const char* pProgress);
+
 	virtual void setContentSize(const CCSize& tSize);
-
-	virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
-	virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
-	virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
-	virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
-
 	virtual void setSliderImage(const char* pFile);
 	virtual void setSliderTexture(CCTexture2D* pTexture);
 	virtual void setSliderSpriteFrame(CCSpriteFrame* pFrame);
 	virtual void setSliderSpriteFrameName(const char* pSpriteName);
 
-	static CSlider* create();
-	static CSlider* create(const char* pSlider, const char* pProgress);
+public:
+	virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
+	virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
+	virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
+	virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
 
 protected:
 	int valueFromPoint(const CCPoint& tPoint);

@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,8 +31,6 @@ NS_CC_WIDGET_BEGIN
 CLabelAtlas::CLabelAtlas()
 {
 	setThisObject(this);
-	m_bTouchEnabled = false;
-	setAnchorPoint(CCPoint(0.5f, 0.5f));
 }
 
 CLabelAtlas::~CLabelAtlas()
@@ -40,11 +38,13 @@ CLabelAtlas::~CLabelAtlas()
 	
 }
 
-CLabelAtlas* CLabelAtlas::create(const char *pString, const char *charMapFile, unsigned int itemWidth, int unsigned itemHeight, unsigned int startCharMap)
+CLabelAtlas* CLabelAtlas::create(const char* pString, const char* charMapFile, unsigned int itemWidth, int unsigned itemHeight, unsigned int startCharMap)
 {
     CLabelAtlas *pRet = new CLabelAtlas();
     if( pRet && pRet->initWithString(pString, charMapFile, itemWidth, itemHeight, startCharMap) )
     {
+		pRet->setTouchEnabled(false);
+		pRet->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pRet->autorelease();
         return pRet;
     }
@@ -52,11 +52,13 @@ CLabelAtlas* CLabelAtlas::create(const char *pString, const char *charMapFile, u
     return NULL;
 }
 
-CLabelAtlas* CLabelAtlas::create(const char *pString, const char *fntFile)
+CLabelAtlas* CLabelAtlas::create(const char* pString, const char* fntFile)
 {    
     CLabelAtlas *pRet = new CLabelAtlas();
     if( pRet && pRet->initWithString(pString, fntFile) )
     {
+		pRet->setTouchEnabled(false);
+		pRet->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
 		pRet->autorelease();
         return pRet;
     }
@@ -64,19 +66,29 @@ CLabelAtlas* CLabelAtlas::create(const char *pString, const char *fntFile)
     return pRet;
 }
 
-CWidgetTouchModel CLabelAtlas::onTouchBegan(CCTouch *pTouch)
+bool CLabelAtlas::init()
+{
+	bool bRet = CCAtlasNode::init();
+
+	setTouchEnabled(false);
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+
+	return bRet;
+}
+
+CWidgetTouchModel CLabelAtlas::onTouchBegan(CCTouch* pTouch)
 {
 	CC_WIDGET_LONGCLICK_ONTOUCHBEGAN
 
 	return eWidgetTouchTransient;
 }
 
-void CLabelAtlas::onTouchMoved(CCTouch *pTouch, float fDuration)
+void CLabelAtlas::onTouchMoved(CCTouch* pTouch, float fDuration)
 {
-	CC_WIDGET_LONGCLICK_ONTOUCHMOVED;
+	CC_WIDGET_LONGCLICK_ONTOUCHMOVED
 }
 
-void CLabelAtlas::onTouchEnded(CCTouch *pTouch, float fDuration)
+void CLabelAtlas::onTouchEnded(CCTouch* pTouch, float fDuration)
 {
 	CC_WIDGET_LONGCLICK_ONTOUCHENDED
 
@@ -87,9 +99,9 @@ void CLabelAtlas::onTouchEnded(CCTouch *pTouch, float fDuration)
 	}
 }
 
-void CLabelAtlas::onTouchCancelled(CCTouch *pTouch, float fDuration)
+void CLabelAtlas::onTouchCancelled(CCTouch* pTouch, float fDuration)
 {
-	CC_WIDGET_LONGCLICK_ONTOUCHCANCELLED;
+	CC_WIDGET_LONGCLICK_ONTOUCHCANCELLED
 }
 
 

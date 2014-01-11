@@ -35,7 +35,7 @@ local function createCControlViewViewBasicTest()
 
 	m_pIcon = CCSprite:create("icon.png");
 	m_pIcon:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(m_pIcon);
+	p_base_scene.p_window:addChild(m_pIcon);
 
 	local pView = CControlView:create("control_baseboard.png", "control_joystick.png");
 	pView:setPosition(CCPoint(100, 100));
@@ -44,7 +44,7 @@ local function createCControlViewViewBasicTest()
 	pView:setAnchorPoint(ccp(0,0));
 	pView:setScale(1.5);
 	pView:setOpacity(200);
-	p_base_scene.p_layout:addChild(pView);
+	p_base_scene.p_window:addChild(pView);
 
 	local pView2 = CControlView:create();
 	pView2:setBaseBoardImage("control_baseboard.png");
@@ -54,7 +54,7 @@ local function createCControlViewViewBasicTest()
 	pView2:setAnchorPoint(CCPoint(1, 0));
 	pView2:setScale(1.5);
 	pView2:setOpacity(200);
-	p_base_scene.p_layout:addChild(pView2);
+	p_base_scene.p_window:addChild(pView2);
 
 	
 	return p_base_scene.p_scene;

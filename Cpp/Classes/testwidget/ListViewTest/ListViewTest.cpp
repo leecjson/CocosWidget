@@ -48,14 +48,14 @@ bool CListViewBasicTest::init()
 	m_pListView->setBackgroundImage("background.png");
 	m_pListView->setPosition(CCPoint(480, 320));
 	m_pListView->setDirection(eScrollViewDirectionVertical);
-	m_pLayout->addChild(m_pListView);
+	m_pWindow->addChild(m_pListView);
 
 	CButton* pButton = CButton::createWith9Sprite(CCSize(150, 50),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton->setPosition(CCPoint(150, 320));
 	pButton->setOnClickListener(this, ccw_click_selector(CListViewBasicTest::onClick));
-	pButton->getLabel()->initWithString("Add", "", 30);
-	m_pLayout->addChild(pButton);
+	pButton->initText("Add", "", 30);
+	m_pWindow->addChild(pButton);
 
 	return true;
 }
@@ -67,16 +67,20 @@ void CListViewBasicTest::onClick(CCObject* pSender)
 		tagItem& tItem = m_lDatas.front();
 		CCNode* pNode = CCNode::create();
 		pNode->setContentSize(tItem.tSize);
-		CPanelColor* pPanel = CPanelColor::create(ccc4(tItem.tColor.r,
+
+		CLayout* pLayout = CLayout::create();
+		pLayout->setBackgroundColor(ccc4(tItem.tColor.r,
 			tItem.tColor.g,
 			tItem.tColor.b,
 			255));
-		pPanel->ignoreAnchorPointForPosition(false);
-		pPanel->setAnchorPoint(CCPoint(0.5f, 0.5f));
-		pPanel->setContentSize(CCSize(tItem.tSize.width - 4, tItem.tSize.height - 2));
-		pPanel->setPosition(CCPoint(tItem.tSize.width/2, tItem.tSize.height/2));
-		pNode->addChild(pPanel);
+
+		pLayout->ignoreAnchorPointForPosition(false);
+		pLayout->setAnchorPoint(CCPoint(0.5f, 0.5f));
+		pLayout->setContentSize(CCSize(tItem.tSize.width - 4, tItem.tSize.height - 2));
+		pLayout->setPosition(CCPoint(tItem.tSize.width/2, tItem.tSize.height/2));
+		pNode->addChild(pLayout);
 		m_pListView->insertNodeAtLast(pNode);
+		m_pListView->reloadData();
 		m_lDatas.pop_front();
 	}
 }
@@ -93,39 +97,39 @@ bool CListViewOperateTest::init()
 	m_pListView->setBackgroundImage("background.png");
 	m_pListView->setPosition(CCPoint(480, 320));
 	m_pListView->setDirection(eScrollViewDirectionVertical);
-	m_pLayout->addChild(m_pListView);
+	m_pWindow->addChild(m_pListView);
 
 	CButton* pButton = CButton::createWith9Sprite(CCSize(150, 50),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton->setPosition(CCPoint(150, 450));
 	pButton->setUserTag(1);
 	pButton->setOnClickListener(this, ccw_click_selector(CListViewOperateTest::onClick));
-	pButton->getLabel()->initWithString("Add Last", "", 30);
-	m_pLayout->addChild(pButton);
+	pButton->initText("Add Last", "", 30);
+	m_pWindow->addChild(pButton);
 
 	CButton* pButton2 = CButton::createWith9Sprite(CCSize(150, 50),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton2->setPosition(CCPoint(150, 380));
 	pButton2->setUserTag(2);
 	pButton2->setOnClickListener(this, ccw_click_selector(CListViewOperateTest::onClick));
-	pButton2->getLabel()->initWithString("Add Front", "", 30);
-	m_pLayout->addChild(pButton2);
+	pButton2->initText("Add Front", "", 30);
+	m_pWindow->addChild(pButton2);
 
 	CButton* pButton3 = CButton::createWith9Sprite(CCSize(150, 50),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton3->setPosition(CCPoint(150, 310));
 	pButton3->setUserTag(3);
 	pButton3->setOnClickListener(this, ccw_click_selector(CListViewOperateTest::onClick));
-	pButton3->getLabel()->initWithString("Remove Last", "", 30);
-	m_pLayout->addChild(pButton3);
+	pButton3->initText("Remove Last", "", 30);
+	m_pWindow->addChild(pButton3);
 
 	CButton* pButton4 = CButton::createWith9Sprite(CCSize(150, 50),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton4->setPosition(CCPoint(150, 240));
 	pButton4->setUserTag(4);
 	pButton4->setOnClickListener(this, ccw_click_selector(CListViewOperateTest::onClick));
-	pButton4->getLabel()->initWithString("Remove Front", "", 30);
-	m_pLayout->addChild(pButton4);
+	pButton4->initText("Remove Front", "", 30);
+	m_pWindow->addChild(pButton4);
 
 	return true;
 }
@@ -139,56 +143,60 @@ void CListViewOperateTest::onClick(CCObject* pSender)
 	{
 	case 1:
 		{
-			CPanel* pPanel = CPanel::create();
-			pPanel->setContentSize(CCSize(480, 30));
+			CLayout* pLayout = CLayout::create();
+			pLayout->setContentSize(CCSize(480, 30));
 
-			CPanelColor* pColor = CPanelColor::create(ccc4(128, 0, 0, 255));
-			pColor->setContentSize(CCSize(480 - 4, 30 - 2));
-			pColor->setPosition(CCPoint(480 /2, 30 /2));
-			pPanel->addChild(pColor);
+			CColorView* pColor = CColorView::create(ccc4(128, 0, 0, 255));
+			pColor->setContentSize(CCSize(478, 28));
+			pColor->setPosition(CCPoint(480/2, 30/2));
+			pLayout->addChild(pColor);
 
 			CButton* pButton =  CButton::createWith9Sprite(CCSize(150, 25),
 				"sprite9_btn1.png", "sprite9_btn2.png");
 			pButton->setPosition(CCPoint(480 /2, 30 /2));
 			char str[64] = {0};
 			sprintf(str, "%d", last_add_idx);
-			pButton->getLabel()->initWithString(str, "", 20);
-			pPanel->addChild(pButton);
+			pButton->initText(str, "", 20);
+			pLayout->addChild(pButton);
 			last_add_idx++;
 
-			m_pListView->insertNodeAtLast(pPanel);
+			m_pListView->insertNodeAtLast(pLayout);
+			m_pListView->reloadData();
 		}
 		break;
 	case 2:
 		{
-			CPanel* pPanel = CPanel::create();
-			pPanel->setContentSize(CCSize(480, 30));
+			CLayout* pLayout = CLayout::create();
+			pLayout->setContentSize(CCSize(480, 30));
 
-			CPanelColor* pColor = CPanelColor::create(ccc4(0, 128, 0, 255));
-			pColor->setContentSize(CCSize(480 - 4, 30 - 2));
-			pColor->setPosition(CCPoint(480 /2, 30 /2));
-			pPanel->addChild(pColor);
+			CColorView* pColor = CColorView::create(ccc4(0, 128, 0, 255));
+			pColor->setContentSize(CCSize(478, 28));
+			pColor->setPosition(CCPoint(480/2, 30/2));
+			pLayout->addChild(pColor);
 
 			CButton* pButton =  CButton::createWith9Sprite(CCSize(150, 25),
 				"sprite9_btn1.png", "sprite9_btn2.png");
 			pButton->setPosition(CCPoint(480 /2, 30 /2));
 			char str[64] = {0};
 			sprintf(str, "%d", last_add_idx);
-			pButton->getLabel()->initWithString(str, "", 20);
-			pPanel->addChild(pButton);
+			pButton->initText(str, "", 20);
+			pLayout->addChild(pButton);
 			last_add_idx++;
 
-			m_pListView->insertNodeAtFront(pPanel);
+			m_pListView->insertNodeAtFront(pLayout);
+			m_pListView->reloadData();
 		}
 		break;
 	case 3:
 		{
 			m_pListView->removeLastNode();
+			m_pListView->reloadData();
 		}
 		break;
 	case 4:
 		{
 			m_pListView->removeFrontNode();
+			m_pListView->reloadData();
 		}
 		break;
 	default:

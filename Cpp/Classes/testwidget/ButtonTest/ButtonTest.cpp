@@ -25,7 +25,7 @@ bool CButtonBasicTest::init()
 
 	CButton* pButton = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
 	pButton->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pButton);
+	m_pWindow->addChild(pButton);
 
 	return true;
 }
@@ -44,33 +44,33 @@ bool CButtonEventTest::init()
 	pButton1->setOnTouchEndedListener(this, ccw_touchevent_selector(CButtonEventTest::onTouchEnded));
 	pButton1->setOnTouchCancelledListener(this, ccw_touchevent_selector(CButtonEventTest::onTouchCancelled));
 	pButton1->setPosition(CCPoint(350, 320));
-	m_pLayout->addChild(pButton1);
+	m_pWindow->addChild(pButton1);
 
 	m_pText1 = CLabel::create();
 	m_pText1->setAnchorPoint(CCPoint(0, 0.5));
 	m_pText1->setPosition(CCPoint(260, 430));
 	m_pText1->setFontSize(35.0f);
 	m_pText1->setString("none");
-	m_pLayout->addChild(m_pText1);
+	m_pWindow->addChild(m_pText1);
 
 	m_pDurationText = CLabel::create();
 	m_pDurationText->setPosition(CCPoint(260, 390));
 	m_pDurationText->setFontSize(35.0f);
 	m_pDurationText->setString("ms:0");
 	m_pDurationText->setAnchorPoint(CCPoint(0, 0.5));
-	m_pLayout->addChild(m_pDurationText);
+	m_pWindow->addChild(m_pDurationText);
 
 	CButton* pButton2 = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
 	pButton2->setOnClickListener(this, ccw_click_selector(CButtonEventTest::onClick));
 	pButton2->setPosition(CCPoint(610, 320));
-	m_pLayout->addChild(pButton2);
+	m_pWindow->addChild(pButton2);
 
 	m_pText2 = CLabel::create();
 	m_pText2->setAnchorPoint(CCPoint(0, 0.5));
 	m_pText2->setPosition(CCPoint(520, 430));
 	m_pText2->setFontSize(35.0f);
 	m_pText2->setString("none");
-	m_pLayout->addChild(m_pText2);
+	m_pWindow->addChild(m_pText2);
 
 	return true;
 }
@@ -120,34 +120,34 @@ bool CButtonLongClickTest::init()
 {
 	CButtonTestSceneBase::init();
 	setTitle("CButtonLongClickTest");
-	setDescription("drag the 2s button after long click\n (the touch event will back to CCWidgetLayout after long click)");
+	setDescription("drag the 2s button after long click\n (the touch event will back to WidgetWindow after long click)");
 
 	CButton* pButton1 = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
 	pButton1->setOnClickListener(this, ccw_click_selector(CButtonLongClickTest::onClick));
 	pButton1->setOnLongClickListener(this, ccw_longclick_selector(CButtonLongClickTest::onButton1LongClick));
 	pButton1->setPosition(CCPoint(350, 320));
-	m_pLayout->addChild(pButton1);
+	m_pWindow->addChild(pButton1);
 
 	m_pText1 = CLabel::create();
 	m_pText1->setAnchorPoint(CCPoint(0, 0.5));
 	m_pText1->setPosition(CCPoint(260, 430));
 	m_pText1->setFontSize(35.0f);
 	m_pText1->setString("none");
-	m_pLayout->addChild(m_pText1);
+	m_pWindow->addChild(m_pText1);
 
-	m_pLayout->setOnTouchMovedAfterLongClickListener(this, ccw_afterlongclick_selector(CButtonLongClickTest::onLayoutTouchMovedAfterLongClick));
+	m_pWindow->setOnTouchMovedAfterLongClickListener(this, ccw_afterlongclick_selector(CButtonLongClickTest::onLayoutTouchMovedAfterLongClick));
 
 	m_pText2 = CLabel::create();
 	m_pText2->setAnchorPoint(CCPoint(0, 0.5));
 	m_pText2->setPosition(CCPoint(520, 430));
 	m_pText2->setFontSize(35.0f);
 	m_pText2->setString("drag after long click!");
-	m_pLayout->addChild(m_pText2);
+	m_pWindow->addChild(m_pText2);
 
 	pButton2 = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
 	pButton2->setOnLongClickListener(this, ccw_longclick_selector(CButtonLongClickTest::onButton2LongClick));
 	pButton2->setPosition(CCPoint(610, 320));
-	m_pLayout->addChild(pButton2);
+	m_pWindow->addChild(pButton2);
 
 	return true;
 }
@@ -165,13 +165,13 @@ bool CButtonLongClickTest::onButton1LongClick(CCObject* pSender, CCTouch* pTouch
 
 bool CButtonLongClickTest::onButton2LongClick(CCObject* pSender, CCTouch* pTouch)
 {
-	pButton2->setPosition(m_pLayout->convertTouchToNodeSpace(pTouch));
+	pButton2->setPosition(m_pWindow->convertTouchToNodeSpace(pTouch));
 	return true;
 }
 
 void CButtonLongClickTest::onLayoutTouchMovedAfterLongClick(CCObject* pSender, CCTouch* pTouch, float fDuration)
 {
-	CCPoint tPoint = m_pLayout->convertTouchToNodeSpace(pTouch);
+	CCPoint tPoint = m_pWindow->convertTouchToNodeSpace(pTouch);
 	
 	if( pSender == pButton2 )
 	{
@@ -192,27 +192,27 @@ bool CButtonWithTextTest::init()
 	pButton1->getLabel()->setFontSize(32.0f);
 	pButton1->getLabel()->setString("Cocos2d-x");
 	pButton1->getLabel()->enableShadow(CCSizeMake(2, 2), 0.1f, 0.1f);
-	m_pLayout->addChild(pButton1);
+	m_pWindow->addChild(pButton1);
 
 	CLabel* pText1 = CLabel::create();
 	pText1->setAnchorPoint(CCPoint(0, 0.5));
 	pText1->setPosition(CCPoint(260, 430));
 	pText1->setFontSize(35.0f);
 	pText1->setString("Shadow Text");
-	m_pLayout->addChild(pText1);
+	m_pWindow->addChild(pText1);
 
 	CButton* pButton2 = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
-	pButton2->getLabel()->initWithString("CocosWidget", "", 32.0f);
+	pButton2->initText("CocosWidget", "", 32.0f);
 	pButton2->setLabelOffset(CCPoint(0, 10));
 	pButton2->setPosition(CCPoint(610, 320));
-	m_pLayout->addChild(pButton2);
+	m_pWindow->addChild(pButton2);
 
 	CLabel* pText2 = CLabel::create();
 	pText2->setAnchorPoint(CCPoint(0, 0.5));
 	pText2->setPosition(CCPoint(520, 430));
 	pText2->setFontSize(35.0f);
 	pText2->setString("Text With Offset");
-	m_pLayout->addChild(pText2);
+	m_pWindow->addChild(pText2);
 
 	return true;
 }
@@ -226,63 +226,63 @@ bool CButtonAttributeTest::init()
 	setDescription("");
 
 	CButton* pButton1 = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
-	pButton1->getLabel()->initWithString("true", "", 30.0f);
+	pButton1->initText("true", "", 30.0f);
 	pButton1->setPosition(CCPoint(480, 500));
 	pButton1->setEnabled(true);
-	m_pLayout->addChild(pButton1);
+	m_pWindow->addChild(pButton1);
 
 	CButton* pButton1ex = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
-	pButton1ex->getLabel()->initWithString("false", "", 30.0f);
+	pButton1ex->initText("false", "", 30.0f);
 	pButton1ex->setPosition(CCPoint(680, 500));
 	pButton1ex->setEnabled(false);
-	m_pLayout->addChild(pButton1ex);
+	m_pWindow->addChild(pButton1ex);
 
 	CLabel* pText1 = CLabel::create();
 	pText1->setAnchorPoint(CCPoint(1, 0.5));
 	pText1->setPosition(CCPoint(350, 500));
 	pText1->setFontSize(35.0f);
 	pText1->setString("setEnabled()");
-	m_pLayout->addChild(pText1);
+	m_pWindow->addChild(pText1);
 
 
 	CButton* pButton2 = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
-	pButton2->getLabel()->initWithString("true", "", 30.0f);
+	pButton2->initText("true", "", 30.0f);
 	pButton2->setPosition(CCPoint(480, 400));
 	pButton2->setTouchEnabled(true);
-	m_pLayout->addChild(pButton2);
+	m_pWindow->addChild(pButton2);
 
 	CButton* pButton2ex = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
-	pButton2ex->getLabel()->initWithString("false", "", 30.0f);
+	pButton2ex->initText("false", "", 30.0f);
 	pButton2ex->setPosition(CCPoint(680, 400));
 	pButton2ex->setTouchEnabled(false);
-	m_pLayout->addChild(pButton2ex);
+	m_pWindow->addChild(pButton2ex);
 
 	CLabel* pText2 = CLabel::create();
 	pText2->setAnchorPoint(CCPoint(1, 0.5));
 	pText2->setPosition(CCPoint(350, 400));
 	pText2->setFontSize(35.0f);
 	pText2->setString("setTouchEnabled()");
-	m_pLayout->addChild(pText2);
+	m_pWindow->addChild(pText2);
 
 
 	CButton* pButton3 = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
-	pButton3->getLabel()->initWithString("true", "", 30.0f);
+	pButton3->initText("true", "", 30.0f);
 	pButton3->setPosition(CCPoint(480, 300));
 	pButton3->setVisible(true);
-	m_pLayout->addChild(pButton3);
+	m_pWindow->addChild(pButton3);
 
 	CButton* pButton3ex = CButton::create("btn1_1.png", "btn1_2.png", "btn1_3.png");
-	pButton3ex->getLabel()->initWithString("false", "", 30.0f);
+	pButton3ex->initText("false", "", 30.0f);
 	pButton3ex->setPosition(CCPoint(680, 300));
 	pButton3ex->setVisible(false);
-	m_pLayout->addChild(pButton3ex);
+	m_pWindow->addChild(pButton3ex);
 
 	CLabel* pText3 = CLabel::create();
 	pText3->setAnchorPoint(CCPoint(1, 0.5));
 	pText3->setPosition(CCPoint(350, 300));
 	pText3->setFontSize(35.0f);
 	pText3->setString("setVisible()");
-	m_pLayout->addChild(pText3);
+	m_pWindow->addChild(pText3);
 
 	return true;
 }
@@ -296,18 +296,18 @@ bool CButton9SpriteTest::init()
 	setDescription("9PatchSprite by create");
 
 	CButton* pButton = CButton::createWith9Sprite(CCSize(196, 68),"sprite9_btn1.png", "sprite9_btn2.png");
-	pButton->getLabel()->initWithString("one", "", 30.0f);
+	pButton->initText("one", "", 30.0f);
 	pButton->setPosition(CCPoint(480, 370));
-	m_pLayout->addChild(pButton);
+	m_pWindow->addChild(pButton);
 
 	CButton* pButton2 = CButton::create();
 	pButton2->setContentSize(CCSize(196, 68));
 	pButton2->setScale9Enabled(true);
 	pButton2->setNormalImage("sprite9_btn1.png");
 	pButton2->setSelectedImage("sprite9_btn2.png");
-	pButton2->getLabel()->initWithString("two", "", 30.0f);
+	pButton2->initText("two", "", 30.0f);
 	pButton2->setPosition(CCPoint(480, 270));
-	m_pLayout->addChild(pButton2);
+	m_pWindow->addChild(pButton2);
 
 	return true;
 }
@@ -336,16 +336,16 @@ bool CButtonChangeSizeTest::init()
 	m_pButton->setScale9Enabled(true);
 	m_pButton->setNormalImage("sprite9_btn1.png");
 	m_pButton->setSelectedImage("sprite9_btn2.png");
-	m_pButton->getLabel()->initWithString("none", "", 30.0f);
-	m_pButton->updateCascadeLabelContentSize(CCSize(50, 30));
+	m_pButton->initText("none", "", 30.0f);
+	m_pButton->setCascadeTextSizeEnabled(true, CCSize(50, 30));
 	m_pButton->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(m_pButton);
+	m_pWindow->addChild(m_pButton);
 
 	CButton* pBtn = CButton::createWith9Sprite(CCSizeMake(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
 	pBtn->setPosition(CCPoint(250, 320));
-	pBtn->getLabel()->initWithString("click me", "", 27.0f);
+	pBtn->initText("click me", "", 27.0f);
 	pBtn->setOnClickListener(this, ccw_click_selector(CButtonChangeSizeTest::onClick));
-	m_pLayout->addChild(pBtn);
+	m_pWindow->addChild(pBtn);
 
 	return true;
 }
@@ -355,8 +355,7 @@ void CButtonChangeSizeTest::onClick(CCObject* pSender)
 	if( !m_lData.empty() )
 	{
 		string& str = m_lData.front();
-		m_pButton->getLabel()->setString(str.c_str());
-		m_pButton->updateCascadeLabelContentSize(CCSize(50, 30));
+		m_pButton->setText(str.c_str());
 		m_lData.pop_front();
 	}
 }

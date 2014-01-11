@@ -47,12 +47,14 @@ local function createCListViewBasicTest()
 			local tagItem = m_data[1];
 			local pNode = CCNode:create();
 			pNode:setContentSize(tagItem.s);
-			local pPanel = CPanelColor:create(ccc4(tagItem.c.r, tagItem.c.g, tagItem.c.b, 255));
-			pPanel:setAnchorPoint(CCPoint(0.5, 0.5));
-			pPanel:setContentSize(CCSize(tagItem.s.width - 4, tagItem.s.height - 2));
-			pPanel:setPosition(CCPoint(tagItem.s.width/2, tagItem.s.height/2));
-			pNode:addChild(pPanel);
+			local pLayout = CLayout:create();
+			pLayout:setBackgroundColor(ccc4(tagItem.c.r, tagItem.c.g, tagItem.c.b, 255));
+			pLayout:setAnchorPoint(CCPoint(0.5, 0.5));
+			pLayout:setContentSize(CCSize(tagItem.s.width - 4, tagItem.s.height - 2));
+			pLayout:setPosition(CCPoint(tagItem.s.width/2, tagItem.s.height/2));
+			pNode:addChild(pLayout);
 			m_pListView:insertNodeAtLast(pNode);
+			m_pListView:reloadData();
 			table.remove(m_data, 1);
 		end
 	end
@@ -61,14 +63,14 @@ local function createCListViewBasicTest()
 	m_pListView:setBackgroundImage("background.png");
 	m_pListView:setPosition(CCPoint(480, 320));
 	m_pListView:setDirection(eScrollViewDirectionVertical);
-	p_base_scene.p_layout:addChild(m_pListView);
+	p_base_scene.p_window:addChild(m_pListView);
 
 	local pButton = CButton:createWith9Sprite(CCSize(150, 50),"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton:setPosition(CCPoint(150, 320));
 	pButton:setOnClickScriptHandler(onClick);
 	pButton:getLabel():setFontSize(30);
 	pButton:getLabel():setString("Add");
-	p_base_scene.p_layout:addChild(pButton);
+	p_base_scene.p_window:addChild(pButton);
 
 	
 	return p_base_scene.p_scene;
@@ -103,50 +105,55 @@ local function createCListViewOperateTest()
 	local function func_on_click(p_sender)
 		local pButton = tolua.cast(p_sender, "CButton");	
 		if pButton:getUserTag() == 1 then
-			local pPanel = CPanel:create();
-			pPanel:setContentSize(CCSize(480, 30));
+			local pLayout = CLayout:create();
+			pLayout:setContentSize(CCSize(480, 30));
 
-			local pColor = CPanelColor:create(ccc4(128, 0, 0, 255));
+			local pColor = CColorView:create(ccc4(128, 0, 0, 255));
 			pColor:setContentSize(CCSize(480 - 4, 30 - 2));
 			pColor:setPosition(CCPoint(480 /2, 30 /2));
-			pPanel:addChild(pColor);
+			pLayout:addChild(pColor);
 
 			local pButton =  CButton:createWith9Sprite(CCSize(150, 25),"sprite9_btn1.png", "sprite9_btn2.png");
 			pButton:setPosition(CCPoint(480 /2, 30 /2));
 			pButton:getLabel():setFontSize(20);
 			pButton:getLabel():setString(tostring(last_add_idx));
-			pPanel:addChild(pButton);
+			pLayout:addChild(pButton);
 			last_add_idx = last_add_idx + 1;
 
-			m_pListView:insertNodeAtLast(pPanel);
+			m_pListView:insertNodeAtLast(pLayout);
+			m_pListView:reloadData();
 			
 		elseif pButton:getUserTag() == 2 then
 		
-			local pPanel = CPanel:create();
-			pPanel:setContentSize(CCSize(480, 30));
+			local pLayout = CLayout:create();
+			pLayout:setContentSize(CCSize(480, 30));
 
-			local pColor = CPanelColor:create(ccc4(0, 128, 0, 255));
+			local pColor = CColorView:create(ccc4(0, 128, 0, 255));
 			pColor:setContentSize(CCSize(480 - 4, 30 - 2));
 			pColor:setPosition(CCPoint(480 /2, 30 /2));
-			pPanel:addChild(pColor);
+			pLayout:addChild(pColor);
 
 			local pButton =  CButton:createWith9Sprite(CCSize(150, 25),
 					"sprite9_btn1.png", "sprite9_btn2.png");
 			pButton:setPosition(CCPoint(480 /2, 30 /2));
 			pButton:getLabel():setFontSize(20);
 			pButton:getLabel():setString(tostring(last_add_idx));
-			pPanel:addChild(pButton);
+			pLayout:addChild(pButton);
 			last_add_idx = last_add_idx + 1;
 
-			m_pListView:insertNodeAtFront(pPanel);
+			m_pListView:insertNodeAtFront(pLayout);
+			m_pListView:reloadData();
 			
 		elseif pButton:getUserTag() == 3 then
 		
 			m_pListView:removeLastNode();
+			m_pListView:reloadData();
 			
 		elseif pButton:getUserTag() == 4 then
 		
 			m_pListView:removeFrontNode();
+			m_pListView:reloadData();
+			
 		end
 	end
 	
@@ -154,7 +161,7 @@ local function createCListViewOperateTest()
 	m_pListView:setBackgroundImage("background.png");
 	m_pListView:setPosition(CCPoint(480, 320));
 	m_pListView:setDirection(eScrollViewDirectionVertical);
-	p_base_scene.p_layout:addChild(m_pListView);
+	p_base_scene.p_window:addChild(m_pListView);
 
 	local pButton = CButton:createWith9Sprite(CCSize(150, 50),
 		"sprite9_btn1.png", "sprite9_btn2.png");
@@ -163,7 +170,7 @@ local function createCListViewOperateTest()
 	pButton:setOnClickScriptHandler(func_on_click);
 	pButton:getLabel():setFontSize(30);
 	pButton:getLabel():setString("Add Last");
-	p_base_scene.p_layout:addChild(pButton);
+	p_base_scene.p_window:addChild(pButton);
 
 	local pButton2 = CButton:createWith9Sprite(CCSize(150, 50),
 		"sprite9_btn1.png", "sprite9_btn2.png");
@@ -172,7 +179,7 @@ local function createCListViewOperateTest()
 	pButton2:setOnClickScriptHandler(func_on_click);
 	pButton2:getLabel():setFontSize(30);
 	pButton2:getLabel():setString("Add Front");
-	p_base_scene.p_layout:addChild(pButton2);
+	p_base_scene.p_window:addChild(pButton2);
 
 	local pButton3 = CButton:createWith9Sprite(CCSize(150, 50),
 		"sprite9_btn1.png", "sprite9_btn2.png");
@@ -181,7 +188,7 @@ local function createCListViewOperateTest()
 	pButton3:setOnClickScriptHandler(func_on_click);
 	pButton3:getLabel():setFontSize(30);
 	pButton3:getLabel():setString("Remove Last");
-	p_base_scene.p_layout:addChild(pButton3);
+	p_base_scene.p_window:addChild(pButton3);
 
 	local pButton4 = CButton:createWith9Sprite(CCSize(150, 50),
 		"sprite9_btn1.png", "sprite9_btn2.png");
@@ -190,7 +197,7 @@ local function createCListViewOperateTest()
 	pButton4:setOnClickScriptHandler(func_on_click);
 	pButton4:getLabel():setFontSize(30);
 	pButton4:getLabel():setString("Remove Front");
-	p_base_scene.p_layout:addChild(pButton4);
+	p_base_scene.p_window:addChild(pButton4);
 
 	return p_base_scene.p_scene;
 end

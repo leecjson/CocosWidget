@@ -4,7 +4,7 @@ function createScene()
 	
 	local tab_scene = {};
 	tab_scene.p_scene = nil;
-	tab_scene.p_layout = nil;
+	tab_scene.p_window = nil;
 	tab_scene.p_next_btn = nil;
 	tab_scene.p_back_btn = nil;
 	tab_scene.p_ref_btn = nil;
@@ -26,28 +26,28 @@ function createScene()
 	local p_scene = CCScene:create();
 	tab_scene.p_scene = p_scene;
 	
-	local p_layout = CWidgetLayout:create();
-	p_layout:setTag(1);
-	p_layout:setMultiTouchEnabled(true);
-	p_scene:addChild(p_layout);
-	tab_scene.p_layout = p_layout;
+	local p_window = CWidgetWindow:create();
+	p_window:setTag(1);
+	p_window:setMultiTouchEnabled(true);
+	p_scene:addChild(p_window);
+	tab_scene.p_window = p_window;
 
 	--next btn
 	local p_next_btn = CButton:create("next1.png", "next2.png");
 	p_next_btn:setPosition(ccp(630, 55));
-	p_layout:addChild(p_next_btn);
+	p_window:addChild(p_next_btn);
 	tab_scene.p_next_btn = p_next_btn;
 	
 	--back btn
 	local p_back_btn = CButton:create("back1.png", "back2.png");
 	p_back_btn:setPosition(ccp(330, 55));
-	p_layout:addChild(p_back_btn);
+	p_window:addChild(p_back_btn);
 	tab_scene.p_back_btn = p_back_btn;
 	
 	--ref btn
 	local p_ref_btn = CButton:create("again1.png", "again2.png");
 	p_ref_btn:setPosition(ccp(480, 55));
-	p_layout:addChild(p_ref_btn);
+	p_window:addChild(p_ref_btn);
 	tab_scene.p_ref_btn = p_ref_btn;
 
 	--title
@@ -55,7 +55,7 @@ function createScene()
 	p_title_text:setFontSize(45);
 	p_title_text:setPosition(ccp(480, 600));
 	p_title_text:setTag(1);
-	p_layout:addChild(p_title_text);
+	p_window:addChild(p_title_text);
 	tab_scene.p_title_text = p_title_text;
 	
 	-- description
@@ -65,7 +65,7 @@ function createScene()
 	p_description_text:setFontSize(30);
 	p_description_text:setPosition(ccp(480, 570));
 	p_description_text:setTag(2);
-	p_layout:addChild(p_description_text);
+	p_window:addChild(p_description_text);
 	tab_scene.p_description_text = p_description_text;
 	
 	local function on_click_exit(p_sender)
@@ -79,8 +79,6 @@ function createScene()
 		p_scale_to:setTag(1);
 		p_sender:runAction(p_scale_to);
 		
-		-- eWidgetTouchNone
-		-- eWidgetTouchSustained
 		return eWidgetTouchTransient;
 	end
 	
@@ -102,7 +100,7 @@ function createScene()
 	p_menu_text:setOnTouchBeganScriptHandler(on_menu_text_touchbegan);
 	p_menu_text:setOnClickScriptHandler(on_click_exit);
 	p_menu_text:setPosition(ccp(893, 35));
-	p_layout:addChild(p_menu_text);
+	p_window:addChild(p_menu_text);
 	tab_scene.p_menu_text = p_menu_text;
 	
 	return tab_scene;

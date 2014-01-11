@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -121,6 +121,96 @@ void CDataSourceAdapterProtocol::removeDataSourceAdapterScriptHandler()
 }
 #endif
 
+
+CTextRichClickableProtocol::CTextRichClickableProtocol()
+: m_pRichTextClickListener(NULL)
+, m_pRichTextClickHandler(NULL)
+#if USING_LUA
+, m_nRichTextClickScriptHandler(0)
+#endif
+{
+
+}
+
+CTextRichClickableProtocol::~CTextRichClickableProtocol()
+{
+#if USING_LUA
+	removeOnTextRichClickScriptHandler();
+#endif
+}
+
+void CTextRichClickableProtocol::setOnTextRichClickListener(CCObject* pListener, SEL_TextRichClickHandler pHandler)
+{
+	m_pRichTextClickListener = pListener;
+	m_pRichTextClickHandler = pHandler;
+}
+
+void CTextRichClickableProtocol::executeTextRichClickHandler(CCObject* pSender, const char* pDescription)
+{
+	if( m_pRichTextClickListener && m_pRichTextClickHandler )
+	{
+		(m_pRichTextClickListener->*m_pRichTextClickHandler)(pSender, pDescription);
+	}
+#if USING_LUA
+	else if( m_nRichTextClickScriptHandler != 0 )
+	{
+		executeTextRichScriptHandler(pSender, pDescription);
+	}
+#endif
+}
+
+#if USING_LUA
+void CTextRichClickableProtocol::executeTextRichScriptHandler(CCObject* pSender, const char* pDescription)
+{
+	if( m_nRichTextClickScriptHandler != 0 )
+	{
+		CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
+		CCLuaStack* pStack = pEngine->getLuaStack();
+
+		pStack->pushCCObject(pSender, "CCObject");
+
+		if( pDescription )
+		{
+			pStack->pushString(pDescription);
+		}
+		else
+		{
+			pStack->pushNil();
+		}
+
+		pStack->executeFunctionByHandler(m_nRichTextClickScriptHandler, 2);
+		pStack->clean();
+	}
+}
+
+void CTextRichClickableProtocol::setOnTextRichClickScriptHandler(int nHandler)
+{
+	removeOnTextRichClickScriptHandler();
+	m_nRichTextClickScriptHandler = nHandler;
+}
+
+void CTextRichClickableProtocol::removeOnTextRichClickScriptHandler()
+{
+	if( m_nRichTextClickScriptHandler != 0 )
+	{
+		CCScriptEngineManager::sharedManager()->getScriptEngine()->removeScriptHandler(m_nRichTextClickScriptHandler);
+		m_nRichTextClickScriptHandler = 0;
+	}
+}
+#endif
+
+
+CLayoutableProtocol::CLayoutableProtocol()
+: m_pSelectedWidget(NULL)
+, m_eSelectedWidgetTouchModel(eWidgetTouchNone)
+{
+
+}
+
+CLayoutableProtocol::~CLayoutableProtocol()
+{
+	
+}
 
 CPageChangeableProtocol::CPageChangeableProtocol()
 : m_pPageChangedListener(NULL)

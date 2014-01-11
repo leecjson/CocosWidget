@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,13 +24,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
-#ifndef __CCWIDGET_WIDGETLAYOUT_H__
-#define __CCWIDGET_WIDGETLAYOUT_H__
-
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// 
-/////////////////////////////////////////////////////////////////////////////
+#ifndef __CCWIDGET_WIDGETWINDOW_H__
+#define __CCWIDGET_WIDGETWINDOW_H__
 
 #include "cocos2d.h"
 #include "WidgetMacros.h"
@@ -41,49 +36,37 @@ THE SOFTWARE.
 NS_CC_WIDGET_BEGIN
 
 /**
- * class    : CWidgetLayout
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 控件布局容器，作为控件树的根
+ * class  : CWidgetWindow
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
-class CWidgetLayout : public CCNodeRGBA, public CCTouchDelegate
+class CWidgetWindow : public CCNodeRGBA, public CCTouchDelegate
 {
 public:
-	CWidgetLayout();
-	virtual ~CWidgetLayout();
-
-	// 初始化默认数据
+	CWidgetWindow();
+	virtual ~CWidgetWindow();
 	virtual bool init();
-	// 计时
-	virtual void visit();
-	// 开启触摸事件接收
-	virtual void onEnter();
-	// 关闭触摸事件接收
-	virtual void onExit();
-	
-	// 获取接收触摸事件的优先级
+	static CWidgetWindow* create();
+
 	virtual int getTouchPriority();
-	// 设置接收触摸事件的优先级
 	virtual void setTouchPriority(int nTouchPriority);
-	// 获取是否接收触摸事件
 	virtual bool isTouchEnabled();
-	// 设置接收触摸事件
 	virtual void setTouchEnabled(bool bTouchEnabled);
-	
-	// 在控件树内查找第一个配置ID的控件
-	virtual CCObject* findViewById(const char* id);
-
-	// 获取是否开启多点触摸
+	CCObject* findViewById(const char* id);
 	bool isMultiTouchEnabled() const;
-	// 设置开启多点触摸
 	void setMultiTouchEnabled(bool bEnabled);
+	void setModalable(bool bModalable);
+	bool isModalable() const;
 
-	// 设置当长点击后移动事件的外部处理函数
 	virtual void setOnTouchMovedAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler);
-	// 设置当长点击后结束事件的外部处理函数
 	virtual void setOnTouchEndedAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler);
-	// 设置当长点击后中断事件的外部处理函数
 	virtual void setOnTouchCancelledAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler);
+
+public:
+	virtual void visit();
+	virtual void onEnter();
+	virtual void onExit();
 
 	virtual bool ccTouchBegan(CCTouch* pTouch, CCEvent* pEvent);
 	virtual void ccTouchMoved(CCTouch* pTouch, CCEvent* pEvent);
@@ -95,25 +78,22 @@ public:
 	virtual void ccTouchesEnded(CCSet* pTouches, CCEvent* pEvent);
 	virtual void ccTouchesCancelled(CCSet* pTouches, CCEvent* pEvent);
 
-	static CWidgetLayout* create();
-
-public:
 	virtual void setLongClickTouchHandlerWidget(CCObject* pWidgetObject, int nTouchId);
-	
-protected:
-	virtual CCObject* find(CCArray* pChidren, const char* id);
+
+	CCObject* find(CCArray* pChidren, const char* id);
+
 	virtual void executeTouchMovedAfterLongClickHandler(CCObject* pSender, CCTouch* pTouch, float fDuration);
     virtual void executeTouchEndedAfterLongClickHandler(CCObject* pSender, CCTouch* pTouch, float fDuration);
     virtual void executeTouchCancelledAfterLongClickHandler(CCObject* pSender, CCTouch* pTouch, float fDuration);
 
 protected:
-	struct tagMultiTouchKeeper
+	struct __ccMULTITOUCHTARGET
 	{
 		CWidget* pWidget;
 		CCObject* pLongClickedWidgetObject;
 		float fTouchedDuration;
 	};
-	std::map<int, tagMultiTouchKeeper> m_mMultiTouchKeeper;
+	std::map<int, __ccMULTITOUCHTARGET> m_mMultiTouchKeeper;
 
 protected:
 	int m_nTouchPriority;
@@ -121,6 +101,7 @@ protected:
 	float m_fTouchedDuration;
 	bool m_bIsTouched;
 	bool m_bMultiTouchEnabled;
+	bool m_bModalable;
 
 	CCObject* m_pLongClickedWidgetObject;
 	CWidget* m_pSelectedWidget;
@@ -151,4 +132,4 @@ public:
 
 NS_CC_WIDGET_END
 
-#endif //__CCWIDGET_WIDGETLAYOUT_H__
+#endif //__CCWIDGET_WIDGETWINDOW_H__

@@ -4,39 +4,43 @@ class CButton : public CCNodeRGBA, public CWidget, public CClickableProtocol, pu
 	virtual ~CButton();
 	
 	virtual bool init();
-	virtual void setContentSize(const CCSize& contentSize);
-	
-	void setLabelOffset(const CCPoint& tOffset);
-	virtual CLabel* getLabel();
-	virtual bool isScale9Enabled();
-	virtual void setScale9Enabled(bool bEnabled);
 	virtual bool initWith9Sprite(const CCSize& tSize, const char* pNormal, const char* pSelected, const char* pDisabled);
 	virtual bool initWithFile(const char* pNormal, const char* pSelected, const char* pDisabled);
-	virtual void updateCascadeLabelContentSize(const CCSize& tOffsetSize = CCSizeZero);
-
-	virtual void setNormalImage(const char* pFile);
-	virtual void setSelectedImage(const char* pFile);
-	virtual void setDisabledImage(const char* pFile);
-
-	virtual void setNormalTexture(CCTexture2D *pTexture);
-	virtual void setSelectedTexture(CCTexture2D *pTexture);
-	virtual void setDisabledTexture(CCTexture2D *pTexture);
-	
-	virtual void setNormalSpriteFrameName(const char* pSpriteName);
-	virtual void setSelectedSpriteFrameName(const char* pSpriteName);
-	virtual void setDisabledSpriteFrameName(const char* pSpriteName);
-
-	virtual void setNormalSpriteFrame(CCSpriteFrame* pFrame);
-	virtual void setSelectedSpriteFrame(CCSpriteFrame* pFrame);
-	virtual void setDisabledSpriteFrame(CCSpriteFrame* pFrame);
-
-	virtual CCNode* getNormalImage();
-	virtual CCNode* getSelectedImage();
-	virtual CCNode* getDisabledImage();
-
 	static CButton* create();
 	static CButton* create(const char* pNormal, const char* pSelected = NULL, const char* pDisabled = NULL);
 	static CButton* createWith9Sprite(const CCSize& tSize, const char* pNormal, const char* pSelected = NULL, const char* pDisabled = NULL);
+	
+	virtual void setContentSize(const CCSize& contentSize);
+	void setLabelOffset(const CCPoint& tOffset);
+	void setText(const char* pText);
+	const char* getText();
+	void setTextFontName(const char* pTextFontName);
+	const char* getTextFontName();
+	void setTextFontSize(float fTextFontSize);
+	float getTextFontSize();
+	void setTextColor(const ccColor3B& color);
+	const ccColor3B& getTextColor();
+	void initText(const char* pText, const char* pFontName, float fFontSize);
+	virtual CLabel* getLabel();
+	virtual bool isScale9Enabled();
+	virtual void setScale9Enabled(bool bEnabled);
+	virtual void setCascadeTextSizeEnabled(bool bEnabled, const CCSize& tPadding = CCSize(50, 30));
+	
+	virtual void setNormalImage(const char* pFile);
+	virtual void setSelectedImage(const char* pFile);
+	virtual void setDisabledImage(const char* pFile);
+	virtual void setNormalTexture(CCTexture2D *pTexture);
+	virtual void setSelectedTexture(CCTexture2D *pTexture);
+	virtual void setDisabledTexture(CCTexture2D *pTexture);
+	virtual void setNormalSpriteFrameName(const char* pSpriteName);
+	virtual void setSelectedSpriteFrameName(const char* pSpriteName);
+	virtual void setDisabledSpriteFrameName(const char* pSpriteName);
+	virtual void setNormalSpriteFrame(CCSpriteFrame* pFrame);
+	virtual void setSelectedSpriteFrame(CCSpriteFrame* pFrame);
+	virtual void setDisabledSpriteFrame(CCSpriteFrame* pFrame);
+	virtual CCNode* getNormalImage();
+	virtual CCNode* getSelectedImage();
+	virtual CCNode* getDisabledImage();
 	
 	virtual void setOnClickScriptHandler(LUA_FUNCTION nHandler);
 	virtual void removeOnClickScriptHandler();
@@ -47,6 +51,8 @@ class CButton : public CCNodeRGBA, public CWidget, public CClickableProtocol, pu
 	void setUserTag(int nTag);
 	const char* getId();
 	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
 	virtual bool isEnabled();
 	virtual void setEnabled(bool bEnabled);
 	virtual bool isTouchEnabled();

@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,7 +31,9 @@ NS_CC_WIDGET_BEGIN
 CImageView::CImageView()
 {
 	setThisObject(this);
-	setTouchEnabled(false);
+
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+	setContentSize(CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE);
 }
 
 CWidgetTouchModel CImageView::onTouchBegan(CCTouch *pTouch)
@@ -62,11 +64,17 @@ void CImageView::onTouchCancelled(CCTouch *pTouch, float fDuration)
 	CC_WIDGET_LONGCLICK_ONTOUCHCANCELLED;
 }
 
+bool CImageView::init()
+{
+	return CCSprite::init();
+}
+
 CImageView* CImageView::createWithTexture(CCTexture2D *pTexture)
 {
     CImageView *pobSprite = new CImageView();
     if (pobSprite && pobSprite->initWithTexture(pTexture))
     {
+		pobSprite->setTouchEnabled(false);
         pobSprite->autorelease();
         return pobSprite;
     }
@@ -79,6 +87,7 @@ CImageView* CImageView::createWithTexture(CCTexture2D *pTexture, const CCRect& r
     CImageView *pobSprite = new CImageView();
     if (pobSprite && pobSprite->initWithTexture(pTexture, rect))
     {
+		pobSprite->setTouchEnabled(false);
         pobSprite->autorelease();
         return pobSprite;
     }
@@ -91,6 +100,7 @@ CImageView* CImageView::create(const char *pszFileName)
     CImageView *pobSprite = new CImageView();
     if (pobSprite && pobSprite->initWithFile(pszFileName))
     {
+		pobSprite->setTouchEnabled(false);
         pobSprite->autorelease();
         return pobSprite;
     }
@@ -103,6 +113,7 @@ CImageView* CImageView::create(const char *pszFileName, const CCRect& rect)
     CImageView *pobSprite = new CImageView();
     if (pobSprite && pobSprite->initWithFile(pszFileName, rect))
     {
+		pobSprite->setTouchEnabled(false);
         pobSprite->autorelease();
         return pobSprite;
     }
@@ -115,6 +126,7 @@ CImageView* CImageView::createWithSpriteFrame(CCSpriteFrame *pSpriteFrame)
     CImageView *pobSprite = new CImageView();
     if (pSpriteFrame && pobSprite && pobSprite->initWithSpriteFrame(pSpriteFrame))
     {
+		pobSprite->setTouchEnabled(false);
         pobSprite->autorelease();
         return pobSprite;
     }
@@ -140,6 +152,7 @@ CImageView* CImageView::create()
     CImageView *pSprite = new CImageView();
     if (pSprite && pSprite->init())
     {
+		pSprite->setTouchEnabled(false);
         pSprite->autorelease();
         return pSprite;
     }

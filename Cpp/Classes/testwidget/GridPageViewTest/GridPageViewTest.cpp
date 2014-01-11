@@ -25,7 +25,7 @@ bool CGridPageViewBasicTest::init()
 
 	CCSprite* pBg = CCSprite::create("background2.png");
 	pBg->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pBg);
+	m_pWindow->addChild(pBg);
 
 	CGridPageView* pTable = CGridPageView::create(
 		CCSizeMake(320, 390),
@@ -36,7 +36,7 @@ bool CGridPageViewBasicTest::init()
 	pTable->setRows(5);
 	pTable->setAutoRelocate(true);
 	pTable->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pTable);
+	m_pWindow->addChild(pTable);
 	pTable->reloadData();
 
 	return true;
@@ -97,7 +97,7 @@ bool CGridPageViewBackPackTest::init()
 
 	CCSprite* pBg = CCSprite::create("background2.png");
 	pBg->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pBg);
+	m_pWindow->addChild(pBg);
 
 	pTable = CGridPageView::create(
 		CCSizeMake(320, 390),
@@ -108,22 +108,22 @@ bool CGridPageViewBackPackTest::init()
 	pTable->setRows(5);
 	pTable->setAutoRelocate(true);
 	pTable->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pTable);
+	m_pWindow->addChild(pTable);
 	pTable->reloadData();
 
 	m_pSelectedSprite = CCSprite::create("icon.png");
 	m_pSelectedSprite->setOpacity(170);
 	m_pSelectedSprite->setZOrder(1);
 	m_pSelectedSprite->setVisible(false);
-	m_pLayout->addChild(m_pSelectedSprite);
+	m_pWindow->addChild(m_pSelectedSprite);
 
-	m_pLayout->setOnTouchMovedAfterLongClickListener(this, ccw_afterlongclick_selector(CGridPageViewBackPackTest::onLayoutTouchMovedAfterLongClick));
-	m_pLayout->setOnTouchEndedAfterLongClickListener(this, ccw_afterlongclick_selector(CGridPageViewBackPackTest::onLayoutTouchEndedAfterLongClick));
-	m_pLayout->setOnTouchCancelledAfterLongClickListener(this, ccw_afterlongclick_selector(CGridPageViewBackPackTest::onLayoutTouchEndedAfterLongClick));
+	m_pWindow->setOnTouchMovedAfterLongClickListener(this, ccw_afterlongclick_selector(CGridPageViewBackPackTest::onLayoutTouchMovedAfterLongClick));
+	m_pWindow->setOnTouchEndedAfterLongClickListener(this, ccw_afterlongclick_selector(CGridPageViewBackPackTest::onLayoutTouchEndedAfterLongClick));
+	m_pWindow->setOnTouchCancelledAfterLongClickListener(this, ccw_afterlongclick_selector(CGridPageViewBackPackTest::onLayoutTouchEndedAfterLongClick));
 
 	m_pToggleImage = CToggleView::create("circle1.png", "circle2.png");
 	m_pToggleImage->setPosition(CCPoint(200, 320));
-	m_pLayout->addChild(m_pToggleImage);
+	m_pWindow->addChild(m_pToggleImage);
 
 	return true;
 }
@@ -175,7 +175,6 @@ bool CGridPageViewBackPackTest::onItemLongClick(CCObject* pSender, CCTouch* pTou
 {
 	CButton* pIconButton = (CButton*) pSender;
 	pIconButton->setVisible(false);
-
 	CCPoint tPoint = pIconButton->getParent()->convertToWorldSpace(pIconButton->getPosition());
 
 	m_pSelectedSprite->setVisible(true);
@@ -188,7 +187,7 @@ void CGridPageViewBackPackTest::onLayoutTouchMovedAfterLongClick(CCObject* pSend
 {
 	m_pSelectedSprite->setPosition(pTouch->getLocation());
 
-	CCPoint tLayoutPoint = m_pLayout->convertTouchToNodeSpace(pTouch);
+	CCPoint tLayoutPoint = m_pWindow->convertTouchToNodeSpace(pTouch);
 	if( m_pToggleImage->boundingBox().containsPoint(tLayoutPoint) )
 	{
 		m_pToggleImage->setChecked(true);
@@ -205,15 +204,16 @@ void CGridPageViewBackPackTest::onLayoutTouchEndedAfterLongClick(CCObject* pSend
 	
 	m_pSelectedSprite->setPosition(pTouch->getLocation());
 
-	CCPoint tLayoutPoint = m_pLayout->convertTouchToNodeSpace(pTouch);
+	pIconButton->setVisible(true); //back to the same as before drag
+	m_pSelectedSprite->setVisible(false);
+	m_pToggleImage->setChecked(false);
+
+	CCPoint tLayoutPoint = m_pWindow->convertTouchToNodeSpace(pTouch);
 	if( m_pToggleImage->boundingBox().containsPoint(tLayoutPoint) )
 	{
 		m_vData.erase(m_vData.begin() + pIconButton->getUserTag());
 		pTable->setCountOfCell(m_vData.size());
 		pTable->reloadData();
+		return;
 	}
-
-	pIconButton->setVisible(true); //back to the same as before drag
-	m_pSelectedSprite->setVisible(false);
-	m_pToggleImage->setChecked(false);
 }

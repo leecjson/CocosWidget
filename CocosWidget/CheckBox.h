@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,11 +27,6 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_CHECKBOX_H__
 #define __CCWIDGET_CHECKBOX_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// 
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
@@ -41,10 +36,10 @@ THE SOFTWARE.
 NS_CC_WIDGET_BEGIN
 
 /**
- * class    : CCheckBox
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 选中框控件定义
+ * class  : CCheckBox
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CCheckBox : public CCNodeRGBA
 , public CWidget
@@ -55,20 +50,12 @@ class CCheckBox : public CCNodeRGBA
 public:
 	CCheckBox();
 	virtual ~CCheckBox();
-
-	// 初始化默认属性
 	virtual bool init();
-	// 设置是否选中，并执行选中事件
-	virtual void setChecked(bool bChecked);
-	// 设置控件是否可用，不可用时不能接收触摸事件
-	virtual void setEnabled(bool bEnabled);
-	// 当设置大小时更新内容的位置
-	virtual void setContentSize(const CCSize& tContentSize);
+	static CCheckBox* create();
 
-	virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
-	virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
-	virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
-	virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
+	virtual void setChecked(bool bChecked);
+	virtual void setEnabled(bool bEnabled);
+	virtual void setContentSize(const CCSize& tContentSize);
 
 	virtual void setNormalImage(const char* pFile);
 	virtual void setNormalPressImage(const char* pFile);
@@ -84,12 +71,12 @@ public:
 	virtual void setDisabledNormalSpriteFrame(CCSpriteFrame* pFrame);
 	virtual void setDisabledCheckedSpriteFrame(CCSpriteFrame* pFrame);
 
-	virtual void setNormalTexture(CCTexture2D *pTexture);
-	virtual void setNormalPressTexture(CCTexture2D *pTexture);
-	virtual void setCheckedTexture(CCTexture2D *pTexture);
-	virtual void setCheckedPressTexture(CCTexture2D *pTexture);
-	virtual void setDisabledNormalTexture(CCTexture2D *pTexture);
-	virtual void setDisabledCheckedTexture(CCTexture2D *pTexture);
+	virtual void setNormalTexture(CCTexture2D* pTexture);
+	virtual void setNormalPressTexture(CCTexture2D* pTexture);
+	virtual void setCheckedTexture(CCTexture2D* pTexture);
+	virtual void setCheckedPressTexture(CCTexture2D* pTexture);
+	virtual void setDisabledNormalTexture(CCTexture2D* pTexture);
+	virtual void setDisabledCheckedTexture(CCTexture2D* pTexture);
 
 	virtual void setNormalSpriteFrameName(const char* pSpriteName);
 	virtual void setNormalPressSpriteFrameName(const char* pSpriteName);
@@ -98,22 +85,20 @@ public:
 	virtual void setDisabledNormalSpriteFrameName(const char* pSpriteName);
 	virtual void setDisabledCheckedSpriteFrameName(const char* pSpriteName);
 
-	static CCheckBox* create();
+public:
+	virtual CWidgetTouchModel onTouchBegan(CCTouch* pTouch);
+	virtual void onTouchMoved(CCTouch* pTouch, float fDuration);
+	virtual void onTouchEnded(CCTouch* pTouch, float fDuration);
+	virtual void onTouchCancelled(CCTouch* pTouch, float fDuration);
 
 	CC_WIDGET_LONGCLICK_SCHEDULE(CCheckBox);
 
 protected:
-	// 正常状态
 	CCSprite* m_pNormal;
-	// 正常按下状态
 	CCSprite* m_pNormalPress;
-	// 选中状态
 	CCSprite* m_pChecked;
-	// 选中按下状态
 	CCSprite* m_pCheckedPress;
-	// 不可用时的正常状态
 	CCSprite* m_pDisabledNormal;
-	// 不可用时的选中状态
 	CCSprite* m_pDisabledChecked;
 };
 

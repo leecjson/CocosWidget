@@ -27,7 +27,16 @@
     <ClInclude Include="..\..\CocosWidget\cocos-widget.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ColorView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\CocosWidget\ControlView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ExpandableListView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\GradientView.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
     <ClInclude Include="..\..\CocosWidget\GridPageView.h">
@@ -51,13 +60,16 @@
     <ClInclude Include="..\..\CocosWidget\LabelBMFont.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Layout.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\CocosWidget\ListView.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\CocosWidget\PageView.h">
+    <ClInclude Include="..\..\CocosWidget\Lua_cocos2dx_widget.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\CocosWidget\Panel.h">
+    <ClInclude Include="..\..\CocosWidget\PageView.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
     <ClInclude Include="..\..\CocosWidget\ProgressBar.h">
@@ -75,13 +87,16 @@
     <ClInclude Include="..\..\CocosWidget\TableView.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\TextArea.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\TextRich.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\CocosWidget\ToggleView.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
     <ClInclude Include="..\..\CocosWidget\Widget.h">
-      <Filter>CocosWidget</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\CocosWidget\WidgetLayout.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
     <ClInclude Include="..\..\CocosWidget\WidgetMacros.h">
@@ -90,7 +105,10 @@
     <ClInclude Include="..\..\CocosWidget\WidgetProtocol.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\CocosWidget\Lua_cocos2dx_widget.h">
+    <ClInclude Include="..\..\CocosWidget\WidgetWindow.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\WitlsMacros.h">
       <Filter>CocosWidget</Filter>
     </ClInclude>
   </ItemGroup>
@@ -107,7 +125,16 @@
     <ClCompile Include="..\..\CocosWidget\CheckBox.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ColorView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\CocosWidget\ControlView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ExpandableListView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\GradientView.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
     <ClCompile Include="..\..\CocosWidget\GridPageView.cpp">
@@ -131,13 +158,16 @@
     <ClCompile Include="..\..\CocosWidget\LabelBMFont.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Layout.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\CocosWidget\ListView.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\CocosWidget\PageView.cpp">
+    <ClCompile Include="..\..\CocosWidget\Lua_cocos2dx_widget.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\CocosWidget\Panel.cpp">
+    <ClCompile Include="..\..\CocosWidget\PageView.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
     <ClCompile Include="..\..\CocosWidget\ProgressBar.cpp">
@@ -155,19 +185,25 @@
     <ClCompile Include="..\..\CocosWidget\TableView.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\TextArea.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\TextRich.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\CocosWidget\ToggleView.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
     <ClCompile Include="..\..\CocosWidget\Widget.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\CocosWidget\WidgetLayout.cpp">
-      <Filter>CocosWidget</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\CocosWidget\WidgetProtocol.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\CocosWidget\Lua_cocos2dx_widget.cpp">
+    <ClCompile Include="..\..\CocosWidget\WidgetWindow.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\WitlsMacros.cpp">
       <Filter>CocosWidget</Filter>
     </ClCompile>
   </ItemGroup>

@@ -2,9 +2,9 @@ class CLabelAtlas : public CCLabelAtlas, public CWidget, public CClickableProtoc
 {
 	CLabelAtlas();
 	virtual ~CLabelAtlas();
-
-    static CLabelAtlas * create(const char *pString, const char *charMapFile, unsigned int itemWidth, unsigned int itemHeight, unsigned int startCharMap);
-    static CLabelAtlas* create(const char *pString, const char *fntFile);
+	virtual bool init();
+    static CLabelAtlas* create(const char* pString, const char* charMapFile, unsigned int itemWidth, unsigned int itemHeight, unsigned int startCharMap);
+    static CLabelAtlas* create(const char* pString, const char* fntFile);
 	
 	virtual void setOnClickScriptHandler(LUA_FUNCTION nHandler);
 	virtual void removeOnClickScriptHandler();
@@ -15,6 +15,8 @@ class CLabelAtlas : public CCLabelAtlas, public CWidget, public CClickableProtoc
 	void setUserTag(int nTag);
 	const char* getId();
 	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
 	virtual bool isEnabled();
 	virtual void setEnabled(bool bEnabled);
 	virtual bool isTouchEnabled();

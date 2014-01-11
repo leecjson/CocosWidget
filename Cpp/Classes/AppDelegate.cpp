@@ -1,9 +1,8 @@
-#include "cocos2d.h"
+﻿#include "cocos2d.h"
 #include "CCEGLView.h"
 #include "AppDelegate.h"
 #include "SimpleAudioEngine.h"
 #include "MenuScene.h"
-
 
 using namespace CocosDenshion;
 using namespace cocos2d::cocoswidget;

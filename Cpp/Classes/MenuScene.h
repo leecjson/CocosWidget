@@ -34,7 +34,7 @@ public:
 	virtual bool init();
 
 protected:
-	CWidgetLayout* m_pLayout;
+	CWidgetWindow* m_pWindow;
 	CButton* m_pNextBtn;
 	CButton* m_pBackBtn;
 	CButton* m_pRefBtn;

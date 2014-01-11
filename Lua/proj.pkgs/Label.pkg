@@ -3,6 +3,7 @@ class CLabel : public CCLabelTTF, public CWidget, public CClickableProtocol, pub
 	CLabel();
 	virtual ~CLabel();
 	
+	virtual bool init();
 	static CLabel* create();
 	static CLabel* create(const char *pString, const char *pFontName, float fFontSize);
 	static CLabel* create(const char *pString, const char *pFontName, float fFontSize,
@@ -19,6 +20,8 @@ class CLabel : public CCLabelTTF, public CWidget, public CClickableProtocol, pub
 	void setUserTag(int nTag);
 	const char* getId();
 	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
 	virtual bool isEnabled();
 	virtual void setEnabled(bool bEnabled);
 	virtual bool isTouchEnabled();

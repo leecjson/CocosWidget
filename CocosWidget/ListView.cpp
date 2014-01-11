@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -29,15 +29,19 @@ using namespace std;
 
 NS_CC_WIDGET_BEGIN
 
-CListView::CListView()
-: m_fNodesSize(0.0f)
-{
+static const CCPoint ListViewHorizontalNodeAnchorPoint = CCPoint(0, 0);
+static const CCPoint ListViewVerticalNodeAnchorPoint = CCPoint(0, 0);
 
+
+CListView::CListView()
+: m_fLayoutIndexSize(0.0f)
+{
+	m_eDirection = eScrollViewDirectionVertical;
 }
 
 CListView::~CListView()
 {
-
+	removeAllNodes();
 }
 
 CListView* CListView::create(const CCSize& contentSize)
@@ -54,225 +58,226 @@ CListView* CListView::create(const CCSize& contentSize)
 
 unsigned int CListView::getNodeCount() const
 {
-	return m_lNodeList.size();
+	return m_vNodeList.size();
 }
 
 CCArray* CListView::getNodes()
 {
-	if( !m_lNodeList.empty() )
-	{
-		CCArray* pArray = new CCArray(m_lNodeList.size());
-		pArray->autorelease();
+	CCArray* pArray = new CCArray();
+	pArray->initWithCapacity(10);
 
-		list<CCNode*>::iterator itr = m_lNodeList.begin();
-		for(; itr != m_lNodeList.end(); ++itr)
+	if( !m_vNodeList.empty() )
+	{
+		vector<CCNode*>::iterator iter = m_vNodeList.begin();
+		vector<CCNode*>::iterator iend = m_vNodeList.end();
+
+		for(; iter != iend; ++iter )
 		{
-			pArray->addObject(*itr);
+			pArray->addObject(*iter);
 		}
-		return pArray;
 	}
-	return NULL;
+
+	pArray->autorelease();
+	return pArray;
+}
+
+CCNode* CListView::getNodeAtIndex(unsigned int idx)
+{
+	return m_vNodeList[idx];
 }
 
 void CListView::insertNodeAtLast(CCNode* pNode)
 {
-	CCSize tNodeSize = pNode->getContentSize();
-	if( m_eDirection == eScrollViewDirectionHorizontal )
-	{
-		setContainerSize(CCSize(m_fNodesSize + tNodeSize.width, m_obContentSize.height));
-		pNode->setAnchorPoint(CCPointZero);
-		pNode->setPosition(CCPoint(m_fNodesSize, 0));
-		m_pContainer->addChild(pNode);
-		m_lNodeList.push_back(pNode);
-
-		m_fNodesSize += tNodeSize.width;
-	}
-	else if( m_eDirection == eScrollViewDirectionVertical )
-	{
-		pNode->setAnchorPoint(CCPointZero);
-		m_pContainer->addChild(pNode);
-		m_lNodeList.push_back(pNode);
-		updateNodesPosition();
-	}
+	CCAssert(pNode, "should not null");
+	m_vNodeList.push_back(pNode);
+	pNode->retain();
 }
 
 void CListView::insertNodeAtFront(CCNode* pNode)
 {
-	CCSize tNodeSize = pNode->getContentSize();
-	if( m_eDirection == eScrollViewDirectionHorizontal )
-	{
-		pNode->setAnchorPoint(CCPointZero);
-		m_pContainer->addChild(pNode);
-		m_lNodeList.push_front(pNode);
-		updateNodesPosition();
-	}
-	else if( m_eDirection == eScrollViewDirectionVertical )
-	{
-		pNode->setAnchorPoint(CCPointZero);
-		m_pContainer->addChild(pNode);
-		m_lNodeList.push_front(pNode);
-		updateNodesPosition();
-	}
+	CCAssert(pNode, "should not null");
+	m_vNodeList.insert(m_vNodeList.begin(), pNode);
+	pNode->retain();
 }
 
 void CListView::insertNode(CCNode* pNode, CCNode* pTarget)
 {
-	if( !m_lNodeList.empty() )
+	CCAssert(pTarget && pNode, "should not null");
+
+	unsigned int idx = 0;
+	unsigned int end = m_vNodeList.size();
+
+	for(; idx < end; ++idx )
 	{
-		list<CCNode*>::iterator itr = m_lNodeList.begin();
-		for(; itr != m_lNodeList.end(); ++itr)
+		if( pTarget == m_vNodeList[idx] )
 		{
-			if( *itr == pTarget )
-			{
-				pNode->setAnchorPoint(CCPointZero);
-				m_lNodeList.insert(itr, pNode);
-				m_pContainer->addChild(pNode);
-				updateNodesPosition();
-				return;
-			}
+			m_vNodeList.insert(m_vNodeList.begin() + idx, pNode);
+			pNode->retain();
 		}
 	}
 }
 
 void CListView::insertNode(CCNode* pNode, unsigned int idx)
 {
-	if( idx >= m_lNodeList.size() )
+	CCAssert(pNode, "should not null");
+
+	if( idx >= m_vNodeList.size() )
 	{
 		insertNodeAtLast(pNode);
 		return;
 	}
 
-	list<CCNode*>::iterator itr = m_lNodeList.begin();
-	for(unsigned int i = 0; itr != m_lNodeList.end(); ++i, ++itr)
-	{
-		if( i == idx )
-		{
-			pNode->setAnchorPoint(CCPointZero);
-			m_lNodeList.insert(itr, pNode);
-			m_pContainer->addChild(pNode);
-			updateNodesPosition();
-			return;
-		}
-	}
+	m_vNodeList.insert(m_vNodeList.begin() + idx, pNode);
+	pNode->retain();
 }
 
-void CListView::removeNode(unsigned int idx)
+void CListView::removeNodeAtIndex(unsigned int idx)
 {
-	if( !m_lNodeList.empty() && idx < m_lNodeList.size() )
-	{
-		list<CCNode*>::iterator itr = m_lNodeList.begin();
-		for(unsigned int i = 0; itr != m_lNodeList.end(); ++i, ++itr)
-		{
-			if( i == idx )
-			{
-				m_pContainer->removeChild(*itr);
-				m_lNodeList.erase(itr);
-				updateNodesPosition();
+	if( m_vNodeList.size() == 0 )
+		return;
 
-				relocateContainer();
-				return;
-			}
-		}
-	}
+	m_vNodeList[idx]->release();
+	m_vNodeList.erase(m_vNodeList.begin() + idx);
 }
 
 void CListView::removeNode(CCNode* pNode)
 {
-	if( !m_lNodeList.empty() )
-	{
-		m_pContainer->removeChild(pNode);
-		m_lNodeList.remove(pNode);
-		updateNodesPosition();
+	CCAssert(pNode, "should not null");
 
-		relocateContainer();
+	if( m_vNodeList.size() == 0 )
+		return;
+
+	vector<CCNode*>::iterator itr = std::find(
+		m_vNodeList.begin(),
+		m_vNodeList.end(),
+		pNode);
+
+	if( itr != m_vNodeList.end() )
+	{
+		pNode->release();
+		m_vNodeList.erase(itr);
 	}
 }
 
 void CListView::removeFrontNode()
 {
-	if( !m_lNodeList.empty() )
-	{
-		CCNode* pNode = m_lNodeList.front();
-		m_pContainer->removeChild(pNode);
-		m_lNodeList.pop_front();
-		updateNodesPosition();
+	if( m_vNodeList.size() == 0 )
+		return;
 
-		relocateContainer();
-	}
+	m_vNodeList[0]->release();
+	m_vNodeList.erase(m_vNodeList.begin());
 }
 
 void CListView::removeLastNode()
 {
-	if( !m_lNodeList.empty() )
-	{
-		CCNode* pNode = m_lNodeList.back();
-		m_pContainer->removeChild(pNode);
-		m_lNodeList.pop_back();
-		updateNodesPosition();
+	if( m_vNodeList.size() == 0 )
+		return;
 
-		relocateContainer();
-	}
+	m_vNodeList[m_vNodeList.size() - 1]->release();
+	m_vNodeList.pop_back();
 }
 
 void CListView::removeAllNodes()
 {
-	if( !m_lNodeList.empty() )
+	if( m_vNodeList.size() == 0 )
+		return;
+
+	unsigned int i = 0;
+	unsigned int end = m_vNodeList.size();
+
+	for(; i < end; ++i )
 	{
-		list<CCNode*>::iterator itr = m_lNodeList.begin();
-		for(; itr != m_lNodeList.end(); ++itr)
-		{
-			m_pContainer->removeChild(*itr);
-		}
-		m_lNodeList.clear();
-		m_fNodesSize = 0.0f;
+		m_vNodeList[i]->release();
 	}
+
+	m_vNodeList.clear();
 }
 
 void CListView::updateNodesPosition()
 {
-	m_fNodesSize = 0.0f;
-	if( !m_lNodeList.empty() )
-	{
-		switch( m_eDirection )
-		{
-		case eScrollViewDirectionHorizontal:
-			{
-				list<CCNode*>::iterator itr = m_lNodeList.begin();
-				for(; itr != m_lNodeList.end(); ++itr)
-				{
-					(*itr)->setPosition(CCPoint(m_fNodesSize, 0));
-					m_fNodesSize += (*itr)->getContentSize().width;
-				}
-				setContainerSize(CCSize(m_fNodesSize, m_obContentSize.height));
-			}
-			break;
-		case eScrollViewDirectionVertical:
-			{
-				float fAllNodesSize = 0.0f;
-				list<CCNode*>::iterator itr = m_lNodeList.begin();
-				for(; itr != m_lNodeList.end(); ++itr)
-				{
-					fAllNodesSize += (*itr)->getContentSize().height;
-				}
-				
-				m_fNodesSize = fAllNodesSize;
-				fAllNodesSize = MAX(m_obContentSize.height, fAllNodesSize);
-				setContainerSize(CCSize(m_obContentSize.width, fAllNodesSize));
+	m_pContainer->removeAllChildrenWithCleanup(true);
 
-				for(itr = m_lNodeList.begin(); itr != m_lNodeList.end(); ++itr)
-				{
-					fAllNodesSize = fAllNodesSize - (*itr)->getContentSize().height;
-					(*itr)->setPosition(CCPoint(0, fAllNodesSize));
-				}
+	if( m_vNodeList.size() == 0 )
+		return;
+
+	m_fLayoutIndexSize = 0.0f;
+
+	switch( m_eDirection )
+	{
+	case eScrollViewDirectionHorizontal:
+		{
+			unsigned int i = 0;
+			unsigned int end = m_vNodeList.size();
+			CCNode* pNode = NULL;
+
+			for(; i < end; ++i )
+			{
+				pNode = m_vNodeList[i];
+				pNode->setAnchorPoint(ListViewHorizontalNodeAnchorPoint);
+				pNode->setPosition(CCPoint(m_fLayoutIndexSize, 0));
+				m_fLayoutIndexSize += pNode->getContentSize().width;
 			}
-			break;
-		default:
-			break;
+
+			setContainerSize(CCSize(m_fLayoutIndexSize, m_obContentSize.height));
 		}
+		break;
+	case eScrollViewDirectionVertical:
+		{
+			float fAllNodesSize = 0.0f;
+
+			unsigned int i = 0;
+			unsigned int end = m_vNodeList.size();
+			CCNode* pNode = NULL;
+
+			for(; i < end; ++i )
+			{
+				pNode = m_vNodeList[i];
+				fAllNodesSize += pNode->getContentSize().height;
+			}
+
+			m_fLayoutIndexSize = fAllNodesSize;
+			fAllNodesSize = MAX(m_obContentSize.height, fAllNodesSize);
+			setContainerSize(CCSize(m_obContentSize.width, fAllNodesSize));
+			
+			i = 0;
+			end = m_vNodeList.size();
+
+			for(; i < end; ++i )
+			{
+				pNode = m_vNodeList[i];
+				fAllNodesSize = fAllNodesSize - pNode->getContentSize().height;
+				pNode->setAnchorPoint(ListViewVerticalNodeAnchorPoint);
+				pNode->setPosition(CCPoint(0, fAllNodesSize));
+
+				m_pContainer->addChild(pNode);
+			}
+		}
+		break;
+	default:
+		break;
 	}
 }
 
+void CListView::reloadData()
+{
+	CCAssert( m_eDirection != eScrollViewDirectionBoth, "reloadData");
 
+	if( m_eDirection == eScrollViewDirectionVertical )
+	{
+		float fOldHeight = getContainerSize().height;
 
+		updateNodesPosition();
+
+		float tNewHeight = getContainerSize().height - fOldHeight;
+
+		setContentOffset(getContentOffset() - CCPoint(0, tNewHeight));
+	}
+	else
+	{
+		updateNodesPosition();
+	}
+
+	relocateContainer();
+}
 
 NS_CC_WIDGET_END

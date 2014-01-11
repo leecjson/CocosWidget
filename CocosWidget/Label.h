@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,11 +27,6 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_LABEL_H__
 #define __CCWIDGET_LABEL_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// 
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
@@ -40,28 +35,29 @@ THE SOFTWARE.
 NS_CC_WIDGET_BEGIN
 
 /**
- * class    : CLabel
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 文字标签控件定义
+ * class  : CButton
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CLabel : public CCLabelTTF, public CWidget, public CClickableProtocol, public CLongClickableProtocol
 {
 public:
 	CLabel();
 	virtual ~CLabel();
-
-    virtual CWidgetTouchModel onTouchBegan(CCTouch* pTouch);
-	virtual void onTouchMoved(CCTouch* pTouch, float fDuration);
-	virtual void onTouchEnded(CCTouch* pTouch, float fDuration);
-	virtual void onTouchCancelled(CCTouch* pTouch, float fDuration);
-
+	virtual bool init();
 	static CLabel* create();
 	static CLabel* create(const char *pString, const char *pFontName, float fFontSize);
 	static CLabel* create(const char *pString, const char *pFontName, float fFontSize,
 		const CCSize& tDimensions, CCTextAlignment hAlignment);
 	static CLabel* create(const char *pString, const char *pFontName, float fFontSize,
 		const CCSize& tDimensions, CCTextAlignment hAlignment, CCVerticalTextAlignment vAlignment);
+
+public:
+	virtual CWidgetTouchModel onTouchBegan(CCTouch* pTouch);
+	virtual void onTouchMoved(CCTouch* pTouch, float fDuration);
+	virtual void onTouchEnded(CCTouch* pTouch, float fDuration);
+	virtual void onTouchCancelled(CCTouch* pTouch, float fDuration);
 
 	CC_WIDGET_LONGCLICK_SCHEDULE(CLabel);
 };

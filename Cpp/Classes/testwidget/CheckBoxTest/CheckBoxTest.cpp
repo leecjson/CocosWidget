@@ -32,21 +32,21 @@ bool CCheckBoxBasicTest::init()
 	pCheckBox->setDisabledCheckedImage("ckb_disable_02.png");
 	pCheckBox->setOnClickListener(this, ccw_click_selector(CCheckBoxBasicTest::onClick));
 	pCheckBox->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pCheckBox);
+	m_pWindow->addChild(pCheckBox);
 
 	CCheckBox* pCheckBox2 = CCheckBox::create();
 	pCheckBox2->setNormalImage("ckb_normal_01.png");
 	pCheckBox2->setCheckedImage("ckb_selected_01.png");
 	pCheckBox2->setOnClickListener(this, ccw_click_selector(CCheckBoxBasicTest::onClick));
 	pCheckBox2->setPosition(CCPoint(560, 320));
-	m_pLayout->addChild(pCheckBox2);
+	m_pWindow->addChild(pCheckBox2);
 
 	m_pText = CLabel::create();
 	m_pText->setAnchorPoint(CCPoint(0, 0.5));
 	m_pText->setPosition(CCPoint(380, 400));
 	m_pText->setFontSize(35.0f);
 	m_pText->setString("none");
-	m_pLayout->addChild(m_pText);
+	m_pWindow->addChild(m_pText);
 
 	return true;
 }
@@ -87,41 +87,41 @@ bool CCheckBoxExclusionTest::init()
 	pCheckBox1->setExclusion(1);
 	pCheckBox1->setChecked(true);
 	pCheckBox1->setEnabled(false);
-	m_pLayout->addChild(pCheckBox1);
+	m_pWindow->addChild(pCheckBox1);
 
 	CREATE_CHECKBOX(pCheckBox2, CCPoint(480, 425));
 	pCheckBox2->setExclusion(1);
-	m_pLayout->addChild(pCheckBox2);
+	m_pWindow->addChild(pCheckBox2);
 	
 	CREATE_CHECKBOX(pCheckBox3, CCPoint(480, 360));
 	pCheckBox3->setExclusion(1);
-	m_pLayout->addChild(pCheckBox3);
+	m_pWindow->addChild(pCheckBox3);
 
 	CREATE_CHECKBOX(pCheckBox4, CCPoint(480, 295));
 	pCheckBox4->setExclusion(1);
-	m_pLayout->addChild(pCheckBox4);
+	m_pWindow->addChild(pCheckBox4);
 
 	CREATE_CHECKBOX(pCheckBox5, CCPoint(480, 230));
 	pCheckBox5->setExclusion(1);
-	m_pLayout->addChild(pCheckBox5);
+	m_pWindow->addChild(pCheckBox5);
 
 	CREATE_CHECKBOX(pCheckBox6, CCPoint(480, 165));
 	pCheckBox6->setExclusion(1);
-	m_pLayout->addChild(pCheckBox6);
+	m_pWindow->addChild(pCheckBox6);
 
 	CButton* pButton = CButton::createWith9Sprite(CCSize(280, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton->setPosition(CCPoint(200, 450));
 	pButton->setUserTag(1);
 	pButton->setOnClickListener(this, ccw_click_selector(CCheckBoxExclusionTest::onClick));
-	pButton->getLabel()->initWithString("set true for first", "", 30);
-	m_pLayout->addChild(pButton);
+	pButton->initText("set true for first", "", 30);
+	m_pWindow->addChild(pButton);
 
 	return true;
 }
 
 void CCheckBoxExclusionTest::onClick(CCObject* pSender)
 {
-	CCheckBox* pCheckBox = (CCheckBox*)m_pLayout->getChildByTag(1);
+	CCheckBox* pCheckBox = (CCheckBox*)m_pWindow->getChildByTag(1);
 	pCheckBox->setChecked(true);
 }

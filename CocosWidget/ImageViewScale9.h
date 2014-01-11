@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,11 +27,6 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_IMAGEVIEWSCALE9_H__
 #define __CCWIDGET_IMAGEVIEWSCALE9_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// 
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
@@ -41,10 +36,10 @@ THE SOFTWARE.
 NS_CC_WIDGET_BEGIN
 
 /**
- * class    : CImageViewScale9
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 9宫格图像视图控件定义
+ * class  : CImageViewScale9
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CImageViewScale9 : public CScale9Sprite
 , public CWidget
@@ -53,12 +48,8 @@ class CImageViewScale9 : public CScale9Sprite
 {
 public:
 	CImageViewScale9();
-
-	virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
-	virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
-	virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
-	virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
-
+	virtual bool init();
+	static CImageViewScale9* create(const CCSize& size, const char* file);
 	static CImageViewScale9* create(const char* file, CCRect rect,  CCRect capInsets);
 	static CImageViewScale9* create(const char* file, CCRect rect);
 	static CImageViewScale9* create(CCRect capInsets, const char* file);
@@ -70,6 +61,12 @@ public:
 	static CImageViewScale9* createWithTexture(CCTexture2D* pTexture);
 	static CImageViewScale9* createWithTexture(CCTexture2D* pTexture, CCRect capInsets);
 	static CImageViewScale9* create();
+
+public:
+	virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
+	virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
+	virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
+	virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
 
 	CC_WIDGET_LONGCLICK_SCHEDULE(CImageViewScale9);
 };

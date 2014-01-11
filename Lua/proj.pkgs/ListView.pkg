@@ -9,12 +9,14 @@ class CListView : public CScrollView
 	void insertNode(CCNode* pNode, CCNode* pTarget);
 	void insertNode(CCNode* pNode, unsigned int idx);
 
-	void removeNode(unsigned int idx);
+	void removeNodeAtIndex(unsigned int idx);
 	void removeNode(CCNode* pNode);
 	void removeFrontNode();
 	void removeLastNode();
 	void removeAllNodes();
 
 	CCArray* getNodes();
+	CCNode* getNodeAtIndex(unsigned int idx);
 	unsigned int getNodeCount() const;
+	void reloadData();
 };

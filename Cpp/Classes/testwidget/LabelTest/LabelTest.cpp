@@ -26,7 +26,7 @@ bool CLabelBasicTest::init()
 	CLabel* pText1 = CLabel::create("Hello CCTK And cocoswidget", "", 30.0f);
 	pText1->enableShadow(CCSizeMake(2.0f, -2.0f), 0, 0);
 	pText1->setPosition(CCPoint(480, 450));
-	m_pLayout->addChild(pText1);
+	m_pWindow->addChild(pText1);
 
 	CLabel* pText2 = CLabel::create("Click me test event", "", 30.0f);
 	pText2->setTouchEnabled(true);
@@ -38,11 +38,11 @@ bool CLabelBasicTest::init()
 	pText2->setOnTouchCancelledListener(this, ccw_touchevent_selector(CLabelBasicTest::onTouchEnded));
 	pText2->setColor(ccc3(0, 255, 0));
 	pText2->setPosition(CCPoint(480, 380));
-	m_pLayout->addChild(pText2);
+	m_pWindow->addChild(pText2);
 
 	pText3 = CLabel::create("none", "", 30.0f);
 	pText3->setPosition(CCPoint(750, 380));
-	m_pLayout->addChild(pText3);
+	m_pWindow->addChild(pText3);
 
 	return true;
 }
@@ -99,7 +99,7 @@ bool CLabelAtlasTest::init()
 	pText->setOnTouchBeganListener(this, ccw_touchbegan_selector(CLabelAtlasTest::onTouchBegan));
 	pText->setOnTouchEndedListener(this, ccw_touchevent_selector(CLabelAtlasTest::onTouchEnded));
 	pText->setOnTouchCancelledListener(this, ccw_touchevent_selector(CLabelAtlasTest::onTouchEnded));
-	m_pLayout->addChild(pText);
+	m_pWindow->addChild(pText);
 
 	return true;
 }
@@ -136,7 +136,7 @@ bool CLabelBMFontTest::init()
 
 	CLabelBMFont* pText = CLabelBMFont::create("hello cocos2d-x and cocoswidget", "arial-unicode-26.fnt");
 	pText->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pText);
+	m_pWindow->addChild(pText);
 
 	return true;
 }

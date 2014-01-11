@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,11 +27,6 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_TOGGLEVIEW_H__
 #define __CCWIDGET_TOGGLEVIEW_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// 
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
@@ -41,10 +36,10 @@ THE SOFTWARE.
 NS_CC_WIDGET_BEGIN
 
 /**
- * class    : CToggleView
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 开关按钮控件
+ * class  : CToggleView
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CToggleView : public CButton, public CCheckableProtocol
 {
@@ -52,19 +47,17 @@ public:
 	CToggleView();
 	virtual ~CToggleView();
 
-	// 设置是否可用
+	static CToggleView* create();
+	static CToggleView* create(const char* pNormal, const char* pSelected = NULL, const char* pDisabled = NULL);
+	static CToggleView* createWith9Sprite(const CCSize& tSize, const char* pNormal, const char* pSelected = NULL, const char* pDisabled = NULL);
 	virtual void setEnabled(bool bEnabled);
-	// 设置选择状态
 	virtual void setChecked(bool bChecked);
 
+public:
 	virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
 	virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
 	virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
 	virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
-	
-	static CToggleView* create();
-	static CToggleView* create(const char* pNormal, const char* pSelected = NULL, const char* pDisabled = NULL);
-	static CToggleView* createWith9Sprite(const CCSize& tSize, const char* pNormal, const char* pSelected = NULL, const char* pDisabled = NULL);
 };
 
 NS_CC_WIDGET_END

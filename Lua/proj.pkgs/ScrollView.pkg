@@ -5,16 +5,15 @@ enum CScrollViewDirection
 	eScrollViewDirectionBoth
 };
 
-class CScrollViewContainer : public CPanel
+class CScrollViewContainer : public CLayout
 {
 	virtual void reset();
 };
 
-class CScrollView : public CPanel, public CScrollableProtocol
+class CScrollView : public CLayout, public CScrollableProtocol
 {
 	CScrollView();
 	virtual ~CScrollView();
-
 	virtual bool init();
 	static CScrollView* create(const CCSize& contentSize);
 	virtual bool initWithSize(const CCSize& tSize);
@@ -24,7 +23,7 @@ class CScrollView : public CPanel, public CScrollableProtocol
 	void setDirection(CScrollViewDirection eDirection);
 	CScrollViewContainer* getContainer();
 	virtual void setContentSize(const CCSize& contentSize);
-
+	
 	const CCPoint& getContentOffset() const;
 	void setBounceable(bool bBounceable);
 	bool isBounceable();

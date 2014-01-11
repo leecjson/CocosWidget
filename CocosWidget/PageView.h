@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,14 +27,6 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_PAGEVIEW_H__
 #define __CCWIDGET_PAGEVIEW_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// Update : [1] changed text "SEL_PageDataSourceHandler" to "SEL_PageViewDataSourceHandler"
-/// Update : [2] changed text "SEL_PageChangedHandler" to "SEL_PageViewChangedHandler"
-/// Update : [3] changed text "pagedatasource_selector" to "pageviewdatasource_selector"
-/// Update : [4] changed text "pagechanged_selector" to "pageviewchanged_selector"
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
@@ -47,10 +39,10 @@ class CPageView;
 class CPageViewCell;
 
 /**
- * class    : CPageViewCell
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 滑动页单元格控件定义
+ * class  : CPageViewCell
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CPageViewCell : public CTableViewCell
 {
@@ -59,10 +51,10 @@ public:
 };
 
 /**
- * class    : CPageView
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 滑动页控件定义
+ * class  : CPageView
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CPageView : public CTableView, public CPageChangeableProtocol
 {

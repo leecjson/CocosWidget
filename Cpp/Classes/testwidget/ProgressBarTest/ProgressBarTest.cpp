@@ -26,7 +26,7 @@ bool CProgressBarBasicTest::init()
 	CCSprite* m_pBg = CCSprite::create("background.png");
 	m_pBg->setScale(1.3f);
 	m_pBg->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(m_pBg);
+	m_pWindow->addChild(m_pBg);
 
 	m_pProgressBar = CProgressBar::create("progress.png");
 	m_pProgressBar->setBackgroundImage("progress_bg.png");
@@ -37,56 +37,56 @@ bool CProgressBarBasicTest::init()
 	m_pProgressBar->setOnValueChangedListener(
 		this, ccw_valuechanged_selector(CProgressBarBasicTest::onProgressing));
 	m_pProgressBar->setContentSize(CCSize(960, 640));
-	m_pLayout->addChild(m_pProgressBar);
+	m_pWindow->addChild(m_pProgressBar);
 
 	CButton* pButton = CButton::createWith9Sprite(CCSize(150, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton->setPosition(CCPoint(250, 450));
 	pButton->setUserTag(1);
 	pButton->setOnClickListener(this, ccw_click_selector(CProgressBarBasicTest::onClick));
-	pButton->getLabel()->initWithString("Add", "", 30);
-	m_pLayout->addChild(pButton);
+	pButton->initText("Add", "", 30);
+	m_pWindow->addChild(pButton);
 
 	CButton* pButton2 = CButton::createWith9Sprite(CCSize(150, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton2->setPosition(CCPoint(450, 450));
 	pButton2->setUserTag(2);
 	pButton2->setOnClickListener(this, ccw_click_selector(CProgressBarBasicTest::onClick));
-	pButton2->getLabel()->initWithString("Less", "", 30);
-	m_pLayout->addChild(pButton2);
+	pButton2->initText("Less", "", 30);
+	m_pWindow->addChild(pButton2);
 
 	CButton* pButton3 = CButton::createWith9Sprite(CCSize(200, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton3->setPosition(CCPoint(670, 450));
 	pButton3->setUserTag(3);
 	pButton3->setOnClickListener(this, ccw_click_selector(CProgressBarBasicTest::onClick));
-	pButton3->getLabel()->initWithString("change direction", "", 30);
-	m_pLayout->addChild(pButton3);
+	pButton3->initText("change direction", "", 30);
+	m_pWindow->addChild(pButton3);
 
 	CButton* pButton4 = CButton::createWith9Sprite(CCSize(150, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton4->setPosition(CCPoint(350, 200));
 	pButton4->setUserTag(4);
 	pButton4->setOnClickListener(this, ccw_click_selector(CProgressBarBasicTest::onClick));
-	pButton4->getLabel()->initWithString("startProgress", "", 30);
-	pButton4->updateCascadeLabelContentSize(CCSize(50, 30));
-	m_pLayout->addChild(pButton4);
+	pButton4->initText("startProgress", "", 30);
+	pButton4->setCascadeTextSizeEnabled(true, CCSize(50, 30));
+	m_pWindow->addChild(pButton4);
 
 	CButton* pButton5 = CButton::createWith9Sprite(CCSize(150, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
 	pButton5->setPosition(CCPoint(650, 200));
 	pButton5->setUserTag(5);
 	pButton5->setOnClickListener(this, ccw_click_selector(CProgressBarBasicTest::onClick));
-	pButton5->getLabel()->initWithString("stopProgress", "", 30);
-	pButton5->updateCascadeLabelContentSize(CCSize(50, 30));
-	m_pLayout->addChild(pButton5);
+	pButton5->initText("stopProgress", "", 30);
+	pButton5->setCascadeTextSizeEnabled(true, CCSize(50, 30));
+	m_pWindow->addChild(pButton5);
 	
 	m_pText = CLabel::create();
 	m_pText->setAnchorPoint(CCPoint(0, 0.5));
 	m_pText->setPosition(CCPoint(200, 400));
 	m_pText->setFontSize(35.0f);
 	m_pText->setString("none");
-	m_pLayout->addChild(m_pText);
+	m_pWindow->addChild(m_pText);
 
 	return true;
 }

@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -43,8 +43,6 @@ CControlView::CControlView()
 , m_tLastPoint(CCPointZero)
 {
 	setThisObject(this);
-	setCascadeColorEnabled(true);
-	setCascadeOpacityEnabled(true);
 }
 
 CControlView::~CControlView()
@@ -76,13 +74,6 @@ CControlView* CControlView::create(const char* pBaseBoard, const char* pJoystick
 	return NULL;
 }
 
-bool CControlView::init()
-{
-	setAnchorPoint(CCPoint(0.5f, 0.5f));
-	setContentSize(CCSize(100, 100));
-	return true;
-}
-
 void CControlView::setRadius(float fRadius)
 {
 	m_fRadius = fRadius;
@@ -101,6 +92,17 @@ void CControlView::setRelocateWithAnimation(bool bAni)
 bool CControlView::isRelocateWithAnimation() const
 {
 	return m_bRelocateWithAnimation;
+}
+
+bool CControlView::init()
+{
+	setCascadeColorEnabled(true);
+	setCascadeOpacityEnabled(true);
+
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+	setContentSize(CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE);
+
+	return true;
 }
 
 bool CControlView::initWithFile(const char* pBaseBoard, const char* pJoystick)

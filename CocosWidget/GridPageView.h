@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,14 +27,6 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_GRIDPAGEVIEW_H__
 #define __CCWIDGET_GRIDPAGEVIEW_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// Update : [1] changed text "SEL_TableGridViewDataSourceHandler" to 
-///              "SEL_TableGridViewDataSourceHandler"
-/// Update : [2] changed text "tablegirddatasource_selector" to
-///              "tablegirdviewdatasource_selector"
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
@@ -48,23 +40,29 @@ class CGridPageView;
 class CGridPageViewCell;
 class CGridPageViewPage;
 
+/**
+ * class  : CGridPageViewPage
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
+ */
 class CGridPageViewPage : public CTableViewCell
 {
 public:
 	CGridPageViewPage();
 	virtual ~CGridPageViewPage();
-	CCArray* getGirdCells();
 
 protected:
-	/// 网格列表项的集合
-	CCArray* m_pGirdCells;
+	friend class CGridPageView;
+	std::vector<CGridPageViewCell*>& getGirdCells();
+	std::vector<CGridPageViewCell*> m_vGirdCells;
 };
 
 /**
- * class    : CGridPageViewCell
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 网格页单元格控件定义
+ * class  : CGridPageViewCell
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CGridPageViewCell : public CTableViewCell
 {
@@ -74,41 +72,29 @@ public:
 };
 
 /**
- * class    : CGridPageView
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 网格页控件定义
+ * class  : CGridPageView
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CGridPageView : public CTableView, public CPageChangeableProtocol
 {
 public:
 	CGridPageView();
 	virtual ~CGridPageView();
-
-	// 通过视图大小构造
 	static CGridPageView* create(const CCSize& tViewSize);
-	// 通过视图大小、单元格大小、单元格数量、数据适配器来初始化。
 	static CGridPageView* create(const CCSize& tViewSize, const CCSize& tCellSize, unsigned int uCellCount, 
 		CCObject* pListener, SEL_DataSoucreAdapterHandler pHandler);
 
 public:
-	// 设置单元格数量
 	void setCountOfCell(unsigned int uCellsCount);
-	// 获取单元格数量
     unsigned int getCountOfCell() const;
-	// 设置单元格大小
     void setSizeOfCell(const CCSize& tCellsSize);
-	// 获取单元格大小
     const CCSize& getSizeOfCell() const;
-	// 设置每页显示的行数
 	void setRows(unsigned int uRows);
-	// 获取每页显示的行数
 	unsigned int getRows() const;
-	// 设置每页显示的列数
 	void setColumns(unsigned int uColumns);
-	// 获取每页显示的列数
 	unsigned int getColumns() const;
-	// 重新加载数据
 	void reloadData();
 
 protected:

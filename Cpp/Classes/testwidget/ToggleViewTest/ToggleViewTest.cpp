@@ -26,14 +26,14 @@ bool CToggleViewBasicTest::init()
 	CToggleView* pToggle = CToggleView::create("toggle1_2.png", "toggle1_1.png");
 	pToggle->setOnClickListener(this, ccw_click_selector(CToggleViewBasicTest::onClick));
 	pToggle->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pToggle);
+	m_pWindow->addChild(pToggle);
 
 	m_pText = CLabel::create();
 	m_pText->setAnchorPoint(CCPoint(0, 0.5));
 	m_pText->setPosition(CCPoint(380, 400));
 	m_pText->setFontSize(35.0f);
 	m_pText->setString("none");
-	m_pLayout->addChild(m_pText);
+	m_pWindow->addChild(m_pText);
 
 	return true;
 }
@@ -63,26 +63,26 @@ bool CToggleViewGroupTest::init()
 	pToggle1->setOnCheckListener(this, ccw_check_selector(CToggleViewGroupTest::onCheck));
 	pToggle1->setPosition(CCPoint(200, 450));
 	pToggle1->setExclusion(1);
-	m_pLayout->addChild(pToggle1);
+	m_pWindow->addChild(pToggle1);
 
 	CToggleView* pToggle2 = CToggleView::create("toggle1_2.png", "toggle1_1.png");
 	pToggle2->setOnCheckListener(this, ccw_check_selector(CToggleViewGroupTest::onCheck));
 	pToggle2->setPosition(CCPoint(200, 350));
 	pToggle2->setExclusion(1);
-	m_pLayout->addChild(pToggle2);
+	m_pWindow->addChild(pToggle2);
 
 	CToggleView* pToggle3 = CToggleView::create("toggle1_2.png", "toggle1_1.png");
 	pToggle3->setOnCheckListener(this, ccw_check_selector(CToggleViewGroupTest::onCheck));
 	pToggle3->setPosition(CCPoint(200, 250));
 	pToggle3->setExclusion(1);
-	m_pLayout->addChild(pToggle3);
+	m_pWindow->addChild(pToggle3);
 
 	CLabel* pText1 = CLabel::create();
 	pText1->setAnchorPoint(CCPoint(0, 0.5));
 	pText1->setPosition(CCPoint(350, 450));
 	pText1->setFontSize(35.0f);
 	pText1->setString("none");
-	m_pLayout->addChild(pText1);
+	m_pWindow->addChild(pText1);
 	pToggle1->setUserObject(pText1);
 
 	CLabel* pText2 = CLabel::create();
@@ -90,7 +90,7 @@ bool CToggleViewGroupTest::init()
 	pText2->setPosition(CCPoint(350, 350));
 	pText2->setFontSize(35.0f);
 	pText2->setString("none");
-	m_pLayout->addChild(pText2);
+	m_pWindow->addChild(pText2);
 	pToggle2->setUserObject(pText2);
 
 	CLabel* pText3 = CLabel::create();
@@ -98,19 +98,19 @@ bool CToggleViewGroupTest::init()
 	pText3->setPosition(CCPoint(350, 250));
 	pText3->setFontSize(35.0f);
 	pText3->setString("none");
-	m_pLayout->addChild(pText3);
+	m_pWindow->addChild(pText3);
 	pToggle3->setUserObject(pText3);
 
 
 	CToggleView* pToggle4 = CToggleView::create("toggle1_2.png", "toggle1_1.png");
 	pToggle4->setPosition(CCPoint(700, 250));
 	pToggle4->setExclusion(2);
-	m_pLayout->addChild(pToggle4);
+	m_pWindow->addChild(pToggle4);
 
 	CToggleView* pToggle5 = CToggleView::create("toggle1_2.png", "toggle1_1.png");
 	pToggle5->setPosition(CCPoint(700, 350));
 	pToggle5->setExclusion(2);
-	m_pLayout->addChild(pToggle5);
+	m_pWindow->addChild(pToggle5);
 
 	return true;
 }

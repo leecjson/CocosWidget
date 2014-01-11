@@ -55,7 +55,7 @@ local function createCGridPageViewBasicTest()
 	
 	local pBg = CCSprite:create("background2.png");
 	pBg:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pBg);
+	p_base_scene.p_window:addChild(pBg);
 
 	local pTable = CGridPageView:create(CCSizeMake(320, 390));
 	pTable:setSizeOfCell(CCSizeMake(320 / 4, 390 / 5));
@@ -65,7 +65,7 @@ local function createCGridPageViewBasicTest()
 	pTable:setRows(5);
 	pTable:setAutoRelocate(true);
 	pTable:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pTable);
+	p_base_scene.p_window:addChild(pTable);
 	pTable:reloadData();
 	
 	return p_base_scene.p_scene;
@@ -105,7 +105,7 @@ local function createCGridPageViewBackPackTest()
 
 	local pBg = CCSprite:create("background2.png");
 	pBg:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pBg);
+	p_base_scene.p_window:addChild(pBg);
 	
 	
 	local function on_item_longclick(p_sender, p_touch)
@@ -118,7 +118,7 @@ local function createCGridPageViewBackPackTest()
 	
 	local function on_afterlongclick_moved(p_sender, p_touch, f_duration)
 		m_pSelectedSprite:setPosition(p_touch:getLocation());
-		local tLayoutPoint = p_base_scene.p_layout:convertTouchToNodeSpace(p_touch);
+		local tLayoutPoint = p_base_scene.p_window:convertTouchToNodeSpace(p_touch);
 		if m_pToggleImage:boundingBox():containsPoint(tLayoutPoint) == true then
 			m_pToggleImage:setChecked(true);
 		else
@@ -130,21 +130,22 @@ local function createCGridPageViewBackPackTest()
 		
 		local pIconButton = tolua.cast(p_sender, "CButton");
 		m_pSelectedSprite:setPosition(p_touch:getLocation());
+		
+		pIconButton:setVisible(true); --back to the same as before dragged
+		m_pSelectedSprite:setVisible(false);
+		m_pToggleImage:setChecked(false);
 
-		local tLayoutPoint = p_base_scene.p_layout:convertTouchToNodeSpace(p_touch);
+		local tLayoutPoint = p_base_scene.p_window:convertTouchToNodeSpace(p_touch);
 		if m_pToggleImage:boundingBox():containsPoint(tLayoutPoint) == true then
 			table.remove(m_vData,pIconButton:getUserTag());
 			pTable:setCountOfCell(table.getn(m_vData));
 			pTable:reloadData();
 		end
-		pIconButton:setVisible(true); --back to the same as before dragged
-		m_pSelectedSprite:setVisible(false);
-		m_pToggleImage:setChecked(false);
 	end
 	
-	p_base_scene.p_layout:setOnTouchMovedAfterLongClickScriptHandler(on_afterlongclick_moved);
-	p_base_scene.p_layout:setOnTouchEndedAfterLongClickScriptHandler(on_afterlongclick_ended);
-	p_base_scene.p_layout:setOnTouchCancelledAfterLongClickScriptHandler(on_afterlongclick_ended);
+	p_base_scene.p_window:setOnTouchMovedAfterLongClickScriptHandler(on_afterlongclick_moved);
+	p_base_scene.p_window:setOnTouchEndedAfterLongClickScriptHandler(on_afterlongclick_ended);
+	p_base_scene.p_window:setOnTouchCancelledAfterLongClickScriptHandler(on_afterlongclick_ended);
 	
 	local function data_source(p_convertview, idx)
 		local pCell = tolua.cast(p_convertview, "CGridPageViewCell");
@@ -185,24 +186,23 @@ local function createCGridPageViewBackPackTest()
 	pTable = CGridPageView:create(CCSizeMake(320, 390));
 	pTable:setDataSourceAdapterScriptHandler(data_source);
 	pTable:setSizeOfCell(CCSizeMake(320 / 4, 390 / 5));
-	print(table.getn(m_vData));
 	pTable:setCountOfCell(table.getn(m_vData));
 	pTable:setColumns(4);
 	pTable:setRows(5);
 	pTable:setAutoRelocate(true);
 	pTable:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pTable);
+	p_base_scene.p_window:addChild(pTable);
 	pTable:reloadData();
 
 	m_pSelectedSprite = CCSprite:create("icon.png");
 	m_pSelectedSprite:setOpacity(170);
 	--m_pSelectedSprite:setZOrder(1);
 	m_pSelectedSprite:setVisible(false);
-	p_base_scene.p_layout:addChild(m_pSelectedSprite, 1);
+	p_base_scene.p_window:addChild(m_pSelectedSprite, 1);
 
 	m_pToggleImage = CToggleView:create("circle1.png", "circle2.png");
 	m_pToggleImage:setPosition(CCPoint(200, 320));
-	p_base_scene.p_layout:addChild(m_pToggleImage);
+	p_base_scene.p_window:addChild(m_pToggleImage);
 
 	return p_base_scene.p_scene;
 end

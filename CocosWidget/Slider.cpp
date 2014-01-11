@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -67,7 +67,13 @@ CSlider* CSlider::create(const char* pSlider, const char* pProgress)
 bool CSlider::initWithSlider(const char* pSlider, const char* pProgress)
 {
 	setSliderImage(pSlider);
-	return initWithFile(pProgress);
+
+	if( initWithFile(pProgress) )
+	{
+		return true;
+	}
+
+	return false;
 }
 
 void CSlider::setContentSize(const CCSize& tSize)

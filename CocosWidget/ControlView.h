@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,11 +27,6 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_CONTROLVIEW_H__
 #define __CCWIDGET_CONTROLVIEW_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// 
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
@@ -40,37 +35,26 @@ THE SOFTWARE.
 NS_CC_WIDGET_BEGIN
 
 /**
- * class    : CControlView
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 操作杆控件定义
+ * class  : CColorView
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CControlView : public CCNodeRGBA, public CWidget, public CControlableProtocol
 {
 public:
 	CControlView();
 	virtual ~CControlView();
-
-	// 初始化默认属性
 	virtual bool init();
-	// 通过图片路径初始化
 	virtual bool initWithFile(const char* pBaseBoard, const char* pJoystick);
-	// 当设置大小时更新内容位置
+	static CControlView* create();
+	static CControlView* create(const char* pBaseBoard, const char* pJoystick);
+
 	virtual void setContentSize(const CCSize& tContentSize);
-	
-	// 设置操作杆可操作范围半径
 	void setRadius(float fRadius);
-	// 获取操作杆可操作范围半径
 	float getRadius() const;
-	// 设置当手指离开操作杆时，是否动作调整。
 	void setRelocateWithAnimation(bool bAni);
-	// 获取是否动作调整位置
 	bool isRelocateWithAnimation() const;
-	
-	virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
-	virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
-    virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
-    virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
 
 	virtual void setBaseBoardImage(const char* pFile);
 	virtual void setJoystickImage(const char* pFile);
@@ -81,8 +65,11 @@ public:
 	virtual void setBaseBoardSpriteFrameName(const char* pSpriteName);
 	virtual void setJoystickSpriteFrameName(const char* pSpriteName);
 
-	static CControlView* create();
-	static CControlView* create(const char* pBaseBoard, const char* pJoystick);
+public:
+	virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
+	virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
+    virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
+    virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
 
 protected:
 	void relocateJoystick(bool bAni);
@@ -94,11 +81,8 @@ protected:
 	void stopExecuteUpdate();
 
 protected:
-	// 操作杆平台（背景）
 	CCSprite* m_pBaseBoard;
-	// 操作杆
 	CCSprite* m_pJoystick;
-	// 可移动半径
 	float m_fRadius;
 
 	bool m_bExecuteEventUpdate;

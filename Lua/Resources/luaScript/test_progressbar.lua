@@ -56,7 +56,7 @@ local function createCProgressBarBasicTest()
 	local m_pBg = CCSprite:create("background.png");
 	m_pBg:setScale(1.3);
 	m_pBg:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(m_pBg);
+	p_base_scene.p_window:addChild(m_pBg);
 
 	m_pProgressBar = CProgressBar:create("progress.png");
 	m_pProgressBar:setBackgroundImage("progress_bg.png");
@@ -66,7 +66,7 @@ local function createCProgressBarBasicTest()
 	m_pProgressBar:setDirection(eProgressBarDirectionLeftToRight);
 	m_pProgressBar:setOnValueChangedScriptHandler(on_progressing);
 	m_pProgressBar:setContentSize(CCSize(960, 640));
-	p_base_scene.p_layout:addChild(m_pProgressBar);
+	p_base_scene.p_window:addChild(m_pProgressBar);
 
 	local pButton = CButton:createWith9Sprite(CCSize(150, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
@@ -75,7 +75,7 @@ local function createCProgressBarBasicTest()
 	pButton:setOnClickScriptHandler(on_click);
 	pButton:getLabel():setFontSize(30);
 	pButton:getLabel():setString("Add");
-	p_base_scene.p_layout:addChild(pButton);
+	p_base_scene.p_window:addChild(pButton);
 
 	local pButton2 = CButton:createWith9Sprite(CCSize(150, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
@@ -84,7 +84,7 @@ local function createCProgressBarBasicTest()
 	pButton2:setOnClickScriptHandler(on_click);
 	pButton2:getLabel():setFontSize(30);
 	pButton2:getLabel():setString("Less");
-	p_base_scene.p_layout:addChild(pButton2);
+	p_base_scene.p_window:addChild(pButton2);
 
 	local pButton3 = CButton:createWith9Sprite(CCSize(200, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
@@ -93,7 +93,7 @@ local function createCProgressBarBasicTest()
 	pButton3:setOnClickScriptHandler(on_click);
 	pButton3:getLabel():setFontSize(30);
 	pButton3:getLabel():setString("change direction");
-	p_base_scene.p_layout:addChild(pButton3);
+	p_base_scene.p_window:addChild(pButton3);
 
 	local pButton4 = CButton:createWith9Sprite(CCSize(150, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
@@ -102,8 +102,8 @@ local function createCProgressBarBasicTest()
 	pButton4:setOnClickScriptHandler(on_click);
 	pButton4:getLabel():setFontSize(30);
 	pButton4:getLabel():setString("startProgress");
-	pButton4:updateCascadeLabelContentSize(CCSize(50, 30));
-	p_base_scene.p_layout:addChild(pButton4);
+	pButton4:setCascadeTextSizeEnabled(true, CCSize(50, 30));
+	p_base_scene.p_window:addChild(pButton4);
 
 	local pButton5 = CButton:createWith9Sprite(CCSize(150, 60),
 		"sprite9_btn1.png", "sprite9_btn2.png");
@@ -112,15 +112,15 @@ local function createCProgressBarBasicTest()
 	pButton5:setOnClickScriptHandler(on_click);
 	pButton5:getLabel():setFontSize(30);
 	pButton5:getLabel():setString("stopProgress");
-	pButton5:updateCascadeLabelContentSize(CCSize(50, 30));
-	p_base_scene.p_layout:addChild(pButton5);
+	pButton5:setCascadeTextSizeEnabled(true, CCSize(50, 30));
+	p_base_scene.p_window:addChild(pButton5);
 	
 	m_pText = CLabel:create();
 	m_pText:setAnchorPoint(CCPoint(0, 0.5));
 	m_pText:setPosition(CCPoint(200, 400));
 	m_pText:setFontSize(35.0);
 	m_pText:setString("none");
-	p_base_scene.p_layout:addChild(m_pText);
+	p_base_scene.p_window:addChild(m_pText);
 	
 	return p_base_scene.p_scene;
 end

@@ -1,9 +1,9 @@
-/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+﻿/****************************************************************************
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,20 +49,12 @@ CTableView::CTableView()
 , m_fAutoRelocateSpeed(CTABLEVIEW_AUTO_RELOCATE_SPPED)
 {
 	m_eDirection  = eScrollViewDirectionHorizontal;
-	m_pIndices    = new set<unsigned int>();
-	m_pPositions  = new vector<float>();
-	m_pCellsUsed  = new list<CTableViewCell*>();
-	m_pCellsFreed = new list<CTableViewCell*>();
 }
 
 CTableView::~CTableView()
 {
 	this->removeAllFromUsed();
 	this->removeAllFromFreed();
-	CC_SAFE_DELETE(m_pIndices);
-	CC_SAFE_DELETE(m_pPositions);
-	CC_SAFE_DELETE(m_pCellsUsed);
-	CC_SAFE_DELETE(m_pCellsFreed);
 }
 
 CTableView* CTableView::create(const CCSize& tViewSize, const CCSize& tCellSize, unsigned int uCellCount, 
@@ -143,46 +135,52 @@ void CTableView::reloadData()
 	CCAssert((int)m_tCellsSize.width != 0 && (int)m_tCellsSize.height != 0, "reloadData");
     CCAssert(m_eDirection != eScrollViewDirectionBoth, "reloadData");
 
-	list<CTableViewCell*>::iterator iter = m_pCellsUsed->begin();
-	while(iter != m_pCellsUsed->end())
+	vector<CTableViewCell*>::iterator itr = m_vCellsUsed.begin();
+	vector<CTableViewCell*>::iterator end = m_vCellsUsed.end();
+
+	for(; itr != end; ++itr )
 	{
-		CTableViewCell* pCell = (*iter);
-		m_pCellsFreed->push_back(pCell);
-		m_pContainer->removeChild(*iter, true);
-		iter = m_pCellsUsed->erase(iter);
+		CTableViewCell* pCell = (*itr);
+		m_vCellsFreed.push_back(pCell);
+		m_pContainer->removeChild(pCell, true);
+		pCell->reset();
 	}
 
-	m_pIndices->clear();
-    m_pPositions->clear();
+	m_vCellsUsed.clear();
+
+	m_sIndices.clear();
+	m_vPositions.clear();
 	this->updatePositions();
 	this->setContentOffsetToTop();
     this->onScrolling();
+
+	relocateContainer();
 }
 
 void CTableView::removeAllFromUsed()
 {
-	if( !m_pCellsUsed->empty() )
+	if( !m_vCellsUsed.empty() )
 	{
-		list<CTableViewCell*>::iterator iter = m_pCellsUsed->begin();
-		for(; iter != m_pCellsUsed->end(); ++iter)
+		vector<CTableViewCell*>::iterator iter = m_vCellsUsed.begin();
+		for(; iter != m_vCellsUsed.end(); ++iter )
 		{
 			m_pContainer->removeChild((*iter));
 			(*iter)->release();
 		}
-		m_pCellsUsed->clear();
+		m_vCellsUsed.clear();
 	}
 }
 
 void CTableView::removeAllFromFreed()
 {
-	if( !m_pCellsFreed->empty() )
+	if( !m_vCellsFreed.empty() )
 	{
-		list<CTableViewCell*>::iterator iter = m_pCellsFreed->begin();
-		for(; iter != m_pCellsFreed->end(); ++iter)
+		vector<CTableViewCell*>::iterator iter = m_vCellsFreed.begin();
+		for(; iter != m_vCellsFreed.end(); ++iter)
 		{
 			(*iter)->release();
 		}
-		m_pCellsFreed->clear();
+		m_vCellsFreed.clear();
 	}
 }
 
@@ -200,16 +198,16 @@ void CTableView::onScrolling()
 	CCLOG("cell begin %u  end %u", uBeginIdx, uEndIdx);
 #endif
 
-    while( !m_pCellsUsed->empty() )
+	while( !m_vCellsUsed.empty() )
     {
-        CTableViewCell* pCell = m_pCellsUsed->front();
+        CTableViewCell* pCell = m_vCellsUsed.front();
 		unsigned int uIdx = pCell->getIdx();
 
         if( uIdx < uBeginIdx )
         {
-			m_pIndices->erase(uIdx);
-			m_pCellsUsed->pop_front();
-            m_pCellsFreed->push_back(pCell);
+			m_sIndices.erase(uIdx);
+			m_vCellsUsed.erase(m_vCellsUsed.begin());
+            m_vCellsFreed.push_back(pCell);
             pCell->reset();
             m_pContainer->removeChild(pCell, true);
         }
@@ -218,17 +216,17 @@ void CTableView::onScrolling()
             break;
         }
     }
-    
-    while( !m_pCellsUsed->empty() )
+
+	while( !m_vCellsUsed.empty() )
     {
-        CTableViewCell* pCell = m_pCellsUsed->back();
+        CTableViewCell* pCell = m_vCellsUsed.back();
 		unsigned int uIdx = pCell->getIdx();
 
         if( uIdx > uEndIdx && uIdx < m_uCellsCount )
         {
-			m_pIndices->erase(uIdx);
-			m_pCellsUsed->pop_back();
-            m_pCellsFreed->push_back(pCell);
+			m_sIndices.erase(uIdx);
+			m_vCellsUsed.pop_back();
+            m_vCellsFreed.push_back(pCell);
             pCell->reset();
             m_pContainer->removeChild(pCell, true);
         }
@@ -240,7 +238,7 @@ void CTableView::onScrolling()
     
     for( unsigned int idx = uBeginIdx; idx <= uEndIdx && idx < m_uCellsCount; ++idx )
     {
-		if( m_pIndices->find(idx) != m_pIndices->end() )
+		if( m_sIndices.find(idx) != m_sIndices.end() )
 		{
 			continue;
 		}
@@ -317,15 +315,15 @@ CTableView* CTableView::create(const CCSize& tViewSize)
 
 CTableViewCell* CTableView::dequeueCell()
 {
-    CTableViewCell* pCell = NULL;
-    if( m_pCellsFreed->empty() )
+	CTableViewCell* pCell = NULL;
+    if( m_vCellsFreed.empty() )
     {
         return NULL;
     }
     else
     {
-        pCell = m_pCellsFreed->front();
-        m_pCellsFreed->pop_front();
+		pCell = m_vCellsFreed.back();
+		m_vCellsFreed.pop_back();
         pCell->autorelease();
     }
     return pCell;
@@ -411,11 +409,11 @@ CCPoint CTableView::cellPositionFromIndex(unsigned int idx)
 	{
 	case eScrollViewDirectionHorizontal:
 		{
-			return CCPoint(m_pPositions->at(idx), 0);
+			return CCPoint(m_vPositions[idx], 0);
 		}
 	default:
 		{
-			return CCPoint(0, m_pPositions->at(idx));
+			return CCPoint(0, m_vPositions[idx]);
 		}
 	}
 
@@ -424,22 +422,24 @@ CCPoint CTableView::cellPositionFromIndex(unsigned int idx)
 
 void CTableView::insertSortableCell(CTableViewCell* pCell, unsigned int idx)
 {
-	if( m_pCellsUsed->empty() )
+	if( m_vCellsUsed.empty() )
 	{
-		m_pCellsUsed->push_back(pCell);
+		m_vCellsUsed.push_back(pCell);
 	}
 	else
 	{
-		list<CTableViewCell*>::iterator iter = m_pCellsUsed->begin();
-		for(; iter != m_pCellsUsed->end(); ++iter)
+		vector<CTableViewCell*>::iterator iter = m_vCellsUsed.begin();
+		vector<CTableViewCell*>::iterator iend = m_vCellsUsed.end();
+
+		for(; iter != iend; ++iter )
 		{
 			if( (*iter)->getIdx() > idx )
 			{
-				m_pCellsUsed->insert(iter, pCell);
+				m_vCellsUsed.insert(iter, pCell);
 				return;
 			}
 		}
-		m_pCellsUsed->push_back(pCell);
+		m_vCellsUsed.push_back(pCell);
 		return;
 	}
 }
@@ -449,10 +449,12 @@ CCArray* CTableView::getCells()
 	CCArray* pArray = new CCArray();
 	pArray->initWithCapacity(10);
 
-	if( !m_pCellsUsed->empty() )
+	if( !m_vCellsUsed.empty() )
 	{
-		list<CTableViewCell*>::iterator iter = m_pCellsUsed->begin();
-		for(; iter != m_pCellsUsed->end(); ++iter)
+		vector<CTableViewCell*>::iterator iter = m_vCellsUsed.begin();
+		vector<CTableViewCell*>::iterator iend = m_vCellsUsed.end();
+
+		for(; iter != iend; ++iter )
 		{
 			pArray->addObject(*iter);
 		}
@@ -464,13 +466,15 @@ CCArray* CTableView::getCells()
 
 CTableViewCell* CTableView::cellAtIndex(unsigned int idx)
 {
-	if( m_pIndices->find(idx) == m_pIndices->end() )
+	if( m_sIndices.find(idx) == m_sIndices.end() )
 	{
 		return NULL;
 	}
 
-    list<CTableViewCell*>::iterator iter = m_pCellsUsed->begin();
-    for(; iter != m_pCellsUsed->end() ; ++iter)
+    vector<CTableViewCell*>::iterator iter = m_vCellsUsed.begin();
+	vector<CTableViewCell*>::iterator iend = m_vCellsUsed.end();
+
+    for(; iter != iend; ++iter )
     {
         if( (*iter)->getIdx() == idx )
         {
@@ -506,7 +510,7 @@ void CTableView::updateCellAtIndex(unsigned int idx)
 	insertSortableCell(pCell, idx);
     pCell->retain();
 
-	m_pIndices->insert(idx);
+	m_sIndices.insert(idx);
 }
 
 void CTableView::updatePositions()
@@ -516,7 +520,7 @@ void CTableView::updatePositions()
 		setContainerSize(CCSizeMake(m_tCellsSize.width * m_uCellsCount, m_tCellsSize.height));
         for(unsigned int i = 0; i < m_uCellsCount; ++i)
         {
-            m_pPositions->push_back(m_tCellsSize.width * i);
+            m_vPositions.push_back(m_tCellsSize.width * i);
         }
     }
     else
@@ -526,7 +530,7 @@ void CTableView::updatePositions()
 		fHeight = MAX(fHeight, m_obContentSize.height);	
         for(int i = m_uCellsCount - 1; i >= 0; --i)
         {
-            m_pPositions->push_back(fHeight);
+            m_vPositions.push_back(fHeight);
 			fHeight -= m_tCellsSize.height;
         }
     }

@@ -2,11 +2,12 @@ class CControlView : public CCNodeRGBA, public CWidget, public CControlableProto
 {
 	CControlView();
 	virtual ~CControlView();
-
 	virtual bool init();
 	virtual bool initWithFile(const char* pBaseBoard, const char* pJoystick);
+	static CControlView* create();
+	static CControlView* create(const char* pBaseBoard, const char* pJoystick);
+
 	virtual void setContentSize(const CCSize& tContentSize);
-	
 	void setRadius(float fRadius);
 	float getRadius() const;
 	void setRelocateWithAnimation(bool bAni);
@@ -20,9 +21,6 @@ class CControlView : public CCNodeRGBA, public CWidget, public CControlableProto
 	virtual void setJoystickTexture(CCTexture2D *pTexture);
 	virtual void setBaseBoardSpriteFrameName(const char* pSpriteName);
 	virtual void setJoystickSpriteFrameName(const char* pSpriteName);
-
-	static CControlView* create();
-	static CControlView* create(const char* pBaseBoard, const char* pJoystick);
 	
 	virtual void setOnControlScriptHandler(LUA_FUNCTION nHandler);
 	virtual void removeOnControlScriptHandler();
@@ -31,6 +29,8 @@ class CControlView : public CCNodeRGBA, public CWidget, public CControlableProto
 	void setUserTag(int nTag);
 	const char* getId();
 	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
 	virtual bool isEnabled();
 	virtual void setEnabled(bool bEnabled);
 	virtual bool isTouchEnabled();

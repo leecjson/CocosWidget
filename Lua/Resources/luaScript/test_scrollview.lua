@@ -28,12 +28,12 @@ local function createCScrollViewBasicTest()
 	
 	local pBg = CCSprite:create("background.png");
 	pBg:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pBg);
+	p_base_scene.p_window:addChild(pBg);
 
 	local pScroll = CScrollView:create(CCSize(480, 320));
 	pScroll:setPosition(CCPoint(480, 320));
 	pScroll:setDirection(eScrollViewDirectionBoth);
-	p_base_scene.p_layout:addChild(pScroll);
+	p_base_scene.p_window:addChild(pScroll);
 
 	local pSprite = CCSprite:create("scrollcontent.png");
 	pSprite:setAnchorPoint(CCPoint(0,0));
@@ -69,14 +69,14 @@ local function createCScrollViewEventTest()
 	
 	local pBg = CCSprite:create("background.png");
 	pBg:setPosition(CCPoint(680, 320));
-	p_base_scene.p_layout:addChild(pBg);
+	p_base_scene.p_window:addChild(pBg);
 	
 	local m_pText1 = CLabel:create();
 	m_pText1:setAnchorPoint(CCPoint(0, 0.5));
 	m_pText1:setPosition(CCPoint(35, 460));
 	m_pText1:setFontSize(35.0);
 	m_pText1:setString("contentOffset:");
-	p_base_scene.p_layout:addChild(m_pText1);
+	p_base_scene.p_window:addChild(m_pText1);
 
 	local pScroll = CScrollView:create(CCSize(480, 320));
 	pScroll:setOnScrollingScriptHandler(function(p_sender)
@@ -85,7 +85,7 @@ local function createCScrollViewEventTest()
 	end);
 	pScroll:setPosition(CCPoint(680, 320));
 	pScroll:setDirection(eScrollViewDirectionBoth);
-	p_base_scene.p_layout:addChild(pScroll);
+	p_base_scene.p_window:addChild(pScroll);
 
 	local pSprite = CCSprite:create("scrollcontent.png");
 	pSprite:setAnchorPoint(ccp(0,0));
@@ -122,12 +122,12 @@ local function createCScrollViewHorizontalTest()
 	
 	local pBg = CCSprite:create("background.png");
 	pBg:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pBg);
+	p_base_scene.p_window:addChild(pBg);
 
 	local pScroll = CScrollView:create(CCSize(480, 320));
 	pScroll:setPosition(CCPoint(480, 320));
 	pScroll:setDirection(eScrollViewDirectionHorizontal);
-	p_base_scene.p_layout:addChild(pScroll);
+	p_base_scene.p_window:addChild(pScroll);
 
 	local pSprite = CCSprite:create("scrollcontent.png");
 	pSprite:setAnchorPoint(ccp(0,0));
@@ -178,12 +178,12 @@ local function createCScrollViewVerticalTest()
 	
 	local pBg = CCSprite:create("background.png");
 	pBg:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pBg);
+	p_base_scene.p_window:addChild(pBg);
 
 	local pScroll = CScrollView:create(CCSize(480, 320));
 	pScroll:setPosition(CCPoint(480, 320));
 	pScroll:setDirection(eScrollViewDirectionVertical);
-	p_base_scene.p_layout:addChild(pScroll);
+	p_base_scene.p_window:addChild(pScroll);
 
 	local pSprite = CCSprite:create("scrollcontent.png");
 	pSprite:setAnchorPoint(ccp(0,0));
@@ -226,12 +226,12 @@ local function createCScrollViewAttributeTest()
 	
 	local pBg = CCSprite:create("background.png");
 	pBg:setPosition(CCPoint(680, 320));
-	p_base_scene.p_layout:addChild(pBg);
+	p_base_scene.p_window:addChild(pBg);
 
 	local pScroll = CScrollView:create(CCSize(480, 320));
 	pScroll:setPosition(CCPoint(680, 320));
 	pScroll:setDirection(eScrollViewDirectionVertical);
-	p_base_scene.p_layout:addChild(pScroll);
+	p_base_scene.p_window:addChild(pScroll);
 
 	local pSprite = CCSprite:create("scrollcontent.png");
 	pSprite:setAnchorPoint(ccp(0,0));
@@ -277,14 +277,14 @@ local function createCScrollViewAttributeTest()
 	pToggle1:setChecked(true);
 	pToggle1:setOnClickScriptHandler(on_click);
 	pToggle1:setUserTag(1);
-	p_base_scene.p_layout:addChild(pToggle1);
+	p_base_scene.p_window:addChild(pToggle1);
 
 	local pText1 = CLabel:create();
 	pText1:setAnchorPoint(CCPoint(0, 0.5));
 	pText1:setPosition(CCPoint(300, 480));
 	pText1:setFontSize(35.0);
 	pText1:setString("true");
-	p_base_scene.p_layout:addChild(pText1);
+	p_base_scene.p_window:addChild(pText1);
 	pToggle1:setUserObject(pText1);
 
 	local pToggle2 = CToggleView:createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
@@ -294,14 +294,14 @@ local function createCScrollViewAttributeTest()
 	pToggle2:setChecked(true);
 	pToggle2:setOnClickScriptHandler(on_click);
 	pToggle2:setUserTag(2);
-	p_base_scene.p_layout:addChild(pToggle2);
+	p_base_scene.p_window:addChild(pToggle2);
 
 	local pText2 = CLabel:create();
 	pText2:setAnchorPoint(CCPoint(0, 0.5));
 	pText2:setPosition(CCPoint(300, 400));
 	pText2:setFontSize(35.0);
 	pText2:setString("true");
-	p_base_scene.p_layout:addChild(pText2);
+	p_base_scene.p_window:addChild(pText2);
 	pToggle2:setUserObject(pText2);
 
 
@@ -312,14 +312,14 @@ local function createCScrollViewAttributeTest()
 	pToggle3:setChecked(true);
 	pToggle3:setOnClickScriptHandler(on_click);
 	pToggle3:setUserTag(3);
-	p_base_scene.p_layout:addChild(pToggle3);
+	p_base_scene.p_window:addChild(pToggle3);
 
 	local pText3 = CLabel:create();
 	pText3:setAnchorPoint(CCPoint(0, 0.5));
 	pText3:setPosition(CCPoint(300, 320));
 	pText3:setFontSize(35.0);
 	pText3:setString("true");
-	p_base_scene.p_layout:addChild(pText3);
+	p_base_scene.p_window:addChild(pText3);
 	pToggle3:setUserObject(pText3);
 
 	local pToggle4 = CToggleView:createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
@@ -329,14 +329,14 @@ local function createCScrollViewAttributeTest()
 	pToggle4:setChecked(true);
 	pToggle4:setOnClickScriptHandler(on_click);
 	pToggle4:setUserTag(4);
-	p_base_scene.p_layout:addChild(pToggle4);
+	p_base_scene.p_window:addChild(pToggle4);
 
 	local pText4 = CLabel:create();
 	pText4:setAnchorPoint(CCPoint(0, 0.5));
 	pText4:setPosition(CCPoint(300, 240));
 	pText4:setFontSize(35.0);
 	pText4:setString("true");
-	p_base_scene.p_layout:addChild(pText4);
+	p_base_scene.p_window:addChild(pText4);
 	pToggle4:setUserObject(pText4);
 
 	return p_base_scene.p_scene;
@@ -367,12 +367,12 @@ local function createCScrollViewAnimationTest()
 	
 	local pBg = CCSprite:create("background.png");
 	pBg:setPosition(CCPoint(680, 320));
-	p_base_scene.p_layout:addChild(pBg);
+	p_base_scene.p_window:addChild(pBg);
 
 	local pScroll = CScrollView:create(CCSize(480, 320));
 	pScroll:setPosition(CCPoint(680, 320));
 	pScroll:setDirection(eScrollViewDirectionHorizontal);
-	p_base_scene.p_layout:addChild(pScroll);
+	p_base_scene.p_window:addChild(pScroll);
 
 	local pSprite = CCSprite:create("scrollcontent.png");
 	pSprite:setAnchorPoint(ccp(0,0));
@@ -404,14 +404,14 @@ local function createCScrollViewAnimationTest()
 	pButton1:setPosition(120, 480);
 	pButton1:setOnClickScriptHandler(on_click);
 	pButton1:setUserTag(1);
-	p_base_scene.p_layout:addChild(pButton1);
+	p_base_scene.p_window:addChild(pButton1);
 
 	local pText1 = CLabel:create();
 	pText1:setAnchorPoint(CCPoint(0, 0.5));
 	pText1:setPosition(CCPoint(240, 480));
 	pText1:setFontSize(35.0);
 	pText1:setString("setContentOffsetInDuration");
-	p_base_scene.p_layout:addChild(pText1);
+	p_base_scene.p_window:addChild(pText1);
 
 
 	local pButton2 = CButton:createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
@@ -420,14 +420,14 @@ local function createCScrollViewAnimationTest()
 	pButton2:setPosition(120, 400);
 	pButton2:setOnClickScriptHandler(on_click);
 	pButton2:setUserTag(2);
-	p_base_scene.p_layout:addChild(pButton2);
+	p_base_scene.p_window:addChild(pButton2);
 
 	local pText2 = CLabel:create();
 	pText2:setAnchorPoint(CCPoint(0, 0.5));
 	pText2:setPosition(CCPoint(240, 400));
 	pText2:setFontSize(35.0);
 	pText2:setString("setContentOffsetEaseIn");
-	p_base_scene.p_layout:addChild(pText2);
+	p_base_scene.p_window:addChild(pText2);
 
 	local pButton3 = CButton:createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
 	pButton3:getLabel():setFontSize(28);
@@ -435,14 +435,14 @@ local function createCScrollViewAnimationTest()
 	pButton3:setPosition(120, 320);
 	pButton3:setOnClickScriptHandler(on_click);
 	pButton3:setUserTag(3);
-	p_base_scene.p_layout:addChild(pButton3);
+	p_base_scene.p_window:addChild(pButton3);
 
 	local pText3 = CLabel:create();
 	pText3:setAnchorPoint(CCPoint(0, 0.5));
 	pText3:setPosition(CCPoint(240, 320));
 	pText3:setFontSize(35.0);
 	pText3:setString("setContentOffset");
-	p_base_scene.p_layout:addChild(pText3);
+	p_base_scene.p_window:addChild(pText3);
 	
 	
 	return p_base_scene.p_scene;
@@ -475,7 +475,7 @@ local function createCScrollViewInsideScrollTest()
 	pScroll:setBackgroundImage("background.png");
 	pScroll:setPosition(CCPoint(480, 320));
 	pScroll:setDirection(eScrollViewDirectionBoth);
-	p_base_scene.p_layout:addChild(pScroll);
+	p_base_scene.p_window:addChild(pScroll);
 
 	local pSprite = CCSprite:create("scrollcontent.png");
 	pSprite:setAnchorPoint(ccp(0,0));

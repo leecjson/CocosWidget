@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,11 +27,6 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_IMAGEVIEW_H__
 #define __CCWIDGET_IMAGEVIEW_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// 
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
@@ -40,10 +35,10 @@ THE SOFTWARE.
 NS_CC_WIDGET_BEGIN
 
 /**
- * class    : CImageView
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 图像视图控件定义
+ * class  : CImageView
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CImageView : public CCSprite
 , public CWidget
@@ -52,12 +47,7 @@ class CImageView : public CCSprite
 {
 public:
 	CImageView();
-
-	virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
-	virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
-	virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
-	virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
-
+	virtual bool init();
 	static CImageView* create();
 	static CImageView* create(const char *pszFileName);
 	static CImageView* create(const char *pszFileName, const CCRect& rect);
@@ -65,6 +55,12 @@ public:
 	static CImageView* createWithTexture(CCTexture2D *pTexture, const CCRect& rect);
 	static CImageView* createWithSpriteFrame(CCSpriteFrame *pSpriteFrame);
 	static CImageView* createWithSpriteFrameName(const char *pszSpriteFrameName);
+
+public:
+	virtual CWidgetTouchModel onTouchBegan(CCTouch *pTouch);
+	virtual void onTouchMoved(CCTouch *pTouch, float fDuration);
+	virtual void onTouchEnded(CCTouch *pTouch, float fDuration);
+	virtual void onTouchCancelled(CCTouch *pTouch, float fDuration);
 
 	CC_WIDGET_LONGCLICK_SCHEDULE(CImageView);
 };

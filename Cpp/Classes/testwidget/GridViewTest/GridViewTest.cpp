@@ -25,7 +25,7 @@ bool CGridViewBasicTest::init()
 
 	CCSprite* pBg = CCSprite::create("background.png");
 	pBg->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pBg);
+	m_pWindow->addChild(pBg);
 
 	CGridView* pGridView = CGridView::create(
 		CCSize(480, 320),
@@ -34,7 +34,7 @@ bool CGridViewBasicTest::init()
 		ccw_datasource_adapter_selector(CGridViewBasicTest::gridviewDataSource));
 	pGridView->setColumns(5);
 	pGridView->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pGridView);
+	m_pWindow->addChild(pGridView);
 	pGridView->setAutoRelocate(true);
 	pGridView->reloadData();
 

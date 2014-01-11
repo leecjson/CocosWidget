@@ -52,7 +52,7 @@ local function createCGridViewBasicTest()
 	
 	local pBg = CCSprite:create("background.png");
 	pBg:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pBg);
+	p_base_scene.p_window:addChild(pBg);
 
 	local pGridView = CGridView:create(CCSize(480, 320));
 	pGridView:setSizeOfCell(CCSize(480 / 5, 320 / 4));
@@ -60,7 +60,7 @@ local function createCGridViewBasicTest()
 	pGridView:setDataSourceAdapterScriptHandler(data_source);
 	pGridView:setColumns(5);
 	pGridView:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pGridView);
+	p_base_scene.p_window:addChild(pGridView);
 	pGridView:setAutoRelocate(true);
 	pGridView:reloadData();
 	

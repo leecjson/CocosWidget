@@ -25,12 +25,12 @@ bool CScrollViewBasicTest::init()
 
 	CCSprite* pBg = CCSprite::create("background.png");
 	pBg->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pBg);
+	m_pWindow->addChild(pBg);
 
 	CScrollView* pScroll = CScrollView::create(CCSize(480, 320));
 	pScroll->setPosition(CCPoint(480, 320));
 	pScroll->setDirection(eScrollViewDirectionBoth);
-	m_pLayout->addChild(pScroll);
+	m_pWindow->addChild(pScroll);
 
 	CCSprite* pSprite = CCSprite::create("scrollcontent.png");
 	pSprite->setAnchorPoint(CCPointZero);
@@ -51,13 +51,13 @@ bool CScrollViewEventTest::init()
 
 	CCSprite* pBg = CCSprite::create("background.png");
 	pBg->setPosition(CCPoint(680, 320));
-	m_pLayout->addChild(pBg);
+	m_pWindow->addChild(pBg);
 
 	CScrollView* pScroll = CScrollView::create(CCSize(480, 320));
 	pScroll->setOnScrollingListener(this, ccw_scrolling_selector(CScrollViewEventTest::onScrolling));
 	pScroll->setPosition(CCPoint(680, 320));
 	pScroll->setDirection(eScrollViewDirectionBoth);
-	m_pLayout->addChild(pScroll);
+	m_pWindow->addChild(pScroll);
 
 	CCSprite* pSprite = CCSprite::create("scrollcontent.png");
 	pSprite->setAnchorPoint(CCPointZero);
@@ -70,7 +70,7 @@ bool CScrollViewEventTest::init()
 	m_pText1->setPosition(CCPoint(35, 460));
 	m_pText1->setFontSize(35.0f);
 	m_pText1->setString("contentOffset:");
-	m_pLayout->addChild(m_pText1);
+	m_pWindow->addChild(m_pText1);
 
 	return true;
 }
@@ -94,12 +94,12 @@ bool CScrollViewHorizontalTest::init()
 
 	CCSprite* pBg = CCSprite::create("background.png");
 	pBg->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pBg);
+	m_pWindow->addChild(pBg);
 
 	CScrollView* pScroll = CScrollView::create(CCSize(480, 320));
 	pScroll->setPosition(CCPoint(480, 320));
 	pScroll->setDirection(eScrollViewDirectionHorizontal);
-	m_pLayout->addChild(pScroll);
+	m_pWindow->addChild(pScroll);
 
 	CCSprite* pSprite = CCSprite::create("scrollcontent.png");
 	pSprite->setAnchorPoint(CCPointZero);
@@ -136,12 +136,12 @@ bool CScrollViewVerticalTest::init()
 
 	CCSprite* pBg = CCSprite::create("background.png");
 	pBg->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pBg);
+	m_pWindow->addChild(pBg);
 
 	CScrollView* pScroll = CScrollView::create(CCSize(480, 320));
 	pScroll->setPosition(CCPoint(480, 320));
 	pScroll->setDirection(eScrollViewDirectionVertical);
-	m_pLayout->addChild(pScroll);
+	m_pWindow->addChild(pScroll);
 
 	CCSprite* pSprite = CCSprite::create("scrollcontent.png");
 	pSprite->setAnchorPoint(CCPointZero);
@@ -171,12 +171,12 @@ bool CScrollViewAttributeTest::init()
 
 	CCSprite* pBg = CCSprite::create("background.png");
 	pBg->setPosition(CCPoint(680, 320));
-	m_pLayout->addChild(pBg);
+	m_pWindow->addChild(pBg);
 
 	pScroll = CScrollView::create(CCSize(480, 320));
 	pScroll->setPosition(CCPoint(680, 320));
 	pScroll->setDirection(eScrollViewDirectionVertical);
-	m_pLayout->addChild(pScroll);
+	m_pWindow->addChild(pScroll);
 
 	CCSprite* pSprite = CCSprite::create("scrollcontent.png");
 	pSprite->setAnchorPoint(CCPointZero);
@@ -194,69 +194,69 @@ bool CScrollViewAttributeTest::init()
 	}
 
 	CToggleView* pToggle1 = CToggleView::createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
-	pToggle1->getLabel()->initWithString("setDeaccelerateable", "", 28);
+	pToggle1->initText("setDeaccelerateable", "", 28);
 	pToggle1->setPosition(150, 480);
 	pToggle1->setChecked(true);
 	pToggle1->setOnClickListener(this, ccw_click_selector(CScrollViewAttributeTest::onClick));
 	pToggle1->setUserTag(1);
-	m_pLayout->addChild(pToggle1);
+	m_pWindow->addChild(pToggle1);
 
 	CLabel* pText1 = CLabel::create();
 	pText1->setAnchorPoint(CCPoint(0, 0.5));
 	pText1->setPosition(CCPoint(300, 480));
 	pText1->setFontSize(35.0f);
 	pText1->setString("true");
-	m_pLayout->addChild(pText1);
+	m_pWindow->addChild(pText1);
 	pToggle1->setUserObject(pText1);
 
 	CToggleView* pToggle2 = CToggleView::createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
-	pToggle2->getLabel()->initWithString("setBounceable", "", 28);
+	pToggle2->initText("setBounceable", "", 28);
 	pToggle2->setPosition(150, 400);
 	pToggle2->setChecked(true);
 	pToggle2->setOnClickListener(this, ccw_click_selector(CScrollViewAttributeTest::onClick));
 	pToggle2->setUserTag(2);
-	m_pLayout->addChild(pToggle2);
+	m_pWindow->addChild(pToggle2);
 
 	CLabel* pText2 = CLabel::create();
 	pText2->setAnchorPoint(CCPoint(0, 0.5));
 	pText2->setPosition(CCPoint(300, 400));
 	pText2->setFontSize(35.0f);
 	pText2->setString("true");
-	m_pLayout->addChild(pText2);
+	m_pWindow->addChild(pText2);
 	pToggle2->setUserObject(pText2);
 
 
 	CToggleView* pToggle3 = CToggleView::createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
-	pToggle3->getLabel()->initWithString("setDragable", "", 28);
+	pToggle3->initText("setDragable", "", 28);
 	pToggle3->setPosition(150, 320);
 	pToggle3->setChecked(true);
 	pToggle3->setOnClickListener(this, ccw_click_selector(CScrollViewAttributeTest::onClick));
 	pToggle3->setUserTag(3);
-	m_pLayout->addChild(pToggle3);
+	m_pWindow->addChild(pToggle3);
 
 	CLabel* pText3 = CLabel::create();
 	pText3->setAnchorPoint(CCPoint(0, 0.5));
 	pText3->setPosition(CCPoint(300, 320));
 	pText3->setFontSize(35.0f);
 	pText3->setString("true");
-	m_pLayout->addChild(pText3);
+	m_pWindow->addChild(pText3);
 	pToggle3->setUserObject(pText3);
 
 
 	CToggleView* pToggle4 = CToggleView::createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
-	pToggle4->getLabel()->initWithString("setTouchEnabled", "", 28);
+	pToggle4->initText("setTouchEnabled", "", 28);
 	pToggle4->setPosition(150, 240);
 	pToggle4->setChecked(true);
 	pToggle4->setOnClickListener(this, ccw_click_selector(CScrollViewAttributeTest::onClick));
 	pToggle4->setUserTag(4);
-	m_pLayout->addChild(pToggle4);
+	m_pWindow->addChild(pToggle4);
 
 	CLabel* pText4 = CLabel::create();
 	pText4->setAnchorPoint(CCPoint(0, 0.5));
 	pText4->setPosition(CCPoint(300, 240));
 	pText4->setFontSize(35.0f);
 	pText4->setString("true");
-	m_pLayout->addChild(pText4);
+	m_pWindow->addChild(pText4);
 	pToggle4->setUserObject(pText4);
 
 	return true;
@@ -304,12 +304,12 @@ bool CScrollViewAnimationTest::init()
 
 	CCSprite* pBg = CCSprite::create("background.png");
 	pBg->setPosition(CCPoint(680, 320));
-	m_pLayout->addChild(pBg);
+	m_pWindow->addChild(pBg);
 
 	pScroll = CScrollView::create(CCSize(480, 320));
 	pScroll->setPosition(CCPoint(680, 320));
 	pScroll->setDirection(eScrollViewDirectionHorizontal);
-	m_pLayout->addChild(pScroll);
+	m_pWindow->addChild(pScroll);
 
 	CCSprite* pSprite = CCSprite::create("scrollcontent.png");
 	pSprite->setAnchorPoint(CCPointZero);
@@ -327,47 +327,47 @@ bool CScrollViewAnimationTest::init()
 
 
 	CButton* pButton1 = CButton::createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
-	pButton1->getLabel()->initWithString("scrollToRight", "", 28);
+	pButton1->initText("scrollToRight", "", 28);
 	pButton1->setPosition(120, 480);
 	pButton1->setOnClickListener(this, ccw_click_selector(CScrollViewAnimationTest::onClick));
 	pButton1->setUserTag(1);
-	m_pLayout->addChild(pButton1);
+	m_pWindow->addChild(pButton1);
 
 	CLabel* pText1 = CLabel::create();
 	pText1->setAnchorPoint(CCPoint(0, 0.5));
 	pText1->setPosition(CCPoint(240, 480));
 	pText1->setFontSize(35.0f);
 	pText1->setString("setContentOffsetInDuration");
-	m_pLayout->addChild(pText1);
+	m_pWindow->addChild(pText1);
 
 
 	CButton* pButton2 = CButton::createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
-	pButton2->getLabel()->initWithString("scrollToLeft", "", 28);
+	pButton2->initText("scrollToLeft", "", 28);
 	pButton2->setPosition(120, 400);
 	pButton2->setOnClickListener(this, ccw_click_selector(CScrollViewAnimationTest::onClick));
 	pButton2->setUserTag(2);
-	m_pLayout->addChild(pButton2);
+	m_pWindow->addChild(pButton2);
 
 	CLabel* pText2 = CLabel::create();
 	pText2->setAnchorPoint(CCPoint(0, 0.5));
 	pText2->setPosition(CCPoint(240, 400));
 	pText2->setFontSize(35.0f);
 	pText2->setString("setContentOffsetEaseIn");
-	m_pLayout->addChild(pText2);
+	m_pWindow->addChild(pText2);
 
 	CButton* pButton3 = CButton::createWith9Sprite(CCSize(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
-	pButton3->getLabel()->initWithString("scrollToRight", "", 28);
+	pButton3->initText("scrollToRight", "", 28);
 	pButton3->setPosition(120, 320);
 	pButton3->setOnClickListener(this, ccw_click_selector(CScrollViewAnimationTest::onClick));
 	pButton3->setUserTag(3);
-	m_pLayout->addChild(pButton3);
+	m_pWindow->addChild(pButton3);
 
 	CLabel* pText3 = CLabel::create();
 	pText3->setAnchorPoint(CCPoint(0, 0.5));
 	pText3->setPosition(CCPoint(240, 320));
 	pText3->setFontSize(35.0f);
 	pText3->setString("setContentOffset");
-	m_pLayout->addChild(pText3);
+	m_pWindow->addChild(pText3);
 
 	return true;
 }
@@ -401,7 +401,7 @@ bool CScrollViewInsideScrollTest::init()
 	pScroll->setBackgroundImage("background.png");
 	pScroll->setPosition(CCPoint(480, 320));
 	pScroll->setDirection(eScrollViewDirectionBoth);
-	m_pLayout->addChild(pScroll);
+	m_pWindow->addChild(pScroll);
 
 	CCSprite* pSprite = CCSprite::create("scrollcontent.png");
 	pSprite->setAnchorPoint(CCPointZero);

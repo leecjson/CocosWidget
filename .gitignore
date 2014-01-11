@@ -11,5 +11,5 @@
 *.lai
 *.la
 *.a
-
+*.tlog
 *.svn

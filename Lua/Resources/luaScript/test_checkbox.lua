@@ -31,7 +31,7 @@ local function createCCheckBoxBasicTest()
 	m_pText:setPosition(CCPoint(380, 400));
 	m_pText:setFontSize(35.0);
 	m_pText:setString("none");
-	p_base_scene.p_layout:addChild(m_pText);
+	p_base_scene.p_window:addChild(m_pText);
 	
 	local function onClick(p_sender)
 		local pCheckBox = tolua.cast(p_sender, "CCheckBox");
@@ -51,14 +51,14 @@ local function createCCheckBoxBasicTest()
 	pCheckBox:setDisabledCheckedImage("ckb_disable_02.png");
 	pCheckBox:setOnClickScriptHandler(onClick);
 	pCheckBox:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pCheckBox);
+	p_base_scene.p_window:addChild(pCheckBox);
 
 	local pCheckBox2 = CCheckBox:create();
 	pCheckBox2:setNormalImage("ckb_normal_01.png");
 	pCheckBox2:setCheckedImage("ckb_selected_01.png");
 	pCheckBox2:setOnClickScriptHandler(onClick);
 	pCheckBox2:setPosition(CCPoint(560, 320));
-	p_base_scene.p_layout:addChild(pCheckBox2);
+	p_base_scene.p_window:addChild(pCheckBox2);
 	
 	return p_base_scene.p_scene;
 end
@@ -98,7 +98,7 @@ local function createCCheckBoxExclusionTest()
 	pCheckBox1:setExclusion(1);
 	pCheckBox1:setChecked(true);
 	pCheckBox1:setEnabled(false);
-	p_base_scene.p_layout:addChild(pCheckBox1);
+	p_base_scene.p_window:addChild(pCheckBox1);
 	
 	local pCheckBox2 = CCheckBox:create();
 	pCheckBox2:setNormalImage("ckb_normal_01.png");
@@ -109,7 +109,7 @@ local function createCCheckBoxExclusionTest()
 	pCheckBox2:setDisabledCheckedImage("ckb_disable_02.png");
 	pCheckBox2:setPosition(CCPoint(480, 425));
 	pCheckBox2:setExclusion(1);
-	p_base_scene.p_layout:addChild(pCheckBox2);
+	p_base_scene.p_window:addChild(pCheckBox2);
 	
 	local pCheckBox3 = CCheckBox:create();
 	pCheckBox3:setNormalImage("ckb_normal_01.png");
@@ -120,7 +120,7 @@ local function createCCheckBoxExclusionTest()
 	pCheckBox3:setDisabledCheckedImage("ckb_disable_02.png");
 	pCheckBox3:setPosition(CCPoint(480, 360));
 	pCheckBox3:setExclusion(1);
-	p_base_scene.p_layout:addChild(pCheckBox3);
+	p_base_scene.p_window:addChild(pCheckBox3);
 	
 	local pCheckBox4 = CCheckBox:create();
 	pCheckBox4:setNormalImage("ckb_normal_01.png");
@@ -131,7 +131,7 @@ local function createCCheckBoxExclusionTest()
 	pCheckBox4:setDisabledCheckedImage("ckb_disable_02.png");
 	pCheckBox4:setPosition(CCPoint(480, 295));
 	pCheckBox4:setExclusion(1);
-	p_base_scene.p_layout:addChild(pCheckBox4);
+	p_base_scene.p_window:addChild(pCheckBox4);
 	
 	local pCheckBox5 = CCheckBox:create();
 	pCheckBox5:setNormalImage("ckb_normal_01.png");
@@ -142,7 +142,7 @@ local function createCCheckBoxExclusionTest()
 	pCheckBox5:setDisabledCheckedImage("ckb_disable_02.png");
 	pCheckBox5:setPosition(CCPoint(480, 230));
 	pCheckBox5:setExclusion(1);
-	p_base_scene.p_layout:addChild(pCheckBox5);
+	p_base_scene.p_window:addChild(pCheckBox5);
 	
 	local pCheckBox6 = CCheckBox:create();
 	pCheckBox6:setNormalImage("ckb_normal_01.png");
@@ -153,7 +153,7 @@ local function createCCheckBoxExclusionTest()
 	pCheckBox6:setDisabledCheckedImage("ckb_disable_02.png");
 	pCheckBox6:setPosition(CCPoint(480, 165));
 	pCheckBox6:setExclusion(1);
-	p_base_scene.p_layout:addChild(pCheckBox6);
+	p_base_scene.p_window:addChild(pCheckBox6);
 	
 	local function on_click(p_sender)
 		pCheckBox1:setChecked(true);
@@ -165,7 +165,7 @@ local function createCCheckBoxExclusionTest()
 	pButton:setOnClickScriptHandler(on_click);
 	pButton:getLabel():setFontSize(30);
 	pButton:getLabel():setString("set true for first");
-	p_base_scene.p_layout:addChild(pButton);
+	p_base_scene.p_window:addChild(pButton);
 	
 	return p_base_scene.p_scene;
 end

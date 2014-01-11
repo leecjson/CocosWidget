@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,7 +24,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
-#include "WidgetLayout.h"
+#include "WidgetWindow.h"
 #if USING_LUA
 #include "CCLuaEngine.h"
 #endif
@@ -32,9 +32,10 @@ using namespace std;
 
 NS_CC_WIDGET_BEGIN
 
-CWidgetLayout::CWidgetLayout()
+CWidgetWindow::CWidgetWindow()
 : m_bIsTouched(false)
 , m_nTouchPriority(0)
+, m_bModalable(false)
 , m_bTouchEnabled(true)
 , m_pSelectedWidget(NULL)
 , m_fTouchedDuration(0.0f)
@@ -55,7 +56,7 @@ CWidgetLayout::CWidgetLayout()
 
 }
 
-CWidgetLayout::~CWidgetLayout()
+CWidgetWindow::~CWidgetWindow()
 {
 #if USING_LUA
 	removeOnTouchMovedAfterLongClickScriptHandler();
@@ -64,21 +65,18 @@ CWidgetLayout::~CWidgetLayout()
 #endif
 }
 
-int CWidgetLayout::getTouchPriority()
+int CWidgetWindow::getTouchPriority()
 {
 	return m_nTouchPriority;
 }
 
-CCObject* CWidgetLayout::findViewById(const char* id)
+CCObject* CWidgetWindow::findViewById(const char* id)
 {
-	if( id && strlen(id) )
-	{
-		return find(m_pChildren, id);
-	}
-	return NULL;
+	CCAssert(id && strlen(id), "should not null");
+	return find(m_pChildren, id);
 }
 
-CCObject* CWidgetLayout::find(CCArray* pChidren, const char* id)
+CCObject* CWidgetWindow::find(CCArray* pChidren, const char* id)
 {
 	if( pChidren && pChidren->count() > 0 )
 	{
@@ -107,11 +105,11 @@ CCObject* CWidgetLayout::find(CCArray* pChidren, const char* id)
 	return NULL;
 }
 
-void CWidgetLayout::setLongClickTouchHandlerWidget(CCObject* pWidgetObject, int nTouchId)
+void CWidgetWindow::setLongClickTouchHandlerWidget(CCObject* pWidgetObject, int nTouchId)
 {
 	if( m_bMultiTouchEnabled && !m_mMultiTouchKeeper.empty() )
 	{
-		map<int, tagMultiTouchKeeper>::iterator itr = m_mMultiTouchKeeper.find(nTouchId);
+		map<int, __ccMULTITOUCHTARGET>::iterator itr = m_mMultiTouchKeeper.find(nTouchId);
 		if( itr != m_mMultiTouchKeeper.end() )
 		{
 			itr->second.pLongClickedWidgetObject = pWidgetObject;
@@ -123,44 +121,44 @@ void CWidgetLayout::setLongClickTouchHandlerWidget(CCObject* pWidgetObject, int 
 	}
 }
 
-void CWidgetLayout::setOnTouchMovedAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler)
+void CWidgetWindow::setOnTouchMovedAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler)
 {
 	m_pTouchMovedAfterLongClickListener = pListener;
     m_pTouchMovedAfterLongClickHandler = pHandler;
 }
 
-void CWidgetLayout::setOnTouchEndedAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler)
+void CWidgetWindow::setOnTouchEndedAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler)
 {
 	m_pTouchEndedAfterLongClickListener = pListener;
     m_pTouchEndedAfterLongClickHandler = pHandler;
 }
 
-void CWidgetLayout::setOnTouchCancelledAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler)
+void CWidgetWindow::setOnTouchCancelledAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler)
 {
 	m_pTouchCancelledAfterLongClickListener = pListener;
     m_pTouchCancelledAfterLongClickHandler = pHandler;
 }
 
 #if USING_LUA
-void CWidgetLayout::setOnTouchMovedAfterLongClickScriptHandler(int nHandler)
+void CWidgetWindow::setOnTouchMovedAfterLongClickScriptHandler(int nHandler)
 {
 	removeOnTouchMovedAfterLongClickScriptHandler();
 	m_nTouchMovedAfterLongClickScriptHandler = nHandler;
 }
 
-void CWidgetLayout::setOnTouchEndedAfterLongClickScriptHandler(int nHandler)
+void CWidgetWindow::setOnTouchEndedAfterLongClickScriptHandler(int nHandler)
 {
 	removeOnTouchEndedAfterLongClickScriptHandler();
 	m_nTouchEndedAfterLongClickScriptHandler = nHandler;
 }
 
-void CWidgetLayout::setOnTouchCancelledAfterLongClickScriptHandler(int nHandler)
+void CWidgetWindow::setOnTouchCancelledAfterLongClickScriptHandler(int nHandler)
 {
 	removeOnTouchCancelledAfterLongClickScriptHandler();
 	m_pTouchCancelledAfterLongClickScriptHandler = nHandler;
 }
 
-void CWidgetLayout::removeOnTouchMovedAfterLongClickScriptHandler()
+void CWidgetWindow::removeOnTouchMovedAfterLongClickScriptHandler()
 {
 	if( m_nTouchMovedAfterLongClickScriptHandler != 0 )
 	{
@@ -169,7 +167,7 @@ void CWidgetLayout::removeOnTouchMovedAfterLongClickScriptHandler()
 	}
 }
 
-void CWidgetLayout::removeOnTouchEndedAfterLongClickScriptHandler()
+void CWidgetWindow::removeOnTouchEndedAfterLongClickScriptHandler()
 {
 	if( m_nTouchEndedAfterLongClickScriptHandler != 0 )
 	{
@@ -178,7 +176,7 @@ void CWidgetLayout::removeOnTouchEndedAfterLongClickScriptHandler()
 	}
 }
 
-void CWidgetLayout::removeOnTouchCancelledAfterLongClickScriptHandler()
+void CWidgetWindow::removeOnTouchCancelledAfterLongClickScriptHandler()
 {
 	if( m_pTouchCancelledAfterLongClickScriptHandler != 0 )
 	{
@@ -188,7 +186,7 @@ void CWidgetLayout::removeOnTouchCancelledAfterLongClickScriptHandler()
 }
 #endif
 
-void CWidgetLayout::executeTouchMovedAfterLongClickHandler(CCObject* pSender, CCTouch *pTouch, float fDuration)
+void CWidgetWindow::executeTouchMovedAfterLongClickHandler(CCObject* pSender, CCTouch *pTouch, float fDuration)
 {
     if( m_pTouchMovedAfterLongClickListener && m_pTouchMovedAfterLongClickHandler )
     {
@@ -210,7 +208,7 @@ void CWidgetLayout::executeTouchMovedAfterLongClickHandler(CCObject* pSender, CC
 #endif
 }
 
-void CWidgetLayout::executeTouchEndedAfterLongClickHandler(CCObject* pSender, CCTouch *pTouch, float fDuration)
+void CWidgetWindow::executeTouchEndedAfterLongClickHandler(CCObject* pSender, CCTouch *pTouch, float fDuration)
 {
     if( m_pTouchEndedAfterLongClickListener && m_pTouchEndedAfterLongClickHandler )
     {
@@ -232,7 +230,7 @@ void CWidgetLayout::executeTouchEndedAfterLongClickHandler(CCObject* pSender, CC
 #endif
 }
 
-void CWidgetLayout::executeTouchCancelledAfterLongClickHandler(CCObject* pSender, CCTouch *pTouch, float fDuration)
+void CWidgetWindow::executeTouchCancelledAfterLongClickHandler(CCObject* pSender, CCTouch *pTouch, float fDuration)
 {
     if( m_pTouchCancelledAfterLongClickListener && m_pTouchCancelledAfterLongClickHandler )
     {
@@ -254,7 +252,7 @@ void CWidgetLayout::executeTouchCancelledAfterLongClickHandler(CCObject* pSender
 #endif
 }
 
-void CWidgetLayout::setTouchPriority(int nTouchPriority)
+void CWidgetWindow::setTouchPriority(int nTouchPriority)
 {
 	if( m_nTouchPriority != nTouchPriority )
 	{
@@ -267,12 +265,12 @@ void CWidgetLayout::setTouchPriority(int nTouchPriority)
 	}
 }
 
-bool CWidgetLayout::isMultiTouchEnabled() const
+bool CWidgetWindow::isMultiTouchEnabled() const
 {
 	return m_bMultiTouchEnabled;
 }
 
-void CWidgetLayout::setMultiTouchEnabled(bool bEnabled)
+void CWidgetWindow::setMultiTouchEnabled(bool bEnabled)
 {
 	if( m_bMultiTouchEnabled != bEnabled )
 	{
@@ -282,12 +280,22 @@ void CWidgetLayout::setMultiTouchEnabled(bool bEnabled)
 	}
 }
 
-bool CWidgetLayout::isTouchEnabled()
+void CWidgetWindow::setModalable(bool bModalable)
+{
+	m_bModalable = bModalable;
+}
+
+bool CWidgetWindow::isModalable() const
+{
+	return m_bModalable;
+}
+
+bool CWidgetWindow::isTouchEnabled()
 {
 	return m_bTouchEnabled;
 }
 
-void CWidgetLayout::setTouchEnabled(bool bTouchEnabled)
+void CWidgetWindow::setTouchEnabled(bool bTouchEnabled)
 {
 	if( m_bTouchEnabled != bTouchEnabled )
 	{
@@ -313,7 +321,7 @@ void CWidgetLayout::setTouchEnabled(bool bTouchEnabled)
 	}
 }
 
-bool CWidgetLayout::init()
+bool CWidgetWindow::init()
 {
 	if( CCNode::init() )
 	{
@@ -329,7 +337,7 @@ bool CWidgetLayout::init()
 	return false;
 }
 
-void CWidgetLayout::visit()
+void CWidgetWindow::visit()
 {
 	if( m_bIsTouched )
 	{
@@ -338,7 +346,7 @@ void CWidgetLayout::visit()
 
 	if( !m_mMultiTouchKeeper.empty() )
 	{
-		map<int, tagMultiTouchKeeper>::iterator itr = m_mMultiTouchKeeper.begin();
+		map<int, __ccMULTITOUCHTARGET>::iterator itr = m_mMultiTouchKeeper.begin();
 		for(; itr != m_mMultiTouchKeeper.end(); ++itr)
 		{
 			itr->second.fTouchedDuration += CCDirector::sharedDirector()->getDeltaTime();
@@ -348,7 +356,7 @@ void CWidgetLayout::visit()
 	CCNode::visit();
 }
 
-void CWidgetLayout::onEnter()
+void CWidgetWindow::onEnter()
 {
 	if( m_bTouchEnabled )
 	{
@@ -364,7 +372,7 @@ void CWidgetLayout::onEnter()
 	CCNode::onEnter();
 }
 
-void CWidgetLayout::onExit()
+void CWidgetWindow::onExit()
 {
 	if( m_bTouchEnabled )
 	{
@@ -373,7 +381,7 @@ void CWidgetLayout::onExit()
 	CCNode::onExit();
 }
 
-bool CWidgetLayout::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+bool CWidgetWindow::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
 	if( m_bTouchEnabled && m_bVisible && m_pChildren && m_pChildren->count() > 0 )
 	{
@@ -402,10 +410,10 @@ bool CWidgetLayout::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 			m_pSelectedWidget = NULL;
 		}
 	}
-	return false;
+	return m_bModalable;
 }
 
-void CWidgetLayout::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
+void CWidgetWindow::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 {
 	if( m_pSelectedWidget )
 	{
@@ -423,7 +431,7 @@ void CWidgetLayout::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent)
 	}
 }
 
-void CWidgetLayout::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
+void CWidgetWindow::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
 	if( m_pSelectedWidget )
 	{
@@ -445,7 +453,7 @@ void CWidgetLayout::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 	m_pLongClickedWidgetObject = NULL;
 }
 
-void CWidgetLayout::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
+void CWidgetWindow::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
 {
 	if( m_pSelectedWidget )
 	{
@@ -467,7 +475,7 @@ void CWidgetLayout::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent)
 	m_pLongClickedWidgetObject = NULL;
 }
 
-void CWidgetLayout::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
+void CWidgetWindow::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 {
 	CCSetIterator itr = pTouches->begin();
 	for(; itr != pTouches->end(); ++itr)
@@ -488,8 +496,8 @@ void CWidgetLayout::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 						bool bSameWidgetBreak = false;
 						if( pNode->boundingBox().containsPoint(touchPointInView) )
 						{
-							//make sure it can not be happened on the same widget
-							map<int, tagMultiTouchKeeper>::iterator mitr = m_mMultiTouchKeeper.begin();
+							//make sure it can not happened on the same widget
+							map<int, __ccMULTITOUCHTARGET>::iterator mitr = m_mMultiTouchKeeper.begin();
 							for(; mitr != m_mMultiTouchKeeper.end(); ++mitr)
 							{
 								if( mitr->second.pWidget == pWidget )
@@ -506,7 +514,7 @@ void CWidgetLayout::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 
 							if( pWidget->executeTouchBeganHandler(pTouch) != eWidgetTouchNone )
 							{
-								tagMultiTouchKeeper tKeeper;
+								__ccMULTITOUCHTARGET tKeeper;
 								tKeeper.fTouchedDuration = 0.0f;
 								tKeeper.pWidget = pWidget;
 								tKeeper.pLongClickedWidgetObject = NULL;
@@ -522,13 +530,13 @@ void CWidgetLayout::ccTouchesBegan(CCSet *pTouches, CCEvent *pEvent)
 	}
 }
 
-void CWidgetLayout::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
+void CWidgetWindow::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 {
 	CCSetIterator itr = pTouches->begin();
 	for(; itr != pTouches->end(); ++itr)
 	{
 		CCTouch* pTouch = (CCTouch*)(*itr);
-		map<int, tagMultiTouchKeeper>::iterator mitr = m_mMultiTouchKeeper.find(pTouch->getID());
+		map<int, __ccMULTITOUCHTARGET>::iterator mitr = m_mMultiTouchKeeper.find(pTouch->getID());
 		if( mitr != m_mMultiTouchKeeper.end() )
 		{
 			if( mitr->second.pWidget->isTouchInterrupted() )
@@ -546,13 +554,13 @@ void CWidgetLayout::ccTouchesMoved(CCSet *pTouches, CCEvent *pEvent)
 	}
 }
 
-void CWidgetLayout::ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent)
+void CWidgetWindow::ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent)
 {
 	CCSetIterator itr = pTouches->begin();
 	for(; itr != pTouches->end(); ++itr)
 	{
 		CCTouch* pTouch = (CCTouch*)(*itr);
-		map<int, tagMultiTouchKeeper>::iterator mitr = m_mMultiTouchKeeper.find(pTouch->getID());
+		map<int, __ccMULTITOUCHTARGET>::iterator mitr = m_mMultiTouchKeeper.find(pTouch->getID());
 		if( mitr != m_mMultiTouchKeeper.end() )
 		{
 			if( mitr->second.pWidget )
@@ -574,13 +582,13 @@ void CWidgetLayout::ccTouchesEnded(CCSet *pTouches, CCEvent *pEvent)
 	}
 }
 
-void CWidgetLayout::ccTouchesCancelled(CCSet *pTouches, CCEvent *pEvent)
+void CWidgetWindow::ccTouchesCancelled(CCSet *pTouches, CCEvent *pEvent)
 {
 	CCSetIterator itr = pTouches->begin();
 	for(; itr != pTouches->end(); ++itr)
 	{
 		CCTouch* pTouch = (CCTouch*)(*itr);
-		map<int, tagMultiTouchKeeper>::iterator mitr = m_mMultiTouchKeeper.find(pTouch->getID());
+		map<int, __ccMULTITOUCHTARGET>::iterator mitr = m_mMultiTouchKeeper.find(pTouch->getID());
 		if( mitr != m_mMultiTouchKeeper.end() )
 		{
 			if( mitr->second.pWidget )
@@ -602,9 +610,9 @@ void CWidgetLayout::ccTouchesCancelled(CCSet *pTouches, CCEvent *pEvent)
 	}
 }
 
-CWidgetLayout* CWidgetLayout::create()
+CWidgetWindow* CWidgetWindow::create()
 {
-	CWidgetLayout *pRet = new CWidgetLayout();
+	CWidgetWindow *pRet = new CWidgetWindow();
 	if( pRet && pRet->init() )
 	{
 		pRet->autorelease();

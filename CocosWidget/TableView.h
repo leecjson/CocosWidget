@@ -1,9 +1,9 @@
-/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+ï»¿/****************************************************************************
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,17 +27,11 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_TABLEVIEW_H__
 #define __CCWIDGET_TABLEVIEW_H__
 
-/////////////////////////////////////////////////////////////////////////////
-/// BugFix : [1]
-/// 
-/////////////////////////////////////////////////////////////////////////////
-
 #include "cocos2d.h"
 #include "WidgetMacros.h"
 #include "Widget.h"
 #include "ScrollView.h"
 #include "WidgetProtocol.h"
-#include <list>
 #include <vector>
 #include <set>
 
@@ -47,75 +41,53 @@ class CTableView;
 class CTableViewCell;
 
 /**
- * class    : CTableViewCell
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : ÁÐ±í¿Ø¼þµ¥Ôª¸ñ
+ * class  : CTableViewCell
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
-class CTableViewCell : public CPanel
+class CTableViewCell : public CLayout
 {
 public:
     CTableViewCell();
     virtual ~CTableViewCell();
-
-	// »ñÈ¡µ¥Ôª¸ñÏÂ±ê
     unsigned int getIdx() { return m_uIdx; }
-	// ÉèÖÃµ¥Ôª¸ñÏÂ±ê
     void setIdx(unsigned int uIdx) { m_uIdx = uIdx; }
-	// µ¥Ôª¸ñ±»¼ÓÈë¿ÕÏÐ×´Ì¬×éÊ±£¬Çå¿Õ×´Ì¬
     virtual void reset(){ m_uIdx = CC_INVALID_INDEX; }
     
 protected:
-	// µ¥Ôª¸ñÏÂ±ê
     unsigned int m_uIdx;
 };
 
 /**
- * class    : CTableView
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : ÁÐ±í¿Ø¼þ
+ * class  : CTableView
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CTableView : public CScrollView, public CDataSourceAdapterProtocol
 {
 public:
     CTableView();
     virtual ~CTableView();
-
-	// ÉèÖÃµ¥Ôª¸ñÊýÁ¿
-    void setCountOfCell(unsigned int uCellsCount);
-	// »ñÈ¡µ¥Ôª¸ñÊýÁ¿
-    unsigned int getCountOfCell() const;
-	// ÉèÖÃµ¥Ôª¸ñ´óÐ¡
-    void setSizeOfCell(const CCSize& tCellsSize);
-	// »ñÈ¡µ¥Ôª¸ñ´óÐ¡
-    const CCSize& getSizeOfCell() const;
-	// ÊÇ·ñ×Ô¶¯¶ÔÆëµ¥Ôª¸ñ
-	bool isAutoRelocate() const;
-	// ÉèÖÃ×Ô¶¯¶ÔÆëµ¥Ôª¸ñ
-	void setAutoRelocate(bool bAuto);
-
-	// »ñÈ¡×Ô¶¯¶ÔÆëµ½µ¥Ôª¸ñÊ±µÄËÙ¶È
-	float getAutoRelocateSpeed() const;
-	// ÉèÖÃ×Ô¶¯¶ÔÆëµ½µ¥Ôª¸ñÊ±µÄËÙ¶È
-	void setAutoRelocateSpeed(float fSpeed);
-
-	// »ñÈ¡ËùÓÐÕýÔÚÊ¹ÓÃµÄµ¥Ôª¸ñ
-	CCArray* getCells();
-	// Í¨¹ýÏÂ±ê»ñÈ¡µ¥Ôª¸ñ
-	CTableViewCell* cellAtIndex(unsigned int idx);
-	// µ¯³öÒ»¸ö¿ÕÏÐµÄµ¥Ôª¸ñ
-    CTableViewCell* dequeueCell();
-	// ÖØÐÂ¼ÓÔØÊý¾Ý
-	void reloadData();
-
-	// Í¨¹ý¿ÉÊÓ·¶Î§´óÐ¡£¬µ¥Ôª¸ñ´óÐ¡£¬µ¥Ôª¸ñÊýÁ¿£¬Êý¾ÝÊÊÅäÆ÷³õÊ¼»¯
 	bool initWithParams(const CCSize& tViewSize, const CCSize& tCellSize, unsigned int uCellCount, 
 		CCObject* pListener, SEL_DataSoucreAdapterHandler pHandler);
-		
     static CTableView* create(const CCSize& tViewSize);
 	static CTableView* create(const CCSize& tViewSize, const CCSize& tCellSize, unsigned int uCellCount, 
 		CCObject* pListener, SEL_DataSoucreAdapterHandler pHandler);
+
+    void setCountOfCell(unsigned int uCellsCount);
+    unsigned int getCountOfCell() const;
+    void setSizeOfCell(const CCSize& tCellsSize);
+    const CCSize& getSizeOfCell() const;
+	bool isAutoRelocate() const;
+	void setAutoRelocate(bool bAuto);
+	float getAutoRelocateSpeed() const;
+	void setAutoRelocateSpeed(float fSpeed);
+	CCArray* getCells();
+	CTableViewCell* cellAtIndex(unsigned int idx);
+    CTableViewCell* dequeueCell();
+	void reloadData();
     
 protected:
     virtual void onScrolling();
@@ -138,10 +110,10 @@ protected:
 	bool m_bAutoRelocate;
 	float m_fAutoRelocateSpeed;
     
-	std::set<unsigned int>* m_pIndices;
-	std::vector<float>* m_pPositions;
-	std::list<CTableViewCell*>* m_pCellsUsed;
-	std::list<CTableViewCell*>* m_pCellsFreed;
+	std::set<unsigned int> m_sIndices;
+	std::vector<float> m_vPositions;
+	std::vector<CTableViewCell*> m_vCellsUsed;
+	std::vector<CTableViewCell*> m_vCellsFreed;
 };
 
 NS_CC_WIDGET_END

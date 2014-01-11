@@ -33,7 +33,7 @@ local function createCSliderBasicTest()
 	m_pText:setPosition(CCPoint(380, 400));
 	m_pText:setFontSize(35.0);
 	m_pText:setString("none");
-	p_base_scene.p_layout:addChild(m_pText);
+	p_base_scene.p_window:addChild(m_pText);
 	
 	local function on_value_changing(p_sender, n_value)
 		m_pText:setString(string.format("value %d, percentage %f", m_pSlider:getValue(), m_pSlider:getPercentage()));
@@ -46,7 +46,7 @@ local function createCSliderBasicTest()
 	m_pSlider:setMinValue(0);
 	m_pSlider:setDirection(eProgressBarDirectionBottomToTop);
 	m_pSlider:setOnValueChangedScriptHandler(on_value_changing);
-	p_base_scene.p_layout:addChild(m_pSlider);
+	p_base_scene.p_window:addChild(m_pSlider);
 	
 	return p_base_scene.p_scene;
 end
@@ -81,7 +81,7 @@ local function createCSliderWithScrollTest()
 	m_pScrollView:setDirection(eScrollViewDirectionHorizontal);
 	m_pScrollView:setPosition(CCPoint(480, 350));
 	m_pScrollView:setDragable(false);
-	p_base_scene.p_layout:addChild(m_pScrollView);
+	p_base_scene.p_window:addChild(m_pScrollView);
 
 	local x = 100.0;
 	for i = 0, 29, 1 do
@@ -107,7 +107,7 @@ local function createCSliderWithScrollTest()
 	m_pSlider:setMinValue(0);
 	m_pSlider:setValue(0);
 	m_pSlider:setOnValueChangedScriptHandler(on_value_changing);
-	p_base_scene.p_layout:addChild(m_pSlider);
+	p_base_scene.p_window:addChild(m_pSlider);
 
 	return p_base_scene.p_scene;
 end

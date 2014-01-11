@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,7 +55,8 @@ CGridView::CGridView()
 
 CGridView::~CGridView()
 {
-	
+	removeAllFromUsed();
+	removeAllFromFreed();
 }
 
 void CGridView::setCountOfCell(unsigned int uCellsCount)
@@ -290,15 +291,6 @@ CCArray* CGridView::getCells()
 		}
 	}
 
-	if( !m_lCellsFreed.empty() )
-	{
-		list<CGridViewCell*>::iterator iter = m_lCellsFreed.begin();
-		for(; iter != m_lCellsFreed.end(); ++iter)
-		{
-			pArray->addObject(*iter);
-		}
-	}
-
 	pArray->autorelease();
 	return pArray;
 }
@@ -357,6 +349,7 @@ void CGridView::reloadData()
 		m_lCellsFreed.push_back(pCell);
 		iter = m_lCellsUsed.erase(iter);
 		m_pContainer->removeChild(pCell, true);
+		pCell->reset();
 	}
 
 	m_sIndices.clear();
@@ -364,6 +357,8 @@ void CGridView::reloadData()
 	this->updatePositions();
 	this->setContentOffsetToTop();
     this->onScrolling();
+	
+	relocateContainer();
 }
 
 void CGridView::onScrolling()

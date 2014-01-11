@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,7 +31,7 @@ NS_CC_WIDGET_BEGIN
 CPageView::CPageView()
 {
 	setAutoRelocate(true);
-	setAutoRelocateSpeed(700.0f);
+	setAutoRelocateSpeed(900.0f);
 }
 
 CPageView* CPageView::create(const CCSize& tPageSize)
@@ -39,7 +39,6 @@ CPageView* CPageView::create(const CCSize& tPageSize)
 	CPageView * pRet = new CPageView();
 	if( pRet && pRet->initWithSize(tPageSize) )
     {
-		
 		pRet->setSizeOfCell(tPageSize);
 		pRet->autorelease();
 		return pRet;
@@ -117,7 +116,7 @@ void CPageView::updateCellAtIndex(unsigned int idx)
 	insertSortableCell(pCell, idx);
     pCell->retain();
 
-	m_pIndices->insert(idx);
+	m_sIndices.insert(idx);
 }
 
 NS_CC_WIDGET_END

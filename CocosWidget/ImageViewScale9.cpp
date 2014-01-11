@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,7 +31,9 @@ NS_CC_WIDGET_BEGIN
 CImageViewScale9::CImageViewScale9()
 {
 	setThisObject(this);
-	setTouchEnabled(false);
+
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+	setContentSize(CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE);
 }
 
 CWidgetTouchModel CImageViewScale9::onTouchBegan(CCTouch *pTouch)
@@ -62,11 +64,40 @@ void CImageViewScale9::onTouchCancelled(CCTouch *pTouch, float fDuration)
 	CC_WIDGET_LONGCLICK_ONTOUCHCANCELLED;
 }
 
+bool CImageViewScale9::init()
+{
+	bool bRet = CScale9Sprite::init();
+
+	setTouchEnabled(false);
+
+	setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+	setContentSize(CCWIDGET_BASIC_DEFAULT_CONTENT_SIZE);
+
+	return true;
+}
+
+CImageViewScale9* CImageViewScale9::create(const CCSize& size, const char* file)
+{
+	CImageViewScale9* pReturn = new CImageViewScale9();
+    if( pReturn && pReturn->initWithFile(file) )
+    {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
+		pReturn->setContentSize(size);
+        pReturn->autorelease();
+        return pReturn;
+    }
+    CC_SAFE_DELETE(pReturn);
+    return NULL;
+}
+
 CImageViewScale9* CImageViewScale9::create(const char* file, CCRect rect,  CCRect capInsets)
 {
     CImageViewScale9* pReturn = new CImageViewScale9();
-    if ( pReturn && pReturn->initWithFile(file, rect, capInsets) )
+    if( pReturn && pReturn->initWithFile(file, rect, capInsets) )
     {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();
         return pReturn;
     }
@@ -77,8 +108,10 @@ CImageViewScale9* CImageViewScale9::create(const char* file, CCRect rect,  CCRec
 CImageViewScale9* CImageViewScale9::create(const char* file, CCRect rect)
 {
     CImageViewScale9* pReturn = new CImageViewScale9();
-    if ( pReturn && pReturn->initWithFile(file, rect) )
+    if( pReturn && pReturn->initWithFile(file, rect) )
     {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();
         return pReturn;
     }
@@ -89,8 +122,10 @@ CImageViewScale9* CImageViewScale9::create(const char* file, CCRect rect)
 CImageViewScale9* CImageViewScale9::create(CCRect capInsets, const char* file)
 {
     CImageViewScale9* pReturn = new CImageViewScale9();
-    if ( pReturn && pReturn->initWithFile(capInsets, file) )
+    if( pReturn && pReturn->initWithFile(capInsets, file) )
     {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();
         return pReturn;
     }
@@ -101,8 +136,10 @@ CImageViewScale9* CImageViewScale9::create(CCRect capInsets, const char* file)
 CImageViewScale9* CImageViewScale9::create(const char* file)
 {
     CImageViewScale9* pReturn = new CImageViewScale9();
-    if ( pReturn && pReturn->initWithFile(file) )
+    if( pReturn && pReturn->initWithFile(file) )
     {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();
         return pReturn;
     }
@@ -113,8 +150,10 @@ CImageViewScale9* CImageViewScale9::create(const char* file)
 CImageViewScale9* CImageViewScale9::createWithSpriteFrame(CCSpriteFrame* spriteFrame, CCRect capInsets)
 {
     CImageViewScale9* pReturn = new CImageViewScale9();
-    if ( pReturn && pReturn->initWithSpriteFrame(spriteFrame, capInsets) )
+    if( pReturn && pReturn->initWithSpriteFrame(spriteFrame, capInsets) )
     {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();
         return pReturn;
     }
@@ -125,8 +164,10 @@ CImageViewScale9* CImageViewScale9::createWithSpriteFrame(CCSpriteFrame* spriteF
 CImageViewScale9* CImageViewScale9::createWithSpriteFrame(CCSpriteFrame* spriteFrame)
 {
     CImageViewScale9* pReturn = new CImageViewScale9();
-    if ( pReturn && pReturn->initWithSpriteFrame(spriteFrame) )
+    if( pReturn && pReturn->initWithSpriteFrame(spriteFrame) )
     {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();
         return pReturn;
     }
@@ -137,8 +178,10 @@ CImageViewScale9* CImageViewScale9::createWithSpriteFrame(CCSpriteFrame* spriteF
 CImageViewScale9* CImageViewScale9::createWithSpriteFrameName(const char* spriteFrameName, CCRect capInsets)
 {
     CImageViewScale9* pReturn = new CImageViewScale9();
-    if ( pReturn && pReturn->initWithSpriteFrameName(spriteFrameName, capInsets) )
+    if( pReturn && pReturn->initWithSpriteFrameName(spriteFrameName, capInsets) )
     {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();
         return pReturn;
     }
@@ -151,22 +194,26 @@ CImageViewScale9* CImageViewScale9::createWithSpriteFrameName(const char* sprite
     CCAssert(spriteFrameName != NULL, "spriteFrameName must be non-NULL");
 
     CImageViewScale9* pReturn = new CImageViewScale9();
-    if ( pReturn && pReturn->initWithSpriteFrameName(spriteFrameName) )
+    if( pReturn && pReturn->initWithSpriteFrameName(spriteFrameName) )
     {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();
         return pReturn;
     }
     CC_SAFE_DELETE(pReturn);
 
-    CCLog("Could not allocate CCImageScale9()");
+    CCLog("Could not allocate CImageViewScale9()");
     return NULL;
 }
 
 CImageViewScale9* CImageViewScale9::createWithTexture(CCTexture2D* pTexture)
 {
 	CImageViewScale9* pReturn = new CImageViewScale9();
-    if ( pReturn && pReturn->initWithTexture(pTexture) )
+    if( pReturn && pReturn->initWithTexture(pTexture) )
     {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();
         return pReturn;
     }
@@ -177,8 +224,10 @@ CImageViewScale9* CImageViewScale9::createWithTexture(CCTexture2D* pTexture)
 CImageViewScale9* CImageViewScale9::createWithTexture(CCTexture2D* pTexture, CCRect capInsets)
 {
 	CImageViewScale9* pReturn = new CImageViewScale9();
-    if ( pReturn && pReturn->initWithTexture(pTexture, capInsets) )
+    if( pReturn && pReturn->initWithTexture(pTexture, capInsets) )
     {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();
         return pReturn;
     }
@@ -189,8 +238,10 @@ CImageViewScale9* CImageViewScale9::createWithTexture(CCTexture2D* pTexture, CCR
 CImageViewScale9* CImageViewScale9::create()
 { 
     CImageViewScale9 *pReturn = new CImageViewScale9();
-    if (pReturn && pReturn->init())
-    { 
+    if( pReturn && pReturn->init() )
+    {
+		pReturn->setTouchEnabled(false);
+		pReturn->setAnchorPoint(CCWIDGET_BASIC_DEFAULT_ANCHOR_POINT);
         pReturn->autorelease();   
         return pReturn;
     } 

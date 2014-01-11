@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -33,28 +33,38 @@ NS_CC_WIDGET_BEGIN
 
 CGridPageViewPage::CGridPageViewPage()
 {
-	m_pGirdCells = new CCArray();
-	m_pGirdCells->initWithCapacity(20);
+	m_vGirdCells.reserve(10);
 }
 
 CGridPageViewPage::~CGridPageViewPage()
 {
-	CC_SAFE_DELETE(m_pGirdCells);
+	if( !m_vGirdCells.empty() )
+	{
+		vector<CGridPageViewCell*>::iterator itr = m_vGirdCells.begin();
+		vector<CGridPageViewCell*>::iterator end = m_vGirdCells.end();
+
+		for(; itr != end; ++itr )
+		{
+			(*itr)->release();
+		}
+
+		m_vGirdCells.clear();
+	}
 }
 
-CCArray* CGridPageViewPage::getGirdCells()
+vector<CGridPageViewCell*>& CGridPageViewPage::getGirdCells()
 {
-	return m_pGirdCells;
+	return m_vGirdCells;
 }
 
 CGridPageViewCell::CGridPageViewCell()
 {
-
+	
 }
 
 CGridPageViewCell::~CGridPageViewCell()
 {
-
+	
 }
 
 CGridPageView::CGridPageView()
@@ -69,7 +79,7 @@ CGridPageView::CGridPageView()
 
 CGridPageView::~CGridPageView()
 {
-
+	
 }
 
 CGridPageView* CGridPageView::create(const CCSize& tViewSize)
@@ -221,7 +231,7 @@ void CGridPageView::updateCellAtIndex(unsigned int page)
 		pPageCell = new CGridPageViewPage();
 		pPageCell->autorelease();
 
-		CCArray* pGridCells = pPageCell->getGirdCells();
+		vector<CGridPageViewCell*>& vGridCells = pPageCell->getGirdCells();
 		unsigned int uBeginIdx = page * m_uCellsMaxCountInPage;
 		unsigned int uEndIdx = uBeginIdx + m_uCellsMaxCountInPage;
 
@@ -239,7 +249,8 @@ void CGridPageView::updateCellAtIndex(unsigned int page)
 				pGridCell->setPosition(m_vGridCellsPosition[i]);
 				pGridCell->setIdx(idx);
 				pPageCell->addChild(pGridCell);
-				pGridCells->addObject(pGridCell);
+				vGridCells.push_back(pGridCell);
+				pGridCell->retain();
 			}
 			else
 			{
@@ -253,19 +264,20 @@ void CGridPageView::updateCellAtIndex(unsigned int page)
 				pGridCell->setIdx(CC_INVALID_INDEX);
 				pGridCell->reset();
 				pPageCell->addChild(pGridCell);
-				pGridCells->addObject(pGridCell);
+				vGridCells.push_back(pGridCell);
+				pGridCell->retain();
 			}
 		}
 	}
 	else
 	{
-		CCArray* pGridCells = pPageCell->getGirdCells();
+		vector<CGridPageViewCell*>& vGridCells = pPageCell->getGirdCells();
 		unsigned int uBeginIdx = page * m_uCellsMaxCountInPage;
 		unsigned int uEndIdx = uBeginIdx + m_uCellsMaxCountInPage;
 		
 		for( unsigned int idx = uBeginIdx, i = 0; idx < uEndIdx; ++idx, ++i )
 		{
-			CGridPageViewCell* pGridCell = (CGridPageViewCell*) pGridCells->objectAtIndex(i);
+			CGridPageViewCell* pGridCell = vGridCells[i];
 			if( idx < m_uGridCellsCount )
 			{
 				pGridCell->setIdx(idx);
@@ -305,7 +317,7 @@ void CGridPageView::updateCellAtIndex(unsigned int page)
 	insertSortableCell(pPageCell, page);
     pPageCell->retain();
 
-	m_pIndices->insert(page);
+	m_sIndices.insert(page);
 }
 
 NS_CC_WIDGET_END

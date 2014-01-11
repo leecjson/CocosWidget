@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -32,7 +32,7 @@ NS_CC_WIDGET_BEGIN
 #define CSCROLLVIEW_DEACCELERATE_VA 2000.0f
 #define CSCROLLVIEW_DEACCELERATE_MAX 400.0f
 #define CSCROLLVIEW_DEACCELERATE_INTERVAL 0.245f
-#define CSCROLLVIEW_DEACCELERATE_PERCENTAGE 0.94f
+#define CSCROLLVIEW_DEACCELERATE_PERCENTAGE 0.955f
 #define CSCROLLVIEW_MOVE_INCH 7.0f/160.0f
 #define CSCROLLVIEW_MOVE_ACTION_TAG 1
 #define CSCROLLVIEW_MOVE_EASEIN_RATE 0.5f
@@ -70,9 +70,9 @@ CScrollView::CScrollView()
 {
 	m_pContainer = new CScrollViewContainer();
 	m_pContainer->init();
-	m_pContainer->ignoreAnchorPointForPosition(true);
-	m_pContainer->setContentSize(CCDirector::sharedDirector()->getWinSize());
 	m_pContainer->setAnchorPoint(CCPointZero);
+	m_pContainer->ignoreAnchorPointForPosition(true);
+	m_pContainer->setContentSize(CCWIDGET_LAYOUT_DEFAULT_CONTENT_SIZE);
 	addChild(m_pContainer);
 	m_pContainer->release();
 }
@@ -113,17 +113,16 @@ CScrollViewContainer* CScrollView::getContainer()
 
 void CScrollView::setContentSize(const CCSize& contentSize)
 {
-	CPanel::setContentSize(contentSize);
+	CLayout::setContentSize(contentSize);
 	updateLimitOffset();
 }
 
 bool CScrollView::init()
 {
-	if( CPanel::init() )
+	if( CLayout::init() )
 	{
-		setContentSize(CCDirector::sharedDirector()->getWinSize());
-		setAnchorPoint(CCPoint(0.5f, 0.5f));
-		setPosition(CCPointZero);
+		setContentSize(CCWIDGET_LAYOUT_DEFAULT_CONTENT_SIZE);
+		setAnchorPoint(CCWIDGET_LAYOUT_DEFAULT_ANCHOR_POINT);
 		return true;
 	}
 	return false;
@@ -133,7 +132,7 @@ void CScrollView::onExit()
 {
 	stoppedAnimatedScroll();
 	stoppedDeaccelerateScroll();
-    CPanel::onExit();
+    CLayout::onExit();
 }
 
 bool CScrollView::initWithSize(const CCSize& tSize)
@@ -141,14 +140,13 @@ bool CScrollView::initWithSize(const CCSize& tSize)
 	if( init() )
 	{
 		setContentSize(tSize);
+		setContainerSize(tSize);
 		m_pContainer->setPosition(CCPointZero);
 		updateLimitOffset();
 		return true;
 	}
 	return false;
 }
-
-
 
 CWidgetTouchModel CScrollView::onTouchBegan(CCTouch *pTouch)
 {
@@ -160,21 +158,21 @@ CWidgetTouchModel CScrollView::onTouchBegan(CCTouch *pTouch)
     }
 	else
 	{
-		 m_pSelectedWidget = NULL;
+		m_pSelectedWidget = NULL;
 	}
     
     if( m_pSelectedWidget )
     {
-		m_eChildTouchModel = m_pSelectedWidget->executeTouchBeganHandler(pTouch);
-        if( m_eChildTouchModel == eWidgetTouchNone )
+		m_eSelectedWidgetTouchModel = m_pSelectedWidget->executeTouchBeganHandler(pTouch);
+        if( m_eSelectedWidgetTouchModel == eWidgetTouchNone )
         {
-           m_pSelectedWidget = NULL;
+			m_pSelectedWidget = NULL;
         }
     }
     
     m_tTouchBeganPoint = tNodePoint;
     
-    if( m_eChildTouchModel == eWidgetTouchNone && m_bDragable )
+    if( m_eSelectedWidgetTouchModel == eWidgetTouchNone && m_bDragable )
     {
         m_tLastMovePoint = tNodePoint;
         m_bDragging = true;
@@ -191,25 +189,25 @@ void CScrollView::onTouchMoved(CCTouch *pTouch, float fDuration)
     
     if( m_pSelectedWidget )
     {
-        if( m_eChildTouchModel == eWidgetTouchTransient && !m_bTouchMoved )
+        if( m_eSelectedWidgetTouchModel == eWidgetTouchTransient && !m_bTouchMoved )
         {
-            float fDistance = ccpDistance(tNodePoint, m_tTouchBeganPoint);
-            
-            if ( !m_bTouchMoved && fabs(ccScrollconvertPointToInch(fDistance)) < CSCROLLVIEW_MOVE_INCH )
+            float fDistance = ccpDistance(tNodePoint, m_tTouchBeganPoint);   
+
+            if(!m_bTouchMoved && fabs(ccScrollconvertPointToInch(fDistance)) < CSCROLLVIEW_MOVE_INCH)
             {
                 m_pSelectedWidget->executeTouchMovedHandler(pTouch, fDuration);
                 return;
             }
-            
+
             m_bTouchMoved = true;
             m_pSelectedWidget->interruptTouch(pTouch, fDuration);
         }
         
-        if( !m_pSelectedWidget->isTouchInterrupted() )
+        if(!m_pSelectedWidget->isTouchInterrupted())
         {
             m_pSelectedWidget->executeTouchMovedHandler(pTouch, fDuration);
-            
-            if( !m_pSelectedWidget->isTouchInterrupted() )
+
+            if(!m_pSelectedWidget->isTouchInterrupted())
             {
                 return;
             }
@@ -248,9 +246,11 @@ void CScrollView::onTouchMoved(CCTouch *pTouch, float fDuration)
 
 void CScrollView::onTouchEnded(CCTouch *pTouch, float fDuration)
 {
-    if( m_pSelectedWidget && !m_pSelectedWidget->isTouchInterrupted() )
+    if( m_pSelectedWidget && !m_bTouchMoved && !m_pSelectedWidget->isTouchInterrupted() )
     {
         m_pSelectedWidget->executeTouchEndedHandler(pTouch, fDuration);
+		m_bTouchMoved = false;
+		m_bDragging = false;
         return;
     }
 	
@@ -365,7 +365,7 @@ void CScrollView::visit()
 	rect = CCRectApplyAffineTransform(rect, nodeToWorldTransform());
 
 	CCEGLView::sharedOpenGLView()->setScissorInPoints(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-	CPanel::visit();
+	CLayout::visit();
 
 	glDisable(GL_SCISSOR_TEST);
 }
@@ -570,6 +570,7 @@ void CScrollView::setContentOffset(CCPoint tOffset)
 	{
 		validateOffset(tOffset);
 	}
+	m_pContainer->stopActionByTag(CSCROLLVIEW_MOVE_ACTION_TAG);
 	m_pContainer->setPosition(tOffset);
     this->onScrolling();
 	this->executeScrollingHandler(this);

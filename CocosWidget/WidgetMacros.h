@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,7 +28,7 @@ THE SOFTWARE.
 #define __CCWIDGET_WIDGETMACROS_H__
 
 #ifndef USING_LUA
-#define USING_LUA 0
+#define USING_LUA 1
 #endif
 
 #define NS_CC_WIDGET_BEGIN			namespace cocos2d { namespace cocoswidget {

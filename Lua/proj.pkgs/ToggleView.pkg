@@ -2,13 +2,11 @@ class CToggleView : public CButton, public CCheckableProtocol
 {
 	CToggleView();
 	virtual ~CToggleView();
-
-	virtual void setEnabled(bool bEnabled);
 	
 	static CToggleView* create();
 	static CToggleView* create(const char* pNormal, const char* pSelected = NULL, const char* pDisabled = NULL);
 	static CToggleView* createWith9Sprite(const CCSize& tSize, const char* pNormal, const char* pSelected = NULL, const char* pDisabled = NULL);
-	
+	virtual void setEnabled(bool bEnabled);
 	virtual void setChecked(bool bChecked);
 	bool isChecked() const;
 	virtual void setExclusion(int nExclusion);

@@ -43,10 +43,12 @@ public:
 
 //////////////////////////////////////////////////////
 
-static int CGridPageView_test_idx;
+static int CGridPageView_test_idx = 0;
 
 static CCScene* getCGridPageViewTestScene()
 {
+	CCLOG("get %d", CGridPageView_test_idx);
+
 	switch(CGridPageView_test_idx)
 	{
 	case 0:
@@ -63,6 +65,8 @@ static CCScene* getCGridPageViewTestScene()
 static CCScene* pushCGridPageViewTestScene()
 {
 	CGridPageView_test_idx = 0;
+
+	CCLOG("push %d", CGridPageView_test_idx);
 	CCScene* pScene = getCGridPageViewTestScene();
 	pScene->init();
 	pScene->autorelease();
@@ -73,6 +77,7 @@ static CCScene* pushCGridPageViewTestScene()
 static void nextCGridPageViewTestScene()
 {
 	CGridPageView_test_idx++;
+	CCLOG("next is %d", CGridPageView_test_idx);
 	CCScene* pScene = getCGridPageViewTestScene();
 	pScene->init();
 	pScene->autorelease();

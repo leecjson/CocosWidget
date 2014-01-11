@@ -54,7 +54,7 @@ local function createCTableViewBasicTest()
 	pTable:setCountOfCell(50);
 	pTable:setDataSourceAdapterScriptHandler(data_source)
 	pTable:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pTable);
+	p_base_scene.p_window:addChild(pTable);
 	pTable:reloadData();
 
 	
@@ -118,7 +118,7 @@ local function createCTableViewBindingDataAndVertical()
 	pText:setPosition(CCPoint(200, 320));
 	pText:setFontSize(35.0);
 	pText:setString("click button");
-	p_base_scene.p_layout:addChild(pText);
+	p_base_scene.p_window:addChild(pText);
 	
 	local function on_click(p_sender)
 		local btn = tolua.cast(p_sender, "CButton");
@@ -155,7 +155,7 @@ local function createCTableViewBindingDataAndVertical()
 	pTable:setDataSourceAdapterScriptHandler(data_source);
 	pTable:setDirection(eScrollViewDirectionVertical);
 	pTable:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pTable);
+	p_base_scene.p_window:addChild(pTable);
 	pTable:reloadData();
 	
 	
@@ -236,7 +236,7 @@ local function createCTableViewReloadTest()
 	pTable:setDirection(eScrollViewDirectionVertical);
 	pTable:setAutoRelocate(true);
 	pTable:setPosition(CCPoint(480, 320));
-	p_base_scene.p_layout:addChild(pTable);
+	p_base_scene.p_window:addChild(pTable);
 	pTable:reloadData();
 
 	local pButton = CButton:createWith9Sprite(CCSizeMake(150, 50), "sprite9_btn1.png", "sprite9_btn2.png");
@@ -244,7 +244,7 @@ local function createCTableViewReloadTest()
 	pButton:setPosition(CCPoint(200, 320));
 	pButton:getLabel():setFontSize(25.0);
 	pButton:getLabel():setString("reloadData");
-	p_base_scene.p_layout:addChild(pButton);
+	p_base_scene.p_window:addChild(pButton);
 	
 	
 	return p_base_scene.p_scene;

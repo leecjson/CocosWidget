@@ -29,7 +29,7 @@ bool CPageViewBasicTest::init()
 		ccw_datasource_adapter_selector(CPageViewBasicTest::pageviewDataSource));
 	pPageView->setOnPageChangedListener(this, ccw_pagechanged_selector(CPageViewBasicTest::onPageChanged));
 	pPageView->setPosition(CCPoint(480, 320));
-	m_pLayout->addChild(pPageView);
+	m_pWindow->addChild(pPageView);
 	pPageView->reloadData();
 
 	m_pText = CLabel::create();
@@ -37,7 +37,7 @@ bool CPageViewBasicTest::init()
 	m_pText->setPosition(CCPoint(800, 320));
 	m_pText->setFontSize(35.0f);
 	m_pText->setString("none");
-	m_pLayout->addChild(m_pText);
+	m_pWindow->addChild(m_pText);
 
 	return true;
 }
@@ -93,7 +93,7 @@ bool CPageViewVerticalTest::init()
 	pPageView->setOnPageChangedListener(this, ccw_pagechanged_selector(CPageViewVerticalTest::onPageChanged));
 	pPageView->setPosition(CCPoint(480, 320));
 	pPageView->setDirection(eScrollViewDirectionVertical);
-	m_pLayout->addChild(pPageView);
+	m_pWindow->addChild(pPageView);
 	pPageView->reloadData();
 
 	m_pText = CLabel::create();
@@ -101,7 +101,7 @@ bool CPageViewVerticalTest::init()
 	m_pText->setPosition(CCPoint(800, 320));
 	m_pText->setFontSize(35.0f);
 	m_pText->setString("none");
-	m_pLayout->addChild(m_pText);
+	m_pWindow->addChild(m_pText);
 
 	return true;
 }

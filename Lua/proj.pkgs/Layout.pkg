@@ -1,12 +1,12 @@
-class CPanel : public CCNodeRGBA, public CWidget
+class CLayout : public CCNodeRGBA, public CWidget, public CLayoutableProtocol
 {
-	CPanel();
-	virtual ~CPanel();
-
+	CLayout();
+	virtual ~CLayout();
 	virtual bool init();
+	static CLayout* create();
+	static CLayout* create(const CCSize& tContentSize);
 	virtual void setContentSize(const CCSize& tContentSize);
-	static CPanel* create();
-	static CPanel* create(const CCSize& tContentSize);
+	CCObject* findViewById(const char* id);
 
 	void setBackgroundImage(const char* pFile);
 	void setBackgroundTexture(CCTexture2D* pTexture);
@@ -14,11 +14,18 @@ class CPanel : public CCNodeRGBA, public CWidget
 	void setBackgroundSpriteFrameName(const char* pFrameName);
 	CCSprite* getBackgroundImage() const;
 	void removeBackgroundImage();
+	void setBackgroundColor(const ccColor4B& tColor);
+	void removeBackgroundColor();
+	void setBackgroundGradient(const ccColor4B& tStart, const ccColor4B& tEnd, const CCPoint& v);
+	void removeBackgroundGradient();
+	void setBackgroundOpacity(GLbyte opacity);
 	
 	int getUserTag() const;
 	void setUserTag(int nTag);
 	const char* getId();
 	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
 	virtual bool isEnabled();
 	virtual void setEnabled(bool bEnabled);
 	virtual bool isTouchEnabled();
@@ -34,37 +41,4 @@ class CPanel : public CCNodeRGBA, public CWidget
 	virtual void removeOnTouchMovedScriptHandler();
 	virtual void removeOnTouchEndedScriptHandler();
 	virtual void removeOnTouchCancelledScriptHandler();
-};
-
-class CPanelColor : public CPanel, public CCBlendProtocol
-{
-	CPanelColor();
-	virtual ~CPanelColor();
-	static CPanelColor* create();
-	static CPanelColor* create(const ccColor4B& color);
-
-	virtual bool init();
-	virtual bool initWithColor(const ccColor4B& color);
-	virtual void draw();
-    virtual void setContentSize(const CCSize & var);
-
-	virtual GLubyte getOpacity();
-	virtual GLubyte getDisplayedOpacity();
-	virtual void setOpacity(GLubyte opacity);
-	virtual void updateDisplayedOpacity(GLubyte parentOpacity);
-	virtual bool isCascadeOpacityEnabled();
-	virtual void setCascadeOpacityEnabled(bool cascadeOpacityEnabled);
-
-	virtual const ccColor3B& getColor();
-	virtual const ccColor3B& getDisplayedColor();
-	virtual void setColor(const ccColor3B& color);
-	virtual void updateDisplayedColor(const ccColor3B& parentColor);
-	virtual bool isCascadeColorEnabled();
-	virtual void setCascadeColorEnabled(bool cascadeColorEnabled);
-
-	virtual void setOpacityModifyRGB(bool bValue);
-	virtual bool isOpacityModifyRGB();
-
-	virtual ccBlendFunc getBlendFunc();
-	virtual void setBlendFunc(ccBlendFunc tBlendFunc);
 };

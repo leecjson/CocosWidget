@@ -1,9 +1,9 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 viva-Lijunlin
+Copyright (c) 2013 Lijunlin - Jason lee
 
-Created by Li JunLin on 2013
+Created by Lijunlin - Jason lee on 2014
 
-csdn_viva@foxmail.com
+jason.lee.c@foxmail.com
 http://www.cocos2d-x.org
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,15 +31,11 @@ THE SOFTWARE.
 #include "WidgetMacros.h"
 #include "Widget.h"
 #include "WidgetProtocol.h"
+#include "ColorView.h"
+#include "GradientView.h"
 
 NS_CC_WIDGET_BEGIN
 
-/**
- * enum     : CProgressBarDirection
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 进度条控件方向枚举定义
- */
 enum CProgressBarDirection
 {
 	eProgressBarDirectionLeftToRight,
@@ -49,10 +45,10 @@ enum CProgressBarDirection
 };
 
 /**
- * class    : CProgressBar
- * author   : viva - Lijunlin
- * email    : csdn_viva@foxmail.com
- * function : 进度条控件定义
+ * class  : CProgressBar
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : 
  */
 class CProgressBar : public CCNodeRGBA
 , public CProgressEndedProtocol
@@ -61,49 +57,30 @@ class CProgressBar : public CCNodeRGBA
 public:
 	CProgressBar();
 	virtual ~CProgressBar();
-
-	// 初始化默认数据
 	virtual bool init();
-	// 通过进度条文件初始化
 	virtual bool initWithFile(const char* pProgress);
-	// 当设置大小时更新内容坐标
-	virtual void setContentSize(const CCSize& tSize);
-	
-	// 设置进度值（不能小于0）
-	void setValue(int nValue);
-	// 获取进度值
-	int getValue() const;
-	// 设置进度最大值
-	void setMaxValue(int nMaxValue);
-	// 获取进度最大值
-	int getMaxValue() const;
-	// 设置进度最小值
-	void setMinValue(int nMinValue);
-	// 获取进度最小值
-	int getMinValue() const;
-	// 设置进度条方向
-	void setDirection(CProgressBarDirection eDirection);
-	// 获取进度条方向
-	CProgressBarDirection getDirection() const;
+	static CProgressBar* create();
+	static CProgressBar* create(const char* pProgress);
 
-	// 执行进度
+	virtual void setContentSize(const CCSize& tSize);
+	void setValue(int nValue);
+	int getValue() const;
+	void setMaxValue(int nMaxValue);
+	int getMaxValue() const;
+	void setMinValue(int nMinValue);
+	int getMinValue() const;
+	void setDirection(CProgressBarDirection eDirection);
+	CProgressBarDirection getDirection() const;
 	void startProgress(int nValue, float fDuration);
-	// 执行进度 从一个值到另外一个值的变化
 	void startProgressFromTo(int nFromValue, int nToValue, float fDuration);
-	// 停止进度
 	void stopProgress();
-	// 获取当前进度百分比
 	float getPercentage() const;
-	// 获取进度是否结束
 	bool isProgressEnded() const;
 
 	virtual void setProgressImage(const char* pFile);
 	virtual void setProgressTexture(CCTexture2D* pTexture);
 	virtual void setProgressSpriteFrame(CCSpriteFrame* pFrame);
 	virtual void setProgressSpriteFrameName(const char* pSpriteName);
-
-	static CProgressBar* create();
-	static CProgressBar* create(const char* pProgress);
 
 	CC_WIDGET_BACKGROUND;
 	
