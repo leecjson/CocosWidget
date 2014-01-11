@@ -1,0 +1,44 @@
+class CLayout : public CCNodeRGBA, public CWidget, public CLayoutableProtocol
+{
+	CLayout();
+	virtual ~CLayout();
+	virtual bool init();
+	static CLayout* create();
+	static CLayout* create(const CCSize& tContentSize);
+	virtual void setContentSize(const CCSize& tContentSize);
+	CCObject* findViewById(const char* id);
+
+	void setBackgroundImage(const char* pFile);
+	void setBackgroundTexture(CCTexture2D* pTexture);
+	void setBackgroundSpriteFrame(CCSpriteFrame* pSpriteFrame);
+	void setBackgroundSpriteFrameName(const char* pFrameName);
+	CCSprite* getBackgroundImage() const;
+	void removeBackgroundImage();
+	void setBackgroundColor(const ccColor4B& tColor);
+	void removeBackgroundColor();
+	void setBackgroundGradient(const ccColor4B& tStart, const ccColor4B& tEnd, const CCPoint& v);
+	void removeBackgroundGradient();
+	void setBackgroundOpacity(GLbyte opacity);
+	
+	int getUserTag() const;
+	void setUserTag(int nTag);
+	const char* getId();
+	void setId(const char* id);
+	const char* getDescription();
+	void setDescription(const char* description);
+	virtual bool isEnabled();
+	virtual void setEnabled(bool bEnabled);
+	virtual bool isTouchEnabled();
+	virtual void setTouchEnabled(bool bTouchEnabled);
+	virtual void interruptTouchCascade(CCTouch* pTouch, float fDuration);
+    virtual void interruptTouch(CCTouch* pTouch, float fDuration);
+    virtual bool isTouchInterrupted();
+	virtual void setOnTouchBeganScriptHandler(LUA_FUNCTION nHandler);
+	virtual void setOnTouchMovedScriptHandler(LUA_FUNCTION nHandler);
+	virtual void setOnTouchEndedScriptHandler(LUA_FUNCTION nHandler);
+	virtual void setOnTouchCancelledScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeOnTouchBeganScriptHandler();
+	virtual void removeOnTouchMovedScriptHandler();
+	virtual void removeOnTouchEndedScriptHandler();
+	virtual void removeOnTouchCancelledScriptHandler();
+};

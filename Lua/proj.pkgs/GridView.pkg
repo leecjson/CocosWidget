@@ -1,0 +1,34 @@
+class CGridViewCell : public CLayout
+{
+    CGridViewCell();
+	virtual ~CGridViewCell();
+	unsigned int getIdx() const;
+	void setIdx(unsigned int uIdx);
+	unsigned int getRow() const;
+	void setRow(unsigned int uRow);
+	virtual void reset();
+};
+
+class CGridView : public CScrollView, public CDataSourceAdapterProtocol
+{
+	CGridView();
+	virtual ~CGridView();
+	static CGridView* create(const CCSize& tViewSize);
+
+	void setCountOfCell(unsigned int uCellsCount);
+    unsigned int getCountOfCell() const;
+    void setSizeOfCell(const CCSize& tCellsSize);
+    const CCSize& getSizeOfCell() const;
+	void setColumns(unsigned int uColumns);
+	unsigned int getColumns() const;
+	unsigned int getRows() const;
+	bool isAutoRelocate() const;
+	void setAutoRelocate(bool bAuto);
+	CCArray* getCells();
+	CGridViewCell* cellAtIndex(unsigned int idx);
+	CGridViewCell* dequeueCell();
+	void reloadData();
+	
+	virtual void setDataSourceAdapterScriptHandler(LUA_FUNCTION nHandler);
+	virtual void removeDataSourceAdapterScriptHandler();
+};

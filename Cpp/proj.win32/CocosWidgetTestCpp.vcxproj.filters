@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CocosWidget">
+      <UniqueIdentifier>{aaf323f3-838e-4cc0-ac45-1a50ebf1f010}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{aec760b4-ea5d-410f-b2a5-f6729acdc337}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\ToggleViewTest\ToggleViewTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\ButtonTest\ButtonTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\CheckBoxTest\CheckBoxTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\ControlViewTest\ControlViewTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\GridPageViewTest\GridPageViewTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\GridViewTest\GridViewTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\LabelTest\LabelTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\ListViewTest\ListViewTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\PageViewTest\PageViewTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\ProgressBarTest\ProgressBarTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\ScrollViewTest\ScrollViewTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\SliderTest\SliderTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\TableViewTest\TableViewTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MenuScene.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\LayoutTest\LayoutTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\TextRichTest\TextRichTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\ExpandableListViewTest\ExpandableListViewTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Button.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\CheckBox.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ColorView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ControlView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ExpandableListView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\GradientView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\GridPageView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\GridView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ImageView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ImageViewScale9.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Label.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\LabelAtlas.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\LabelBMFont.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Layout.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ListView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Lua_cocos2dx_widget.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\PageView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ProgressBar.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Scale9Sprite.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ScrollView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Slider.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\TableView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\TextArea.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\TextRich.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\ToggleView.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\Widget.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\WidgetProtocol.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\WidgetWindow.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CocosWidget\WitlsMacros.cpp">
+      <Filter>CocosWidget</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\testwidget\DrawOrderTest\DrawOrderTest.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\ToggleViewTest\ToggleViewTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\ButtonTest\ButtonTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\CheckBoxTest\CheckBoxTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\ControlViewTest\ControlViewTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\GridPageViewTest\GridPageViewTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\GridViewTest\GridViewTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\LabelTest\LabelTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\ListViewTest\ListViewTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\PageViewTest\PageViewTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\ProgressBarTest\ProgressBarTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\ScrollViewTest\ScrollViewTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\SliderTest\SliderTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\TableViewTest\TableViewTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MenuScene.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\LayoutTest\LayoutTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\TextRichTest\TextRichTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\ExpandableListViewTest\ExpandableListViewTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Button.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\CheckBox.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\cocos-widget.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ColorView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ControlView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ExpandableListView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\GradientView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\GridPageView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\GridView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ImageView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ImageViewScale9.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Label.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\LabelAtlas.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\LabelBMFont.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Layout.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ListView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Lua_cocos2dx_widget.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\PageView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ProgressBar.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Scale9Sprite.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ScrollView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Slider.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\TableView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\TextArea.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\TextRich.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\ToggleView.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\Widget.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\WidgetMacros.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\WidgetProtocol.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\WidgetWindow.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\CocosWidget\WitlsMacros.h">
+      <Filter>CocosWidget</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\testwidget\DrawOrderTest\DrawOrderTest.h">
+      <Filter>Test</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

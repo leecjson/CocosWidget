@@ -1,0 +1,22 @@
+class CListView : public CScrollView
+{
+	CListView();
+	virtual ~CListView();
+	static CListView* create(const CCSize& contentSize);
+
+	void insertNodeAtLast(CCNode* pNode);
+	void insertNodeAtFront(CCNode* pNode);
+	void insertNode(CCNode* pNode, CCNode* pTarget);
+	void insertNode(CCNode* pNode, unsigned int idx);
+
+	void removeNodeAtIndex(unsigned int idx);
+	void removeNode(CCNode* pNode);
+	void removeFrontNode();
+	void removeLastNode();
+	void removeAllNodes();
+
+	CCArray* getNodes();
+	CCNode* getNodeAtIndex(unsigned int idx);
+	unsigned int getNodeCount() const;
+	void reloadData();
+};
