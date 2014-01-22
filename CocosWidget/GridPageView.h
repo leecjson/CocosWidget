@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -44,7 +44,7 @@ class CGridPageViewPage;
  * class  : CGridPageViewPage
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : grid page view page define
  */
 class CGridPageViewPage : public CTableViewCell
 {
@@ -62,7 +62,7 @@ protected:
  * class  : CGridPageViewCell
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : grid page view cell define
  */
 class CGridPageViewCell : public CTableViewCell
 {
@@ -75,7 +75,7 @@ public:
  * class  : CGridPageView
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : grid page view define
  */
 class CGridPageView : public CTableView, public CPageChangeableProtocol
 {

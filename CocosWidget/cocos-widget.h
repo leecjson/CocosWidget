@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -27,9 +27,6 @@ THE SOFTWARE.
 #ifndef __CCWIDGET_H__
 #define __CCWIDGET_H__
 
-// version CocosWidget-alpha 2.1
-// version for Cocos2d-x 2.x
-
 #include "WidgetMacros.h"
 
 NS_CC_WIDGET_BEGIN
@@ -41,11 +38,11 @@ class CCheckBox;
 class CColorView;
 class CControlView;
 class CExpandableNode;
-class CExpanedableListView;
+class CExpandableListView;
 class CGradientView;
 class CGridPageViewPage;
 class CGridPageViewCell;
-class GridPageView;
+class CGridPageView;
 class CGridViewCell;
 class CGridView;
 class CImageView;

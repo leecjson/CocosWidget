@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 

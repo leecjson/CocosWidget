@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -38,7 +38,7 @@ NS_CC_WIDGET_BEGIN
  * class  : CImageView
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : image view define
  */
 class CImageView : public CCSprite
 , public CWidget

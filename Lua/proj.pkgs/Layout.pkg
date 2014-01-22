@@ -6,7 +6,7 @@ class CLayout : public CCNodeRGBA, public CWidget, public CLayoutableProtocol
 	static CLayout* create();
 	static CLayout* create(const CCSize& tContentSize);
 	virtual void setContentSize(const CCSize& tContentSize);
-	CCObject* findViewById(const char* id);
+	CCObject* findWidgetById(const char* id);
 
 	void setBackgroundImage(const char* pFile);
 	void setBackgroundTexture(CCTexture2D* pTexture);

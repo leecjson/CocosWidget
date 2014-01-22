@@ -224,10 +224,10 @@ local CCObjectTypes = {
 	"CScrollView",
 	"CScrollViewContainer",
 	"CExpandableNode",
-	"CExpanedableListView",
+	"CExpandableListView",
 	"CGridPageViewPage",
 	"CGridPageViewCell",
-	"GridPageView",
+	"CGridPageView",
 	"CGridViewCell",
 	"CGridView",
 	"CListView",
@@ -295,7 +295,7 @@ function post_output_hook(package)
 
 #include "tolua++.h"]],
       [[/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 

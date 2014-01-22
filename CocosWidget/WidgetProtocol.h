@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -44,15 +44,18 @@ static const CCPoint CCWIDGET_LAYOUT_DEFAULT_ANCHOR_POINT = CCPoint(0.5f, 0.5f);
 static const CCSize CCWIDGET_LAYOUT_DEFAULT_CONTENT_SIZE = CCSize(300, 300);
 
 /**
- * class  : CGridPageView
+ * enum   : CWidgetTouchModel
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : touch model for widget event dispatch
  */
 enum CWidgetTouchModel
 {
+	// no need to handle evnet
 	eWidgetTouchNone,
+	// need to handle a while, the parent layout can interrupt me.
 	eWidgetTouchTransient,
+	// need handle event forever, interrupt self only
 	eWidgetTouchSustained,
 };
 

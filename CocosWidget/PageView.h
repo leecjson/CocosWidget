@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -42,7 +42,7 @@ class CPageViewCell;
  * class  : CPageViewCell
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : page view cell define
  */
 class CPageViewCell : public CTableViewCell
 {
@@ -54,7 +54,7 @@ public:
  * class  : CPageView
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : page view define
  */
 class CPageView : public CTableView, public CPageChangeableProtocol
 {

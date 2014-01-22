@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -40,7 +40,7 @@ NS_CC_WIDGET_BEGIN
  * class  : CExpandableNode
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : expandable node define
  */
 class CExpandableNode: public CLayout
 {
@@ -79,7 +79,7 @@ protected:
  * class  : CExpandableListView
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : expandable list view define
  */
 class CExpandableListView : public CScrollView
 {
@@ -88,7 +88,9 @@ public:
 	virtual ~CExpandableListView();
 	static CExpandableListView* create(const CCSize& contentSize);
 
+	// expand a expandable node by idx
 	void expand(unsigned int idx);
+	// collapse a expandable node by idx
 	void collapse(unsigned int idx);
 
 	void insertExpandableNodeAtLast(CExpandableNode* pNode);

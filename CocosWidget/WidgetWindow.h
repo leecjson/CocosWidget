@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -39,28 +39,54 @@ NS_CC_WIDGET_BEGIN
  * class  : CWidgetWindow
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : widget window define
  */
 class CWidgetWindow : public CCNodeRGBA, public CCTouchDelegate
 {
 public:
 	CWidgetWindow();
 	virtual ~CWidgetWindow();
+
+	// init default
 	virtual bool init();
+
+	// create and init default
 	static CWidgetWindow* create();
 
+	// get touch priority
 	virtual int getTouchPriority();
+
+	// set touch priority from widget tree root
 	virtual void setTouchPriority(int nTouchPriority);
+
+	// is touch enabled
 	virtual bool isTouchEnabled();
+
+	// set touch enabled, if false it is not going to handle event
 	virtual void setTouchEnabled(bool bTouchEnabled);
-	CCObject* findViewById(const char* id);
+	
+	// find a first matching widget in widget tree
+	CCObject* findWidgetById(const char* id);
+
+	// is multi touch enabled
 	bool isMultiTouchEnabled() const;
+
+	// set multi touch enabeld
 	void setMultiTouchEnabled(bool bEnabled);
+
+	// set modalable for window
 	void setModalable(bool bModalable);
+
+	// is modalable
 	bool isModalable() const;
 
+	// moved after long click
 	virtual void setOnTouchMovedAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler);
+
+	// ended after long click
 	virtual void setOnTouchEndedAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler);
+
+	// cancelled after long click
 	virtual void setOnTouchCancelledAfterLongClickListener(CCObject* pListener, SEL_AfterLongClickHandler pHandler);
 
 public:

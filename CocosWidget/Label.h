@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -35,10 +35,10 @@ THE SOFTWARE.
 NS_CC_WIDGET_BEGIN
 
 /**
- * class  : CButton
+ * class  : CLabel
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : label define
  */
 class CLabel : public CCLabelTTF, public CWidget, public CClickableProtocol, public CLongClickableProtocol
 {

@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -36,6 +36,12 @@ THE SOFTWARE.
 
 NS_CC_WIDGET_BEGIN
 
+/**
+ * enum   : CProgressBarDirection
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : progress bar direction
+ */
 enum CProgressBarDirection
 {
 	eProgressBarDirectionLeftToRight,
@@ -48,7 +54,7 @@ enum CProgressBarDirection
  * class  : CProgressBar
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : progress bar define, 4 direction
  */
 class CProgressBar : public CCNodeRGBA
 , public CProgressEndedProtocol

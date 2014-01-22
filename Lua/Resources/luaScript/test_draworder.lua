@@ -24,7 +24,7 @@ local function createDrawOrderTestBasicTest()
 	end);
 	
 	p_base_scene.setTitle("DrawOrderTestBasicTest");
-	p_base_scene.setDescription("toggle button");
+	p_base_scene.setDescription("swap zorder for see event dispatch");
 	
 	local pButton1 = nil;
 	local pButton2 = nil;
@@ -32,16 +32,8 @@ local function createDrawOrderTestBasicTest()
 	local function onClick(p_sender)
 		local z1 = pButton1:getZOrder();
 		local z2 = pButton2:getZOrder();
-
-		pButton1:retain();
-		p_base_scene.p_window:removeChild(pButton1, false);
-		p_base_scene.p_window:addChild(pButton1, z2);
-		pButton1:release();
-		
-		pButton2:retain();
-		p_base_scene.p_window:removeChild(pButton2, false);
-		p_base_scene.p_window:addChild(pButton2, z1);
-		pButton2:release();
+		p_base_scene.p_window:reorderChild(pButton1, z2);
+		p_base_scene.p_window:reorderChild(pButton2, z1);
 	end
 
 	local pSwapBtn = CButton:create();

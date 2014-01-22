@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -38,6 +38,12 @@ NS_CC_WIDGET_BEGIN
 class CScrollView;
 class CScrollViewContainer;
 
+/**
+ * enum   : CScrollViewDirection
+ * author : Jason lee
+ * email  : jason.lee.c@foxmail.com
+ * descpt : direction of scroll view
+ */
 enum CScrollViewDirection
 {
 	eScrollViewDirectionHorizontal,
@@ -49,7 +55,7 @@ enum CScrollViewDirection
  * class  : CScrollViewContainer
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : scroll view container define
  */
 class CScrollViewContainer : public CLayout
 {
@@ -62,7 +68,7 @@ public:
  * class  : CScrollView
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : scroll view define
  */
 class CScrollView : public CLayout, public CScrollableProtocol
 {
@@ -116,19 +122,16 @@ protected:
 	void setContentOffsetInDurationWithoutCheck(const CCPoint& tOffset, float fDuration);
 	void setContentOffsetEaseInWithoutCheck(const CCPoint& tOffset, float fDuration, float fRate);
 
-protected:
 	bool m_bDeaccelerateScrolling;
 	void perpareDeaccelerateScroll();
 	void performedDeaccelerateScrolling(float dt);
 	void stoppedDeaccelerateScroll();
 
-protected:
 	bool m_bAnimatedScrolling;
 	void perpareAnimatedScroll();
     void performedAnimatedScrolling(float dt);
     void stoppedAnimatedScroll();
 
-protected:
     virtual void onScrolling(){};
 	virtual void onDeaccelerateScrollEnded(){};
 	virtual void onDraggingScrollEnded(){};

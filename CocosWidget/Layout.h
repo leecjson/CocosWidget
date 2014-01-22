@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -40,7 +40,7 @@ NS_CC_WIDGET_BEGIN
  * class  : CLayout
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : layout define
  */
 class CLayout : public CCNodeRGBA, public CWidget, public CLayoutableProtocol
 {
@@ -51,7 +51,9 @@ public:
 	static CLayout* create();
 	static CLayout* create(const CCSize& tContentSize);
 	virtual void setContentSize(const CCSize& tContentSize);
-	CCObject* findViewById(const char* id);
+
+	// find the first matching widget by id
+	CCObject* findWidgetById(const char* id);
 
 	CC_WIDGET_BACKGROUND;
 

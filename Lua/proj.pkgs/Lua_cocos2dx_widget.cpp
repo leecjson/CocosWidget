@@ -1,10 +1,10 @@
 /*
 ** Lua binding: Lua_cocos2dx_widget
-** Generated automatically by tolua++-1.0.92 on 01/11/14 23:39:27.
+** Generated automatically by tolua++-1.0.92 on 01/15/14 01:08:37.
 */
 
 /****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -627,9 +627,9 @@ static int tolua_Lua_cocos2dx_widget_CWidgetWindow_setTouchEnabled00(lua_State* 
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: findViewById of class  CWidgetWindow */
-#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_widget_CWidgetWindow_findViewById00
-static int tolua_Lua_cocos2dx_widget_CWidgetWindow_findViewById00(lua_State* tolua_S)
+/* method: findWidgetById of class  CWidgetWindow */
+#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_widget_CWidgetWindow_findWidgetById00
+static int tolua_Lua_cocos2dx_widget_CWidgetWindow_findWidgetById00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
@@ -645,10 +645,10 @@ static int tolua_Lua_cocos2dx_widget_CWidgetWindow_findViewById00(lua_State* tol
   CWidgetWindow* self = (CWidgetWindow*)  tolua_tousertype(tolua_S,1,0);
   const char* id = ((const char*)  tolua_tostring(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'findViewById'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'findWidgetById'", NULL);
 #endif
   {
-   CCObject* tolua_ret = (CCObject*)  self->findViewById(id);
+   CCObject* tolua_ret = (CCObject*)  self->findWidgetById(id);
     int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
     int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
     toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CCObject");
@@ -657,7 +657,7 @@ static int tolua_Lua_cocos2dx_widget_CWidgetWindow_findViewById00(lua_State* tol
  return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'findViewById'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'findWidgetById'.",&tolua_err);
  return 0;
 #endif
 }
@@ -3933,9 +3933,9 @@ static int tolua_Lua_cocos2dx_widget_CLayout_setContentSize00(lua_State* tolua_S
 }
 #endif //#ifndef TOLUA_DISABLE
 
-/* method: findViewById of class  CLayout */
-#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_widget_CLayout_findViewById00
-static int tolua_Lua_cocos2dx_widget_CLayout_findViewById00(lua_State* tolua_S)
+/* method: findWidgetById of class  CLayout */
+#ifndef TOLUA_DISABLE_tolua_Lua_cocos2dx_widget_CLayout_findWidgetById00
+static int tolua_Lua_cocos2dx_widget_CLayout_findWidgetById00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
  tolua_Error tolua_err;
@@ -3951,10 +3951,10 @@ static int tolua_Lua_cocos2dx_widget_CLayout_findViewById00(lua_State* tolua_S)
   CLayout* self = (CLayout*)  tolua_tousertype(tolua_S,1,0);
   const char* id = ((const char*)  tolua_tostring(tolua_S,2,0));
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'findViewById'", NULL);
+  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'findWidgetById'", NULL);
 #endif
   {
-   CCObject* tolua_ret = (CCObject*)  self->findViewById(id);
+   CCObject* tolua_ret = (CCObject*)  self->findWidgetById(id);
     int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
     int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
     toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CCObject");
@@ -3963,7 +3963,7 @@ static int tolua_Lua_cocos2dx_widget_CLayout_findViewById00(lua_State* tolua_S)
  return 1;
 #ifndef TOLUA_RELEASE
  tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'findViewById'.",&tolua_err);
+ tolua_error(tolua_S,"#ferror in function 'findWidgetById'.",&tolua_err);
  return 0;
 #endif
 }
@@ -9367,7 +9367,9 @@ static int tolua_Lua_cocos2dx_widget_CGridPageView_new00(lua_State* tolua_S)
  {
   {
    CGridPageView* tolua_ret = (CGridPageView*)  Mtolua_new((CGridPageView)());
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CGridPageView");
+    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CGridPageView");
   }
  }
  return 1;
@@ -9395,7 +9397,9 @@ static int tolua_Lua_cocos2dx_widget_CGridPageView_new00_local(lua_State* tolua_
  {
   {
    CGridPageView* tolua_ret = (CGridPageView*)  Mtolua_new((CGridPageView)());
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CGridPageView");
+    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CGridPageView");
     tolua_register_gc(tolua_S,lua_gettop(tolua_S));
   }
  }
@@ -9455,7 +9459,9 @@ static int tolua_Lua_cocos2dx_widget_CGridPageView_create00(lua_State* tolua_S)
   const CCSize* tViewSize = ((const CCSize*)  tolua_tousertype(tolua_S,2,0));
   {
    CGridPageView* tolua_ret = (CGridPageView*)  CGridPageView::create(*tViewSize);
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CGridPageView");
+    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CGridPageView");
   }
  }
  return 1;
@@ -11799,7 +11805,9 @@ static int tolua_Lua_cocos2dx_widget_CExpandableListView_new00(lua_State* tolua_
  {
   {
    CExpandableListView* tolua_ret = (CExpandableListView*)  Mtolua_new((CExpandableListView)());
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CExpandableListView");
+    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CExpandableListView");
   }
  }
  return 1;
@@ -11827,7 +11835,9 @@ static int tolua_Lua_cocos2dx_widget_CExpandableListView_new00_local(lua_State* 
  {
   {
    CExpandableListView* tolua_ret = (CExpandableListView*)  Mtolua_new((CExpandableListView)());
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CExpandableListView");
+    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CExpandableListView");
     tolua_register_gc(tolua_S,lua_gettop(tolua_S));
   }
  }
@@ -11887,7 +11897,9 @@ static int tolua_Lua_cocos2dx_widget_CExpandableListView_create00(lua_State* tol
   const CCSize* contentSize = ((const CCSize*)  tolua_tousertype(tolua_S,2,0));
   {
    CExpandableListView* tolua_ret = (CExpandableListView*)  CExpandableListView::create(*contentSize);
-    tolua_pushusertype(tolua_S,(void*)tolua_ret,"CExpandableListView");
+    int nID = (tolua_ret) ? (int)tolua_ret->m_uID : -1;
+    int* pLuaID = (tolua_ret) ? &tolua_ret->m_nLuaID : NULL;
+    toluafix_pushusertype_ccobject(tolua_S, nID, pLuaID, (void*)tolua_ret,"CExpandableListView");
   }
  }
  return 1;
@@ -26546,7 +26558,7 @@ TOLUA_API int tolua_Lua_cocos2dx_widget_open (lua_State* tolua_S)
    tolua_function(tolua_S,"setTouchPriority",tolua_Lua_cocos2dx_widget_CWidgetWindow_setTouchPriority00);
    tolua_function(tolua_S,"isTouchEnabled",tolua_Lua_cocos2dx_widget_CWidgetWindow_isTouchEnabled00);
    tolua_function(tolua_S,"setTouchEnabled",tolua_Lua_cocos2dx_widget_CWidgetWindow_setTouchEnabled00);
-   tolua_function(tolua_S,"findViewById",tolua_Lua_cocos2dx_widget_CWidgetWindow_findViewById00);
+   tolua_function(tolua_S,"findWidgetById",tolua_Lua_cocos2dx_widget_CWidgetWindow_findWidgetById00);
    tolua_function(tolua_S,"isMultiTouchEnabled",tolua_Lua_cocos2dx_widget_CWidgetWindow_isMultiTouchEnabled00);
    tolua_function(tolua_S,"setMultiTouchEnabled",tolua_Lua_cocos2dx_widget_CWidgetWindow_setMultiTouchEnabled00);
    tolua_function(tolua_S,"setModalable",tolua_Lua_cocos2dx_widget_CWidgetWindow_setModalable00);
@@ -26674,7 +26686,7 @@ TOLUA_API int tolua_Lua_cocos2dx_widget_open (lua_State* tolua_S)
    tolua_function(tolua_S,"create",tolua_Lua_cocos2dx_widget_CLayout_create00);
    tolua_function(tolua_S,"create",tolua_Lua_cocos2dx_widget_CLayout_create01);
    tolua_function(tolua_S,"setContentSize",tolua_Lua_cocos2dx_widget_CLayout_setContentSize00);
-   tolua_function(tolua_S,"findViewById",tolua_Lua_cocos2dx_widget_CLayout_findViewById00);
+   tolua_function(tolua_S,"findWidgetById",tolua_Lua_cocos2dx_widget_CLayout_findWidgetById00);
    tolua_function(tolua_S,"setBackgroundImage",tolua_Lua_cocos2dx_widget_CLayout_setBackgroundImage00);
    tolua_function(tolua_S,"setBackgroundTexture",tolua_Lua_cocos2dx_widget_CLayout_setBackgroundTexture00);
    tolua_function(tolua_S,"setBackgroundSpriteFrame",tolua_Lua_cocos2dx_widget_CLayout_setBackgroundSpriteFrame00);

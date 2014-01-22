@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -148,7 +148,7 @@ void CLayout::onTouchCancelled(CCTouch* pTouch, float fDuration)
 	m_eSelectedWidgetTouchModel = eWidgetTouchNone;
 }
 
-CCObject* CLayout::findViewById(const char* id)
+CCObject* CLayout::findWidgetById(const char* id)
 {
 	CCAssert(id && strlen(id), "should not null");
 

@@ -16,7 +16,7 @@ class CWidgetWindow : public CCNodeRGBA, public CCTouchDelegate
 	virtual void setTouchPriority(int nTouchPriority);
 	virtual bool isTouchEnabled();
 	virtual void setTouchEnabled(bool bTouchEnabled);
-	CCObject* findViewById(const char* id);
+	CCObject* findWidgetById(const char* id);
 	bool isMultiTouchEnabled() const;
 	void setMultiTouchEnabled(bool bEnabled);
 	void setModalable(bool bModalable);

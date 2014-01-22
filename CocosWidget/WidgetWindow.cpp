@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -70,9 +70,10 @@ int CWidgetWindow::getTouchPriority()
 	return m_nTouchPriority;
 }
 
-CCObject* CWidgetWindow::findViewById(const char* id)
+CCObject* CWidgetWindow::findWidgetById(const char* id)
 {
 	CCAssert(id && strlen(id), "should not null");
+
 	return find(m_pChildren, id);
 }
 

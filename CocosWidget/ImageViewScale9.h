@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -39,7 +39,7 @@ NS_CC_WIDGET_BEGIN
  * class  : CImageViewScale9
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : image view scale 9 define 
  */
 class CImageViewScale9 : public CScale9Sprite
 , public CWidget

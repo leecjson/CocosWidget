@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
-Copyright (c) 2013 Lijunlin - Jason lee
+Copyright (c) 2014 Lijunlin - Jason lee
 
 Created by Lijunlin - Jason lee on 2014
 
@@ -44,7 +44,7 @@ class CTableViewCell;
  * class  : CTableViewCell
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : table view cell define
  */
 class CTableViewCell : public CLayout
 {
@@ -63,7 +63,7 @@ protected:
  * class  : CTableView
  * author : Jason lee
  * email  : jason.lee.c@foxmail.com
- * descpt : 
+ * descpt : table view define
  */
 class CTableView : public CScrollView, public CDataSourceAdapterProtocol
 {
