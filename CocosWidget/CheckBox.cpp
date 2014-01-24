@@ -69,19 +69,19 @@ bool CCheckBox::init()
 	return true;
 }
 
-#define SAVE_SET_VISIBLE(_SPRITE_, _FLAG_) if(_SPRITE_) _SPRITE_->setVisible(_FLAG_)
-#define SAVE_SET_CENTER(_SPRITE_, _SIZE_) \
+#define SAFE_SET_VISIBLE(_SPRITE_, _FLAG_) if(_SPRITE_) _SPRITE_->setVisible(_FLAG_)
+#define SAFE_SET_CENTER(_SPRITE_, _SIZE_) \
 if( _SPRITE_ ) _SPRITE_->setPosition(CCPoint(_SIZE_.width/2, _SIZE_.height/2))
 
 void CCheckBox::setContentSize(const CCSize& tContentSize)
 {
 	CCNodeRGBA::setContentSize(tContentSize);
-	SAVE_SET_CENTER(m_pNormal, m_obContentSize);
-	SAVE_SET_CENTER(m_pNormalPress, m_obContentSize);
-	SAVE_SET_CENTER(m_pChecked, m_obContentSize);
-	SAVE_SET_CENTER(m_pCheckedPress, m_obContentSize);
-	SAVE_SET_CENTER(m_pDisabledNormal, m_obContentSize);
-	SAVE_SET_CENTER(m_pDisabledChecked, m_obContentSize);
+	SAFE_SET_CENTER(m_pNormal, m_obContentSize);
+	SAFE_SET_CENTER(m_pNormalPress, m_obContentSize);
+	SAFE_SET_CENTER(m_pChecked, m_obContentSize);
+	SAFE_SET_CENTER(m_pCheckedPress, m_obContentSize);
+	SAFE_SET_CENTER(m_pDisabledNormal, m_obContentSize);
+	SAFE_SET_CENTER(m_pDisabledChecked, m_obContentSize);
 }
 
 CWidgetTouchModel CCheckBox::onTouchBegan(CCTouch* pTouch)
@@ -92,16 +92,16 @@ CWidgetTouchModel CCheckBox::onTouchBegan(CCTouch* pTouch)
 	{
 		if( m_pCheckedPress )
 		{
-			SAVE_SET_VISIBLE(m_pCheckedPress, true);
-			SAVE_SET_VISIBLE(m_pChecked, false);
+			SAFE_SET_VISIBLE(m_pCheckedPress, true);
+			SAFE_SET_VISIBLE(m_pChecked, false);
 		}
 	}
 	else
 	{
 		if( m_pNormalPress )
 		{
-			SAVE_SET_VISIBLE(m_pNormalPress, true);
-			SAVE_SET_VISIBLE(m_pNormal, false);
+			SAFE_SET_VISIBLE(m_pNormalPress, true);
+			SAFE_SET_VISIBLE(m_pNormal, false);
 		}
 	}
 
@@ -119,24 +119,24 @@ void CCheckBox::onTouchMoved(CCTouch* pTouch, float fDuration)
 		{
 			if( m_pCheckedPress )
 			{
-				SAVE_SET_VISIBLE(m_pCheckedPress, true);
-				SAVE_SET_VISIBLE(m_pChecked, false);
+				SAFE_SET_VISIBLE(m_pCheckedPress, true);
+				SAFE_SET_VISIBLE(m_pChecked, false);
 			}
 			else
 			{
-				SAVE_SET_VISIBLE(m_pChecked, true);
+				SAFE_SET_VISIBLE(m_pChecked, true);
 			}
 		}
 		else
 		{
 			if( m_pNormalPress )
 			{
-				SAVE_SET_VISIBLE(m_pNormalPress, true);
-				SAVE_SET_VISIBLE(m_pNormal, false);
+				SAFE_SET_VISIBLE(m_pNormalPress, true);
+				SAFE_SET_VISIBLE(m_pNormal, false);
 			}
 			else
 			{
-				SAVE_SET_VISIBLE(m_pNormal, true);
+				SAFE_SET_VISIBLE(m_pNormal, true);
 			}
 		}
 	}
@@ -144,13 +144,13 @@ void CCheckBox::onTouchMoved(CCTouch* pTouch, float fDuration)
 	{
 		if( isChecked() )
 		{
-			SAVE_SET_VISIBLE(m_pCheckedPress, false);
-			SAVE_SET_VISIBLE(m_pChecked, true);
+			SAFE_SET_VISIBLE(m_pCheckedPress, false);
+			SAFE_SET_VISIBLE(m_pChecked, true);
 		}
 		else
 		{
-			SAVE_SET_VISIBLE(m_pNormalPress, false);
-			SAVE_SET_VISIBLE(m_pNormal, true);
+			SAFE_SET_VISIBLE(m_pNormalPress, false);
+			SAFE_SET_VISIBLE(m_pNormal, true);
 		}
 	}
 }
@@ -176,17 +176,17 @@ void CCheckBox::onTouchEnded(CCTouch* pTouch, float fDuration)
 	{
 		if( isChecked() )
 		{
-			SAVE_SET_VISIBLE(m_pNormalPress, false);
-			SAVE_SET_VISIBLE(m_pNormal, false);
-			SAVE_SET_VISIBLE(m_pCheckedPress, false);
-			SAVE_SET_VISIBLE(m_pChecked, true);
+			SAFE_SET_VISIBLE(m_pNormalPress, false);
+			SAFE_SET_VISIBLE(m_pNormal, false);
+			SAFE_SET_VISIBLE(m_pCheckedPress, false);
+			SAFE_SET_VISIBLE(m_pChecked, true);
 		}
 		else
 		{
-			SAVE_SET_VISIBLE(m_pNormalPress, false);
-			SAVE_SET_VISIBLE(m_pNormal, true);
-			SAVE_SET_VISIBLE(m_pCheckedPress, false);
-			SAVE_SET_VISIBLE(m_pChecked, false);
+			SAFE_SET_VISIBLE(m_pNormalPress, false);
+			SAFE_SET_VISIBLE(m_pNormal, true);
+			SAFE_SET_VISIBLE(m_pCheckedPress, false);
+			SAFE_SET_VISIBLE(m_pChecked, false);
 		}
 	}
 }
@@ -197,13 +197,13 @@ void CCheckBox::onTouchCancelled(CCTouch* pTouch, float fDuration)
 
 	if( isChecked() )
 	{
-		SAVE_SET_VISIBLE(m_pCheckedPress, false);
-		SAVE_SET_VISIBLE(m_pChecked, true);
+		SAFE_SET_VISIBLE(m_pCheckedPress, false);
+		SAFE_SET_VISIBLE(m_pChecked, true);
 	}
 	else
 	{
-		SAVE_SET_VISIBLE(m_pNormalPress, false);
-		SAVE_SET_VISIBLE(m_pNormal, true);
+		SAFE_SET_VISIBLE(m_pNormalPress, false);
+		SAFE_SET_VISIBLE(m_pNormal, true);
 	}
 }
 
@@ -215,18 +215,18 @@ void CCheckBox::setChecked(bool bChecked)
 		{
 			if( bChecked )
 			{
-				SAVE_SET_VISIBLE(m_pNormalPress, false);
-				SAVE_SET_VISIBLE(m_pNormal, false);
-				SAVE_SET_VISIBLE(m_pCheckedPress, false);
-				SAVE_SET_VISIBLE(m_pChecked, true);
+				SAFE_SET_VISIBLE(m_pNormalPress, false);
+				SAFE_SET_VISIBLE(m_pNormal, false);
+				SAFE_SET_VISIBLE(m_pCheckedPress, false);
+				SAFE_SET_VISIBLE(m_pChecked, true);
 				setUnCheckedForOtherWidgetsByExclusion(m_pParent);
 			}
 			else
 			{
-				SAVE_SET_VISIBLE(m_pNormalPress, false);
-				SAVE_SET_VISIBLE(m_pNormal, true);
-				SAVE_SET_VISIBLE(m_pCheckedPress, false);
-				SAVE_SET_VISIBLE(m_pChecked, false);
+				SAFE_SET_VISIBLE(m_pNormalPress, false);
+				SAFE_SET_VISIBLE(m_pNormal, true);
+				SAFE_SET_VISIBLE(m_pCheckedPress, false);
+				SAFE_SET_VISIBLE(m_pChecked, false);
 			}
 		}
 		else
@@ -236,19 +236,19 @@ void CCheckBox::setChecked(bool bChecked)
 				if( m_pDisabledChecked )
 				{
 					m_pDisabledChecked->setVisible(true);
-					SAVE_SET_VISIBLE(m_pNormalPress, false);
-					SAVE_SET_VISIBLE(m_pNormal, false);
-					SAVE_SET_VISIBLE(m_pCheckedPress, false);
-					SAVE_SET_VISIBLE(m_pChecked, false);
-					SAVE_SET_VISIBLE(m_pDisabledNormal, false);
+					SAFE_SET_VISIBLE(m_pNormalPress, false);
+					SAFE_SET_VISIBLE(m_pNormal, false);
+					SAFE_SET_VISIBLE(m_pCheckedPress, false);
+					SAFE_SET_VISIBLE(m_pChecked, false);
+					SAFE_SET_VISIBLE(m_pDisabledNormal, false);
 				}
 				else
 				{
-					SAVE_SET_VISIBLE(m_pNormalPress, false);
-					SAVE_SET_VISIBLE(m_pNormal, false);
-					SAVE_SET_VISIBLE(m_pCheckedPress, false);
-					SAVE_SET_VISIBLE(m_pChecked, true);
-					SAVE_SET_VISIBLE(m_pDisabledNormal, false);
+					SAFE_SET_VISIBLE(m_pNormalPress, false);
+					SAFE_SET_VISIBLE(m_pNormal, false);
+					SAFE_SET_VISIBLE(m_pCheckedPress, false);
+					SAFE_SET_VISIBLE(m_pChecked, true);
+					SAFE_SET_VISIBLE(m_pDisabledNormal, false);
 				}
 				setUnCheckedForOtherWidgetsByExclusion(m_pParent);
 			}
@@ -257,19 +257,19 @@ void CCheckBox::setChecked(bool bChecked)
 				if( m_pDisabledNormal )
 				{
 					m_pDisabledNormal->setVisible(true);
-					SAVE_SET_VISIBLE(m_pNormalPress, false);
-					SAVE_SET_VISIBLE(m_pNormal, false);
-					SAVE_SET_VISIBLE(m_pCheckedPress, false);
-					SAVE_SET_VISIBLE(m_pChecked, false);
-					SAVE_SET_VISIBLE(m_pDisabledChecked, false);
+					SAFE_SET_VISIBLE(m_pNormalPress, false);
+					SAFE_SET_VISIBLE(m_pNormal, false);
+					SAFE_SET_VISIBLE(m_pCheckedPress, false);
+					SAFE_SET_VISIBLE(m_pChecked, false);
+					SAFE_SET_VISIBLE(m_pDisabledChecked, false);
 				}
 				else
 				{
-					SAVE_SET_VISIBLE(m_pNormalPress, false);
-					SAVE_SET_VISIBLE(m_pNormal, true);
-					SAVE_SET_VISIBLE(m_pCheckedPress, false);
-					SAVE_SET_VISIBLE(m_pChecked, false);
-					SAVE_SET_VISIBLE(m_pDisabledChecked, false);
+					SAFE_SET_VISIBLE(m_pNormalPress, false);
+					SAFE_SET_VISIBLE(m_pNormal, true);
+					SAFE_SET_VISIBLE(m_pCheckedPress, false);
+					SAFE_SET_VISIBLE(m_pChecked, false);
+					SAFE_SET_VISIBLE(m_pDisabledChecked, false);
 				}
 			}
 		}
@@ -287,21 +287,21 @@ void CCheckBox::setEnabled(bool bEnabled)
 		{
 			if( isChecked() )
 			{
-				SAVE_SET_VISIBLE(m_pNormalPress, false);
-				SAVE_SET_VISIBLE(m_pNormal, false);
-				SAVE_SET_VISIBLE(m_pCheckedPress, false);
-				SAVE_SET_VISIBLE(m_pChecked, true);
-				SAVE_SET_VISIBLE(m_pDisabledNormal, false);
-				SAVE_SET_VISIBLE(m_pDisabledChecked, false);
+				SAFE_SET_VISIBLE(m_pNormalPress, false);
+				SAFE_SET_VISIBLE(m_pNormal, false);
+				SAFE_SET_VISIBLE(m_pCheckedPress, false);
+				SAFE_SET_VISIBLE(m_pChecked, true);
+				SAFE_SET_VISIBLE(m_pDisabledNormal, false);
+				SAFE_SET_VISIBLE(m_pDisabledChecked, false);
 			}
 			else
 			{
-				SAVE_SET_VISIBLE(m_pNormalPress, false);
-				SAVE_SET_VISIBLE(m_pNormal, true);
-				SAVE_SET_VISIBLE(m_pCheckedPress, false);
-				SAVE_SET_VISIBLE(m_pChecked, false);
-				SAVE_SET_VISIBLE(m_pDisabledNormal, false);
-				SAVE_SET_VISIBLE(m_pDisabledChecked, false);
+				SAFE_SET_VISIBLE(m_pNormalPress, false);
+				SAFE_SET_VISIBLE(m_pNormal, true);
+				SAFE_SET_VISIBLE(m_pCheckedPress, false);
+				SAFE_SET_VISIBLE(m_pChecked, false);
+				SAFE_SET_VISIBLE(m_pDisabledNormal, false);
+				SAFE_SET_VISIBLE(m_pDisabledChecked, false);
 			}
 		}
 		else
@@ -310,40 +310,40 @@ void CCheckBox::setEnabled(bool bEnabled)
 			{
 				if( m_pDisabledChecked )
 				{
-					SAVE_SET_VISIBLE(m_pNormalPress, false);
-					SAVE_SET_VISIBLE(m_pNormal, false);
-					SAVE_SET_VISIBLE(m_pCheckedPress, false);
-					SAVE_SET_VISIBLE(m_pChecked, false);
-					SAVE_SET_VISIBLE(m_pDisabledNormal, false);
-					SAVE_SET_VISIBLE(m_pDisabledChecked, true);
+					SAFE_SET_VISIBLE(m_pNormalPress, false);
+					SAFE_SET_VISIBLE(m_pNormal, false);
+					SAFE_SET_VISIBLE(m_pCheckedPress, false);
+					SAFE_SET_VISIBLE(m_pChecked, false);
+					SAFE_SET_VISIBLE(m_pDisabledNormal, false);
+					SAFE_SET_VISIBLE(m_pDisabledChecked, true);
 				}
 				else
 				{
-					SAVE_SET_VISIBLE(m_pNormalPress, false);
-					SAVE_SET_VISIBLE(m_pNormal, false);
-					SAVE_SET_VISIBLE(m_pCheckedPress, false);
-					SAVE_SET_VISIBLE(m_pChecked, true);
-					SAVE_SET_VISIBLE(m_pDisabledNormal, false);
+					SAFE_SET_VISIBLE(m_pNormalPress, false);
+					SAFE_SET_VISIBLE(m_pNormal, false);
+					SAFE_SET_VISIBLE(m_pCheckedPress, false);
+					SAFE_SET_VISIBLE(m_pChecked, true);
+					SAFE_SET_VISIBLE(m_pDisabledNormal, false);
 				}
 			}
 			else
 			{
 				if( m_pDisabledNormal )
 				{
-					SAVE_SET_VISIBLE(m_pNormalPress, false);
-					SAVE_SET_VISIBLE(m_pNormal, false);
-					SAVE_SET_VISIBLE(m_pCheckedPress, false);
-					SAVE_SET_VISIBLE(m_pChecked, false);
-					SAVE_SET_VISIBLE(m_pDisabledNormal, true);
-					SAVE_SET_VISIBLE(m_pDisabledChecked, false);
+					SAFE_SET_VISIBLE(m_pNormalPress, false);
+					SAFE_SET_VISIBLE(m_pNormal, false);
+					SAFE_SET_VISIBLE(m_pCheckedPress, false);
+					SAFE_SET_VISIBLE(m_pChecked, false);
+					SAFE_SET_VISIBLE(m_pDisabledNormal, true);
+					SAFE_SET_VISIBLE(m_pDisabledChecked, false);
 				}
 				else
 				{
-					SAVE_SET_VISIBLE(m_pNormalPress, true);
-					SAVE_SET_VISIBLE(m_pNormal, false);
-					SAVE_SET_VISIBLE(m_pCheckedPress, false);
-					SAVE_SET_VISIBLE(m_pChecked, false);
-					SAVE_SET_VISIBLE(m_pDisabledChecked, false);
+					SAFE_SET_VISIBLE(m_pNormalPress, true);
+					SAFE_SET_VISIBLE(m_pNormal, false);
+					SAFE_SET_VISIBLE(m_pCheckedPress, false);
+					SAFE_SET_VISIBLE(m_pChecked, false);
+					SAFE_SET_VISIBLE(m_pDisabledChecked, false);
 				}
 			}
 		}
