@@ -28,7 +28,7 @@ THE SOFTWARE.
 #define __CCWIDGET_WIDGETMACROS_H__
 
 #ifndef USING_LUA
-#define USING_LUA 0
+#define USING_LUA 1
 #endif
 
 #define NS_CC_WIDGET_BEGIN			namespace cocos2d { namespace cocoswidget {
