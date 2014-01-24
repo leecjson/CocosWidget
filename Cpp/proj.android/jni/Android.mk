@@ -7,44 +7,53 @@ LOCAL_MODULE := cocoswidget_shared
 LOCAL_MODULE_FILENAME := libcocoswidget
 
 LOCAL_SRC_FILES := cpp/main.cpp \
-../../../CocosWidget/Button.cpp \
-../../../CocosWidget/CheckBox.cpp \
-../../../CocosWidget/ControlView.cpp \
-../../../CocosWidget/GridPageView.cpp \
-../../../CocosWidget/GridView.cpp \
-../../../CocosWidget/ImageView.cpp \
-../../../CocosWidget/ImageViewScale9.cpp \
-../../../CocosWidget/Label.cpp \
-../../../CocosWidget/LabelAtlas.cpp \
-../../../CocosWidget/LabelBMFont.cpp \
-../../../CocosWidget/ListView.cpp \
-../../../CocosWidget/Lua_cocos2dx_widget.cpp \
-../../../CocosWidget/PageView.cpp \
-../../../CocosWidget/Panel.cpp \
-../../../CocosWidget/ProgressBar.cpp \
-../../../CocosWidget/Scale9Sprite.cpp \
-../../../CocosWidget/ScrollView.cpp \
-../../../CocosWidget/Slider.cpp \
-../../../CocosWidget/TableView.cpp \
-../../../CocosWidget/ToggleView.cpp \
-../../../CocosWidget/Widget.cpp \
-../../../CocosWidget/WidgetLayout.cpp \
-../../../CocosWidget/WidgetProtocol.cpp \
+../../../CocosBase/Button.cpp \
+../../../CocosBase/CheckBox.cpp \
+../../../CocosBase/ColorView.cpp \
+../../../CocosBase/ControlView.cpp \
+../../../CocosBase/ExpandableListView.cpp \
+../../../CocosBase/GradientView.cpp \
+../../../CocosBase/GridPageView.cpp \
+../../../CocosBase/GridView.cpp \
+../../../CocosBase/ImageView.cpp \
+../../../CocosBase/ImageViewScale9.cpp \
+../../../CocosBase/Label.cpp \
+../../../CocosBase/LabelAtlas.cpp \
+../../../CocosBase/LabelBMFont.cpp \
+../../../CocosBase/Layout.cpp \
+../../../CocosBase/ListView.cpp \
+../../../CocosBase/Lua_cocos2dx_widget.cpp \
+../../../CocosBase/PageView.cpp \
+../../../CocosBase/ProgressBar.cpp \
+../../../CocosBase/Scale9Sprite.cpp \
+../../../CocosBase/ScrollView.cpp \
+../../../CocosBase/Slider.cpp \
+../../../CocosBase/TableView.cpp \
+../../../CocosBase/TextArea.cpp \
+../../../CocosBase/TextRich.cpp \
+../../../CocosBase/ToggleView.cpp \
+../../../CocosBase/Widget.cpp \
+../../../CocosBase/WidgetProtocol.cpp \
+../../../CocosBase/WidgetWindow.cpp \
+../../../CocosBase/WitlsMacros.cpp \
 ../../Classes/AppDelegate.cpp \
 ../../Classes/MenuScene.cpp \
 ../../Classes/testwidget/ButtonTest/ButtonTest.cpp \
 ../../Classes/testwidget/CheckBoxTest/CheckBoxTest.cpp \
 ../../Classes/testwidget/ControlViewTest/ControlViewTest.cpp \
+../../Classes/testwidget/DrawOrderTest/DrawOrderTest.cpp \
+../../Classes/testwidget/ExpandableListViewTest/ExpandableListViewTest.cpp \
 ../../Classes/testwidget/GridPageViewTest/GridPageViewTest.cpp \
 ../../Classes/testwidget/GridViewTest/GridViewTest.cpp \
 ../../Classes/testwidget/LabelTest/LabelTest.cpp \
+../../Classes/testwidget/LayoutTest/LayoutTest.cpp \
 ../../Classes/testwidget/ListViewTest/ListViewTest.cpp \
 ../../Classes/testwidget/PageViewTest/PageViewTest.cpp \
-../../Classes/testwidget/PanelTest/PanelTest.cpp \
 ../../Classes/testwidget/ProgressBarTest/ProgressBarTest.cpp \
 ../../Classes/testwidget/ScrollViewTest/ScrollViewTest.cpp \
 ../../Classes/testwidget/SliderTest/SliderTest.cpp \
 ../../Classes/testwidget/TableViewTest/TableViewTest.cpp \
+../../Classes/testwidget/TextRichTest/TextRichTest.cpp \
 ../../Classes/testwidget/ToggleViewTest/ToggleViewTest.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes

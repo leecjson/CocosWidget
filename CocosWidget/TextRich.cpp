@@ -104,9 +104,7 @@ void CTextRich::insertElement(const char* pString
 				nCharLength = 1; //English char
 			}
 			
-			m_uCharCursor += nCharLength;
-
-			if( m_uCharCursor > m_uMaxLineLength )
+			if( m_uCharCursor + nCharLength > m_uMaxLineLength )
 			{
 				_ccTEXTRICHELEMENT tElement;
 				makeAtlasLabelElement(tElement, str_buffer.c_str(), pFontName, fFontSize, tColor, pDescription);
@@ -123,6 +121,7 @@ void CTextRich::insertElement(const char* pString
 				str_buffer.append(pstr,(unsigned int)nlen);
 			}
 
+			m_uCharCursor += nCharLength;
 			pstr += nlen;
 		}
 

@@ -28,6 +28,7 @@ THE SOFTWARE.
 #define __CCWIDGET_TEXTRICH_H__
 
 #include "cocos2d.h"
+#include "WitlsMacros.h"
 #include "WidgetMacros.h"
 #include "WidgetProtocol.h"
 #include "Widget.h"

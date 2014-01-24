@@ -50,7 +50,7 @@ static unsigned char utf8_look_for_table[] =
 
 #define UTF8LEN(_X_) utf8_look_for_table[(_X_)]
 
-inline int str_utf8_char_len(unsigned char ch)
+int str_utf8_char_len(unsigned char ch)
 {
 	return (int)(UTF8LEN((ch)));
 }

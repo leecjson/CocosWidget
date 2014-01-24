@@ -55,11 +55,11 @@ bool CTextRichEventTest::init()
 	pTextRich->setVerticalSpacing(15.0f);
 	pTextRich->insertElement("[System]:", "", 30);
 	pTextRich->insertElement("cocos2d-x ", "", 30, ccRED);
-	pTextRich->insertElement("is a good engine for mobile phone and ");
+	pTextRich->insertElement("is a good mobile phone game engine and ");
 	pTextRich->insertElement("cocoswidget ", "", 30, ccRED);
-	pTextRich->insertElement("is helpful for it ", "", 30, ccRED);
+	pTextRich->insertElement("be helpful for it ", "", 30, ccORANGE);
 	pTextRich->insertElement("[ click me ] ", "", 30, ccMAGENTA, "Label");
-	pTextRich->insertElement("my name is ", "", 30);
+	pTextRich->insertElement("my name ", "", 30);
 	pTextRich->insertElement("Jason lee - Lijunlin", "", 30, ccYELLOW, "Jason lee - Lijunlin");
 
 	CCSprite* pIcon = CCSprite::create("icon.png");

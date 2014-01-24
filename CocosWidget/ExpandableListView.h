@@ -36,6 +36,9 @@ THE SOFTWARE.
 
 NS_CC_WIDGET_BEGIN
 
+class CExpandableNode;
+class CExpandableListView;
+
 /**
  * class  : CExpandableNode
  * author : Jason lee

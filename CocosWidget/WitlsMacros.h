@@ -27,10 +27,10 @@ THE SOFTWARE.
 #ifndef __CWIDGET_WITLSMACROS_H__
 #define __CWIDGET_WITLSMACROS_H__
 
-extern inline int str_utf8_char_len(unsigned char ch);
+int str_utf8_char_len(unsigned char ch);
 
-extern int str_utf8_len(const char* p_str);
+int str_utf8_len(const char* p_str);
 
-extern char* sub_utf8_str(const char* p_str, unsigned int start, unsigned int end);
+char* sub_utf8_str(const char* p_str, unsigned int start, unsigned int end);
 
 #endif //__CWIDGET_WITLSMACROS_H__

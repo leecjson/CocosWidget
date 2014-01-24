@@ -207,7 +207,6 @@
 		67D503BC185EB28C005D6DF9 /* control_baseboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D50393185EB28C005D6DF9 /* control_baseboard.png */; };
 		67D503BD185EB28C005D6DF9 /* control_joystick.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D50394185EB28C005D6DF9 /* control_joystick.png */; };
 		67D503BE185EB28C005D6DF9 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D50395185EB28C005D6DF9 /* icon.png */; };
-		67D503BF185EB28C005D6DF9 /* luaScript in Resources */ = {isa = PBXBuildFile; fileRef = 67D50396185EB28C005D6DF9 /* luaScript */; };
 		67D503C0185EB28C005D6DF9 /* next1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D50397185EB28C005D6DF9 /* next1.png */; };
 		67D503C1185EB28C005D6DF9 /* next2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D50398185EB28C005D6DF9 /* next2.png */; };
 		67D503C2185EB28C005D6DF9 /* num.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D50399185EB28C005D6DF9 /* num.png */; };
@@ -221,29 +220,37 @@
 		67D503CA185EB28C005D6DF9 /* sprite9_btn2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D503A1185EB28C005D6DF9 /* sprite9_btn2.png */; };
 		67D503CB185EB28C005D6DF9 /* toggle1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D503A2185EB28C005D6DF9 /* toggle1_1.png */; };
 		67D503CC185EB28C005D6DF9 /* toggle1_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 67D503A3185EB28C005D6DF9 /* toggle1_2.png */; };
-		67D503FE185EB2B0005D6DF9 /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503CE185EB2AF005D6DF9 /* Button.cpp */; };
-		67D503FF185EB2B0005D6DF9 /* CheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503D0185EB2AF005D6DF9 /* CheckBox.cpp */; };
-		67D50400185EB2B0005D6DF9 /* ControlView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503D3185EB2AF005D6DF9 /* ControlView.cpp */; };
-		67D50401185EB2B0005D6DF9 /* GridPageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503D5185EB2AF005D6DF9 /* GridPageView.cpp */; };
-		67D50402185EB2B0005D6DF9 /* GridView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503D7185EB2AF005D6DF9 /* GridView.cpp */; };
-		67D50403185EB2B0005D6DF9 /* ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503D9185EB2AF005D6DF9 /* ImageView.cpp */; };
-		67D50404185EB2B0005D6DF9 /* ImageViewScale9.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503DB185EB2AF005D6DF9 /* ImageViewScale9.cpp */; };
-		67D50405185EB2B0005D6DF9 /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503DD185EB2AF005D6DF9 /* Label.cpp */; };
-		67D50406185EB2B0005D6DF9 /* LabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503DF185EB2AF005D6DF9 /* LabelAtlas.cpp */; };
-		67D50407185EB2B0005D6DF9 /* LabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503E1185EB2AF005D6DF9 /* LabelBMFont.cpp */; };
-		67D50408185EB2B0005D6DF9 /* ListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503E3185EB2AF005D6DF9 /* ListView.cpp */; };
-		67D50409185EB2B0005D6DF9 /* Lua_cocos2dx_widget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503E5185EB2B0005D6DF9 /* Lua_cocos2dx_widget.cpp */; };
-		67D5040A185EB2B0005D6DF9 /* PageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503E7185EB2B0005D6DF9 /* PageView.cpp */; };
-		67D5040B185EB2B0005D6DF9 /* Panel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503E9185EB2B0005D6DF9 /* Panel.cpp */; };
-		67D5040C185EB2B0005D6DF9 /* ProgressBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503EB185EB2B0005D6DF9 /* ProgressBar.cpp */; };
-		67D5040D185EB2B0005D6DF9 /* Scale9Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503ED185EB2B0005D6DF9 /* Scale9Sprite.cpp */; };
-		67D5040E185EB2B0005D6DF9 /* ScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503EF185EB2B0005D6DF9 /* ScrollView.cpp */; };
-		67D5040F185EB2B0005D6DF9 /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503F1185EB2B0005D6DF9 /* Slider.cpp */; };
-		67D50410185EB2B0005D6DF9 /* TableView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503F3185EB2B0005D6DF9 /* TableView.cpp */; };
-		67D50411185EB2B0005D6DF9 /* ToggleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503F5185EB2B0005D6DF9 /* ToggleView.cpp */; };
-		67D50412185EB2B0005D6DF9 /* Widget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503F7185EB2B0005D6DF9 /* Widget.cpp */; };
-		67D50413185EB2B0005D6DF9 /* WidgetLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503F9185EB2B0005D6DF9 /* WidgetLayout.cpp */; };
-		67D50414185EB2B0005D6DF9 /* WidgetProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67D503FC185EB2B0005D6DF9 /* WidgetProtocol.cpp */; };
+		A17927A81892B55900C8003B /* expandnodebg.png in Resources */ = {isa = PBXBuildFile; fileRef = A17927A61892B55900C8003B /* expandnodebg.png */; };
+		A17927A91892B55900C8003B /* luaScript in Resources */ = {isa = PBXBuildFile; fileRef = A17927A71892B55900C8003B /* luaScript */; };
+		A17927E61892B59200C8003B /* Button.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927AA1892B59200C8003B /* Button.cpp */; };
+		A17927E71892B59200C8003B /* CheckBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927AC1892B59200C8003B /* CheckBox.cpp */; };
+		A17927E81892B59200C8003B /* ColorView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927AF1892B59200C8003B /* ColorView.cpp */; };
+		A17927E91892B59200C8003B /* ControlView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927B11892B59200C8003B /* ControlView.cpp */; };
+		A17927EA1892B59200C8003B /* ExpandableListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927B31892B59200C8003B /* ExpandableListView.cpp */; };
+		A17927EB1892B59200C8003B /* GradientView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927B51892B59200C8003B /* GradientView.cpp */; };
+		A17927EC1892B59200C8003B /* GridPageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927B71892B59200C8003B /* GridPageView.cpp */; };
+		A17927ED1892B59200C8003B /* GridView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927B91892B59200C8003B /* GridView.cpp */; };
+		A17927EE1892B59200C8003B /* ImageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927BB1892B59200C8003B /* ImageView.cpp */; };
+		A17927EF1892B59200C8003B /* ImageViewScale9.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927BD1892B59200C8003B /* ImageViewScale9.cpp */; };
+		A17927F01892B59200C8003B /* Label.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927BF1892B59200C8003B /* Label.cpp */; };
+		A17927F11892B59200C8003B /* LabelAtlas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927C11892B59200C8003B /* LabelAtlas.cpp */; };
+		A17927F21892B59200C8003B /* LabelBMFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927C31892B59200C8003B /* LabelBMFont.cpp */; };
+		A17927F31892B59200C8003B /* Layout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927C51892B59200C8003B /* Layout.cpp */; };
+		A17927F41892B59200C8003B /* ListView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927C71892B59200C8003B /* ListView.cpp */; };
+		A17927F51892B59200C8003B /* Lua_cocos2dx_widget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927C91892B59200C8003B /* Lua_cocos2dx_widget.cpp */; };
+		A17927F61892B59200C8003B /* PageView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927CB1892B59200C8003B /* PageView.cpp */; };
+		A17927F71892B59200C8003B /* ProgressBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927CD1892B59200C8003B /* ProgressBar.cpp */; };
+		A17927F81892B59200C8003B /* Scale9Sprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927CF1892B59200C8003B /* Scale9Sprite.cpp */; };
+		A17927F91892B59200C8003B /* ScrollView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927D11892B59200C8003B /* ScrollView.cpp */; };
+		A17927FA1892B59200C8003B /* Slider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927D31892B59200C8003B /* Slider.cpp */; };
+		A17927FB1892B59200C8003B /* TableView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927D51892B59200C8003B /* TableView.cpp */; };
+		A17927FC1892B59200C8003B /* TextArea.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927D71892B59200C8003B /* TextArea.cpp */; };
+		A17927FD1892B59200C8003B /* TextRich.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927D91892B59200C8003B /* TextRich.cpp */; };
+		A17927FE1892B59200C8003B /* ToggleView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927DB1892B59200C8003B /* ToggleView.cpp */; };
+		A17927FF1892B59200C8003B /* Widget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927DD1892B59200C8003B /* Widget.cpp */; };
+		A17928001892B59200C8003B /* WidgetProtocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927E01892B59200C8003B /* WidgetProtocol.cpp */; };
+		A17928011892B59200C8003B /* WidgetWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927E21892B59200C8003B /* WidgetWindow.cpp */; };
+		A17928021892B59200C8003B /* WitlsMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A17927E41892B59200C8003B /* WitlsMacros.cpp */; };
 		F293B3CD15EB7BE500256477 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3CC15EB7BE500256477 /* QuartzCore.framework */; };
 		F293B3CF15EB7BE500256477 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3CE15EB7BE500256477 /* OpenGLES.framework */; };
 		F293B3D115EB7BE500256477 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F293B3D015EB7BE500256477 /* OpenAL.framework */; };
@@ -653,7 +660,6 @@
 		67D50393185EB28C005D6DF9 /* control_baseboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = control_baseboard.png; sourceTree = "<group>"; };
 		67D50394185EB28C005D6DF9 /* control_joystick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = control_joystick.png; sourceTree = "<group>"; };
 		67D50395185EB28C005D6DF9 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		67D50396185EB28C005D6DF9 /* luaScript */ = {isa = PBXFileReference; lastKnownFileType = folder; path = luaScript; sourceTree = "<group>"; };
 		67D50397185EB28C005D6DF9 /* next1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next1.png; sourceTree = "<group>"; };
 		67D50398185EB28C005D6DF9 /* next2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next2.png; sourceTree = "<group>"; };
 		67D50399185EB28C005D6DF9 /* num.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = num.png; sourceTree = "<group>"; };
@@ -667,54 +673,68 @@
 		67D503A1185EB28C005D6DF9 /* sprite9_btn2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite9_btn2.png; sourceTree = "<group>"; };
 		67D503A2185EB28C005D6DF9 /* toggle1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggle1_1.png; sourceTree = "<group>"; };
 		67D503A3185EB28C005D6DF9 /* toggle1_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toggle1_2.png; sourceTree = "<group>"; };
-		67D503CE185EB2AF005D6DF9 /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
-		67D503CF185EB2AF005D6DF9 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
-		67D503D0185EB2AF005D6DF9 /* CheckBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CheckBox.cpp; sourceTree = "<group>"; };
-		67D503D1185EB2AF005D6DF9 /* CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
-		67D503D2185EB2AF005D6DF9 /* cocos-widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cocos-widget.h"; sourceTree = "<group>"; };
-		67D503D3185EB2AF005D6DF9 /* ControlView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ControlView.cpp; sourceTree = "<group>"; };
-		67D503D4185EB2AF005D6DF9 /* ControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlView.h; sourceTree = "<group>"; };
-		67D503D5185EB2AF005D6DF9 /* GridPageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridPageView.cpp; sourceTree = "<group>"; };
-		67D503D6185EB2AF005D6DF9 /* GridPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridPageView.h; sourceTree = "<group>"; };
-		67D503D7185EB2AF005D6DF9 /* GridView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridView.cpp; sourceTree = "<group>"; };
-		67D503D8185EB2AF005D6DF9 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
-		67D503D9185EB2AF005D6DF9 /* ImageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageView.cpp; sourceTree = "<group>"; };
-		67D503DA185EB2AF005D6DF9 /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
-		67D503DB185EB2AF005D6DF9 /* ImageViewScale9.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageViewScale9.cpp; sourceTree = "<group>"; };
-		67D503DC185EB2AF005D6DF9 /* ImageViewScale9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewScale9.h; sourceTree = "<group>"; };
-		67D503DD185EB2AF005D6DF9 /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
-		67D503DE185EB2AF005D6DF9 /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
-		67D503DF185EB2AF005D6DF9 /* LabelAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelAtlas.cpp; sourceTree = "<group>"; };
-		67D503E0185EB2AF005D6DF9 /* LabelAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelAtlas.h; sourceTree = "<group>"; };
-		67D503E1185EB2AF005D6DF9 /* LabelBMFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelBMFont.cpp; sourceTree = "<group>"; };
-		67D503E2185EB2AF005D6DF9 /* LabelBMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelBMFont.h; sourceTree = "<group>"; };
-		67D503E3185EB2AF005D6DF9 /* ListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListView.cpp; sourceTree = "<group>"; };
-		67D503E4185EB2AF005D6DF9 /* ListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListView.h; sourceTree = "<group>"; };
-		67D503E5185EB2B0005D6DF9 /* Lua_cocos2dx_widget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lua_cocos2dx_widget.cpp; sourceTree = "<group>"; };
-		67D503E6185EB2B0005D6DF9 /* Lua_cocos2dx_widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lua_cocos2dx_widget.h; sourceTree = "<group>"; };
-		67D503E7185EB2B0005D6DF9 /* PageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PageView.cpp; sourceTree = "<group>"; };
-		67D503E8185EB2B0005D6DF9 /* PageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageView.h; sourceTree = "<group>"; };
-		67D503E9185EB2B0005D6DF9 /* Panel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Panel.cpp; sourceTree = "<group>"; };
-		67D503EA185EB2B0005D6DF9 /* Panel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panel.h; sourceTree = "<group>"; };
-		67D503EB185EB2B0005D6DF9 /* ProgressBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgressBar.cpp; sourceTree = "<group>"; };
-		67D503EC185EB2B0005D6DF9 /* ProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBar.h; sourceTree = "<group>"; };
-		67D503ED185EB2B0005D6DF9 /* Scale9Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scale9Sprite.cpp; sourceTree = "<group>"; };
-		67D503EE185EB2B0005D6DF9 /* Scale9Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scale9Sprite.h; sourceTree = "<group>"; };
-		67D503EF185EB2B0005D6DF9 /* ScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrollView.cpp; sourceTree = "<group>"; };
-		67D503F0185EB2B0005D6DF9 /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
-		67D503F1185EB2B0005D6DF9 /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Slider.cpp; sourceTree = "<group>"; };
-		67D503F2185EB2B0005D6DF9 /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
-		67D503F3185EB2B0005D6DF9 /* TableView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableView.cpp; sourceTree = "<group>"; };
-		67D503F4185EB2B0005D6DF9 /* TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableView.h; sourceTree = "<group>"; };
-		67D503F5185EB2B0005D6DF9 /* ToggleView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToggleView.cpp; sourceTree = "<group>"; };
-		67D503F6185EB2B0005D6DF9 /* ToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleView.h; sourceTree = "<group>"; };
-		67D503F7185EB2B0005D6DF9 /* Widget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Widget.cpp; sourceTree = "<group>"; };
-		67D503F8185EB2B0005D6DF9 /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
-		67D503F9185EB2B0005D6DF9 /* WidgetLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WidgetLayout.cpp; sourceTree = "<group>"; };
-		67D503FA185EB2B0005D6DF9 /* WidgetLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetLayout.h; sourceTree = "<group>"; };
-		67D503FB185EB2B0005D6DF9 /* WidgetMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetMacros.h; sourceTree = "<group>"; };
-		67D503FC185EB2B0005D6DF9 /* WidgetProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WidgetProtocol.cpp; sourceTree = "<group>"; };
-		67D503FD185EB2B0005D6DF9 /* WidgetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetProtocol.h; sourceTree = "<group>"; };
+		A17927A61892B55900C8003B /* expandnodebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = expandnodebg.png; sourceTree = "<group>"; };
+		A17927A71892B55900C8003B /* luaScript */ = {isa = PBXFileReference; lastKnownFileType = folder; path = luaScript; sourceTree = "<group>"; };
+		A17927AA1892B59200C8003B /* Button.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Button.cpp; sourceTree = "<group>"; };
+		A17927AB1892B59200C8003B /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		A17927AC1892B59200C8003B /* CheckBox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CheckBox.cpp; sourceTree = "<group>"; };
+		A17927AD1892B59200C8003B /* CheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckBox.h; sourceTree = "<group>"; };
+		A17927AE1892B59200C8003B /* cocos-widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "cocos-widget.h"; sourceTree = "<group>"; };
+		A17927AF1892B59200C8003B /* ColorView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorView.cpp; sourceTree = "<group>"; };
+		A17927B01892B59200C8003B /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
+		A17927B11892B59200C8003B /* ControlView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ControlView.cpp; sourceTree = "<group>"; };
+		A17927B21892B59200C8003B /* ControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlView.h; sourceTree = "<group>"; };
+		A17927B31892B59200C8003B /* ExpandableListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ExpandableListView.cpp; sourceTree = "<group>"; };
+		A17927B41892B59200C8003B /* ExpandableListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandableListView.h; sourceTree = "<group>"; };
+		A17927B51892B59200C8003B /* GradientView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GradientView.cpp; sourceTree = "<group>"; };
+		A17927B61892B59200C8003B /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		A17927B71892B59200C8003B /* GridPageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridPageView.cpp; sourceTree = "<group>"; };
+		A17927B81892B59200C8003B /* GridPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridPageView.h; sourceTree = "<group>"; };
+		A17927B91892B59200C8003B /* GridView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridView.cpp; sourceTree = "<group>"; };
+		A17927BA1892B59200C8003B /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
+		A17927BB1892B59200C8003B /* ImageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageView.cpp; sourceTree = "<group>"; };
+		A17927BC1892B59200C8003B /* ImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageView.h; sourceTree = "<group>"; };
+		A17927BD1892B59200C8003B /* ImageViewScale9.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageViewScale9.cpp; sourceTree = "<group>"; };
+		A17927BE1892B59200C8003B /* ImageViewScale9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewScale9.h; sourceTree = "<group>"; };
+		A17927BF1892B59200C8003B /* Label.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Label.cpp; sourceTree = "<group>"; };
+		A17927C01892B59200C8003B /* Label.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Label.h; sourceTree = "<group>"; };
+		A17927C11892B59200C8003B /* LabelAtlas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelAtlas.cpp; sourceTree = "<group>"; };
+		A17927C21892B59200C8003B /* LabelAtlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelAtlas.h; sourceTree = "<group>"; };
+		A17927C31892B59200C8003B /* LabelBMFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LabelBMFont.cpp; sourceTree = "<group>"; };
+		A17927C41892B59200C8003B /* LabelBMFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelBMFont.h; sourceTree = "<group>"; };
+		A17927C51892B59200C8003B /* Layout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Layout.cpp; sourceTree = "<group>"; };
+		A17927C61892B59200C8003B /* Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
+		A17927C71892B59200C8003B /* ListView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListView.cpp; sourceTree = "<group>"; };
+		A17927C81892B59200C8003B /* ListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListView.h; sourceTree = "<group>"; };
+		A17927C91892B59200C8003B /* Lua_cocos2dx_widget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Lua_cocos2dx_widget.cpp; sourceTree = "<group>"; };
+		A17927CA1892B59200C8003B /* Lua_cocos2dx_widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lua_cocos2dx_widget.h; sourceTree = "<group>"; };
+		A17927CB1892B59200C8003B /* PageView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PageView.cpp; sourceTree = "<group>"; };
+		A17927CC1892B59200C8003B /* PageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageView.h; sourceTree = "<group>"; };
+		A17927CD1892B59200C8003B /* ProgressBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProgressBar.cpp; sourceTree = "<group>"; };
+		A17927CE1892B59200C8003B /* ProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressBar.h; sourceTree = "<group>"; };
+		A17927CF1892B59200C8003B /* Scale9Sprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scale9Sprite.cpp; sourceTree = "<group>"; };
+		A17927D01892B59200C8003B /* Scale9Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scale9Sprite.h; sourceTree = "<group>"; };
+		A17927D11892B59200C8003B /* ScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScrollView.cpp; sourceTree = "<group>"; };
+		A17927D21892B59200C8003B /* ScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollView.h; sourceTree = "<group>"; };
+		A17927D31892B59200C8003B /* Slider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Slider.cpp; sourceTree = "<group>"; };
+		A17927D41892B59200C8003B /* Slider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slider.h; sourceTree = "<group>"; };
+		A17927D51892B59200C8003B /* TableView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TableView.cpp; sourceTree = "<group>"; };
+		A17927D61892B59200C8003B /* TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableView.h; sourceTree = "<group>"; };
+		A17927D71892B59200C8003B /* TextArea.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextArea.cpp; sourceTree = "<group>"; };
+		A17927D81892B59200C8003B /* TextArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextArea.h; sourceTree = "<group>"; };
+		A17927D91892B59200C8003B /* TextRich.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextRich.cpp; sourceTree = "<group>"; };
+		A17927DA1892B59200C8003B /* TextRich.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextRich.h; sourceTree = "<group>"; };
+		A17927DB1892B59200C8003B /* ToggleView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ToggleView.cpp; sourceTree = "<group>"; };
+		A17927DC1892B59200C8003B /* ToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleView.h; sourceTree = "<group>"; };
+		A17927DD1892B59200C8003B /* Widget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Widget.cpp; sourceTree = "<group>"; };
+		A17927DE1892B59200C8003B /* Widget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Widget.h; sourceTree = "<group>"; };
+		A17927DF1892B59200C8003B /* WidgetMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetMacros.h; sourceTree = "<group>"; };
+		A17927E01892B59200C8003B /* WidgetProtocol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WidgetProtocol.cpp; sourceTree = "<group>"; };
+		A17927E11892B59200C8003B /* WidgetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetProtocol.h; sourceTree = "<group>"; };
+		A17927E21892B59200C8003B /* WidgetWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WidgetWindow.cpp; sourceTree = "<group>"; };
+		A17927E31892B59200C8003B /* WidgetWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetWindow.h; sourceTree = "<group>"; };
+		A17927E41892B59200C8003B /* WitlsMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WitlsMacros.cpp; sourceTree = "<group>"; };
+		A17927E51892B59200C8003B /* WitlsMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WitlsMacros.h; sourceTree = "<group>"; };
 		F293B3C815EB7BE500256477 /* CocosWidgetTestLua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocosWidgetTestLua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F293B3CC15EB7BE500256477 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F293B3CE15EB7BE500256477 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1426,54 +1446,66 @@
 		67D503CD185EB2AF005D6DF9 /* CocosWidget */ = {
 			isa = PBXGroup;
 			children = (
-				67D503CE185EB2AF005D6DF9 /* Button.cpp */,
-				67D503CF185EB2AF005D6DF9 /* Button.h */,
-				67D503D0185EB2AF005D6DF9 /* CheckBox.cpp */,
-				67D503D1185EB2AF005D6DF9 /* CheckBox.h */,
-				67D503D2185EB2AF005D6DF9 /* cocos-widget.h */,
-				67D503D3185EB2AF005D6DF9 /* ControlView.cpp */,
-				67D503D4185EB2AF005D6DF9 /* ControlView.h */,
-				67D503D5185EB2AF005D6DF9 /* GridPageView.cpp */,
-				67D503D6185EB2AF005D6DF9 /* GridPageView.h */,
-				67D503D7185EB2AF005D6DF9 /* GridView.cpp */,
-				67D503D8185EB2AF005D6DF9 /* GridView.h */,
-				67D503D9185EB2AF005D6DF9 /* ImageView.cpp */,
-				67D503DA185EB2AF005D6DF9 /* ImageView.h */,
-				67D503DB185EB2AF005D6DF9 /* ImageViewScale9.cpp */,
-				67D503DC185EB2AF005D6DF9 /* ImageViewScale9.h */,
-				67D503DD185EB2AF005D6DF9 /* Label.cpp */,
-				67D503DE185EB2AF005D6DF9 /* Label.h */,
-				67D503DF185EB2AF005D6DF9 /* LabelAtlas.cpp */,
-				67D503E0185EB2AF005D6DF9 /* LabelAtlas.h */,
-				67D503E1185EB2AF005D6DF9 /* LabelBMFont.cpp */,
-				67D503E2185EB2AF005D6DF9 /* LabelBMFont.h */,
-				67D503E3185EB2AF005D6DF9 /* ListView.cpp */,
-				67D503E4185EB2AF005D6DF9 /* ListView.h */,
-				67D503E5185EB2B0005D6DF9 /* Lua_cocos2dx_widget.cpp */,
-				67D503E6185EB2B0005D6DF9 /* Lua_cocos2dx_widget.h */,
-				67D503E7185EB2B0005D6DF9 /* PageView.cpp */,
-				67D503E8185EB2B0005D6DF9 /* PageView.h */,
-				67D503E9185EB2B0005D6DF9 /* Panel.cpp */,
-				67D503EA185EB2B0005D6DF9 /* Panel.h */,
-				67D503EB185EB2B0005D6DF9 /* ProgressBar.cpp */,
-				67D503EC185EB2B0005D6DF9 /* ProgressBar.h */,
-				67D503ED185EB2B0005D6DF9 /* Scale9Sprite.cpp */,
-				67D503EE185EB2B0005D6DF9 /* Scale9Sprite.h */,
-				67D503EF185EB2B0005D6DF9 /* ScrollView.cpp */,
-				67D503F0185EB2B0005D6DF9 /* ScrollView.h */,
-				67D503F1185EB2B0005D6DF9 /* Slider.cpp */,
-				67D503F2185EB2B0005D6DF9 /* Slider.h */,
-				67D503F3185EB2B0005D6DF9 /* TableView.cpp */,
-				67D503F4185EB2B0005D6DF9 /* TableView.h */,
-				67D503F5185EB2B0005D6DF9 /* ToggleView.cpp */,
-				67D503F6185EB2B0005D6DF9 /* ToggleView.h */,
-				67D503F7185EB2B0005D6DF9 /* Widget.cpp */,
-				67D503F8185EB2B0005D6DF9 /* Widget.h */,
-				67D503F9185EB2B0005D6DF9 /* WidgetLayout.cpp */,
-				67D503FA185EB2B0005D6DF9 /* WidgetLayout.h */,
-				67D503FB185EB2B0005D6DF9 /* WidgetMacros.h */,
-				67D503FC185EB2B0005D6DF9 /* WidgetProtocol.cpp */,
-				67D503FD185EB2B0005D6DF9 /* WidgetProtocol.h */,
+				A17927AA1892B59200C8003B /* Button.cpp */,
+				A17927AB1892B59200C8003B /* Button.h */,
+				A17927AC1892B59200C8003B /* CheckBox.cpp */,
+				A17927AD1892B59200C8003B /* CheckBox.h */,
+				A17927AE1892B59200C8003B /* cocos-widget.h */,
+				A17927AF1892B59200C8003B /* ColorView.cpp */,
+				A17927B01892B59200C8003B /* ColorView.h */,
+				A17927B11892B59200C8003B /* ControlView.cpp */,
+				A17927B21892B59200C8003B /* ControlView.h */,
+				A17927B31892B59200C8003B /* ExpandableListView.cpp */,
+				A17927B41892B59200C8003B /* ExpandableListView.h */,
+				A17927B51892B59200C8003B /* GradientView.cpp */,
+				A17927B61892B59200C8003B /* GradientView.h */,
+				A17927B71892B59200C8003B /* GridPageView.cpp */,
+				A17927B81892B59200C8003B /* GridPageView.h */,
+				A17927B91892B59200C8003B /* GridView.cpp */,
+				A17927BA1892B59200C8003B /* GridView.h */,
+				A17927BB1892B59200C8003B /* ImageView.cpp */,
+				A17927BC1892B59200C8003B /* ImageView.h */,
+				A17927BD1892B59200C8003B /* ImageViewScale9.cpp */,
+				A17927BE1892B59200C8003B /* ImageViewScale9.h */,
+				A17927BF1892B59200C8003B /* Label.cpp */,
+				A17927C01892B59200C8003B /* Label.h */,
+				A17927C11892B59200C8003B /* LabelAtlas.cpp */,
+				A17927C21892B59200C8003B /* LabelAtlas.h */,
+				A17927C31892B59200C8003B /* LabelBMFont.cpp */,
+				A17927C41892B59200C8003B /* LabelBMFont.h */,
+				A17927C51892B59200C8003B /* Layout.cpp */,
+				A17927C61892B59200C8003B /* Layout.h */,
+				A17927C71892B59200C8003B /* ListView.cpp */,
+				A17927C81892B59200C8003B /* ListView.h */,
+				A17927C91892B59200C8003B /* Lua_cocos2dx_widget.cpp */,
+				A17927CA1892B59200C8003B /* Lua_cocos2dx_widget.h */,
+				A17927CB1892B59200C8003B /* PageView.cpp */,
+				A17927CC1892B59200C8003B /* PageView.h */,
+				A17927CD1892B59200C8003B /* ProgressBar.cpp */,
+				A17927CE1892B59200C8003B /* ProgressBar.h */,
+				A17927CF1892B59200C8003B /* Scale9Sprite.cpp */,
+				A17927D01892B59200C8003B /* Scale9Sprite.h */,
+				A17927D11892B59200C8003B /* ScrollView.cpp */,
+				A17927D21892B59200C8003B /* ScrollView.h */,
+				A17927D31892B59200C8003B /* Slider.cpp */,
+				A17927D41892B59200C8003B /* Slider.h */,
+				A17927D51892B59200C8003B /* TableView.cpp */,
+				A17927D61892B59200C8003B /* TableView.h */,
+				A17927D71892B59200C8003B /* TextArea.cpp */,
+				A17927D81892B59200C8003B /* TextArea.h */,
+				A17927D91892B59200C8003B /* TextRich.cpp */,
+				A17927DA1892B59200C8003B /* TextRich.h */,
+				A17927DB1892B59200C8003B /* ToggleView.cpp */,
+				A17927DC1892B59200C8003B /* ToggleView.h */,
+				A17927DD1892B59200C8003B /* Widget.cpp */,
+				A17927DE1892B59200C8003B /* Widget.h */,
+				A17927DF1892B59200C8003B /* WidgetMacros.h */,
+				A17927E01892B59200C8003B /* WidgetProtocol.cpp */,
+				A17927E11892B59200C8003B /* WidgetProtocol.h */,
+				A17927E21892B59200C8003B /* WidgetWindow.cpp */,
+				A17927E31892B59200C8003B /* WidgetWindow.h */,
+				A17927E41892B59200C8003B /* WitlsMacros.cpp */,
+				A17927E51892B59200C8003B /* WitlsMacros.h */,
 			);
 			name = CocosWidget;
 			path = ../../CocosWidget;
@@ -1485,6 +1517,7 @@
 				15C1533E168310C700D239F2 /* cocos2dx.xcodeproj */,
 				15C154A71683118600D239F2 /* Box2D */,
 				15C1542E1683116B00D239F2 /* chipmunk */,
+				67D503CD185EB2AF005D6DF9 /* CocosWidget */,
 				F293BB7C15EB830F00256477 /* Classes */,
 				15C1555A168311AA00D239F2 /* CocosDenshion */,
 				15C153791683112E00D239F2 /* extensions */,
@@ -1537,7 +1570,6 @@
 		F293BB7C15EB830F00256477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				67D503CD185EB2AF005D6DF9 /* CocosWidget */,
 				F293BB7E15EB831F00256477 /* AppDelegate.cpp */,
 				F293BB7F15EB831F00256477 /* AppDelegate.h */,
 			);
@@ -1547,6 +1579,8 @@
 		F293BC4615EB859D00256477 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A17927A61892B55900C8003B /* expandnodebg.png */,
+				A17927A71892B55900C8003B /* luaScript */,
 				67D5037B185EB28B005D6DF9 /* again1.png */,
 				67D5037C185EB28B005D6DF9 /* again2.png */,
 				67D5037D185EB28B005D6DF9 /* arial-unicode-26.fnt */,
@@ -1574,7 +1608,6 @@
 				67D50393185EB28C005D6DF9 /* control_baseboard.png */,
 				67D50394185EB28C005D6DF9 /* control_joystick.png */,
 				67D50395185EB28C005D6DF9 /* icon.png */,
-				67D50396185EB28C005D6DF9 /* luaScript */,
 				67D50397185EB28C005D6DF9 /* next1.png */,
 				67D50398185EB28C005D6DF9 /* next2.png */,
 				67D50399185EB28C005D6DF9 /* num.png */,
@@ -1690,6 +1723,7 @@
 				67D503B5185EB28C005D6DF9 /* ckb_disable_02.png in Resources */,
 				67D503B6185EB28C005D6DF9 /* ckb_normal_01.png in Resources */,
 				67D503B7185EB28C005D6DF9 /* ckb_normal_02.png in Resources */,
+				A17927A91892B55900C8003B /* luaScript in Resources */,
 				67D503B8185EB28C005D6DF9 /* ckb_selected_01.png in Resources */,
 				67D503B9185EB28C005D6DF9 /* ckb_selected_02.png in Resources */,
 				67D503BA185EB28C005D6DF9 /* CloseNormal.png in Resources */,
@@ -1697,7 +1731,7 @@
 				67D503BC185EB28C005D6DF9 /* control_baseboard.png in Resources */,
 				67D503BD185EB28C005D6DF9 /* control_joystick.png in Resources */,
 				67D503BE185EB28C005D6DF9 /* icon.png in Resources */,
-				67D503BF185EB28C005D6DF9 /* luaScript in Resources */,
+				A17927A81892B55900C8003B /* expandnodebg.png in Resources */,
 				67D503C0185EB28C005D6DF9 /* next1.png in Resources */,
 				67D503C1185EB28C005D6DF9 /* next2.png in Resources */,
 				67D503C2185EB28C005D6DF9 /* num.png in Resources */,
@@ -1729,13 +1763,17 @@
 				15C153F81683112E00D239F2 /* CCBFileLoader.cpp in Sources */,
 				15C153F91683112E00D239F2 /* CCBKeyframe.cpp in Sources */,
 				15C153FA1683112E00D239F2 /* CCBReader.cpp in Sources */,
+				A17927E81892B59200C8003B /* ColorView.cpp in Sources */,
 				15C153FB1683112E00D239F2 /* CCBSequence.cpp in Sources */,
 				15C153FC1683112E00D239F2 /* CCBSequenceProperty.cpp in Sources */,
 				15C153FD1683112E00D239F2 /* CCBValue.cpp in Sources */,
+				A17927EE1892B59200C8003B /* ImageView.cpp in Sources */,
 				15C153FE1683112E00D239F2 /* CCControlButtonLoader.cpp in Sources */,
 				15C153FF1683112E00D239F2 /* CCControlLoader.cpp in Sources */,
 				15C154001683112E00D239F2 /* CCData.cpp in Sources */,
 				15C154011683112E00D239F2 /* CCLabelBMFontLoader.cpp in Sources */,
+				A17927EB1892B59200C8003B /* GradientView.cpp in Sources */,
+				A17927FA1892B59200C8003B /* Slider.cpp in Sources */,
 				15C154021683112E00D239F2 /* CCLabelTTFLoader.cpp in Sources */,
 				15C154031683112E00D239F2 /* CCLayerColorLoader.cpp in Sources */,
 				15C154041683112E00D239F2 /* CCLayerGradientLoader.cpp in Sources */,
@@ -1748,11 +1786,13 @@
 				15C1540B1683112E00D239F2 /* CCParticleSystemQuadLoader.cpp in Sources */,
 				15C1540C1683112E00D239F2 /* CCScale9SpriteLoader.cpp in Sources */,
 				15C1540D1683112E00D239F2 /* CCScrollViewLoader.cpp in Sources */,
+				A17927F21892B59200C8003B /* LabelBMFont.cpp in Sources */,
 				15C1540E1683112E00D239F2 /* CCSpriteLoader.cpp in Sources */,
 				15C1540F1683112E00D239F2 /* CCControl.cpp in Sources */,
 				15C154101683112E00D239F2 /* CCControlButton.cpp in Sources */,
 				15C154111683112E00D239F2 /* CCControlColourPicker.cpp in Sources */,
 				15C154121683112E00D239F2 /* CCControlHuePicker.cpp in Sources */,
+				A17928001892B59200C8003B /* WidgetProtocol.cpp in Sources */,
 				15C154131683112E00D239F2 /* CCControlPotentiometer.cpp in Sources */,
 				15C154141683112E00D239F2 /* CCControlSaturationBrightnessPicker.cpp in Sources */,
 				15C154151683112E00D239F2 /* CCControlSlider.cpp in Sources */,
@@ -1765,6 +1805,7 @@
 				15C1541D1683112E00D239F2 /* CCEditBoxImplIOS.mm in Sources */,
 				15C1541F1683112E00D239F2 /* CCScrollView.cpp in Sources */,
 				15C154201683112E00D239F2 /* CCSorting.cpp in Sources */,
+				A17927F41892B59200C8003B /* ListView.cpp in Sources */,
 				15C154211683112E00D239F2 /* CCTableView.cpp in Sources */,
 				15C154221683112E00D239F2 /* CCTableViewCell.cpp in Sources */,
 				15C154231683112E00D239F2 /* HttpClient.cpp in Sources */,
@@ -1772,8 +1813,10 @@
 				15C154251683112E00D239F2 /* CCPhysicsSprite.cpp in Sources */,
 				15C154891683116B00D239F2 /* chipmunk.c in Sources */,
 				15C1548B1683116B00D239F2 /* cpConstraint.c in Sources */,
+				A17927E91892B59200C8003B /* ControlView.cpp in Sources */,
 				15C1548C1683116B00D239F2 /* cpDampedRotarySpring.c in Sources */,
 				15C1548D1683116B00D239F2 /* cpDampedSpring.c in Sources */,
+				A17927FE1892B59200C8003B /* ToggleView.cpp in Sources */,
 				15C1548E1683116B00D239F2 /* cpGearJoint.c in Sources */,
 				15C1548F1683116B00D239F2 /* cpGrooveJoint.c in Sources */,
 				15C154901683116B00D239F2 /* cpPinJoint.c in Sources */,
@@ -1783,8 +1826,12 @@
 				15C154941683116B00D239F2 /* cpSimpleMotor.c in Sources */,
 				15C154951683116B00D239F2 /* cpSlideJoint.c in Sources */,
 				15C154961683116B00D239F2 /* cpArbiter.c in Sources */,
+				A17927FB1892B59200C8003B /* TableView.cpp in Sources */,
 				15C154971683116B00D239F2 /* cpArray.c in Sources */,
+				A17927F61892B59200C8003B /* PageView.cpp in Sources */,
+				A17928011892B59200C8003B /* WidgetWindow.cpp in Sources */,
 				15C154981683116B00D239F2 /* cpBB.c in Sources */,
+				A17927EA1892B59200C8003B /* ExpandableListView.cpp in Sources */,
 				15C154991683116B00D239F2 /* cpBBTree.c in Sources */,
 				15C1549A1683116B00D239F2 /* cpBody.c in Sources */,
 				15C1549B1683116B00D239F2 /* cpCollision.c in Sources */,
@@ -1796,17 +1843,21 @@
 				15C154A11683116B00D239F2 /* cpSpaceHash.c in Sources */,
 				15C154A21683116B00D239F2 /* cpSpaceQuery.c in Sources */,
 				15C154A31683116B00D239F2 /* cpSpaceStep.c in Sources */,
+				A17927E71892B59200C8003B /* CheckBox.cpp in Sources */,
 				15C154A41683116B00D239F2 /* cpSpatialIndex.c in Sources */,
 				15C154A51683116B00D239F2 /* cpSweep1D.c in Sources */,
 				15C154A61683116B00D239F2 /* cpVect.c in Sources */,
 				15C1551F1683118600D239F2 /* b2BroadPhase.cpp in Sources */,
 				15C155201683118600D239F2 /* b2CollideCircle.cpp in Sources */,
+				A17927EC1892B59200C8003B /* GridPageView.cpp in Sources */,
 				15C155211683118600D239F2 /* b2CollideEdge.cpp in Sources */,
 				15C155221683118600D239F2 /* b2CollidePolygon.cpp in Sources */,
 				15C155231683118600D239F2 /* b2Collision.cpp in Sources */,
 				15C155241683118600D239F2 /* b2Distance.cpp in Sources */,
 				15C155251683118600D239F2 /* b2DynamicTree.cpp in Sources */,
 				15C155261683118600D239F2 /* b2TimeOfImpact.cpp in Sources */,
+				A17927F51892B59200C8003B /* Lua_cocos2dx_widget.cpp in Sources */,
+				A17927FF1892B59200C8003B /* Widget.cpp in Sources */,
 				15C155271683118600D239F2 /* b2ChainShape.cpp in Sources */,
 				15C155281683118600D239F2 /* b2CircleShape.cpp in Sources */,
 				15C155291683118600D239F2 /* b2EdgeShape.cpp in Sources */,
@@ -1827,26 +1878,34 @@
 				15C155381683118600D239F2 /* b2ChainAndPolygonContact.cpp in Sources */,
 				15C155391683118600D239F2 /* b2CircleContact.cpp in Sources */,
 				15C1553A1683118600D239F2 /* b2Contact.cpp in Sources */,
+				A17927FD1892B59200C8003B /* TextRich.cpp in Sources */,
 				15C1553B1683118600D239F2 /* b2ContactSolver.cpp in Sources */,
 				15C1553C1683118600D239F2 /* b2EdgeAndCircleContact.cpp in Sources */,
 				15C1553D1683118600D239F2 /* b2EdgeAndPolygonContact.cpp in Sources */,
 				15C1553E1683118600D239F2 /* b2PolygonAndCircleContact.cpp in Sources */,
 				15C1553F1683118600D239F2 /* b2PolygonContact.cpp in Sources */,
 				15C155401683118600D239F2 /* b2DistanceJoint.cpp in Sources */,
+				A17927F71892B59200C8003B /* ProgressBar.cpp in Sources */,
 				15C155411683118600D239F2 /* b2FrictionJoint.cpp in Sources */,
 				15C155421683118600D239F2 /* b2GearJoint.cpp in Sources */,
 				15C155431683118600D239F2 /* b2Joint.cpp in Sources */,
+				A17927F01892B59200C8003B /* Label.cpp in Sources */,
 				15C155441683118600D239F2 /* b2MouseJoint.cpp in Sources */,
 				15C155451683118600D239F2 /* b2PrismaticJoint.cpp in Sources */,
 				15C155461683118600D239F2 /* b2PulleyJoint.cpp in Sources */,
 				15C155471683118600D239F2 /* b2RevoluteJoint.cpp in Sources */,
+				A17927F31892B59200C8003B /* Layout.cpp in Sources */,
 				15C155481683118600D239F2 /* b2RopeJoint.cpp in Sources */,
 				15C155491683118600D239F2 /* b2WeldJoint.cpp in Sources */,
 				15C1554A1683118600D239F2 /* b2WheelJoint.cpp in Sources */,
 				15C155591683118600D239F2 /* b2Rope.cpp in Sources */,
+				A17928021892B59200C8003B /* WitlsMacros.cpp in Sources */,
+				A17927F91892B59200C8003B /* ScrollView.cpp in Sources */,
+				A17927EF1892B59200C8003B /* ImageViewScale9.cpp in Sources */,
 				15C155DA168311AA00D239F2 /* CDAudioManager.m in Sources */,
 				15C155DB168311AA00D239F2 /* CDOpenALSupport.m in Sources */,
 				15C155DC168311AA00D239F2 /* CocosDenshion.m in Sources */,
+				A17927F81892B59200C8003B /* Scale9Sprite.cpp in Sources */,
 				15C155DD168311AA00D239F2 /* SimpleAudioEngine.mm in Sources */,
 				15C155DE168311AA00D239F2 /* SimpleAudioEngine_objc.m in Sources */,
 				15C15685168311CB00D239F2 /* tolua_event.c in Sources */,
@@ -1864,15 +1923,19 @@
 				46C1009316BF786A00F74D54 /* tolua_fix.c in Sources */,
 				1A40E7DF1727C47E006D4861 /* Animation.cpp in Sources */,
 				1A40E7E01727C47E006D4861 /* AnimationState.cpp in Sources */,
+				A17927E61892B59200C8003B /* Button.cpp in Sources */,
 				1A40E7E11727C47E006D4861 /* AnimationStateData.cpp in Sources */,
 				1A40E7E21727C47E006D4861 /* Atlas.cpp in Sources */,
+				A17927F11892B59200C8003B /* LabelAtlas.cpp in Sources */,
 				1A40E7E31727C47E006D4861 /* AtlasAttachmentLoader.cpp in Sources */,
 				1A40E7E41727C47E006D4861 /* Attachment.cpp in Sources */,
 				1A40E7E51727C47E006D4861 /* AttachmentLoader.cpp in Sources */,
 				1A40E7E61727C47E006D4861 /* Bone.cpp in Sources */,
 				1A40E7E71727C47E006D4861 /* BoneData.cpp in Sources */,
+				A17927FC1892B59200C8003B /* TextArea.cpp in Sources */,
 				1A40E7E81727C47E006D4861 /* extension.cpp in Sources */,
 				1A40E7E91727C47E006D4861 /* Json.cpp in Sources */,
+				A17927ED1892B59200C8003B /* GridView.cpp in Sources */,
 				1A40E7EA1727C47E006D4861 /* RegionAttachment.cpp in Sources */,
 				1A40E7EB1727C47E006D4861 /* Skeleton.cpp in Sources */,
 				1A40E7EC1727C47E006D4861 /* SkeletonData.cpp in Sources */,
@@ -1888,29 +1951,6 @@
 				1A9CE91E1765A2C2000E3062 /* Lua_extensions_CCB.cpp in Sources */,
 				1A9CE91F1765A2C2000E3062 /* Lua_web_socket.cpp in Sources */,
 				150E36FF17F2B72B0021A6EA /* lua_cocos2dx_extensions_manual.cpp in Sources */,
-				67D503FE185EB2B0005D6DF9 /* Button.cpp in Sources */,
-				67D503FF185EB2B0005D6DF9 /* CheckBox.cpp in Sources */,
-				67D50400185EB2B0005D6DF9 /* ControlView.cpp in Sources */,
-				67D50401185EB2B0005D6DF9 /* GridPageView.cpp in Sources */,
-				67D50402185EB2B0005D6DF9 /* GridView.cpp in Sources */,
-				67D50403185EB2B0005D6DF9 /* ImageView.cpp in Sources */,
-				67D50404185EB2B0005D6DF9 /* ImageViewScale9.cpp in Sources */,
-				67D50405185EB2B0005D6DF9 /* Label.cpp in Sources */,
-				67D50406185EB2B0005D6DF9 /* LabelAtlas.cpp in Sources */,
-				67D50407185EB2B0005D6DF9 /* LabelBMFont.cpp in Sources */,
-				67D50408185EB2B0005D6DF9 /* ListView.cpp in Sources */,
-				67D50409185EB2B0005D6DF9 /* Lua_cocos2dx_widget.cpp in Sources */,
-				67D5040A185EB2B0005D6DF9 /* PageView.cpp in Sources */,
-				67D5040B185EB2B0005D6DF9 /* Panel.cpp in Sources */,
-				67D5040C185EB2B0005D6DF9 /* ProgressBar.cpp in Sources */,
-				67D5040D185EB2B0005D6DF9 /* Scale9Sprite.cpp in Sources */,
-				67D5040E185EB2B0005D6DF9 /* ScrollView.cpp in Sources */,
-				67D5040F185EB2B0005D6DF9 /* Slider.cpp in Sources */,
-				67D50410185EB2B0005D6DF9 /* TableView.cpp in Sources */,
-				67D50411185EB2B0005D6DF9 /* ToggleView.cpp in Sources */,
-				67D50412185EB2B0005D6DF9 /* Widget.cpp in Sources */,
-				67D50413185EB2B0005D6DF9 /* WidgetLayout.cpp in Sources */,
-				67D50414185EB2B0005D6DF9 /* WidgetProtocol.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
